@@ -1,0 +1,86 @@
+# -----------------------------------------------------------------------------
+# Credentials and connection material - never committed
+# -----------------------------------------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*
+*credential*
+*password*
+*secret*
+.mysql*
+.my.cnf
+.mylogin.cnf
+*mysql*.cnf
+
+# -----------------------------------------------------------------------------
+# Database dumps and backups
+# -----------------------------------------------------------------------------
+*.sql.gz
+*.dump
+*dump.sql
+*.bak
+*.backup
+*_backup.*
+
+# -----------------------------------------------------------------------------
+# Full-resolution tables stay in the analysis environment, not in Git.
+# Compact evidence tables under evidence/ ARE intended to be published, so CSVs
+# are excluded by location rather than by a blanket *.csv rule.
+# -----------------------------------------------------------------------------
+data/*
+!data/README.md
+data/raw/
+data/marts/
+data/exports/
+data/full/
+raw/
+marts/
+exports/
+extracts/
+*_full.csv
+*_export.csv
+*_extract.csv
+*.parquet
+*.feather
+*.arrow
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.zip
+*.7z
+*.gz
+*.tar
+
+# -----------------------------------------------------------------------------
+# Python, notebooks and editors
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+.vscode/
+.idea/
+
+# -----------------------------------------------------------------------------
+# Logs and temporary output
+# -----------------------------------------------------------------------------
+logs/
+tmp/
+temp/
+*.log
+*.tmp
+*.temp
+
+# -----------------------------------------------------------------------------
+# Operating system and office lock files
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+~$*

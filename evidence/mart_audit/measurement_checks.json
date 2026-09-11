@@ -1,0 +1,436 @@
+{
+  "scope": "Current mart grain, profile opportunity and episodic continuation contracts; no business findings.",
+  "measurement_windows": {
+    "BASELINE_90": [
+      "2025-09-01",
+      "2025-11-29"
+    ],
+    "FINAL_90": [
+      "2025-11-30",
+      "2026-02-27"
+    ]
+  },
+  "checks": [
+    {
+      "id": "K01",
+      "check": "profile_title_window: unique at profile_id + parent_title_id + window_label",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K02",
+      "check": "profile_genre_window: unique at profile_id + primary_genre + window_label",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K03",
+      "check": "profile_viewership_window: unique at profile_id + window_label",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K04",
+      "check": "account_viewership_window: unique at account_id + window_label",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K05",
+      "check": "account_subscription_window: unique at account_id + window_label",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K06",
+      "check": "account_plan_transition_features: unique at account_id + transition_date",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K07",
+      "check": "No orphan profiles across profile-grain marts",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K08",
+      "check": "No orphan accounts across account-grain marts",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K09",
+      "check": "No orphan parent titles in profile_title_window",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K10",
+      "check": "Window boundaries present, ordered and inside the calendar",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K11",
+      "check": "Every profile appears in profile_viewership_window per window",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "K12",
+      "check": "Every account appears in account_subscription_window per window",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CA_unique_opportunity",
+      "check": "CA unique opportunity",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CB_same_parent",
+      "check": "CB same parent",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CC_next_order",
+      "check": "CC next order",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CD_earliest_progression",
+      "check": "CD earliest progression",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CE_asset_available",
+      "check": "CE asset available",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CF_profile_exists",
+      "check": "CF profile exists",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CG_opening_access",
+      "check": "CG opening access",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CH_regional_access",
+      "check": "CH regional access",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CI_positive_not_censored",
+      "check": "CI positive not censored",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CJ_positive_not_negative",
+      "check": "CJ positive not negative",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CK_censored_not_negative",
+      "check": "CK censored not negative",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CL_exactly_one_state",
+      "check": "CL exactly one state",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CN_negative_full_followup",
+      "check": "CN negative full followup",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CN2_horizon_evidence",
+      "check": "CN2 horizon evidence",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CM_positive_horizon_and_attribution",
+      "check": "CM positive horizon and attribution",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CM_session_id",
+      "check": "CM session id",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CM_is_autoplay",
+      "check": "CM is autoplay",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CM_audio_language",
+      "check": "CM audio language",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CM_device_type",
+      "check": "CM device type",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CO_censored_contains_no_positive",
+      "check": "CO censored contains no positive",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CP_no_fanout",
+      "check": "CP no fanout",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CP2_window_ownership",
+      "check": "CP2 window ownership",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_grain",
+      "check": "CT grain",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_opportunity_coverage",
+      "check": "CT opportunity coverage",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_continuation_opportunities",
+      "check": "CT continuation opportunities",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_continued_opportunities",
+      "check": "CT continued opportunities",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_censored_continuation_opportunities",
+      "check": "CT censored continuation opportunities",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_exclusive_counts",
+      "check": "CT exclusive counts",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_meaningful_title",
+      "check": "CT meaningful title",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CT_opportunity_only_behaviour",
+      "check": "CT opportunity only behaviour",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_grain",
+      "check": "CV grain",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_opportunity_coverage",
+      "check": "CV opportunity coverage",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_continuation_opportunities",
+      "check": "CV continuation opportunities",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_continued_opportunities",
+      "check": "CV continued opportunities",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_censored_continuation_opportunities",
+      "check": "CV censored continuation opportunities",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_exclusive_counts",
+      "check": "CV exclusive counts",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_observed_denominator",
+      "check": "CV observed denominator",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_observed_positive",
+      "check": "CV observed positive",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_pooled_rate",
+      "check": "CV pooled rate",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "CV_validity",
+      "check": "CV validity",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P01_BASELINE_90",
+      "check": "entitled_days_in_window bounded by observable profile days",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P02_BASELINE_90",
+      "check": "vod_entitled_days_in_window bounded by observable profile days",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P03_BASELINE_90",
+      "check": "Profile-title opportunity upper bound",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P04_BASELINE_90",
+      "check": "Every profile-title exposure equals independent historical day intersection",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P05_BASELINE_90",
+      "check": "Profile entitled days equal independent historical access",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P06_BASELINE_90",
+      "check": "Profile catalogue opportunity and mean reproduce",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P07_BASELINE_90",
+      "check": "Eligibility and component flags reproduce exactly",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P08_BASELINE_90",
+      "check": "Late-created profiles have no inherited pre-creation opportunity",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P09_BASELINE_90",
+      "check": "Account eligible-profile counts equal the sum of profile eligibility",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P01_FINAL_90",
+      "check": "entitled_days_in_window bounded by observable profile days",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P02_FINAL_90",
+      "check": "vod_entitled_days_in_window bounded by observable profile days",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P03_FINAL_90",
+      "check": "Profile-title opportunity upper bound",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P04_FINAL_90",
+      "check": "Every profile-title exposure equals independent historical day intersection",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P05_FINAL_90",
+      "check": "Profile entitled days equal independent historical access",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P06_FINAL_90",
+      "check": "Profile catalogue opportunity and mean reproduce",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P07_FINAL_90",
+      "check": "Eligibility and component flags reproduce exactly",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P08_FINAL_90",
+      "check": "Late-created profiles have no inherited pre-creation opportunity",
+      "observed": "0 violations",
+      "status": "PASS"
+    },
+    {
+      "id": "P09_FINAL_90",
+      "check": "Account eligible-profile counts equal the sum of profile eligibility",
+      "observed": "0 violations",
+      "status": "PASS"
+    }
+  ],
+  "human_review_status": "Mart grain, opportunity and continuation contracts pass. profile_title_window measurement semantics have completed human review; profile_viewership_window and later viewer-level measures remain ahead. Fingerprints, segments and business interpretation remain downstream."
+}
