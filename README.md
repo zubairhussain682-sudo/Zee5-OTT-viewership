@@ -118,17 +118,17 @@ Every continuation opportunity ends in exactly one state: the viewer went on to 
 
 ## Current Analytical Position
 
-The business framing, data model, raw schema understanding and six-mart architecture are in place. The title-level mart has been audited by hand, including the measurement semantics it depends on — qualified starts, meaningful titles, title opportunity and continuation outcomes. Automated contract checks on the marts all pass ([evidence](evidence/mart_audit/README.md)).
+The business framing, data model, raw schema understanding and six-mart architecture are in place. The title-level mart has been audited by hand, including the measurement semantics it depends on — qualified starts, meaningful titles, title opportunity and continuation outcomes. The viewer-level base, `profile_viewership_window`, has passed its first two audit blocks: grain, coverage and row semantics, and activity, volume and session measures, which reconcile to raw playback. Automated contract checks on the marts all pass ([evidence](evidence/mart_audit/README.md)).
 
-The work now is semantic validation at mart level and the move from title-level evidence toward viewer-level measurement. No normalised atomic measurement layer, fingerprints, segments or business findings have yet been produced.
+The work now is the breadth and concentration audit of the viewer-level base, followed by its remaining measures. No normalised atomic measurement layer, fingerprints, segments or business findings have yet been produced.
 
 ## Project Roadmap
 
 | State | Work |
 | --- | --- |
-| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart |
-| Current | Mart-level semantic validation · transition toward viewer-level measurement |
-| Next | `profile_viewership_window` audit · normalised atomic measures · behavioural fingerprints · segmentation · headroom diagnosis · commercial context · visual analysis and Power BI |
+| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit |
+| Current | Viewer-level breadth and concentration audit |
+| Next | Remaining `profile_viewership_window` audit · normalised atomic measures · behavioural fingerprints · segmentation · headroom diagnosis · commercial context · visual analysis and Power BI |
 
 The [analysis journal](docs/analysis_journal.md) records the reasoning behind each decision so far.
 

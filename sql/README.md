@@ -13,6 +13,6 @@ Routine debugging, inspection and redundant QA remain in the internal analytical
 
 **`schema_understanding/`** — queries that establish the relational and temporal distinctions the diagnosis depends on: profile versus account, asset versus title, session versus event, and historical access.
 
-**`mart_audit/`** — queries that test the measurement contracts required before behavioural diagnosis: meaningful title engagement, realistic opportunity, continuation observability and raw lineage.
+**`mart_audit/`** — queries that test the measurement contracts required before behavioural diagnosis: meaningful title engagement, realistic opportunity, continuation observability and raw lineage — and, for the viewer-level base, grain and coverage, activity and session invariants, and reconciliation with raw playback.
 
 Diagnostic SQL will be published only when it materially contributes to an insight, constraint, expectation or analytical decision.

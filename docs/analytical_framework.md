@@ -23,7 +23,7 @@ flowchart TD
     G --> H[Business action and evaluation]
 ```
 
-All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base is next. Everything from atomic measures onward remains downstream work.
+All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity and session reviews, with breadth and concentration next. Everything from atomic measures onward remains downstream work.
 
 ## The segmentation pathway
 

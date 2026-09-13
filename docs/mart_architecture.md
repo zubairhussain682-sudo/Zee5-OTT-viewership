@@ -59,7 +59,9 @@ Genre is each title's primary genre. No genre-level opportunity denominator is i
 | **Mistake prevented** | Comparing profiles that had very different evidence or access as if they were equivalent |
 | **Downstream use** | The primary input to atomic measures and, later, fingerprints |
 
-Profiles that do not meet eligibility stay in the mart. Eligibility is a flag for comparability, not a segment and not a deletion.
+Profiles that do not meet eligibility stay in the mart. Eligibility is a flag for comparability, not a segment and not a deletion. Profiles with no playback in a window stay too, with zero activity alongside their opportunity measures.
+
+`first_event_ts` and `last_event_ts` are the earliest and latest event *start* timestamps in the window, not the end of the last playback. `session_minutes` and its summaries measure elapsed session time, which is a different construct from `watch_minutes` summed over events.
 
 ### `account_viewership_window`
 
@@ -128,4 +130,4 @@ A known positive is never also unknown, and access returning later does not reop
 
 Automated contract checks on grain, opportunity and continuation all pass — see [mart audit evidence](../evidence/mart_audit/README.md). The SQL behind the checks is in [`sql/mart_audit`](../sql/mart_audit).
 
-Passing checks provide structural, grain, reconciliation and measurement-contract evidence. They do not by themselves establish that every field is analytically suitable for downstream behavioural use — that judgment belongs to human semantic review. `profile_title_window` has completed that review; `profile_viewership_window` is next.
+Passing checks provide structural, grain, reconciliation and measurement-contract evidence. They do not by themselves establish that every field is analytically suitable for downstream behavioural use — that judgment belongs to human semantic review. `profile_title_window` has completed that review; `profile_viewership_window` has passed its grain, coverage, activity and session blocks, with breadth and concentration next.
