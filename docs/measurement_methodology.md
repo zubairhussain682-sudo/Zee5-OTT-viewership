@@ -27,6 +27,34 @@ A parent title counts toward a viewer's breadth only when it has **at least one 
 
 **Checked by:** [`meaningful_title_validation.sql`](../sql/mart_audit/meaningful_title_validation.sql).
 
+## Concentration: top-title share and HHI
+
+**Definition:** a viewer's qualified watch minutes are divided across their meaningful titles into shares s₁, …, sₙ that sum to 1. Top-title share is the largest share. The Herfindahl-Hirschman Index is:
+
+```text
+HHI = Σ sᵢ²
+```
+
+**Why both:** top-title share only sees the largest title, so two viewers with the same top share can spread the rest of their viewing very differently. HHI uses the whole distribution, and squaring gives progressively more weight to large allocations. Title HHI is valid only for profiles with at least three meaningful titles; genre HHI is built the same way across meaningful genres.
+
+**What kind of measure it is:** a descriptive concentration index. It summarises how concentrated an allocation is. It is not an inferential test, does not estimate causality, and does not say whether concentration is healthy, constrained or recoverable — HHI measures concentration, not mechanism or headroom.
+
+**The breadth-dependent floor:** equal shares across `n` titles give the lowest possible HHI, `1/n`. Raw HHI therefore falls with breadth partly for arithmetic reasons, and is not a breadth-independent viewer trait.
+
+![Line chart of median raw title HHI against the equal-share floor 1/n by exact meaningful-title count in the final 90-day window, showing that much of the decline in raw HHI with breadth follows the floor](../figures/figure_04_hhi_breadth_constraint.png)
+
+**Exploratory adjustment:** the breadth audit rescaled HHI to remove that floor:
+
+```text
+adjusted HHI = (HHI − 1/n) / (1 − 1/n)
+```
+
+0 means equal shares across the viewer's meaningful titles; values approach 1 as allocation concentrates. This adjustment is a diagnostic used in the audit. It is not yet an approved measure in the behavioural measurement layer.
+
+**Caveat:** `genre_hhi` is populated for a small number of profiles with no meaningful genre, where genre concentration is undefined; those rows are excluded from genre-concentration interpretation.
+
+**Checked by:** [`profile_viewership_title_concentration.sql`](../sql/mart_audit/profile_viewership_title_concentration.sql) and [`profile_viewership_genre_concentration.sql`](../sql/mart_audit/profile_viewership_genre_concentration.sql).
+
 ## Completion
 
 An asset is complete when furthest progress reaches **90%** of runtime. Completion rates use qualified starts as their denominator, so an accidental autoplay start cannot count as an incomplete viewing.

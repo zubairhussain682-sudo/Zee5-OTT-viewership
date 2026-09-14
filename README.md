@@ -96,7 +96,7 @@ Candidate behavioural dimensions include activity, breadth, concentration, stick
 
 ## Selected Analytical Figures
 
-These figures are drawn directly from the current marts. They show why three of the principles above are needed: they document the conditions viewing has to be measured under, not findings about viewers.
+These figures are drawn directly from the current marts. The first three show why three of the principles above are needed: they document the conditions viewing has to be measured under. The last two show how concentration has to be read once breadth is taken into account. None of them is a finding about what concentration means.
 
 ### Episodic depth should not be mistaken for catalogue breadth
 
@@ -116,18 +116,30 @@ Sharing a window does not mean sharing the same opportunity. In each window roug
 
 Every continuation opportunity ends in exactly one state: the viewer went on to the next episode, was observed for the full seven days without doing so, or could not be followed long enough to know. The unknown share is small — 0.8% in the baseline window and 3.3% in the final window, which runs up to the end of the observable period. Folding it into non-continuation would read limited observation as disengagement, and unevenly across windows. Continuation rates are built from known outcomes only.
 
+### Raw HHI cannot be read independently of breadth
+
+![Line chart of median raw title HHI against the equal-share floor 1/n by exact meaningful-title count in the final 90-day window](figures/figure_04_hhi_breadth_constraint.png)
+
+HHI sums a viewer's squared shares of qualified viewing across meaningful titles, so it sees the whole allocation rather than just the top title. But equal shares across `n` titles still produce an HHI of `1/n`, so a viewer with three titles cannot score as low as one with thirty. Much of the fall in raw HHI as breadth grows follows that floor: it is arithmetic, not a change in behaviour.
+
+### Viewers with the same breadth still differ in how concentrated their viewing is
+
+![Line chart of median and 90th-percentile adjusted title HHI by exact meaningful-title count in the final 90-day window](figures/figure_05_adjusted_hhi_by_breadth.png)
+
+Once HHI is rescaled to remove the floor, viewers with exactly the same number of meaningful titles still spread their viewing very differently. At twenty titles, the median viewer's adjusted HHI is 0.054 while the 90th percentile is 0.116. Breadth and concentration are therefore separate signals, and broad-but-concentrated viewing is a real configuration worth carrying forward — as a candidate to explain, not a segment and not evidence of headroom. The adjustment is an exploratory diagnostic, not yet an approved measure.
+
 ## Current Analytical Position
 
-The business framing, data model, raw schema understanding and six-mart architecture are in place. The title-level mart has been audited by hand, including the measurement semantics it depends on — qualified starts, meaningful titles, title opportunity and continuation outcomes. The viewer-level base, `profile_viewership_window`, has passed its first two audit blocks: grain, coverage and row semantics, and activity, volume and session measures, which reconcile to raw playback. Automated contract checks on the marts all pass ([evidence](evidence/mart_audit/README.md)).
+The business framing, data model, raw schema understanding and six-mart architecture are in place. The title-level mart has been audited by hand, including the measurement semantics it depends on — qualified starts, meaningful titles, title opportunity and continuation outcomes. The viewer-level base, `profile_viewership_window`, has passed its first three audit blocks: grain, coverage and row semantics; activity, volume and session measures, which reconcile to raw playback; and breadth and concentration, with one bounded caveat on genre concentration. Automated contract checks on the marts all pass ([evidence](evidence/mart_audit/README.md)).
 
-The work now is the breadth and concentration audit of the viewer-level base, followed by its remaining measures. No normalised atomic measurement layer, fingerprints, segments or business findings have yet been produced.
+The work now is the post-start engagement and stickiness audit of the viewer-level base, followed by realistic opportunity. No normalised atomic measurement layer, fingerprints, segments or business findings have yet been produced.
 
 ## Project Roadmap
 
 | State | Work |
 | --- | --- |
-| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit |
-| Current | Viewer-level breadth and concentration audit |
+| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit |
+| Current | Viewer-level post-start engagement and stickiness audit |
 | Next | Remaining `profile_viewership_window` audit · normalised atomic measures · behavioural fingerprints · segmentation · headroom diagnosis · commercial context · visual analysis and Power BI |
 
 The [analysis journal](docs/analysis_journal.md) records the reasoning behind each decision so far.
@@ -152,7 +164,7 @@ src/
   validation/                  independent checks and small boundary fixtures
 evidence/
   mart_audit/                  compact check outcomes supporting the mart audit
-figures/                       measurement figures: title depth, title opportunity, continuation outcomes
+figures/                       measurement figures: title depth, title opportunity, continuation outcomes, HHI and breadth
 data/README.md                 what is and is not stored here
 ```
 

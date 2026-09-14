@@ -23,7 +23,7 @@ flowchart TD
     G --> H[Business action and evaluation]
 ```
 
-All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity and session reviews, with breadth and concentration next. Everything from atomic measures onward remains downstream work.
+All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity, session, breadth and concentration reviews, with post-start engagement and stickiness next. Everything from atomic measures onward remains downstream work.
 
 ## The segmentation pathway
 
@@ -69,7 +69,7 @@ The first figures from the marts make these requirements concrete. [Depth within
 | --- | --- | --- |
 | Activity | Sessions, viewing time, active days | A declared window and realistic opportunity |
 | Breadth | Meaningful parent titles, genres, languages | Parent-title grain and reachable choice |
-| Concentration | Top-title share and HHI | Sufficient qualified viewing |
+| Concentration | Top-title share and HHI | Sufficient qualified viewing, and HHI's breadth-dependent floor of 1/n |
 | Stickiness | Completion, continuation, resumed engagement | Legitimate starts and valid outcome observability |
 | Exploration | Movement across genres, languages or content origins | Alternatives that were actually available |
 | Persistence | Recurrence across days and weeks | Comparable tenure and enough longitudinal evidence |
