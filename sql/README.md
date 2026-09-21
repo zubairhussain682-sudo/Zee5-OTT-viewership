@@ -15,4 +15,6 @@ Routine debugging, inspection and redundant QA remain in the internal analytical
 
 **`mart_audit/`** — queries that test the measurement contracts required before behavioural diagnosis: meaningful title engagement, realistic opportunity, continuation observability and raw lineage — and, for the viewer-level base, grain and coverage, activity and session invariants, reconciliation with raw playback, and breadth and concentration.
 
+**`diagnostics/`** — queries behind consequential diagnostic decisions: the known-outcome treatment of completion and abandonment, and the breadth × concentration mechanism check with separate activity controls. Their Python companions in [`scripts/diagnostics`](../scripts/diagnostics) rebuild resume and replay behaviour from raw playback.
+
 Diagnostic SQL will be published only when it materially contributes to an insight, constraint, expectation or analytical decision.

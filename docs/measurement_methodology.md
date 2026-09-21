@@ -57,7 +57,9 @@ adjusted HHI = (HHI − 1/n) / (1 − 1/n)
 
 ## Completion
 
-An asset is complete when furthest progress reaches **90%** of runtime. Completion rates use qualified starts as their denominator, so an accidental autoplay start cannot count as an incomplete viewing.
+An asset is complete when furthest progress reaches **90%** of runtime. Only qualified starts can become completions or non-completions, so an accidental autoplay start cannot count as an incomplete viewing.
+
+The mart stores `completion_rate` over all qualified starts. For behavioural comparison, completion uses the same known-outcome denominator as abandonment (below). On that denominator every known start either completes or is abandoned, so the two are exact complements and form **one outcome axis**: completion is the primary general-retention measure, and abandonment is its diagnostic inverse rather than a second fingerprint dimension.
 
 ## Abandonment: an observable no-resume horizon is required
 
@@ -67,7 +69,13 @@ An asset is complete when furthest progress reaches **90%** of runtime. Completi
 
 **Rule:** an unfinished qualified start is abandoned only after 14 days with no resume. Where fewer than 14 days of follow-up exist, the outcome is **unknown** and is never counted as abandonment.
 
-**Current mart definition and open question:** the stored `abandonment_rate` divides abandoned starts by all qualified starts, so unknown outcomes sit in its denominator. The mart also carries `abandonment_known_denominator` — qualified starts minus unknown outcomes — so a rate over known outcomes only can be built from the same row. Which denominator a behavioural abandonment measure should use is part of the `profile_viewership_window` audit, and neither is treated as settled until that review is done.
+**Behavioural denominator:** the stored `abandonment_rate` divides abandoned starts by all qualified starts, so unknown outcomes sit in its denominator and late-window viewing looks less abandoned than it is. Behavioural abandonment uses known outcomes only:
+
+```text
+abandonment_known_denominator = qualified_asset_starts − censored_abandonment_starts
+```
+
+The stored rate stays documented but is not the downstream behavioural measure. No mart rebuild is needed: the mart carries every component.
 
 ## Continuation
 
@@ -77,11 +85,46 @@ An asset is complete when furthest progress reaches **90%** of runtime. Completi
 
 **Why the precision matters:** a next episode that had not yet been released is not a missed opportunity, and a follow-up period cut short by a lapse in access is not a refusal.
 
+**Scope:** continuation is an episodic-specific persistence measure. A profile with no legitimate next-episode opportunity has no continuation value, not a low one, and only known outcomes enter the rate.
+
 ![100% stacked bar chart showing continued, observed non-continuation and censored or unknown outcomes as shares of episodic continuation opportunities in the baseline and final 90-day windows](../figures/figure_03_continuation_outcomes_by_window.png)
 
 **What the marts show:** unknown outcomes are 0.8% of continuation opportunities in the baseline window and 3.3% in the final window, which runs up to the end of the observable period. Keeping them as a separate state is a measurement control, not a cosmetic detail. Counted as non-continuation, they would push the measured rate down wherever follow-up is shortest — for reasons of observation, not behaviour.
 
 **Implemented in:** [`continuation.py`](../src/analytical_transforms/continuation.py) · **Checked by:** [`continuation_state_integrity.sql`](../sql/mart_audit/continuation_state_integrity.sql) and [`continuation_checks.py`](../src/validation/continuation_checks.py), which tests each opportunity against the source tables and confirms both marts reproduce them.
+
+## Resume: a pathway, not an outcome
+
+The mart field `resumed_assets` counts qualified assets seen in more than one session. That mixes two behaviours: returning to an asset **before** completion, and returning **after** completion, which is replay.
+
+**Rule:** resume means a pre-completion cross-session return. These returns were validated against playback position — later sessions typically restart just before the previous endpoint, with modest backtracking and almost never from the beginning — so they represent genuine unfinished-content persistence.
+
+**Downstream treatment:** a resumed asset may still go on to complete, be abandoned or remain censored, so resume is an intermediate viewing pathway, not a terminal outcome, and it is never paired with abandonment as an alternative result. Validated resume is supporting evidence of unfinished-content persistence. The broad `resumed_assets` field is not a canonical fingerprint measure.
+
+## Replay: completed-content repeat value over a fixed horizon
+
+A rewatch is a qualified start at least 12 hours after the asset's first completion. Raw rewatch cannot be compared across windows, because earlier completions have more of the observation period left to produce one.
+
+**Rule:** replay is measured over a fixed 14-day horizon after first completion. A rewatch inside the horizon is a known positive at once; a non-rewatch is known only when all 14 days were observable; otherwise the outcome is censored.
+
+```text
+14-day replay rate = completed assets rewatched within 14 days ÷ known 14-day outcomes
+```
+
+**Evidence threshold:** at profile grain the rate is used for behavioural comparison only when there are at least three known outcomes, and the known denominator is carried beside the rate so that three outcomes are never read as precisely as thirty.
+
+## Post-choice response: four constructs, not one engagement score
+
+| Construct | Measure | Condition |
+| --- | --- | --- |
+| General retention | Completion | Known outcomes only |
+| Episodic persistence | Continuation | A legitimate, observable next-episode opportunity |
+| Unfinished-content persistence | Validated pre-completion resume | Supporting pathway evidence |
+| Completed-content repeat value | 14-day replay | At least three known outcomes, denominator retained |
+
+These answer different questions and are not collapsed into a single score. A profile-average rate weights every viewer equally; a pooled rate weights outcomes. Neither is automatically more reliable, and later analysis keeps the evidence denominator alongside the rate. None of these measures establishes viewing opportunity or headroom: they describe what happened after content was chosen.
+
+**Reproduced by:** [`post_choice_outcome_semantics.sql`](../sql/diagnostics/post_choice_outcome_semantics.sql) (censoring and the completion–abandonment axis), [`return_behavior_semantics.py`](../scripts/diagnostics/return_behavior_semantics.py) (resume versus replay) and [`rewatch_observability.py`](../scripts/diagnostics/rewatch_observability.py) (the replay horizon and profile coverage). The scripts need full-resolution exports of the playback tables and write compact evidence files.
 
 ## Opportunity
 

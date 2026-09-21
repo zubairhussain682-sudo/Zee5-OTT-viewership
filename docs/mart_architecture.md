@@ -29,7 +29,7 @@
 | **Purpose** | Record how each viewer's attention falls across parent titles |
 | **Analytical role** | Attention, qualified engagement, sessions and days per title, asset and episode depth, completion and continuation outcomes, and title-level opportunity |
 | **Mistake prevented** | Counting each episode as a newly explored title |
-| **Downstream use** | The foundation for breadth, concentration, depth and stickiness measures |
+| **Downstream use** | The foundation for breadth, concentration, depth and post-choice response measures |
 
 Rows cover every title a profile either watched or had a continuation opportunity on. A row that records opportunity but no qualified viewing never counts as a meaningful title. This is not a full grid of every profile against every catalogue title, so the absence of a profile-title row is not evidence that the title was either reachable or unreachable. A profile's complete reachable choice is measured through its profile-level opportunity and exposure measures, not inferred from missing title rows.
 
@@ -62,6 +62,8 @@ Genre is each title's primary genre. No genre-level opportunity denominator is i
 Profiles that do not meet eligibility stay in the mart. Eligibility is a flag for comparability, not a segment and not a deletion. Profiles with no playback in a window stay too, with zero activity alongside their opportunity measures.
 
 `first_event_ts` and `last_event_ts` are the earliest and latest event *start* timestamps in the window, not the end of the last playback. `session_minutes` and its summaries measure elapsed session time, which is a different construct from `watch_minutes` summed over events.
+
+Two stored post-choice fields need care downstream. `abandonment_rate` divides by all qualified starts, including starts whose follow-up is still censored, so behavioural completion and abandonment use `abandonment_known_denominator` instead. `resumed_assets` counts assets seen in more than one session, which mixes unfinished-content resume with post-completion replay, so it is not used as a behavioural measure. See [resume](measurement_methodology.md#resume-a-pathway-not-an-outcome) and [replay](measurement_methodology.md#replay-completed-content-repeat-value-over-a-fixed-horizon).
 
 ### `account_viewership_window`
 
@@ -130,4 +132,4 @@ A known positive is never also unknown, and access returning later does not reop
 
 Automated contract checks on grain, opportunity and continuation all pass — see [mart audit evidence](../evidence/mart_audit/README.md). The SQL behind the checks is in [`sql/mart_audit`](../sql/mart_audit).
 
-Passing checks provide structural, grain, reconciliation and measurement-contract evidence. They do not by themselves establish that every field is analytically suitable for downstream behavioural use — that judgment belongs to human semantic review. `profile_title_window` has completed that review; `profile_viewership_window` has passed its grain, coverage, activity, session, breadth and concentration blocks, with post-start engagement and stickiness next.
+Passing checks provide structural, grain, reconciliation and measurement-contract evidence. They do not by themselves establish that every field is analytically suitable for downstream behavioural use — that judgment belongs to human semantic review. `profile_title_window` has completed that review; `profile_viewership_window` has passed its grain, coverage, activity, session, breadth, concentration and post-choice response blocks, with realistic opportunity next.

@@ -44,6 +44,7 @@ extracts/
 *_full.csv
 *_export.csv
 *_extract.csv
+audit_profile_*.csv
 *.parquet
 *.feather
 *.arrow

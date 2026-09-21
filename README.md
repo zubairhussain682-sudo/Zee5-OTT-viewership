@@ -78,7 +78,7 @@ flowchart TD
 
 Access and catalogue context enter at the start, not after the marts. Constraints and opportunity condition how behaviour is measured and *interpreted fairly*; they are not behavioural identity. A profile created two weeks before the window closed has short tenure — that limits what its viewing can tell us, but it is not a personality trait.
 
-Candidate behavioural dimensions include activity, breadth, concentration, stickiness, exploration, persistence, language openness and observable responsiveness to prominent titles. Each still needs to earn its place on evidence, stability and non-redundancy. There are no segment names, thresholds or prevalence estimates here yet.
+Candidate behavioural dimensions include activity, breadth, concentration, post-choice response (completion, episodic continuation, resume and 14-day replay), exploration, persistence, language openness and observable responsiveness to prominent titles. Each still needs to earn its place on evidence, stability and non-redundancy. There are no segment names, thresholds or prevalence estimates here yet.
 
 ## Measurement Principles
 
@@ -132,15 +132,17 @@ Once HHI is rescaled to remove the floor, viewers with exactly the same number o
 
 The business framing, data model, raw schema understanding and six-mart architecture are in place. The title-level mart has been audited by hand, including the measurement semantics it depends on — qualified starts, meaningful titles, title opportunity and continuation outcomes. The viewer-level base, `profile_viewership_window`, has passed its first three audit blocks: grain, coverage and row semantics; activity, volume and session measures, which reconcile to raw playback; and breadth and concentration, with one bounded caveat on genre concentration. Automated contract checks on the marts all pass ([evidence](evidence/mart_audit/README.md)).
 
-The work now is the post-start engagement and stickiness audit of the viewer-level base, followed by realistic opportunity. No normalised atomic measurement layer, fingerprints, segments or business findings have yet been produced.
+Post-choice response has also been audited. Completion on known outcomes is the primary retention measure, with abandonment as its inverse; continuation is episodic-specific; resume is a viewing pathway rather than an outcome; and replay uses a fixed 14-day horizon. Read under activity context, similar concentration turns out to sit above different post-choice responses — candidate behavioural states within each window, not segments ([viewer diagnosis evidence](evidence/viewer_diagnosis/README.md)).
+
+The work now is realistic opportunity: what each profile could actually have chosen. No normalised atomic measurement layer, fingerprints, segments, headroom estimates or business findings have yet been produced.
 
 ## Project Roadmap
 
 | State | Work |
 | --- | --- |
-| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit |
-| Current | Viewer-level post-start engagement and stickiness audit |
-| Next | Remaining `profile_viewership_window` audit · normalised atomic measures · behavioural fingerprints · segmentation · headroom diagnosis · commercial context · visual analysis and Power BI |
+| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit · post-choice response measurement and candidate mechanism states |
+| Current | Realistic opportunity: entitlement, catalogue reachability, tenure and consumption opportunity |
+| Next | Normalised atomic measures · behavioural fingerprints · segmentation · headroom diagnosis · commercial context · visual analysis and Power BI |
 
 The [analysis journal](docs/analysis_journal.md) records the reasoning behind each decision so far.
 
@@ -158,12 +160,15 @@ docs/
 sql/
   schema_understanding/        grain and relationship checks on the raw model
   mart_audit/                  measurement contract checks on the marts
-  diagnostics/                 reserved for diagnostic queries as analysis proceeds
+  diagnostics/                 post-choice outcome semantics and breadth × concentration mechanism checks
 src/
   analytical_transforms/       opportunity, qualification, continuation and eligibility logic
   validation/                  independent checks and small boundary fixtures
+scripts/
+  diagnostics/                 resume/replay reconstruction and replay observability from raw playback
 evidence/
   mart_audit/                  compact check outcomes supporting the mart audit
+  viewer_diagnosis/            compact breadth × concentration mechanism results
 figures/                       measurement figures: title depth, title opportunity, continuation outcomes, HHI and breadth
 data/README.md                 what is and is not stored here
 ```

@@ -30,9 +30,12 @@ The viewer-level base is reviewed in blocks, each asking whether a family of fie
 | Test 1 | Grain, coverage and row semantics | PASS |
 | Test 2 | Activity, volume and session measures | PASS |
 | Test 3 | Breadth and concentration | PASS WITH CAVEAT |
-| Next | Post-start engagement and stickiness | Not yet reviewed |
+| Test 4 | Post-choice response and its link to breadth and concentration | PASS WITH MEASUREMENT DECISIONS |
+| Next | Realistic opportunity | Not yet reviewed |
 
 **PASS WITH CAVEAT** records a bounded semantic imperfection that does not threaten the project objective, downstream denominators, analytical eligibility or the interpretation of the populations actually used. The imperfection is documented and the affected rows are excluded from the relevant interpretation; the mart is not rebuilt for it.
+
+**PASS WITH MEASUREMENT DECISIONS** records that the stored fields reconcile, but that behavioural use requires explicit decisions about denominators, observability or scope. The decisions are made from components the mart already carries; the mart is not rebuilt.
 
 ### Test 1 — grain, coverage and row semantics
 
@@ -150,3 +153,35 @@ Genre concentration is related to title concentration but not redundant once the
 **Caveat:** the 30 baseline and 34 final-window profiles with `genre_hhi` populated but no meaningful genre have no valid qualified genre distribution, so genre concentration is undefined for them. They are all profiles with playback but no qualified start, none is analytically eligible, and they are excluded from genre-concentration interpretation.
 
 **Meaning of the pass:** breadth reconciles across grains and preserves parent-title breadth separately from asset depth; title concentration is correctly built from qualified viewing across meaningful titles; breadth and concentration are related but distinct signals; and genre concentration adds supporting context, subject to one bounded caveat.
+
+### Test 4 — post-choice response and the bridge from concentration to mechanism
+
+Test 4 asked whether the post-choice fields are semantically strong enough to help explain concentrated catalogue consumption. It was not a search for a generic engagement score: the purpose was to decide which outcomes carry distinct behavioural information, which need censoring-aware or opportunity-aware denominators, and which can safely support later fingerprints.
+
+Code: [`post_choice_outcome_semantics.sql`](../../sql/diagnostics/post_choice_outcome_semantics.sql) (4B–4C), [`return_behavior_semantics.py`](../../scripts/diagnostics/return_behavior_semantics.py) and [`rewatch_observability.py`](../../scripts/diagnostics/rewatch_observability.py) (4C), and [`concentration_mechanism_controls.sql`](../../sql/diagnostics/concentration_mechanism_controls.sql) (4D). The Python scripts rebuild asset-level behaviour from raw playback for analytically eligible profile-windows, anchoring each asset at its first qualified start.
+
+| Area | Resolution | Evidence |
+| --- | --- | --- |
+| 4A — post-choice field reconciliation | Profile-level completion, abandonment, continuation and return components reconcile to title-level evidence; what remains is semantics and denominators, not aggregation loss | — |
+| 4B — abandonment censoring | An unfinished start without the full 14-day follow-up is unknown. Behavioural abandonment uses qualified starts − censored abandonment starts; `FINAL_90` holds 11,776 censored starts across 6,174 profiles | [`post_choice_measurement_summary.csv`](post_choice_measurement_summary.csv) |
+| Evidence sufficiency | Each profile rate needs at least five units of evidence on its own basis — qualified starts for the stored completion summary, known outcomes for abandonment and for downstream completion, observed opportunities for continuation — and at least three known outcomes for 14-day replay | [`post_choice_measurement_summary.csv`](post_choice_measurement_summary.csv), [`rewatch_profile_coverage.csv`](rewatch_profile_coverage.csv) |
+| Completion / abandonment redundancy | On the same known denominator they are exact complements (correlation −1.0000, complement gap 0, no residual outcome): completion is primary, abandonment its diagnostic mirror | [`completion_abandonment_axis.csv`](completion_abandonment_axis.csv) |
+| Continuation scope | Episodic-specific, known outcomes only; no opportunity is not a negative | [`post_choice_measurement_summary.csv`](post_choice_measurement_summary.csv) |
+| Resume / rewatch separation | `resumed_assets` mixes pre-completion return with post-completion replay; pre-completion returns restart near the previous endpoint (median −43 s and −52 s) and behave as genuine resume; resume is a pathway, not a terminal outcome | [`return_decomposition.csv`](return_decomposition.csv), [`resume_playback_continuity.csv`](resume_playback_continuity.csv), [`return_semantic_closure.csv`](return_semantic_closure.csv) |
+| 14-day replay | Median available follow-up after completion was 137 days in the baseline window and 44 in the final window, so replay uses a fixed 14-day horizon with known-outcome denominators | [`rewatch_latency_observability.csv`](rewatch_latency_observability.csv), [`rewatch_horizon_summary.csv`](rewatch_horizon_summary.csv) |
+| Breadth × concentration mechanism connection | Similar concentration sits above different completion and replay responses | [`../viewer_diagnosis/concentration_mechanism_controls.csv`](../viewer_diagnosis/concentration_mechanism_controls.csv) |
+| Separate activity-control robustness | Each profile is benchmarked separately against similar qualified watch hours and similar active days; a direction counts only when both agree. A crossed 25-stratum benchmark was rejected because it produced thin reference groups | [`../viewer_diagnosis/concentration_mechanism_controls.csv`](../viewer_diagnosis/concentration_mechanism_controls.csv) |
+
+[`post_choice_measurement_summary.csv`](post_choice_measurement_summary.csv) keeps its historical completion summary alongside the corrected abandonment measure, so its columns sit on different bases:
+
+- **Completion coverage and rates** (`completion_profiles_ge5`, `mean_completion_rate_ge5`, `pooled_completion_rate`) use the stored mart formulation: completed starts ÷ all qualified starts. The profile average covers profiles with at least five qualified starts; the pooled rate covers all eligible profiles.
+- **Abandonment** (`known_abandonment_profiles_ge5`, `mean_known_abandonment_rate_ge5`, `pooled_known_abandonment_rate`) uses known outcomes after the censoring correction, for profiles with at least five known outcomes.
+- **Continuation** averages profiles with at least five observed opportunities and pools across all eligible profiles.
+
+Downstream, completion is measured on the same known-outcome denominator as abandonment — the common denominator on which [`completion_abandonment_axis.csv`](completion_abandonment_axis.csv) shows the two are exact complements. In `BASELINE_90` almost nothing is censored and the stored and known bases coincide. In `FINAL_90` they differ (average completion 0.7519 on the stored basis against 0.7935 on known outcomes), so the summary's completion and abandonment columns there should not be read as complements.
+
+**Resulting post-choice vocabulary:** general retention → completion; episodic persistence → continuation under legitimate next-episode opportunity; unfinished-content persistence → validated pre-completion resume as supporting pathway evidence; completed-content repeat value → 14-day replay. Broad `resumed_assets` is excluded from downstream fingerprint use.
+
+**What Test 4 licenses:** concentration alone is insufficient to identify a behavioural mechanism; completion is the primary post-choice retention axis; continuation is episodic-specific; resume is an intermediate pathway; 14-day replay is a distinct completed-content repeat measure; activity context is required before reading raw breadth × concentration differences; and several breadth × concentration states keep different post-choice signatures under both activity controls.
+
+**What it does not license:** final viewer segments, permanent identities, causal explanations, recommendation-system claims, the assumption that replay occurred on the dominant title, or genuine unrealised viewing headroom. This is measurement and diagnostic evidence. The next block conditions behaviour on entitlement, catalogue reachability, tenure and other opportunity constraints.

@@ -7,7 +7,7 @@ Full-resolution operational and analytical tables are maintained in the analysis
 What the repository holds instead is what someone needs to understand and check the reasoning:
 
 - **Methodology** — the business framing, data model, measurement rules and mart design in [`docs/`](../docs).
-- **Reproducible analytical code** — the opportunity, qualification, continuation and eligibility logic in [`src/analytical_transforms`](../src/analytical_transforms), with independent checks and boundary fixtures in [`src/validation`](../src/validation).
+- **Reproducible analytical code** — the opportunity, qualification, continuation and eligibility logic in [`src/analytical_transforms`](../src/analytical_transforms), with independent checks and boundary fixtures in [`src/validation`](../src/validation), and diagnostic scripts in [`scripts/diagnostics`](../scripts/diagnostics).
 - **Selected SQL** — schema understanding and mart audit queries in [`sql/`](../sql), chosen because each settles a consequential measurement question.
 - **Compact evidence** — small outcome tables in [`evidence/`](../evidence) that support what the documentation claims.
 - **Visual outputs** — in [`figures/`](../figures) as analysis produces them.

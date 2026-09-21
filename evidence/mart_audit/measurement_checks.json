@@ -432,5 +432,5 @@
       "status": "PASS"
     }
   ],
-  "human_review_status": "Mart grain, opportunity and continuation contracts pass. profile_title_window measurement semantics have completed human review; profile_viewership_window has passed human review of grain, coverage and row semantics (Test 1) and activity, volume and session measures (Test 2), and breadth and concentration (Test 3, passed with a bounded genre-concentration caveat); its post-start engagement, stickiness and later viewer-level measures remain ahead. Fingerprints, segments and business interpretation remain downstream."
+  "human_review_status": "Mart grain, opportunity and continuation contracts pass. profile_title_window measurement semantics have completed human review; profile_viewership_window has passed human review of grain, coverage and row semantics (Test 1) and activity, volume and session measures (Test 2), breadth and concentration (Test 3, passed with a bounded genre-concentration caveat), and post-choice response (Test 4, passed with measurement decisions on known-outcome denominators, resume and replay semantics and activity context); realistic opportunity and later viewer-level measures remain ahead. Fingerprints, segments and business interpretation remain downstream."
 }
