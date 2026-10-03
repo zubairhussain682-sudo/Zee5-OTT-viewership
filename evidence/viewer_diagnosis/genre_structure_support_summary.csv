@@ -1,0 +1,5 @@
+window_label,control_type,total_profiles,profiles_in_retained_strata,coverage_pct,retained_strata,minimum_retained_stratum_size,median_retained_stratum_size
+BASELINE_90,WATCH_HOURS,7531,6007,79.76,91,20,48
+FINAL_90,WATCH_HOURS,8396,6893,82.1,112,20,36
+BASELINE_90,ACTIVE_DAYS,7531,5952,79.03,97,20,43
+FINAL_90,ACTIVE_DAYS,8396,6409,76.33,105,20,42

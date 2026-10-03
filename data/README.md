@@ -10,6 +10,8 @@ What the repository holds instead is what someone needs to understand and check 
 - **Reproducible analytical code** — the opportunity, qualification, continuation and eligibility logic in [`src/analytical_transforms`](../src/analytical_transforms), with independent checks and boundary fixtures in [`src/validation`](../src/validation), and diagnostic scripts in [`scripts/diagnostics`](../scripts/diagnostics).
 - **Selected SQL** — schema understanding and mart audit queries in [`sql/`](../sql), chosen because each settles a consequential measurement question.
 - **Compact evidence** — small outcome tables in [`evidence/`](../evidence) that support what the documentation claims.
+
+Everything in `evidence/` is an aggregate. Profile-level, peer-stratum and stratum-level working tables — including the profile-level opportunity, genre-structure and carryforward extracts behind the opportunity conditioning — stay in the analysis environment, because publishing them would turn a compact record into a derived dataset without making any claim easier to check.
 - **Visual outputs** — in [`figures/`](../figures) as analysis produces them.
 
 The boundary fixtures run on small in-memory frames and need no database or full tables.

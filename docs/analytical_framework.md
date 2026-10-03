@@ -23,7 +23,7 @@ flowchart TD
     G --> H[Business action and evaluation]
 ```
 
-All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity, session, breadth, concentration and post-choice response reviews, with realistic opportunity next. Everything from atomic measures onward remains downstream work.
+All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity, session, breadth, concentration and post-choice response reviews. Realistic opportunity has since been brought into the diagnosis as a conditioning layer. Everything from atomic measures onward remains downstream work.
 
 ## The segmentation pathway
 
@@ -46,8 +46,10 @@ MECHANISM-LED SEGMENTS
         ↓
 CONCENTRATION × MECHANISM × OPPORTUNITY
         ↓
-VIEWING HEADROOM
+REALISABLE VIEWING HEADROOM
 ```
+
+Opportunity conditioning asks whether a behavioural mechanism still looks like the same mechanism once the realistic choice set behind it is visible. It changes how the pathway is read, not the order in which it runs.
 
 ### Constraints decide what can be read fairly — they are not behaviour
 
@@ -103,7 +105,59 @@ Breadth, concentration and post-choice response read under activity context give
 
 ### Opportunity remains separate from behavioural identity
 
-Post-choice evidence describes what happened after selection, not how much realistic choice existed before it. The same state can arise from preference, a plan exposing a narrower catalogue, limited availability, narrower language reach or too little consumption opportunity. Opportunity conditions how a state is interpreted; it never becomes part of the viewer's behavioural identity.
+Opportunity belongs around the behaviour, not inside the viewer's behavioural identity. A profile may display narrow breadth because it repeatedly chooses a small set from a large reachable catalogue, because its plan exposes a materially smaller catalogue, because it had limited time or activity in which to encounter alternatives, or because several of those conditions occurred together. The observed state alone cannot tell those explanations apart.
+
+### Access opportunity and consumption opportunity answer different questions
+
+Two forms of opportunity would otherwise blur into one vague idea of "exposure".
+
+**Access opportunity** — *what could this profile legitimately have chosen?* It is determined historically, day by day, from profile existence, effective entitlement and catalogue availability. At window level, the relevant choice-set measure is the number of distinct parent titles that were reachable at least once during the profile's entitled portion of the window. That is not the same construct as `mean_daily_eligible_parent_titles`: a daily average describes the typical size of the reachable catalogue on an entitled day, while `reachable_parent_titles_in_window` describes the distinct catalogue that became reachable across the whole window. Meaningful-title breadth is itself a window-level count, so the latter provides the coherent comparison.
+
+**Consumption opportunity** — *how much opportunity did the profile have to generate observable viewing behaviour?* Qualified watch hours and active days remain separate controls for this purpose. One measures viewing volume; the other measures recurrence across days. They are related, but not interchangeable, and combining them would create a synthetic activity score the analysis has not earned.
+
+| Layer | Question |
+| --- | --- |
+| Access opportunity | What could realistically have been chosen? |
+| Consumption opportunity | How much behavioural opportunity was available to generate choices and outcomes? |
+| Behaviour | What was actually chosen, and what happened after selection? |
+
+### Reachable catalogue is a boundary on choice, not proof of consideration
+
+A reachable title is one the profile could legitimately access under the historical plan and catalogue state. It is not evidence that the title was shown, recommended, noticed or considered. The dataset contains no recommendation impressions, carousel positions, ranking exposure or search-result logs, so the reachable catalogue defines the boundary of possible choice, not the set of options known to have entered the viewer's consideration.
+
+This also limits how breadth ratios can be interpreted. A diagnostic such as meaningful titles relative to distinct reachable titles may help compare behaviour under differently sized choice sets, but it is not a catalogue-utilisation target: a profile is not expected to consume some fixed proportion of everything technically available. **Unused reachable catalogue is therefore not, by itself, unrealised viewing opportunity.**
+
+### Opportunity structures breadth more strongly than concentration
+
+Broad-access profiles faced substantially larger distinct reachable catalogues than regional-access profiles. Their meaningful viewing was also broader, but nowhere near in proportion to the difference in catalogue reach. The implication is not that one access group "uses" its catalogue better; it is that a larger reachable catalogue creates more room for breadth without mechanically producing breadth. The contrasts behind this, inside matched activity quintiles, are published in [`opportunity_family_activity_contrasts.csv`](../evidence/viewer_diagnosis/opportunity_family_activity_contrasts.csv).
+
+| Dimension | Interpretation after opportunity conditioning | Structured by access? |
+| --- | --- | --- |
+| Breadth | How far meaningful viewing spread, interpreted relative to realistic reachable choice | Materially |
+| Concentration | How qualified attention was allocated across the meaningful titles actually consumed | Not consistently |
+
+Profiles with broad opportunity can remain highly concentrated. Profiles facing much narrower opportunity can still distribute viewing across many titles within that smaller set. The size of the field and the way attention is allocated once play begins are related conditions, but they are not the same behaviour. That is why opportunity conditions the interpretation of concentration rather than replacing concentration with an access-normalised score.
+
+### Genre structure remains context within the opportunity-aware reading
+
+A profile can consume many titles while staying inside a relatively narrow genre space, or move across several genres while still concentrating heavily on a small number of parent titles. Genre structure adds explanatory information, but does not make title-level breadth and concentration redundant, so the framework keeps title breadth and title concentration **interpreted with** genre structure rather than substituting genre concentration for title concentration. Genre helps explain what kind of breadth occurred. It does not, on its own, establish narrow preference, broad exploration or unrealised opportunity.
+
+### Candidate mechanisms are tested under opportunity, not rebuilt from it
+
+The behavioural states remain behavioural. Opportunity conditioning does not redefine them using entitlement or catalogue size; it asks whether their interpretation survives once profiles are compared under more realistic conditions. The principal candidates largely do.
+
+| Candidate mechanism | After opportunity conditioning |
+| --- | --- |
+| Focused successful consumption | Remains distinct. Very narrow breadth and high concentration, with completion above activity context and replay neutral or below. Where comparable opportunity evidence is sufficient, it still reads as a small number of choices that tend to work. |
+| Selective-core attachment | Remains distinguishable. Meaningful breadth alongside high concentration, weaker completion relative to activity context and stronger replay. Some neighbouring high-concentration states become more access-dependent or too thinly supported to carry equally strongly. |
+| Successful first-pass consumption | Remains a useful contrast rather than collapsing into an access group. |
+| Broad distributed consumption | Remains a useful contrast rather than collapsing into an access group. |
+
+Constrained access can explain an apparently narrow choice set without necessarily explaining the post-choice mechanism underneath it. Where evidence is sparse, the limitation is retained: insufficient support is not converted into either confirmation or rejection simply to complete the taxonomy.
+
+### Opportunity-aware mechanism is still not a final segment
+
+The project can now make a stronger distinction than behaviour alone allowed — **behavioural state** (what the profile did) plus **realistic opportunity** (the conditions under which it could do it) gives an opportunity-aware mechanism interpretation. That still stops before segmentation. The states are window-specific, opportunity can change between windows, and a mechanism observed once may be persistent, emerging or transient when the same profile is followed over time. Final fingerprints and segments therefore still require the later longitudinal stage.
 
 ### Fingerprints are configurations, not labels
 
@@ -124,3 +178,17 @@ Every segment has to stay traceable:
 The pathway ends back at the original sequence. For each pattern: was there adequate opportunity? Was engagement deep or shallow? Did exploration last? Is there realistic room for more?
 
 Healthy preference may call for nothing. Constrained access points to a context problem rather than a viewer problem. Adequate opportunity with weak conversion from sampling to sustained viewing may justify a closer look. These are possible destinations, not current findings and not demonstrated intervention effects.
+
+Opportunity conditioning makes that diagnosis more defensible, and it also makes the boundary clearer. A large reachable catalogue with relatively narrow consumption establishes unused accessible choice. It does not establish that additional viewing is realistically achievable. Moving from unused choice toward realisable headroom still requires later evidence that:
+
+- the profile has behavioural reason to engage with compatible alternatives;
+- the relevant mechanism is not merely temporary;
+- opportunity exists under conditions where expansion is plausible.
+
+**Reachable but unwatched catalogue ≠ realisable headroom.** Opportunity is necessary to interpret headroom. It is not sufficient to create it.
+
+### What remains unresolved
+
+Opportunity has now been brought into the diagnosis at the title level, but one part of it cannot safely be treated as a simple count: language. Original language, available audio language and consumed audio language are different observations. Regional entitlement reaches titles through language availability, while actual language behaviour occurs only in the track the viewer chose to consume, and a multilingual title can make a catalogue reachable in ways a raw consumed-language count will not reveal.
+
+Language therefore needs the same discipline that was applied to catalogue opportunity: supply, entitlement and behaviour must be separated before any interpretation of linguistic breadth or exploration is allowed. That is the next layer of the diagnosis.

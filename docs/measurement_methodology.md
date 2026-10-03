@@ -137,7 +137,22 @@ Profile opportunity        = profile exists  AND  account holds valid access    
 Profile-title opportunity  = profile opportunity  AND  title released, available, eligible   (per day)
 ```
 
-A regional plan reaches a title only when the title offers that plan's language, original or dubbed. Days before the profile was created, days in an access gap, and days before release or after catalogue exit contribute nothing.
+Opportunity is evaluated from the access and catalogue state that actually existed at the time. It is not reconstructed from the plan an account happened to hold at the end of the window.
+
+| Rule | Effect |
+| --- | --- |
+| Days before profile creation | Do not belong to that profile's opportunity |
+| Subscription gaps | Contribute no entitlement |
+| Before release or catalogue entry, after catalogue exit | Title contributes no opportunity |
+| A later upgrade | Cannot enlarge an earlier choice set |
+
+**Regional entitlement is title-level.** For a regional plan, a parent title is reachable when the plan's language group appears among that title's available audio languages:
+
+```text
+regional_title_eligibility = plan_language_group ∈ available audio languages for the parent title
+```
+
+The test is therefore based on offered audio availability, not solely on `original_language`, and it determines only whether the title enters the reachable catalogue — never which audio language was later consumed during playback. **Offered language describes opportunity; consumed language describes behaviour.** `ALL_ACCESS` and `ALL_ACCESS_SPORTS` are treated as the same broad VOD opportunity family because their VOD catalogue reach is the same here; that does not imply the two products are commercially identical outside this calculation.
 
 **Why it matters:** this is the denominator that separates *chose not to watch* from *could not watch*.
 
@@ -146,6 +161,131 @@ A regional plan reaches a title only when the title offers that plan's language,
 **What the marts show:** within the same 90-day window, roughly a quarter of profile-title rows had fewer than the full 90 days of opportunity, and around 6% had fewer than 30. These rows cover titles a profile watched or had a continuation opportunity on, not the whole catalogue. Opportunity is a measurement control, not a cosmetic detail: without it, a title's shorter reach would be read as a viewer's lower interest.
 
 **Implemented in:** [`access.py`](../src/analytical_transforms/access.py) and [`opportunity.py`](../src/analytical_transforms/opportunity.py) · **Checked by:** [`opportunity_integrity.sql`](../sql/mart_audit/opportunity_integrity.sql) and, independently, [`opportunity_checks.py`](../src/validation/opportunity_checks.py), which rebuilds the same quantities day by day from the source tables without reusing the implementation's own logic.
+
+## Profile-level opportunity quantities
+
+Three related but **non-interchangeable** measures describe opportunity at profile grain.
+
+| Measure | What it describes |
+| --- | --- |
+| `entitled_days_in_window` | Days within the declared window on which the profile existed and its account held valid VOD entitlement — an opportunity-duration measure |
+| `eligible_parent_title_days` | Σ reachable parent titles on each entitled day: duration combined with daily catalogue reach, not a count of distinct titles |
+| `mean_daily_eligible_parent_titles` | `eligible_parent_title_days ÷ entitled_days_in_window` (where entitled days > 0) — the average size of the reachable catalogue on an entitled day |
+
+For zero-entitlement profile-windows the mean opportunity stays zero rather than producing an undefined behavioural quantity.
+
+**Reconciled before use:** these fields were checked before being used as conditioning variables — entitlement never exceeded observable profile tenure, catalogue opportunity never appeared without entitlement, and mean daily opportunity reconciled to title-days divided by entitled days.
+
+## Window-level reachable catalogue: the same-grain breadth denominator
+
+The daily measures are not sufficient for every question. `distinct_meaningful_titles` is a count over the whole 90-day window, so dividing it by `mean_daily_eligible_parent_titles` — a daily average — mixes grains. The window-level measure is therefore:
+
+```text
+reachable_parent_titles_in_window
+  = count of distinct parent titles with at least one valid
+    profile-title opportunity day during that profile-window
+```
+
+Operationally, where the profile × parent-title exposure matrix stores the number of valid reachable days, this is `count(exposure_days > 0)` — the matrix [`profile_opportunity`](../src/analytical_transforms/opportunity.py) already returns, so the same canonical historical logic produces both.
+
+| Measure | What it describes |
+| --- | --- |
+| `mean_daily_eligible_parent_titles` | Typical reachable catalogue size on an entitled day |
+| `eligible_parent_title_days` | Total title × day opportunity accumulated through the window |
+| `reachable_parent_titles_in_window` | Distinct parent titles reachable at least once during the window |
+
+The distinctions are deliberate. A catalogue changes during a 90-day window, so the number of titles reachable at least once can exceed the average number reachable on any one day. The window-level measure was reconciled back to the existing entitlement and title-day fields before behavioural interpretation, specifically so that a window-level behavioural count is compared with a window-level reachable choice set rather than dividing quantities that merely happen to have convenient units.
+
+## Breadth relative to reach is diagnostic, not a utilisation target
+
+For exploratory comparison:
+
+```text
+meaningful_titles_per_100_reachable
+  = 100 × distinct_meaningful_titles ÷ reachable_parent_titles_in_window
+    (defined only where the reachable denominator is positive)
+```
+
+Without a positive denominator the ratio is undefined rather than zero, and the public helper returns `NaN`. A zero ratio says a profile watched nothing meaningful out of a real reachable pool; no pool at all is a different statement, and collapsing the two would understate breadth relative to reach. This is not the same case as `mean_daily_eligible_parent_titles`, which is legitimately zero when a profile had no entitled days.
+
+This ratio is diagnostic only. It must not be read as the percentage of catalogue a viewer was expected to consume, a platform utilisation target, recommendation exposure, evidence that all reachable titles were noticed or considered, or direct viewing headroom. A reachable title is technically available under the historically valid access state; the dataset does not establish that it was surfaced to the viewer.
+
+**Downstream treatment:** absolute breadth stays beside any opportunity-relative diagnostic rather than meaningful-title breadth being replaced by one normalised score.
+
+## Opportunity regimes: use the structure in access, not arbitrary quintiles
+
+Quantile bands were examined first and rejected for final conditioning. Eligible entitlement was heavily concentrated at 90 days, producing large ties, and reachable catalogue size formed repeated discrete pools rather than a smooth continuum. Those pools mapped directly back to historical plan structure, so the classification follows the access mechanics that generated the choice set.
+
+**Entitlement timing**
+
+| Timing | Definition |
+| --- | --- |
+| `FULL_90` | Valid entitlement across all 90 days of the analytical window |
+| `PARTIAL` | Fewer than 90 entitled days while still satisfying analytical eligibility |
+
+Timing is kept separate from catalogue regime: a partial-window broad-access profile is not treated as though it belonged to a narrower access family merely because it accumulated fewer entitled days. Catalogue composition also changes through time, so a partial profile may observe a slightly different daily catalogue mix while remaining under the same access regime. Duration and access family cannot safely be collapsed into one opportunity score.
+
+**Opportunity regime**, reconstructed from the subscription intervals that overlap the period in which the profile actually exists:
+
+```text
+effective_start = max(subscription_start, window_start, profile_created_date)
+effective_end   = min(subscription_end, window_end)
+```
+
+| Regime | Assigned when |
+| --- | --- |
+| `STABLE_BROAD` | Effective VOD opportunity remains within the broad-access family |
+| `STABLE_REGIONAL_<language>` | Effective access remains within one regional language pack |
+| `MIXED_ACCESS` | More than one materially different VOD opportunity regime applies during the profile-window |
+
+The major reachable-catalogue modes were checked against these reconstructed historical access states rather than labelled from catalogue size alone; the correspondence between the repeated opportunity pools and the underlying plan regimes is what justified the classification.
+
+The resulting structure is published, one row per window × entitlement timing × regime, in [`opportunity_regime_summary.csv`](../evidence/mart_audit/opportunity_regime_summary.csv). `access_context_days` and `opportunity_regimes` in [`opportunity.py`](../src/analytical_transforms/opportunity.py) implement the effective-overlap day weighting and the classification above.
+
+## Access and consumption opportunity remain separate controls
+
+A large reachable catalogue does not guarantee enough actual viewing activity to encounter much of it.
+
+| Control | Definition |
+| --- | --- |
+| Access opportunity | Reachable catalogue under historical entitlement |
+| Consumption opportunity | The amount of observed activity through which choices could occur |
+
+Qualified watch hours and active days remain the two primary consumption-opportunity controls, and they are used **separately**. A profile can accumulate substantial hours through relatively few long viewing occasions while another accumulates similar hours over many active days; combining them into a single activity score would remove a distinction the analysis has already shown to matter. [Activity context](analytical_framework.md#activity-context) is a fairness comparison, not a new behavioural score.
+
+## Opportunity-conditioned mechanism comparisons
+
+When behavioural states are tested against realistic opportunity, the comparison follows this order:
+
+```text
+same analytical window
+  + comparable opportunity family
+  + comparable consumption opportunity
+        ↓
+compare behavioural state / post-choice response
+```
+
+Qualified watch hours and active days are used in separate versions of the comparison rather than crossed into one joint benchmark unless support is demonstrably sufficient. This prevents three sources of variation from being mistaken for one another: different catalogues being reachable, different amounts of viewing being generated, and genuinely different allocation or post-choice behaviour.
+
+**Downstream treatment:** opportunity conditioning does not redefine the behavioural state itself. Breadth and concentration states remain `state(profile, window)` derived from observed behaviour; access regime is attached as context.
+
+The comparisons themselves, with the population restriction and the support columns they have to be read against, are published under [opportunity conditioning](../evidence/viewer_diagnosis/README.md#opportunity-conditioning-test-5). One practical consequence of the rule above is recorded there: the candidate-mechanism table keeps the original Test 4 full-population activity quintiles, while the opportunity contrasts bucket activity within the stable population, so the two sets of quintile boundaries are not interchangeable.
+
+## Genre structure is supporting context, not an opportunity denominator
+
+Genre structure can help explain whether title breadth occurred across many genres or across many titles inside a narrower genre space. It is not treated as a complete opportunity denominator: the current data establish title-level reachability historically, but provide no equivalent canonical profile × genre opportunity measure strong enough to turn genre breadth into an exposure-normalised behavioural score.
+
+**Downstream treatment:** genre measures are retained as supporting structure beside title breadth and concentration rather than substituted for the title-level opportunity framework.
+
+## What opportunity conditioning licenses
+
+The opportunity measures may be used to ask whether an observed mechanism survives under comparable realistic choice. They do not license this inference:
+
+```text
+reachable but unwatched titles = viewing headroom      ✗ not licensed
+```
+
+Reachability establishes possibility, not inclination or conversion. A title can be reachable without having been surfaced, considered or compatible with the viewer's observed behaviour, and genuine headroom requires later evidence beyond unused access.
 
 ## Analytical eligibility
 
@@ -166,12 +306,12 @@ The full account aggregation builder remains outside the current public code che
 | Module | Logic | Inputs |
 | --- | --- | --- |
 | `access.py` | Account-day access; profile existence; plan and audio membership | `cycles` with inclusive `date` start/end; `profiles` with unique IDs, account IDs and creation dates |
-| `opportunity.py` | Released, available parent titles; historical plan eligibility; account and profile exposure | Catalogue release/entry/exit as pandas timestamps (`NaT` for no exit); audio with `parent_title_id` and `language`; inclusive window bounds |
+| `opportunity.py` | Released, available parent titles; historical plan eligibility; account and profile exposure; window-level reachable catalogue, entitlement timing and access regimes | Catalogue release/entry/exit as pandas timestamps (`NaT` for no exit); audio with `parent_title_id` and `language`; inclusive window bounds |
 | `qualification.py` | Qualified start and the 90% progression threshold | Events with `watch_seconds`, `is_autoplay`; runtime in seconds |
 | `continuation.py` | Episode ordering, continuation opportunity, outcome state and attribution | Prepared episode events plus `profiles`, `accounts`, `catalogue`, `cycles` and `audio` frames |
 | `eligibility.py` | The eligibility rule | A frame that already carries entitled days, active days and qualified minutes |
 
-Opportunity and continuation functions take a calendar object exposing `n_days` and `day_index(date)`; continuation additionally needs `start`, `end` and `analytical_start`. The fixture tests show a minimal example. `profile_opportunity` returns `(profile_ids, parent_ids, exposure_matrix)` indexed by profile, alongside a profile-level opportunity frame.
+Opportunity and continuation functions take a calendar object exposing `n_days` and `day_index(date)`; continuation additionally needs `start`, `end` and `analytical_start`. The fixture tests show a minimal example. `profile_opportunity` returns `(profile_ids, parent_ids, exposure_matrix)` indexed by profile, alongside a profile-level opportunity frame. `reachable_parent_titles` reduces that exposure matrix to the window-level count defined above, `entitlement_timing` labels full against partial entitlement, `meaningful_titles_per_100_reachable` forms the diagnostic ratio and returns `NaN` where nothing was reachable, and `access_context_days` and `opportunity_regimes` classify the access history. All five are pure functions over frames and arrays, and the fixtures cover their boundaries: a title reachable for one day counts once, a profile with no access has no context row, a move between `ALL_ACCESS` and `ALL_ACCESS_SPORTS` stays `STABLE_BROAD` because VOD reach is unchanged, and a move between regional languages or between regional and broad access is `MIXED_ACCESS`.
 
 The published code exposes these transformations and their checks. It does not include a single command that rebuilds every mart from full-resolution tables.
 

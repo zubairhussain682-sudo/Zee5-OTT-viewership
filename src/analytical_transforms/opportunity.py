@@ -123,3 +123,106 @@ def profile_opportunity(profiles, cycles, catalogue, audio, cal, w0, w1):
             entitled > 0, title_days / np.maximum(entitled, 1), 0.0),
     })
     return ((ids, parents, exposure), opp)
+
+
+def reachable_parent_titles(exposure: np.ndarray) -> np.ndarray:
+    """Distinct parent titles reachable at least once inside the window.
+
+    The window-level breadth denominator: a title counts once however many
+    days it was reachable, so it answers the same question as a window-level
+    meaningful-title count. Reachable is not exposed, surfaced or considered.
+    """
+    return (exposure > 0).sum(axis=1).astype(np.int64)
+
+
+def entitlement_timing(entitled_days, window_days: int) -> np.ndarray:
+    """Whether a profile held access for the whole window or only part of it.
+
+    Labels follow the published evidence: ``FULL_<window_days>`` or ``PARTIAL``.
+    """
+    return np.where(np.asarray(entitled_days) == window_days,
+                    f'FULL_{window_days}', 'PARTIAL')
+
+
+def meaningful_titles_per_100_reachable(meaningful, reachable) -> np.ndarray:
+    """Diagnostic breadth relative to reach, undefined without a denominator.
+
+    Zero reachable titles returns ``NaN``, not zero: a zero ratio means no
+    meaningful title out of a real reachable pool, which is a different
+    statement from there having been no pool to begin with. (Daily opportunity
+    is the other case — ``mean_daily_eligible_parent_titles`` is legitimately
+    zero when there were no entitled days.)
+
+    Not a utilisation target: unused reachable catalogue is not headroom.
+    """
+    meaningful = np.asarray(meaningful, dtype=float)
+    reachable = np.asarray(reachable, dtype=float)
+    return np.divide(100.0 * meaningful, reachable,
+                     out=np.full(np.broadcast(meaningful, reachable).shape, np.nan),
+                     where=reachable > 0)
+
+
+def access_context_days(profiles, cycles, w0, w1) -> pd.DataFrame:
+    """Day-weighted plan contexts a profile actually held inside the window.
+
+    A context is one (plan family, plan language group) pair. Days are counted
+    on the effective overlap only: max(cycle start, window start, profile
+    creation) through min(cycle end, window end). An account with no cycle
+    contributes nothing, so a profile with no access has no context row.
+    """
+    base = profiles[['profile_id', 'account_id', 'profile_created_date']].copy()
+    base['profile_created_date'] = pd.to_datetime(base['profile_created_date'])
+    joined = base.merge(cycles, on='account_id', how='inner')
+    joined['cycle_start_date'] = pd.to_datetime(joined['cycle_start_date'])
+    joined['cycle_end_date'] = pd.to_datetime(joined['cycle_end_date'])
+    joined = joined.dropna(subset=['cycle_start_date', 'cycle_end_date'])
+    start = pd.concat([
+        joined['cycle_start_date'],
+        pd.Series(w0, index=joined.index),
+        joined['profile_created_date'],
+    ], axis=1).max(axis=1)
+    end = pd.concat([
+        joined['cycle_end_date'],
+        pd.Series(w1, index=joined.index),
+    ], axis=1).min(axis=1)
+    joined['days_in_context'] = (end - start).dt.days + 1
+    joined = joined[joined['days_in_context'] > 0]
+    return joined.groupby(
+        ['profile_id', 'plan_family', 'plan_language_group'],
+        as_index=False, dropna=False).agg(days_in_context=('days_in_context', 'sum'))
+
+
+def opportunity_regimes(contexts: pd.DataFrame) -> pd.DataFrame:
+    """Classify each profile's window by the structure of its access history.
+
+    Classification follows VOD opportunity, not plan identity. `ALL_ACCESS` and
+    `ALL_ACCESS_SPORTS` reach the same VOD catalogue, so moving between them
+    does not change the choice set and stays STABLE_BROAD however many times it
+    happens. One regional language throughout is STABLE_REGIONAL_<language
+    group>. MIXED_ACCESS is reserved for a materially different choice set
+    inside the window: regional to broad, broad to regional, or one regional
+    language to another. The regimes come from observed access structure, not
+    from arbitrary quantiles of a reach count.
+    """
+    contexts = contexts.copy()
+    contexts['vod_family'] = np.where(
+        contexts['plan_family'].isin(['ALL_ACCESS', 'ALL_ACCESS_SPORTS']),
+        'BROAD', contexts['plan_family'].astype(str))
+    structure = contexts.groupby('profile_id', as_index=False).agg(
+        context_days=('days_in_context', 'sum'),
+        distinct_access_contexts=('days_in_context', 'size'),
+        distinct_vod_families=('vod_family', 'nunique'),
+        sole_vod_family=('vod_family', 'max'),
+        distinct_language_groups=('plan_language_group', 'nunique'),
+        sole_language_group=('plan_language_group', 'max'),
+    )
+    one_family = structure['distinct_vod_families'].eq(1)
+    broad = one_family & structure['sole_vod_family'].eq('BROAD')
+    regional = (one_family & structure['sole_vod_family'].eq('REGIONAL')
+                & structure['distinct_language_groups'].eq(1))
+    structure['opportunity_regime'] = np.select(
+        [broad, regional],
+        ['STABLE_BROAD', 'STABLE_REGIONAL_' + structure['sole_language_group'].astype(str)],
+        default='MIXED_ACCESS')
+    return structure[['profile_id', 'context_days', 'distinct_access_contexts',
+                      'distinct_vod_families', 'opportunity_regime']]

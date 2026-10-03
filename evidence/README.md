@@ -23,6 +23,7 @@ A Test 4 file therefore sits in `mart_audit/` when it settles how something is m
 | [`rewatch_latency_observability.csv`](mart_audit/rewatch_latency_observability.csv) | First-rewatch latency and available follow-up — the source for Figures 10A and 10B | Test 4C |
 | [`rewatch_horizon_summary.csv`](mart_audit/rewatch_horizon_summary.csv) | Replay outcomes and censoring at horizons from 1 to 60 days | Test 4C |
 | [`rewatch_profile_coverage.csv`](mart_audit/rewatch_profile_coverage.csv) | Profile-level evidence coverage behind the "at least three known outcomes" replay rule | Test 4C |
+| [`opportunity_regime_summary.csv`](mart_audit/opportunity_regime_summary.csv) | Reachable catalogue, breadth, concentration and activity by window × entitlement timing × opportunity regime | Test 5B |
 
 [`mart_audit/README.md`](mart_audit/README.md) is the audit record itself: what each block asked, what passed, and the caveats attached.
 
@@ -31,7 +32,13 @@ A Test 4 file therefore sits in `mart_audit/` when it settles how something is m
 | File | What it holds | From |
 | --- | --- | --- |
 | [`concentration_mechanism_controls.csv`](viewer_diagnosis/concentration_mechanism_controls.csv) | Completion and 14-day replay by breadth × concentration cell, with separate watch-hours and active-days controls — the source for Figures 11A and 11B | Test 4D |
+| [`opportunity_family_activity_contrasts.csv`](viewer_diagnosis/opportunity_family_activity_contrasts.csv) | Broad against regional access inside the same activity quintile: reachable catalogue, breadth and concentration | Test 5C |
+| [`genre_structure_incremental_models.csv`](viewer_diagnosis/genre_structure_incremental_models.csv) | How much genre structure adds to concentration models that already hold breadth, activity and opportunity | Test 5C |
+| [`genre_structure_support_summary.csv`](viewer_diagnosis/genre_structure_support_summary.csv) | Coverage of the matched peer strata behind that genre comparison | Test 5C |
+| [`opportunity_conditioned_candidate_mechanisms.csv`](viewer_diagnosis/opportunity_conditioned_candidate_mechanisms.csv) | The Test 4 candidate states, and two neighbouring states, re-read inside broad and regional opportunity | Test 5D |
 
 [`viewer_diagnosis/README.md`](viewer_diagnosis/README.md) documents that file's grain, denominators and interpretation boundary.
 
-Behavioural results stay thin on purpose: only one table has so far earned publication, because measurement had to be settled first. Later tests add opportunity conditioning and within-profile comparison, and their results will land here.
+Behavioural results stay deliberately thin: a table is published when a claim needs it, not because the analysis produced it. The four Test 5 tables are grouped under [opportunity conditioning](viewer_diagnosis/README.md#opportunity-conditioning-test-5), which states the population restriction they share — full-window entitlement in a single stable access context — and why the activity quintiles behind the candidate-mechanism table are not the same quintiles as the ones behind the contrasts.
+
+Two things are deliberately absent. Nothing here is at profile, peer-stratum or mart grain, so the profile-level opportunity, peer and genre extracts behind these summaries stay in the analysis environment. And the Test 5A reachable-catalogue reconciliation is not published as a table: it is enforced in process, before any output is written. `P01`–`P09` in [`mart_audit/measurement_checks.json`](mart_audit/measurement_checks.json) are not a substitute for it — they validate the historical opportunity semantics the marts already carry (entitled days, title exposure, eligibility, account roll-up), while `reachable_parent_titles_in_window` is a newer window-level measure derived from the same exposure. What is public for the derived measure is its implementation and the boundary tests in [`src/validation/test_opportunity.py`](../src/validation/test_opportunity.py); the reconciliation that preceded its analytical use is described in the [methodology](../docs/measurement_methodology.md#window-level-reachable-catalogue-the-same-grain-breadth-denominator) and [journal entry 15](../docs/analysis_journal.md#15-a-large-catalogue-is-not-the-same-thing-as-a-large-choice-set), and it ran in the analysis environment. Later within-profile comparison will land here too.

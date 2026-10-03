@@ -31,7 +31,8 @@ The viewer-level base is reviewed in blocks, each asking whether a family of fie
 | Test 2 | Activity, volume and session measures | PASS |
 | Test 3 | Breadth and concentration | PASS WITH CAVEAT |
 | Test 4 | Post-choice response and its link to breadth and concentration | PASS WITH MEASUREMENT DECISIONS |
-| Next | Realistic opportunity | Not yet reviewed |
+| Test 5 | Opportunity measures used for realistic-choice conditioning | PASS |
+| Next | Language opportunity | Not yet reviewed |
 
 **PASS WITH CAVEAT** records a bounded semantic imperfection that does not threaten the project objective, downstream denominators, analytical eligibility or the interpretation of the populations actually used. The imperfection is documented and the affected rows are excluded from the relevant interpretation; the mart is not rebuilt for it.
 
@@ -185,3 +186,15 @@ Downstream, completion is measured on the same known-outcome denominator as aban
 **What Test 4 licenses:** concentration alone is insufficient to identify a behavioural mechanism; completion is the primary post-choice retention axis; continuation is episodic-specific; resume is an intermediate pathway; 14-day replay is a distinct completed-content repeat measure; activity context is required before reading raw breadth × concentration differences; and several breadth × concentration states keep different post-choice signatures under both activity controls.
 
 **What it does not license:** final viewer segments, permanent identities, causal explanations, recommendation-system claims, the assumption that replay occurred on the dominant title, or genuine unrealised viewing headroom. This is measurement and diagnostic evidence. The next block conditions behaviour on entitlement, catalogue reachability, tenure and other opportunity constraints.
+
+### Test 5 — opportunity measures before conditioning
+
+Before the opportunity fields could be used as conditioning variables, they had to hold as measures. Entitlement never exceeded observable profile tenure, catalogue opportunity never appeared without entitlement, and mean daily opportunity reconciled to eligible title-days divided by entitled days — the contracts already covered by `P01`–`P09` and [`opportunity_integrity.sql`](../../sql/mart_audit/opportunity_integrity.sql).
+
+Test 5 then added a window-level measure, `reachable_parent_titles_in_window`: the distinct parent titles reachable at least once during the profile's entitled portion of a window. It was rebuilt with the same canonical day-by-day logic and reconciled back to the entitled-day and title-day fields before any behavioural comparison used it. The point was grain, not another green check: a window-level behavioural count needs a window-level choice set, which a daily average cannot provide. The [methodology](../../docs/measurement_methodology.md#window-level-reachable-catalogue-the-same-grain-breadth-denominator) defines the three quantities and why they are not interchangeable.
+
+[`opportunity_regime_summary.csv`](opportunity_regime_summary.csv) publishes the resulting opportunity structure before any behavioural comparison uses it: one row per window × entitlement timing × opportunity regime, with profile counts, the reachable-catalogue distribution (average, minimum and maximum), average reachable titles per entitled day, meaningful titles, the diagnostic `meaningful_titles_per_100_reachable`, concentration and the activity averages. It is the table behind the statement that access, not behaviour, decides the size of the field: broad regimes average roughly 913 (baseline) and 976 (final) reachable parent titles against roughly 307 and 329 for regional regimes.
+
+Three details matter when reading it. `hhi_valid_profiles` is the subset of each row's profiles whose title HHI is defined, so `avg_valid_title_hhi` has a smaller denominator than the other averages. Rows are reported however few profiles they contain — thin regimes are visible rather than merged away, and a row with a handful of profiles is a description, not a result. And `avg_meaningful_titles_per_100_reachable` is a profile-level average of a diagnostic ratio: it is not a utilisation target, because a reachable title was never owed a viewing.
+
+The conditioning results built on this structure are reported in [journal entry 15](../../docs/analysis_journal.md#15-a-large-catalogue-is-not-the-same-thing-as-a-large-choice-set), with their own tables in [`../viewer_diagnosis`](../viewer_diagnosis/README.md#opportunity-conditioning-test-5).

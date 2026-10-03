@@ -1,6 +1,6 @@
 # Figures
 
-Every figure here is explanatory: it exists because a measurement decision or a behavioural contrast was hard to see in prose. Each one is drawn from a published table in [`evidence/`](../evidence/README.md), and each is discussed where the reasoning happened — mostly in the [analysis journal](../docs/analysis_journal.md), which carries a "how to read it" note beside every figure.
+Every figure here is explanatory: it exists because a measurement decision or a behavioural contrast was hard to see in prose. Each one is drawn either from a published table in [`evidence/`](../evidence/README.md) or directly from the marts, as the source column records, and each is discussed where the reasoning happened — mostly in the [analysis journal](../docs/analysis_journal.md), which carries a "how to read it" note beside every figure.
 
 Figures 06–08 are reserved for the Test 3 visual sequence and are not published yet.
 

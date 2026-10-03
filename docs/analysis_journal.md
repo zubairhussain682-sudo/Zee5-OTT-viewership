@@ -518,3 +518,100 @@ Full cell-level results, including thin cells and the number of profiles meeting
 **What it made us ask next:** Test 4 answers *what did the viewer choose, and what happened after selection?* Test 5 asks *what could the viewer realistically have chosen?* A profile may look narrowly concentrated because it preferred a small set of titles — or because its plan exposed a smaller catalogue, its entitled days were limited, regional or language availability narrowed the reachable set, or it had too little consumption opportunity to encounter alternatives. Only once entitlement, catalogue opportunity, tenure and related constraints are added can the analysis begin separating healthy preference, constrained concentration, insufficient consumption opportunity and credible unrealised viewing opportunity.
 
 Later, within-profile analysis from the baseline to the final window will ask whether these states recur. The same state in both windows would read as a persistent mechanism; a new state in the final window as an emerging one; a state that disappears as transient. A persistent mechanism deserves a different business reading from a temporary one.
+
+---
+
+## 15. A large catalogue is not the same thing as a large choice set
+
+**Date:** 2026-10-04
+
+**Question:** once the Test 4 behavioural states are placed back inside the catalogue each profile could realistically reach, do they still describe different mechanisms, or were some of those differences simply unequal opportunity wearing a behavioural disguise?
+
+**Why it matters:** Test 4 deliberately stopped short of answering that. It showed that similar concentration could sit above very different post-choice behaviour, but those profiles were not necessarily choosing under comparable conditions. A viewer on broad access and a viewer on a regional pack can both end a window with five meaningful titles. The number is the same; the choice set behind it may be nothing alike.
+
+That distinction is central to the business question. Narrow viewing is only interesting as unrealised opportunity if there was meaningful opportunity to begin with. Otherwise the analysis risks treating a constraint as a preference, or worse, manufacturing headroom out of catalogue a viewer could never have reached.
+
+**Evidence — opportunity had to be measured at the same grain as the behaviour:** the viewer mart already carried `mean_daily_eligible_parent_titles`, `eligible_parent_title_days` and entitled days. Those fields were necessary, but the first attempt to compare them with breadth exposed a grain problem.
+
+| Field | Grain |
+| --- | --- |
+| `distinct_meaningful_titles` | Window-level count |
+| `mean_daily_eligible_parent_titles` | Daily average |
+
+Dividing one by the other would produce a convenient ratio and an awkward meaning. What the comparison actually needed was the number of distinct parent titles that were reachable at least once during that profile's entitled portion of the same 90-day window: `reachable_parent_titles_in_window`.
+
+That required reconstructing opportunity day by day from profile existence, historical entitlement and catalogue availability. The existing opportunity logic was reused rather than replaced with a second interpretation of access. Entitled days, eligible title-days and mean daily opportunity were then reconciled back to the mart before the new window-level reach measure was trusted.
+
+The reconstruction passed. That matters less because another check turned green than because the denominator now answers the same question as the numerator: how much of the catalogue a profile meaningfully reached, relative to the distinct catalogue it could actually have encountered during that window.
+
+Even then, the derived `meaningful_titles_per_100_reachable` measure stayed diagnostic. It is not a utilisation score. A profile does not owe the platform consumption of every reachable title, and a title being technically reachable does not mean it was shown, noticed or considered.
+
+**Evidence — access changed the size of the field much more than the amount of play on it:** the natural opportunity structure was not subtle. Regional opportunity also differed materially by language pack, so reducing the whole problem to broad versus regional would have thrown away useful structure.
+
+| Opportunity family | Share of eligible profile-windows |
+| --- | ---: |
+| Broad access | ~70% |
+| Regional access | ~27% |
+| Mixed access | Small remainder |
+
+Once distinct window reach was reconstructed, the gap between what was available and what was watched became the story:
+
+| Broad versus regional access | Difference |
+| --- | --- |
+| Distinct reachable parent titles (average) | ~3× larger |
+| Meaningful titles actually watched | Only ~24–26% more |
+
+That gap is important, but not because regional viewers are somehow more "efficient" catalogue users. It shows that access creates the boundary of possible choice without mechanically determining how far viewing spreads inside it. A much larger menu did not produce a proportionally larger meal. That was the first strong reason not to equate catalogue availability with exploration.
+
+**Evidence — opportunity explained breadth better than concentration:** the next question was whether access was also driving the concentration states from Test 4. Profiles were therefore compared inside the same window and the same opportunity family, with consumption opportunity handled separately through qualified watch hours and active days. Those two controls remained separate for the same reason they did in Test 4: they describe different ways of having enough behavioural opportunity to accumulate viewing, and combining them would create a score the analysis never defined.
+
+The result was asymmetric. Opportunity materially structured breadth: profiles with broader access generally reached more meaningful titles. It did not produce a consistent equivalent shift in concentration.
+
+Profiles with large reachable catalogues could still devote most of their viewing to a small core. Profiles with much narrower regional opportunity could distribute viewing comparatively widely within what they had. Access therefore helped explain how far viewing could spread more reliably than how attention was allocated after selection.
+
+Opportunity is not another behavioural dimension. It is the context needed to decide what a behavioural dimension is allowed to mean.
+
+**Evidence — genre helped, but it did not replace the title-level story:** genre structure was tested next because title breadth can hide two different kinds of range. A profile might watch many titles because it moves across several genres, or watch many titles inside a narrow genre space.
+
+Genre added information, but not enough to overturn the title-level mechanism. Profiles with relatively narrow genre structure could still distribute their viewing across many parent titles inside those genres. Conversely, broader genre reach did not guarantee broadly distributed title attention.
+
+Genre therefore remained useful context for how breadth is composed, rather than becoming a substitute for title breadth or title concentration. The original warning from Test 3 survived: title and genre concentration overlap, but they are not the same construct.
+
+**Evidence — then the Test 4 candidates had to face opportunity:** at this point there was no value in inventing new states. The useful test was harsher: take the candidates already earned in Test 4 and ask whether their interpretation survives when profiles are read against comparable realistic opportunity. Several did.
+
+| Candidate | State | Verdict under opportunity |
+| --- | --- | --- |
+| Focused successful consumption | C5_B1 | Survived — strongest case. Kept the post-choice pattern that made it distinctive. |
+| | C4_B1 | Supports the same family where evidence was sufficient. Regional support in the final window too thin for a confident comparison. |
+| Selective-core attachment | C4_B3 | Survived — cleanest anchor. Meaningful breadth, high concentration, weaker completion against activity context, stronger replay. |
+| | C5_B2 | Conditional. Useful neighbour under broad access; regional evidence weaker and less consistent. |
+| Successful first-pass consumption | — | Remained a separate response pattern. |
+| Broad distributed consumption | — | Remained. Broad viewing still does not imply shallow viewing. |
+
+Regional support for C4_B1 in the final window being too thin is insufficient evidence, not evidence of failure. Access did not erase the selective-core pattern, but it changed how confidently the C5_B2 neighbour could be carried.
+
+Sparse states were not deleted to make the picture cleaner. Where support was inadequate, the result stayed inadequate. That sounds obvious. Analytical workflows have nevertheless found more creative ways to turn "not enough evidence" into whichever answer is most convenient.
+
+**What this changed:** Test 5 did not turn the candidate states into segments. It did something more necessary first: it tested whether unequal access was doing the explanatory work we had been assigning to behaviour. It was not, at least not by itself. The resulting distinction is sharper:
+
+| Quantity | What it determines |
+| --- | --- |
+| Access opportunity | What could realistically have been chosen |
+| Consumption opportunity | How much behavioural evidence a profile had time and activity to generate |
+| Breadth | How far meaningful viewing spread |
+| Concentration | How attention was allocated across that spread |
+| Post-choice response | What happened once content was selected |
+
+Those quantities interact, but collapsing them would put us back where the project started.
+
+The strongest Test 4 mechanism candidates survived opportunity conditioning, although some neighbouring states became access-sensitive or support-limited. That is enough to carry them forward as opportunity-aware candidate mechanisms. It is not enough to call them durable identities, segments or headroom populations.
+
+Unused reachable catalogue is still not headroom. A profile can have hundreds of unwatched reachable titles and no reason whatsoever to want them. Opportunity is necessary for headroom; it is not evidence that the opportunity would convert.
+
+**What it made us ask next:** one part of opportunity was still hiding too much structure inside a single count: language.
+
+Regional entitlement itself is defined through language availability, many titles offer several audio tracks, and the language actually consumed is recorded separately from both original language and offered audio. A raw count of languages watched could therefore reflect supply, entitlement, dubbing structure, programme mix or genuine movement across catalogue ecosystems.
+
+Test 5 established the reachable catalogue. The next question became whether language behaviour adds anything beyond that opportunity structure, and whether it can do so without pretending that home region, regional plan or title origin tells us a viewer's native language. That is Test 6.
+
+**Evidence tables:** the opportunity structure itself is published as [`opportunity_regime_summary.csv`](../evidence/mart_audit/opportunity_regime_summary.csv); the conditioning results as [`opportunity_family_activity_contrasts.csv`](../evidence/viewer_diagnosis/opportunity_family_activity_contrasts.csv), [`genre_structure_incremental_models.csv`](../evidence/viewer_diagnosis/genre_structure_incremental_models.csv) with its [support summary](../evidence/viewer_diagnosis/genre_structure_support_summary.csv), and [`opportunity_conditioned_candidate_mechanisms.csv`](../evidence/viewer_diagnosis/opportunity_conditioned_candidate_mechanisms.csv). [`viewer_diagnosis/README.md`](../evidence/viewer_diagnosis/README.md#opportunity-conditioning-test-5) records their populations, denominators and support rules, including why the candidate-mechanism quintiles are the original Test 4 ones.

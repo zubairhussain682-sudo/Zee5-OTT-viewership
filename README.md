@@ -91,6 +91,7 @@ Candidate behavioural dimensions include activity, breadth, concentration, post-
 - Every metric carries its own legitimate denominator; there is no universal normalisation.
 - Completion, abandonment and continuation need qualified starts, observable follow-up and explicit handling of unknown outcomes.
 - Recommendation effects are out of scope: there are no impression, ranking, search or carousel logs.
+- A reachable title was accessible, not necessarily surfaced, noticed or considered — so unused reachable catalogue is not headroom.
 
 [Measurement methodology](docs/measurement_methodology.md) defines each rule and where it is implemented.
 
@@ -136,14 +137,16 @@ The business framing, data model, raw schema understanding and six-mart architec
 
 Post-choice response has also been audited. Completion on known outcomes is the primary retention measure, with abandonment as its inverse; continuation is episodic-specific; resume is a viewing pathway rather than an outcome; and replay uses a fixed 14-day horizon. Read under activity context, similar concentration turns out to sit above different post-choice responses — candidate behavioural states within each window, not segments ([viewer diagnosis evidence](evidence/viewer_diagnosis/README.md)).
 
-The work now is realistic opportunity: what each profile could actually have chosen. No normalised atomic measurement layer, fingerprints, segments, headroom estimates or business findings have yet been produced.
+Realistic opportunity has since been brought into the diagnosis. Each profile's reachable catalogue is reconstructed day by day from existence, historical entitlement and catalogue availability, and compared with behaviour at the same window grain. Access turned out to structure breadth materially but concentration far less consistently, so the candidate mechanisms are carried forward as opportunity-aware candidates rather than explained away by access ([journal entry 15](docs/analysis_journal.md#15-a-large-catalogue-is-not-the-same-thing-as-a-large-choice-set), [opportunity evidence](evidence/viewer_diagnosis/README.md#opportunity-conditioning-test-5)).
+
+The open question now is language: offered audio, entitlement and consumed audio are different observations, and none of them can stand in for the others. No normalised atomic measurement layer, fingerprints, segments, headroom estimates or business findings have yet been produced.
 
 ## Project Roadmap
 
 | State | Work |
 | --- | --- |
-| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit · post-choice response measurement and candidate mechanism states |
-| Current | Realistic opportunity: entitlement, catalogue reachability, tenure and consumption opportunity |
+| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit · post-choice response measurement and candidate mechanism states · realistic opportunity conditioning |
+| Current | Language opportunity: separating offered audio, entitlement and consumed audio |
 | Next | Normalised atomic measures · behavioural fingerprints · segmentation · headroom diagnosis · commercial context · visual analysis and Power BI |
 
 The [analysis journal](docs/analysis_journal.md) records the reasoning behind each decision so far.
@@ -182,7 +185,8 @@ sql/
   mart_audit/                  measurement contract checks on the marts
   diagnostics/                 post-choice outcome semantics and breadth × concentration mechanism checks
 src/
-  analytical_transforms/       opportunity, qualification, continuation and eligibility logic
+  analytical_transforms/       opportunity, reachable catalogue, access regimes, qualification,
+                               continuation and eligibility logic
   validation/                  independent checks and small boundary fixtures
 scripts/
   diagnostics/                 resume/replay reconstruction and replay observability from raw playback
