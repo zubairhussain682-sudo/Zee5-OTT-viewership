@@ -48,6 +48,10 @@ This journal records the reasoning behind consequential measurement decisions �
 
 **What this changed:** attention is measured at parent-title grain, with asset and episode depth kept alongside it. See [mart architecture](mart_architecture.md).
 
+![Grouped horizontal bar chart comparing average distinct assets watched and qualified assets per meaningful parent title, by programme type, in the final 90-day window](../figures/figure_01_episodic_depth_by_program_type.png)
+
+*How to read it:* each row is a programme type, covering titles a profile engaged with meaningfully in the final 90-day window. The blue bar is the average number of distinct assets watched **inside one parent title**; the orange bar counts only assets that passed the qualified-start rule. A movie sits at one asset by construction, while web series and TV catch-up average close to four. Both bars measure depth within a title — never how many titles were reached.
+
 **What it made us ask next:** when does touching a title count as engaging with it?
 
 ---
@@ -96,6 +100,10 @@ This journal records the reasoning behind consequential measurement decisions �
 
 **What this changed:** opportunity is computed day by day as profile existence, historical access, and released, available, plan-eligible catalogue. Access an account held before a profile existed belongs to the account, not the profile. An independent check rebuilds the same quantities from source tables without reusing the implementation's logic. See [opportunity.py](../src/analytical_transforms/opportunity.py) and [opportunity_checks.py](../src/validation/opportunity_checks.py).
 
+![100% stacked bar chart showing profile-title rows by days of title availability — under 30, 30 to 59, 60 to 89, and the full 90 — in the baseline and final 90-day windows](../figures/figure_02_title_opportunity_by_band.png)
+
+*How to read it:* each bar is one 90-day window and totals 100% of profile-title rows. The four bands split those rows by how many days the title was genuinely available to that profile: under 30, 30–59, 60–89, or the full 90. Roughly a quarter of rows fall short of the full window, which is the point — sharing a window does not mean sharing an opportunity.
+
 **What it made us ask next:** which profiles have enough evidence and access to be compared at all?
 
 ---
@@ -127,6 +135,10 @@ This journal records the reasoning behind consequential measurement decisions �
 **Interpretation:** only an opportunity that was genuinely open, and fully observed, can produce a negative outcome.
 
 **What this changed:** each continuation opportunity opens only when the next episode is reachable and has exactly one outcome — known positive, known negative or unknown. Rates pool known outcomes only; unknown outcomes are never counted as failures. See [continuation.py](../src/analytical_transforms/continuation.py) and [`continuation_state_integrity.sql`](../sql/mart_audit/continuation_state_integrity.sql).
+
+![100% stacked bar chart showing continued, observed non-continuation and censored or unknown outcomes as shares of episodic continuation opportunities in the baseline and final 90-day windows](../figures/figure_03_continuation_outcomes_by_window.png)
+
+*How to read it:* each bar is one window and totals 100% of episodic continuation opportunities. Blue is continued; orange is observed non-continuation, where the full seven days passed with no start on the next episode; the hatched grey slice is censored, meaning follow-up ended before the outcome could be seen. The unknown slice is larger in the final window, which is exactly why it is kept separate instead of being counted as a failure.
 
 **What it made us ask next:** do the other outcome measures hold themselves to the same standard?
 
@@ -276,7 +288,11 @@ HHI also has a structural limitation that matters considerably here. Its minimum
 minimum HHI = 1 / n
 ```
 
-A viewer with three meaningful titles therefore cannot reach the same low HHI as a viewer with thirty, even if both distribute attention perfectly evenly across their own titles. Part of the relationship between breadth and raw HHI is mathematical rather than behavioural ([Figure 04](../figures/figure_04_hhi_breadth_constraint.png)), which rules out simply reading "lower HHI" as "more distributed viewer" without also considering how many titles the viewer had.
+A viewer with three meaningful titles therefore cannot reach the same low HHI as a viewer with thirty, even if both distribute attention perfectly evenly across their own titles. Part of the relationship between breadth and raw HHI is mathematical rather than behavioural, which rules out simply reading "lower HHI" as "more distributed viewer" without also considering how many titles the viewer had.
+
+![Line chart of median raw title HHI against the equal-share floor 1/n by exact meaningful-title count in the final 90-day window](../figures/figure_04_hhi_breadth_constraint.png)
+
+*How to read it:* the x-axis is the exact number of meaningful titles a profile reached. The solid blue line is the median raw title HHI at each breadth; the dashed grey line is the lowest HHI arithmetically possible there, `1/n`. The shaded gap between them is the part of concentration that reflects how attention was allocated rather than how many titles there were.
 
 To investigate that problem, I used an exploratory breadth-adjusted form:
 
@@ -312,6 +328,8 @@ The more consequential result came from comparing viewers at the same breadth. I
 The same structure remains at higher breadth: among viewers with exactly 30 meaningful titles, median adjusted HHI was 0.038 while the 90th percentile was 0.078.
 
 ![Line chart of median and 90th-percentile adjusted title HHI by exact meaningful-title count in the final 90-day window, showing a persistent upper concentration tail at every breadth](../figures/figure_05_adjusted_hhi_by_breadth.png)
+
+*How to read it:* both lines show adjusted HHI, which rescales HHI so that 0 means equal shares across the profile's own meaningful titles. Blue is the median profile at each exact breadth and orange the 90th percentile; the shaded band between them is the spread that remains once breadth is held constant. The band never closes, which is the finding.
 
 **Interpretation:** breadth and concentration are genuinely distinct signals. A viewer can demonstrate substantial catalogue reach and still allocate a disproportionate share of viewing to a small part of that reached catalogue. A viewer with the same breadth can distribute attention considerably more evenly.
 
@@ -388,6 +406,12 @@ Some assets did both (27,720 and 9,738). A large part of what the broad field wo
 
 **Evidence — rewatch needed equal observation time:** once replay was separated from resume, raw rewatch looked far stronger in the baseline window. But baseline completions had a median of 137 days of the observation period left to generate a replay; final-window completions had 44. Raw rewatch mixed replay tendency with the time available to show it. Fixed horizons remove that difference, at a price. A 7-day horizon keeps observability high but captures only about 22% of eventual first rewatches. At 30 days, 32% of final-window completions remain censored, and at 60 days 58%. Fourteen days captures about 38% to 40% of eventual first rewatches while about 85% of final-window completions still have a known outcome. That became the replay horizon.
 
+![Line chart of the share of eventual first rewatches already observed by 1, 3, 7, 14, 30 and 60 days after first completion, for the baseline and final 90-day windows](../figures/figure_10a_rewatch_capture_by_horizon.png)
+
+![Line chart of the share of completed assets with full follow-up available at 1, 3, 7, 14, 30 and 60 days, for the baseline and final 90-day windows](../figures/figure_10b_rewatch_observability_by_horizon.png)
+
+*How to read them:* the two charts share an x-axis — days after first completion, marked at the six measured checkpoints, with the chosen 14-day horizon dotted. Grey is the baseline window and blue the final window. In **10A** the y-axis is behavioural capture: the share of eventual first rewatches already visible by that horizon, so higher is better. In **10B** the y-axis is the measurement cost: the share of completed assets that could be followed for the whole horizon, so falling lines mean more censoring. Read together, they are the trade-off — 10A rises with a longer horizon while 10B collapses for the final window, which runs up against the end of the data.
+
 **Evidence — the replay measure had to survive at profile grain:** a sound asset-level rule is useless for viewer analysis if most profiles contribute only one or two outcomes.
 
 | Known 14-day replay outcomes per eligible profile | BASELINE_90 | FINAL_90 |
@@ -407,7 +431,11 @@ Requiring five would have discarded too much of the final window; allowing one w
 | Later abandoned | 2,697 | 1,161 |
 | Still censored | 2 | 1,033 |
 
-A viewing journey can run start → stop unfinished → resume → complete, or → resume → remain unfinished → abandon, or → resume → unresolved at the observation boundary. **Resume is an intermediate viewing pathway, not a terminal outcome axis.** Forcing it into the same rate architecture as completion merely for symmetry would have been wrong, so the attempted construction was rejected rather than forced into existence.
+A viewing journey can run start → stop unfinished → resume → complete, or → resume → remain unfinished → abandon, or → resume → unresolved at the observation boundary. **Resume is an intermediate viewing pathway, not a terminal outcome axis.**
+
+![100% stacked horizontal bar chart showing completed, abandoned and censored shares of assets that had a validated pre-completion resume, in the baseline and final 90-day windows](../figures/figure_09_resume_is_a_pathway.png)
+
+*How to read it:* each bar is one window and totals 100% of assets that had a validated pre-completion resume. Blue is eventually completed, orange eventually abandoned, and the hatched grey slice is still censored at the observation boundary. Resume sits upstream of all three outcomes, which is the point: it describes a step on the way, not where the viewing ended. Forcing it into the same rate architecture as completion merely for symmetry would have been wrong, so the attempted construction was rejected rather than forced into existence.
 
 **Interpretation — what this changed:** five apparently comparable fields became a post-choice vocabulary in which each measure answers one question:
 
@@ -465,6 +493,12 @@ A completion deviation of +0.10 against watch-hours context means completing abo
 | | Q3 / Q2 | FINAL_90 | 523 | +0.041 · +0.040 | −0.025 · −0.026 |
 | Broad distributed consumption | Q1 / Q5 | BASELINE_90 | 1,446 | −0.011 · −0.007 | −0.004 · −0.010 |
 | | Q1 / Q5 | FINAL_90 | 1,489 | −0.026 · −0.024 | −0.004 · −0.002 |
+
+![Deviation chart of completion versus comparable activity peers across breadth quintiles Q1 to Q3 within the highest concentration quintile, for both windows and both activity controls](../figures/figure_11a_completion_deviation_high_concentration.png)
+
+![Deviation chart of 14-day replay versus comparable activity peers across breadth quintiles Q1 to Q3 within the highest concentration quintile, for both windows and both activity controls](../figures/figure_11b_replay_deviation_high_concentration.png)
+
+*How to read them:* both charts stay inside the highest concentration quintile and move left to right from the narrowest breadth (Q1) to moderate breadth (Q3). The y-axis is deviation from comparable activity peers in percentage points, so the black zero line means "behaves like peers with similar activity"; above it is more, below it is less. Colour is the window — grey baseline, blue final — and line style is the control: a solid line with filled circles benchmarks against profiles with similar watch hours, a dashed line with open squares against profiles with a similar number of active days. Points are nudged sideways only so overlapping series stay readable. The n labels count measured profiles, those meeting the evidence threshold behind each rate, which is why they are smaller than the cell counts in the table above. **11A** shows completion falling from well above peers at narrow breadth to well below as breadth widens; **11B** shows replay moving the opposite way.
 
 Full cell-level results, including thin cells and the number of profiles meeting each evidence threshold, are in [`concentration_mechanism_controls.csv`](../evidence/viewer_diagnosis/concentration_mechanism_controls.csv).
 

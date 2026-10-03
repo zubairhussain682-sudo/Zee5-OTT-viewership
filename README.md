@@ -98,6 +98,8 @@ Candidate behavioural dimensions include activity, breadth, concentration, post-
 
 These figures are drawn directly from the current marts. The first three show why three of the principles above are needed: they document the conditions viewing has to be measured under. The last two show how concentration has to be read once breadth is taken into account. None of them is a finding about what concentration means.
 
+Five further figures cover post-choice response and the mechanisms underneath concentration; they are shown and explained in [journal entries 13 and 14](docs/analysis_journal.md#13-post-choice-response-had-to-be-rebuilt-before-it-could-explain-concentration). The [figures index](figures/README.md) lists all of them with a short reading guide.
+
 ### Episodic depth should not be mistaken for catalogue breadth
 
 ![Grouped horizontal bar chart comparing average distinct assets watched and qualified assets per meaningful parent title, by programme type, in the final 90-day window](figures/figure_01_episodic_depth_by_program_type.png)
@@ -146,17 +148,35 @@ The work now is realistic opportunity: what each profile could actually have cho
 
 The [analysis journal](docs/analysis_journal.md) records the reasoning behind each decision so far.
 
-## Repository Structure
+## How to Read This Repository
+
+If you are reviewing this for the first time, this order takes about twenty minutes:
+
+1. **[The business problem](docs/business_problem.md)** — the decision this analysis has to support, and its limits.
+2. **[The analytical framework](docs/analytical_framework.md)** — how concentration, mechanism and opportunity fit together, and what has to be true before a segment can be claimed.
+3. **[The analysis journal](docs/analysis_journal.md)** — the reasoning in the order it happened, one entry per consequential decision, with every figure shown beside the question it answered.
+4. **[Measurement methodology](docs/measurement_methodology.md)** and **[mart architecture](docs/mart_architecture.md)** — the rules and the six marts, when you want the definition behind a number.
+5. **[Evidence](evidence/README.md)** and **[SQL](sql/README.md)** — the tables behind the claims and the queries that produced them.
+
+The [figures index](figures/README.md) lists every chart with what it shows and where it is discussed; the [evidence index](evidence/README.md) maps every published table to the question it settles.
 
 ```text
-README.md
+README.md                      this overview and the selected figures
 docs/
   business_problem.md          the decision this analysis supports
   analytical_framework.md      concentration → mechanism → opportunity
   data_model.md                grains, identity, access and time
   mart_architecture.md         why each mart exists
   measurement_methodology.md   definitions, denominators and implementation
-  analysis_journal.md          how the reasoning developed
+  analysis_journal.md          how the reasoning developed, figure by figure
+figures/
+  README.md                    index: what each figure shows and where it is discussed
+  visual_decision_log.md       why each chart form was chosen, and what was rejected
+  figure_*.png                 the figures themselves
+evidence/
+  README.md                    index: which table answers which question
+  mart_audit/                  does a measure mean what it claims — contract checks and the human audit
+  viewer_diagnosis/            what the behaviour looks like once the measures are trusted
 sql/
   schema_understanding/        grain and relationship checks on the raw model
   mart_audit/                  measurement contract checks on the marts
@@ -166,10 +186,6 @@ src/
   validation/                  independent checks and small boundary fixtures
 scripts/
   diagnostics/                 resume/replay reconstruction and replay observability from raw playback
-evidence/
-  mart_audit/                  compact check outcomes supporting the mart audit
-  viewer_diagnosis/            compact breadth × concentration mechanism results
-figures/                       measurement figures: title depth, title opportunity, continuation outcomes, HHI and breadth
 data/README.md                 what is and is not stored here
 ```
 
