@@ -631,3 +631,126 @@ Regional entitlement itself is defined through language availability, many title
 Test 5 established the reachable catalogue. The next question became whether language behaviour adds anything beyond that opportunity structure, and whether it can do so without pretending that home region, regional plan or title origin tells us a viewer's native language. That is Test 6.
 
 **Evidence tables:** the opportunity structure itself is published as [`opportunity_regime_summary.csv`](../evidence/mart_audit/opportunity_regime_summary.csv); the conditioning results as [`opportunity_family_activity_contrasts.csv`](../evidence/viewer_diagnosis/opportunity_family_activity_contrasts.csv), [`genre_structure_incremental_models.csv`](../evidence/viewer_diagnosis/genre_structure_incremental_models.csv) with its [support summary](../evidence/viewer_diagnosis/genre_structure_support_summary.csv), and [`opportunity_conditioned_candidate_mechanisms.csv`](../evidence/viewer_diagnosis/opportunity_conditioned_candidate_mechanisms.csv). [`viewer_diagnosis/README.md`](../evidence/viewer_diagnosis/README.md#opportunity-conditioning-test-5) records their populations, denominators and support rules, including why the candidate-mechanism quintiles are the original Test 4 ones.
+
+## 16. A multilingual catalogue is not the same thing as multilingual behaviour
+
+**Date:** 2026-10-04
+
+**Question:** once title-level opportunity had been reconstructed, could language simply be added as another breadth measure, or did language itself need a separate opportunity audit before any viewer behaviour could mean anything?
+
+**Why it matters:** Test 5 ended with a problem hiding inside the regional entitlement rule. A regional pack reaches a title because its pack language appears among that title's offered audio tracks — but once the title is reachable, the viewer may select any listed track. The language that admits a title into the catalogue, the language the title originated in, and the language actually played are therefore three different observations. Treating them as one field would have made the next analysis pleasantly simple and analytically useless.
+
+**Evidence — multilingual supply was large, and very uneven:** Test 6A deliberately contained no viewer behaviour. It asked what multilingual choice existed before asking what anyone did with it. The 8,628 playable assets collapse to 1,000 parent titles and 1,904 parent-title × audio-language rows.
+
+| Audio-language structure | Result |
+| --- | ---: |
+| Monolingual titles | 445 |
+| Multilingual titles | 555 |
+| Mean audio languages per title | 1.904 |
+| Maximum audio languages | 6 |
+| Titles with three or more languages | 244 |
+
+Those 244 titles hold 65.6% of all additional-language tracks. Supply exists at scale, but it is not spread evenly — and programme type produces the sharper asymmetry: 78.17% of movies are multilingual against 61.11% of web series, 19.83% of reality titles and 9.83% of catch-up. The documentary figure (6 of 9 titles) is arithmetically correct and analytically tiny.
+
+That ruled out a tempting shortcut immediately. A profile watching mostly movies and one watching mostly catch-up do not face the same multilingual environment, so raw consumed-language breadth would inherit programme structure before it reflected anything like exploratory behaviour.
+
+**Evidence — original language and available audio were not interchangeable either:** Hindi originates 428 titles but is offered as audio on 486; Tamil 158 against 271; Telugu 107 against 245; Kannada 44 against 216, nearly five times as many by audio as by origin. Counting original languages as if they were available audio would understate dubbing opportunity; counting every offered track as consumed behaviour would do the opposite.
+
+The regional rule was then checked rather than assumed: a regional language admits a parent title when that language exists in its audio bridge, entitlement applies at title level, and after admission every listed track on that title remains selectable. "Tamil regional opportunity" does not mean "Tamil-only audio opportunity". The pack decides which titles enter the field, not which track must be played once a title is inside it.
+
+Regional packs reached much smaller pools — 186 to 449 reachable parent titles in the baseline window against 913 under broad access — but those smaller pools were multilingual-enriched, because a dub is itself one route by which a title becomes eligible for a pack. A higher multilingual *percentage* inside a regional catalogue therefore does not mean more multilingual opportunity than broad access. Percentages and absolute choice sets were doing different jobs again. Apparently the dataset had not finished objecting to convenient denominators.
+
+**Caveat — track timing is not observed independently:** the audio bridge records which tracks a title offers, not a separate entry and exit date for each dub. Listed tracks therefore inherit the parent title's availability dates. That does not break the structural comparison, but it prevents any claim about exactly when an individual dub appeared if its real timing differed from the title's. Test 6A closed as **pass with caveat**: it established the supply layer and no multilingual viewer, preference, propensity, segment or headroom population.
+
+**Evidence — consumed language was much narrower than opportunity:** only once the supply semantics were stable did Test 6B bring in qualified viewing.
+
+| Measure | BASELINE_90 | FINAL_90 |
+| --- | ---: | ---: |
+| Mean reachable audio languages | 9.978 | 9.867 |
+| Mean consumed audio languages | 4.444 | 4.434 |
+| Mean top consumed-language share | 0.624 | 0.646 |
+| Mean top opportunity-language share | 0.310 | 0.303 |
+| Mean consumed-language HHI | 0.503 | 0.527 |
+| Mean opportunity-language HHI | 0.180 | 0.178 |
+
+In 99.43% of baseline and 99.47% of final eligible profiles, consumed-language HHI exceeded opportunity-language HHI. That sounds like a language-preference result until the denominator is inspected: reachable-language count was almost saturated at nine or ten languages. It could say that alternatives technically existed; it could not say how opportunity was distributed among them. The analysis therefore kept opportunity shares and opportunity HHI rather than promoting reachable-language count into a complete denominator.
+
+Broad-access profiles consumed more distinct audio languages and showed lower consumed-language concentration than every regional family, and the pattern held when qualified watch hours and active days were used separately as activity context. Regional-pack profiles also gave their pack language materially more consumed share than it held in their reachable opportunity. Those are real descriptive patterns, and they still do not establish that plan family causes language concentration: access, catalogue composition, programme mix and behavioural selection are entangled observationally. The project stopped short of manufacturing a "language openness" score from them.
+
+**What this changed:** consumed audio was clearly behavioural, but raw consumed-language breadth was not sufficient for the mechanism question. The next step had to separate *which track was played* from *whether viewing moved across catalogue-origin ecosystems*.
+
+**Evidence tables:** [`catalogue_multilinguality_by_program_type.csv`](../evidence/mart_audit/catalogue_multilinguality_by_program_type.csv), [`title_origin_vs_available_audio.csv`](../evidence/mart_audit/title_origin_vs_available_audio.csv), [`language_opportunity_by_access_regime.csv`](../evidence/mart_audit/language_opportunity_by_access_regime.csv) and [`consumed_vs_opportunity_language.csv`](../evidence/viewer_diagnosis/consumed_vs_opportunity_language.csv).
+
+## 17. Native language was not observed, so the reference had to come from behaviour
+
+**Date:** 2026-10-04
+
+**Question:** if home region and regional-plan language cannot stand in for native language, what observable reference can define movement across content-language ecosystems?
+
+**Why it matters:** the obvious shortcuts were all contextual metadata wearing a convincing label. `home_region` is account context, regional pack language is entitlement context, and `original_language` is title metadata. None tells us a profile's mother tongue, and calling any of them "native language" would turn an absent variable into a confident-looking column heading.
+
+**Analyst choice:** for profiles eligible in both analytical windows, the Baseline title-origin ecosystem receiving the largest share of qualified viewing became the fixed reference — the Baseline title-origin anchor. The paired population contains 8,199 profiles, about 93.6% of baseline eligible profiles and 84.0% of final eligible ones. The distribution is concentrated: Hindi anchors 4,956 profiles (60.45%), Bengali 1,502 (18.32%) and Telugu 1,316 (16.05%), with Tamil 237 and Marathi 119 behind them. Those first three account for 94.82% of anchors.
+
+That imbalance matters for support and for later matching. It is not a reason to rename the anchor as identity. The anchor means one thing only: this was the title-origin ecosystem receiving the largest share of this profile's qualified Baseline viewing.
+
+**Evidence — the anchor had no natural threshold:** the next temptation was to require some minimum Baseline dominance before the reference counted as real. The anchor-share distribution declines smoothly across its 5-percentage-point bands, with no elbow to justify a cutoff, and activity itself structures origin breadth, which makes a universal threshold even less attractive. No anchor-strength cutoff became a behavioural rule. A ≥70% slice was retained as a strong-anchor diagnostic subset and the 95–100% slice as an even cleaner sensitivity case. Neither is a segment definition.
+
+**Evidence — movement appeared even from strong starting anchors:** for the 2,985 profiles with Baseline anchor share at or above 70%, cross-origin viewing rose materially in the final window.
+
+| Movement into Final | 70–95% anchors | 95–100% anchors |
+| --- | ---: | ---: |
+| Profiles | 1,957 | 1,028 |
+| Cross-origin minute share, Baseline → Final | 19.3% → 37.3% | 0.5% → 10.5% |
+| Entered a new origin ecosystem | 71.4% | 42.1% |
+| Increased cross-origin share | 70.2% | 42.5% |
+| Remained anchor-only | — | 55.7% |
+
+The 95–100% group is the harder test, because its Baseline viewing was almost entirely anchor-centred. The combination mattered more than either side alone: movement was clearly possible even from extremely concentrated Baseline origin behaviour, and it was not universal. That is roughly what a useful behavioural dimension should look like before anyone gets overexcited and turns it into a personality test.
+
+**Caveat — the anchor is selected from Baseline by construction:** the Baseline winner is mechanically the largest Baseline origin share, so profiles chosen for very strong Baseline concentration have more room to move away from that winner later, and some regression toward a less extreme Final distribution is expected. The Baseline-to-Final rise could not by itself establish a stable cross-origin tendency.
+
+**What it made us ask next:** whether the opportunity to move beyond the anchor had also changed enough to explain the behavioural shift.
+
+**Evidence table:** [`cross_origin_anchor_and_opportunity.csv`](../evidence/viewer_diagnosis/cross_origin_anchor_and_opportunity.csv), whose `ANCHOR_SHARE_BAND` and `ANCHOR_ORIGIN_LANGUAGE` rows carry the distribution and the band movement above.
+
+## 18. Cross-origin movement survived the opportunity test, and programme structure did not explain it away
+
+**Date:** 2026-10-04
+
+**Question:** did profiles move beyond their Baseline title-origin ecosystem because the final window simply offered them much more cross-origin catalogue, or did behavioural heterogeneity remain once that opportunity was reconstructed?
+
+**Evidence — opportunity had to be relative to the fixed anchor:** the title-level opportunity logic from Test 5 was reused rather than replaced. For each profile and day: did the profile exist, what entitlement was historically valid, which parent titles were available, what was each title's original language, and was that language the anchor or not. Cross-origin opportunity was then measured in title-days rather than from a final plan label or a static full-window catalogue, so a later upgrade could not enlarge earlier regional opportunity. The reconstructed profile-level opportunity passed 117 checks with zero failures across the 8,199 paired profiles.
+
+**Evidence — opportunity moved little relative to behaviour:**
+
+| Population | Cross-origin opportunity, B → F | Cross-origin viewing, B → F |
+| --- | ---: | ---: |
+| All paired profiles (8,199) | 63.7% → 64.7% (+1.0) | 36.6% → 48.5% (+11.9) |
+| Strong anchors ≥70% (2,985) | 52.3% → 53.7% (+1.5) | 12.8% → 28.0% (+15.2) |
+| Near-total anchors 95–100% (1,028) | 26.2% → 28.5% (+2.3) | 0.5% → 10.5% (+10.0) |
+
+Within the strong-anchor group, the 70–95% band showed roughly an 18-point behavioural increase against about one point of opportunity movement. No profile reached the final window with zero opportunity outside its Baseline anchor.
+
+The result is not that opportunity was irrelevant — without cross-origin opportunity, cross-origin viewing cannot happen at all. It is that the direction and magnitude of the behavioural movement were not mechanically determined by the change in opportunity.
+
+One access case shows why the correction mattered. Baseline `FULL_90` Hindi regional access reached roughly 449 parent titles, but only about 54 of them were cross-origin relative to a Hindi anchor, giving cross-origin title-day opportunity of only about 11.5%. Profiles in that context could show Baseline anchor shares near 98% partly because the access structure offered little cross-origin room. That does not invalidate the anchor; it explains why the anchor cannot be read without opportunity beside it.
+
+**Evidence — programme type was the next plausible alternative explanation:** Test 6A had already shown enormous differences in multilingual supply by programme type, so Test 6C.4A asked whether programme composition accounted for the remaining pattern. It controlled for Baseline anchor structure and activity, and the resulting programme deviations were modest — but it still lacked direct matching on each profile's historical cross-origin opportunity. Useful evidence, not yet the answer.
+
+Test 6C.4B tightened the comparison. Peer cells matched profiles on exact Baseline dominant origin, Baseline anchor share in 5-percentage-point bands, Final cross-origin title-day opportunity share in 5-percentage-point bands, and activity quintile — with active days and watch hours used in separate versions rather than crossed. The primary interpretation used peer cells of at least 20 profiles. All 8,199 profiles entered the matching, and the Final programme reconstruction reconciled 175,673 meaningful title rows without failure.
+
+| Dominant programme | vs active-days peers | vs watch-hours peers | Support |
+| --- | ---: | ---: | --- |
+| MOVIE | −1.75 pp | −1.68 pp | Well supported |
+| WEB_SERIES | +2.35 pp | +2.10 pp | Well supported |
+| TV_CATCHUP | +1.32 pp | +1.23 pp | Well supported |
+| REALITY | — | — | Support-sensitive (~41–42 profiles) |
+| DOCUMENTARY_SPECIAL | — | — | Too thin (3 overall, 1 supported) |
+
+That did not justify deleting the thin categories. It justified refusing to let them carry the conclusion. The full peer-matched comparison, including the `ALL` population beside the supported one and the peer-cell support columns behind each row, is published as [`test6c4b_programme_multilingual_sensitivity.csv`](../evidence/viewer_diagnosis/test6c4b_programme_multilingual_sensitivity.csv).
+
+The same check looked at the share of final minutes spent on multilingual titles — a consumption-composition measure, not multilingual supply. Split into quintiles, peer-adjusted cross-origin deviations were small and non-monotonic: the middle quintiles sat modestly above peer expectation while the lowest and highest sat below it. The fifth quintile consisted entirely of profiles at 100% multilingual-title minutes, with tied values spilling into the fourth, so that boundary is a rank artefact rather than a behavioural cliff. The data did not support "more multilingual-title viewing, therefore progressively more cross-origin behaviour".
+
+**What this changed:** by the end of Test 6C.4B several simpler explanations had been narrowed. Raw audio supply, regional access, activity, Baseline anchor strength and historical cross-origin opportunity were each insufficient alone; programme composition did not explain the heterogeneity away; and multilingual-title intensity offered no monotonic substitute. The defensible carry-forward phrase is **cross-origin catalogue propensity under realistic opportunity** — deliberately bounded, describing an observed tendency across two windows of evidence rather than a psychological trait, a causal parameter, a native-language preference, a stable identity, a segment or a headroom score.
+
+**What it made us ask next:** when two profiles occupy the same opportunity-aware mechanism from Tests 4 and 5, does their cross-origin behaviour tell us something new about that mechanism, or is it merely another description of behaviour we already understand? That question belongs to Test 6D, and no answer to it is carried backward into this checkpoint.

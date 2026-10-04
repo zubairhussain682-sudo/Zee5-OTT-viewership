@@ -8,6 +8,8 @@
 
 Answering them in order matters. Asking about opportunity before understanding mechanism is how a platform ends up "fixing" viewers who were perfectly happy.
 
+That sequence has since been extended rather than replaced. Realistic opportunity is now reconstructed before behaviour is interpreted (Test 5), and language work (Test 6) has added one provisional stage after it: **concentration → mechanism → realistic opportunity → opportunity-conditioned propensity → persistence → realisable viewing headroom**. Only the propensity stage is newly earned. Persistence and headroom remain downstream questions, and the sequence is still a set of questions rather than a score.
+
 ## The measurement bridge
 
 Playback records describe a session, an event and a playable asset. The business diagnosis concerns a viewer, the parent titles they chose, and recurring behaviour under the access they actually had. Those are different units of analysis, and the marts exist to translate between them.
@@ -38,6 +40,8 @@ MECHANISM VALIDATION
         ↓
 OPPORTUNITY CONDITIONING
         ↓
+OPPORTUNITY-CONDITIONED PROPENSITY
+        ↓
 BEHAVIOURAL FINGERPRINTS
         ↓
 WITHIN-PROFILE LONGITUDINAL STABILITY
@@ -50,6 +54,8 @@ REALISABLE VIEWING HEADROOM
 ```
 
 Opportunity conditioning asks whether a behavioural mechanism still looks like the same mechanism once the realistic choice set behind it is visible. It changes how the pathway is read, not the order in which it runs.
+
+The propensity stage is the newest one and the only part of it earned so far: profiles differ in how far their viewing moves beyond the catalogue ecosystem it started in, and those differences survive the realistic opportunity behind them. Everything below it — fingerprints, within-profile stability, segments and headroom — is still downstream, and the propensity stage itself has yet to prove it adds anything the mechanisms above it do not already say.
 
 ### Constraints decide what can be read fairly — they are not behaviour
 
@@ -86,10 +92,10 @@ The first figures from the marts make these requirements concrete. [Depth within
 | Completed-content repeat value | 14-day replay | A fixed follow-up horizon and at least three known outcomes |
 | Exploration | Movement across genres, languages or content origins | Alternatives that were actually available |
 | Persistence | Recurrence across days and weeks | Comparable tenure and enough longitudinal evidence |
-| Language openness | Consumed audio relative to offered languages | Consumption kept separate from supply |
+| Cross-origin catalogue propensity | Qualified viewing beyond a fixed Baseline title-origin anchor | Anchor-relative historical opportunity, and consumption kept separate from supply |
 | Responsiveness to prominent titles | Defensible observable proxies, if any hold up | No exposure data, so no causal claim and no use of later information |
 
-These are candidates. Some may prove unstable, redundant with another dimension, or unsupported by enough evidence, and stay descriptive rather than defining segments.
+These are candidates. Some may prove unstable, redundant with another dimension, or unsupported by enough evidence, and stay descriptive rather than defining segments. Consumed-language breadth remains one of those descriptors: Test 6 kept it as a description of behaviour rather than letting it become a language-openness dimension.
 
 ### Post-choice response is not one construct
 
@@ -187,8 +193,73 @@ Opportunity conditioning makes that diagnosis more defensible, and it also makes
 
 **Reachable but unwatched catalogue ≠ realisable headroom.** Opportunity is necessary to interpret headroom. It is not sufficient to create it.
 
+### Language is three observations, not one dimension
+
+Opportunity was brought into the diagnosis at the title level first. Language then had to be added, and it is the one part of opportunity that cannot be treated as a simple count, because three different fields are involved and each answers a different question.
+
+| Observation | Field | What it is |
+| --- | --- | --- |
+| Title origin | `content_catalogue.original_language` | The language ecosystem a title comes from. A Hindi-origin title stays Hindi-origin whichever track is played. |
+| Available audio | `content_audio_languages.language` | The audio opportunity attached to a reachable parent title. Tamil audio can admit a Hindi-origin title into a Tamil pack. |
+| Consumed audio | `view_events.audio_language` | The track actually played during qualified viewing. |
+
+None of the three substitutes for another. A viewer consuming Tamil audio on a Hindi-origin title has both consumed Tamil audio and watched inside a Hindi-origin ecosystem; those statements are simultaneously true and analytically different.
+
+Regional entitlement adds a structural asymmetry that follows directly from this. A regional pack reaches a title because the pack language appears among that title's offered tracks — but once the title is entitled, every listed track on it remains selectable. Regional opportunity is a title filter, not a rule that consumption inside the title must happen in the pack language. The order the framework keeps is therefore catalogue supply → historical entitlement → reachable multilingual opportunity → observed language behaviour.
+
+### Multilingual supply conditions behaviour before behaviour begins
+
+Multilingual opportunity is not spread evenly through the catalogue. More than half of parent titles carry several audio languages, but that supply is strongly structured by programme type: movies and web series are far more multilingual than catch-up and reality content. A viewer whose consumption is dominated by movies therefore meets a different multilingual environment from one whose consumption is dominated by recurring catch-up, before either has made a single language choice.
+
+That makes programme composition a contextual variable in any language analysis. It does not make programme type a language behaviour.
+
+### Reachable-language count is not a sufficient denominator
+
+A count of reachable languages sounds like the natural denominator for consumed-language breadth. In this catalogue it saturates: most eligible profiles can reach nearly the whole observed set of audio languages, especially under broad access. The count can say that alternatives existed; it cannot say how opportunity was distributed among them, and ten reachable languages can describe an opportunity set dominated by one or two of them just as easily as a balanced one.
+
+Language opportunity therefore needs breadth *and* allocation: which languages were reachable, how much title-day opportunity each represented, and how concentrated that opportunity was. Consumed-language concentration is then read against the second and third of those, not against the first alone.
+
+Profiles consume a much narrower language mix than their reachable audio environment. That establishes behavioural concentration relative to supply. It does not establish why the concentration exists — content origin, dubbing structure, programme mix, access regime and habit are all still entangled — so consumed-language breadth stays a descriptor and is never promoted into a "language openness" score.
+
+### Title origin asks a different question from audio language
+
+| Construct | Question it answers |
+| --- | --- |
+| Audio language | Which track was consumed? |
+| Title origin | Did viewing stay inside, or move beyond, a catalogue ecosystem? |
+
+These can diverge: a viewer can consume a dubbed track while moving into a different origin ecosystem, or consume one language across titles from several ecosystems. The framework keeps track choice and catalogue-origin movement separate rather than forcing both into a single language-exploration measure.
+
+### The Baseline title-origin anchor is behavioural, not demographic
+
+Native language is not observed. `home_region`, regional plan language and title origin are contextual fields; none of them proves a viewer's mother tongue. To study movement across ecosystems without inventing identity, the analysis uses an observed reference: the **Baseline title-origin anchor**, the origin ecosystem receiving the largest share of a profile's qualified Baseline viewing.
+
+The anchor says where observed Baseline viewing was centred. It does not say what language the viewer speaks, what they prefer in general, or what their later behaviour must be. It is held fixed while Final behaviour and opportunity are evaluated — otherwise the reference would move with the outcome it is meant to measure. Anchor-strength slices such as ≥70% or 95–100% are sensitivity lenses, chosen because movement is easier to read from a clear starting centre; the observed distribution offered no natural breakpoint, so they are not segment boundaries.
+
+### Opportunity enables cross-origin movement; it does not determine it
+
+Cross-origin viewing is qualified viewing on titles whose origin differs from the fixed anchor, and it needs its own anchor-relative denominator: reachable title-days belonging to origins other than the anchor, reconstructed from the access and catalogue state valid on each day. A later broad plan cannot enlarge an earlier regional window, a title that was not yet available contributes nothing earlier, and a profile does not inherit opportunity from before it existed.
+
+This matters because Final cross-origin behaviour can rise substantially while the cross-origin opportunity behind it moves only slightly. Without cross-origin opportunity the behaviour cannot occur at all — but the direction and size of the movement are not mechanically set by the change in opportunity. That is an argument against treating availability as the explanation, not evidence of an intrinsic preference.
+
+The ratio of cross-origin viewing to cross-origin opportunity is not a conversion rate, and no utilisation or openness score is built from the two.
+
+### Cross-origin catalogue propensity under realistic opportunity
+
+After anchor structure, historical cross-origin opportunity and activity context are accounted for, profiles still differ materially in how far viewing moves beyond their Baseline ecosystem. The defensible term for that is **cross-origin catalogue propensity under realistic opportunity**: the first half describes what the profile actually did, the second half keeps it attached to what was legitimately reachable.
+
+"Propensity" here means an observed behavioural tendency in two windows of evidence. It is not a latent psychological trait, a native-language measure, a causal parameter, a permanent identity, a segment axis or a headroom score.
+
+### Programme composition remains context, not explanation
+
+Programme type changes the environment in which cross-origin behaviour happens, so it had to be tested as an alternative explanation rather than assumed away. After profiles were matched on Baseline origin structure, Final historical cross-origin opportunity and activity, the remaining programme deviations were modest for the well-supported groups, and multilingual-title viewing intensity was non-monotonic rather than rising steadily with cross-origin behaviour.
+
+Programme structure therefore shapes the environment without reducing cross-origin behaviour to programme composition. The small residual differences stay descriptive context.
+
+One naming rule follows from this. A profile's multilingual-title minute share is the share of consumed minutes spent on titles that happen to offer several audio tracks. It is a consumption-composition measure and must never be described as multilingual supply, as the multilingual share of reachable catalogue, or as the number of alternatives the viewer considered. Supply belongs to the opportunity layer; minutes belong to behaviour.
+
 ### What remains unresolved
 
-Opportunity has now been brought into the diagnosis at the title level, but one part of it cannot safely be treated as a simple count: language. Original language, available audio language and consumed audio language are different observations. Regional entitlement reaches titles through language availability, while actual language behaviour occurs only in the track the viewer chose to consume, and a multilingual title can make a catalogue reachable in ways a raw consumed-language count will not reveal.
+Cross-origin propensity is a candidate dimension, not an established one. The open question is whether it carries information the project does not already have: when two profiles sit in the same opportunity-aware mechanism from Tests 4 and 5, does their cross-origin behaviour say something new about that mechanism, or does it merely re-describe behaviour already understood?
 
-Language therefore needs the same discipline that was applied to catalogue opportunity: supply, entitlement and behaviour must be separated before any interpretation of linguistic breadth or exploration is allowed. That is the next layer of the diagnosis.
+Until that is answered, cross-origin movement is not folded into a fingerprint, and the stages below propensity on the pathway — within-profile persistence, mechanism-led segments and realisable headroom — remain exactly where they were.

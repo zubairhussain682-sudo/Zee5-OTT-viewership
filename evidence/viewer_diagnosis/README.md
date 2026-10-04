@@ -96,3 +96,86 @@ The three tables below share one population restriction. Opportunity structure i
 **What it supports:** that the strongest Test 4 mechanisms survive opportunity conditioning — the selective-core and focused-successful patterns keep their direction against both activity controls under broad access — while the neighbouring states become access-sensitive or support-limited, as set out in [journal entry 15](../../docs/analysis_journal.md#15-a-large-catalogue-is-not-the-same-thing-as-a-large-choice-set).
 
 **What it does not prove:** segments, durable identities, causes or headroom. Where regional support was too thin for a confident comparison — visible directly in the measured-profile and minimum-cell columns — the result stays inadequate instead of becoming a weaker claim in the same direction.
+
+## Language and title origin (Test 6)
+
+**Question:** does language behaviour add anything once the multilingual supply behind it is known — and if consumed-language breadth is not enough, does movement across catalogue-origin ecosystems survive the opportunity that made it possible?
+
+Two rules travel with both tables. Native language is **not observed**: `home_region`, regional plan language and title origin are contextual fields, so nothing here is described as native, mother-tongue or non-native viewing. And the three language observations stay separate — a title's origin, the audio offered on it, and the track actually consumed answer different questions, so a dubbed title keeps its origin however it was watched.
+
+### `consumed_vs_opportunity_language.csv`
+
+**Produced by:** the Test 6B language-behaviour analysis, which joins qualified viewing to the historically valid language opportunity behind it. The profile-level language distributions it was aggregated from are not published.
+
+**Population and window:** analytically eligible profiles — 8,761 in `BASELINE_90` and 9,762 in `FINAL_90`, each window analysed separately.
+
+**Grain:** one row per window × opportunity regime, plus an `ALL_REGIMES` row per window. The regime rows are the analysis output; the `ALL_REGIMES` rows are profile-weighted aggregations of them, exact because the regimes partition the eligible population (counts are summed, means are weighted by `profiles`).
+
+| Column | Meaning |
+| --- | --- |
+| `avg_distinct_reachable_audio_languages` | Audio languages reachable at least once — a breadth measure that saturates near nine or ten |
+| `avg_distinct_consumed_audio_languages` | Audio languages actually used by qualified viewing |
+| `avg_top_consumed_language_watch_share`, `avg_consumed_language_hhi` | Concentration of playback across languages |
+| `avg_opportunity_top_language_day_share`, `avg_opportunity_language_hhi_days` | The same concentration measures computed on title-day language opportunity |
+| `avg_consumed_minus_opportunity_top_day_share_pp`, `avg_consumed_minus_opportunity_hhi_days` | The gap between the two, in percentage points and HHI units |
+| `hhi_valid_profiles`, `profiles_consumption_more_concentrated_days` | The denominator and numerator behind "consumed is more concentrated than opportunity" |
+
+**What it supports:** the aggregate window × opportunity-regime comparison. Playback is far more concentrated than the audio environment it happens in — consumed HHI exceeds opportunity HHI for 8,711 of 8,761 baseline profiles (99.43%) and 9,710 of 9,762 final profiles (99.47%) — and at regime level, broad-access profiles consume more languages, and less concentrated ones, than every regional family. It also shows why reachable-language *count* cannot be the denominator: it is nearly saturated, so the opportunity shares and HHI carry the comparison.
+
+**Scope limit:** this table is aggregated to the regime level, so it does not itself demonstrate that the broad/regional difference survives activity conditioning. That check was run inside Test 6B against watch-hours and active-days quintiles separately and is reported in [journal entry 16](../../docs/analysis_journal.md#16-a-multilingual-catalogue-is-not-the-same-thing-as-multilingual-behaviour); the quintile-level output behind it is not published here.
+
+**What it does not prove:** that plan family causes language concentration, or that any profile was expected to consume languages in proportion to supply. Access, catalogue composition, programme mix and behavioural selection are entangled observationally, and nothing here is a language-openness score.
+
+### `cross_origin_anchor_and_opportunity.csv`
+
+**Produced by:** the Test 6C analysis. Behaviour comes from [`test6c2_baseline_anchor_cross_origin_behaviour.sql`](../../sql/diagnostics/test6c2_baseline_anchor_cross_origin_behaviour.sql); the anchor-relative opportunity is reconstructed in Python from the same day-by-day exposure the marts use, with the public logic in [`origin.py`](../../src/analytical_transforms/origin.py). Profile-level anchors, behaviour and opportunity sidecars are not published.
+
+**Population:** the paired population of 8,199 profiles eligible in *both* windows — about 93.6% of baseline and 84.0% of final eligible profiles.
+
+**Grain:** one row per profile group, with `group_type` saying which kind of group:
+
+| `group_type` | `group` | What it is |
+| --- | --- | --- |
+| `POPULATION` | `ALL_PAIRED`, `ANCHOR_70_PLUS`, `ANCHOR_70_95`, `ANCHOR_95_100` | Diagnostic sensitivity populations, aggregated from the bands below |
+| `ANCHOR_SHARE_BAND` | `0.15-0.20` … `0.95-1.00` | 5-percentage-point bands of Baseline anchor share, as the analysis produced them |
+| `ANCHOR_ORIGIN_LANGUAGE` | `Hindi`, `Bengali`, `Telugu`, … | Profiles grouped by their Baseline anchor origin |
+
+The `POPULATION` rows are profile-weighted aggregations of the band rows, exact because the bands partition the paired population. They are **diagnostic slices, not segment thresholds**: the anchor-share distribution declines smoothly with no natural breakpoint, so ≥70% and 95–100% exist only because movement is easier to read from a clear starting centre.
+
+**Columns.** `avg_baseline_cross_origin_title_day_share` and its final counterpart are historically valid *opportunity* — reachable title-days outside the fixed anchor over all reachable title-days. `avg_baseline_cross_origin_minute_share` and its final counterpart are *behaviour* — qualified minutes on titles originating outside the anchor. Opportunity and behaviour are deliberately adjacent, because the comparison between them is the finding. `pct_entered_new_origin_language`, `pct_cross_origin_share_increased` and `pct_stayed_only_in_baseline_anchor` are percentages; the shares are fractions.
+
+**What it supports:** that cross-origin viewing moved much further than the opportunity behind it. Across all paired profiles, opportunity went from 63.7% to 64.7% while viewing went from 36.6% to 48.5%; for anchors at or above 70%, from 52.3% to 53.7% against 12.8% to 28.0%; and in the 95–100% band, from 26.2% to 28.5% against 0.5% to 10.5%, with 55.7% of that band still consuming nothing outside the anchor. Without cross-origin opportunity the behaviour cannot occur at all — so the point is not that opportunity is irrelevant, but that it does not mechanically determine the direction or size of the movement.
+
+**What it does not prove:** causality in either direction, language openness, native-language preference, a stable tendency, a segment or headroom. Cross-origin viewing divided by cross-origin opportunity is not a conversion rate. One caveat belongs beside every reading of the strong-anchor rows: the Baseline anchor is by construction the largest Baseline origin share, so profiles selected for extreme Baseline concentration have more room to move away from it afterwards, and some regression toward a less extreme final distribution is expected.
+
+### `test6c4b_programme_multilingual_sensitivity.csv`
+
+**Question:** does programme composition or multilingual-title viewing intensity materially explain cross-origin behaviour, once profiles are compared against peers with comparable historical cross-origin opportunity and activity?
+
+**Why it matters:** Test 6A had already shown that multilingual supply is heavily structured by programme type, so programme mix was the most plausible alternative explanation for the cross-origin heterogeneity. If it accounted for the pattern, there would be no behavioural tendency left to carry forward.
+
+**Produced by:** the Test 6C.4B peer-matching analysis. Peer cells match exact Baseline dominant origin, 5-percentage-point Baseline anchor-share band, 5-percentage-point Final cross-origin title-day opportunity band, and activity quintile — with `ACTIVE_DAYS` and `WATCH_HOURS` run as separate versions rather than crossed. Profile-level peer expectations are not published.
+
+**Population:** the paired Test 6C population of 8,199 profiles. `support_population` separates `ALL` from `PEER_N_GE_20`; **the primary interpretation is `PEER_N_GE_20`**, and that threshold is a support rule, not a behavioural one.
+
+**Grain:** 40 rows — one per analysis dimension × level × control basis × support population, split evenly between 20 `PROGRAMME_TYPE` rows and 20 `MULTILINGUAL_INTENSITY_QUINTILE` rows.
+
+**Reading a deviation:** `avg_cross_origin_deviation_pp` is the profile's Final cross-origin minute share minus its peer-cell expectation, in percentage points, averaged over the group. Positive means more cross-origin viewing than comparable peers. On the `PROGRAMME_TYPE` rows the peer-group columns (`avg_`, `median_`, `min_peer_group_size` and the `pct_profiles_peer_n_*` columns) carry the detailed peer-cell support diagnostics; on the `MULTILINGUAL_INTENSITY_QUINTILE` rows those columns are deliberately blank and support is carried by `support_population` and `profiles`. The completed 6C.4B analysis reconciled with zero failures, and the row-level `reconciliation_failures` field is populated only where the source programme-support table carried it.
+
+**What it supports — programme:** the remaining associations are modest in the supported population, and consistent in direction across both activity controls.
+
+| Dominant programme | vs active-days peers | vs watch-hours peers | Support |
+| --- | ---: | ---: | --- |
+| MOVIE | −1.75 pp | −1.68 pp | Well supported |
+| WEB_SERIES | +2.35 pp | +2.10 pp | Well supported |
+| TV_CATCHUP | +1.32 pp | +1.23 pp | Well supported |
+| REALITY | +2.89 pp | +2.82 pp | Support-sensitive — 41 and 42 supported profiles |
+| DOCUMENTARY_SPECIAL | +3.79 pp | +4.26 pp | Too thin — one supported profile |
+
+The two thin rows are published rather than deleted, and they do not carry the conclusion.
+
+**What it supports — multilingual-title intensity:** the peer-adjusted pattern is non-monotonic. In the supported population Q1 sits below peer expectation under both controls (−0.95 and −1.01 pp), Q2 marginally below (−0.17 and −0.39 pp), Q3 and Q4 above it (+1.19/+1.23 and +1.21/+1.13 pp), and Q5 falls back below (−1.32 and −0.94 pp). Q5 consists entirely of profiles at 100% multilingual-title minutes, and tied values at 100% also appear in Q4, so the Q4/Q5 boundary is a ranking artefact rather than a behavioural threshold. More multilingual-title viewing therefore does not mean progressively more cross-origin behaviour.
+
+`multilingual_title_minute_share` is consumed minutes on titles that happen to offer several audio tracks. It is a consumption-composition measure and is never multilingual supply.
+
+**What it does not establish:** a causal programme effect, psychological language openness, a stable identity, segment membership, persistence or headroom. Differences between the `ALL` and `PEER_N_GE_20` populations also carry population-selection effects and must not be attributed to opportunity matching alone.

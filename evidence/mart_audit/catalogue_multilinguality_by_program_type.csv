@@ -1,0 +1,7 @@
+program_type,parent_titles,monolingual_titles,multilingual_titles,multilingual_pct,mean_audio_language_count,max_audio_language_count,titles_with_1_audio_languages,titles_with_2_audio_languages,titles_with_3_audio_languages,titles_with_4_audio_languages,titles_with_5_audio_languages,titles_with_6_audio_languages
+ALL_TITLES,1000,445,555,55.5,1.904,6,445,311,168,53,17,6
+DOCUMENTARY_SPECIAL,9,3,6,66.6667,2.2222,5,3,4,0,1,1,0
+MOVIE,481,105,376,78.1705,2.3638,6,105,184,131,40,15,6
+REALITY,121,97,24,19.8347,1.2231,4,97,22,1,1,0,0
+TV_CATCHUP,173,156,17,9.8266,1.104,3,156,16,1,0,0,0
+WEB_SERIES,216,84,132,61.1111,1.8889,5,84,85,35,11,1,0

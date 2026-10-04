@@ -139,14 +139,16 @@ Post-choice response has also been audited. Completion on known outcomes is the 
 
 Realistic opportunity has since been brought into the diagnosis. Each profile's reachable catalogue is reconstructed day by day from existence, historical entitlement and catalogue availability, and compared with behaviour at the same window grain. Access turned out to structure breadth materially but concentration far less consistently, so the candidate mechanisms are carried forward as opportunity-aware candidates rather than explained away by access ([journal entry 15](docs/analysis_journal.md#15-a-large-catalogue-is-not-the-same-thing-as-a-large-choice-set), [opportunity evidence](evidence/viewer_diagnosis/README.md#opportunity-conditioning-test-5)).
 
-The open question now is language: offered audio, entitlement and consumed audio are different observations, and none of them can stand in for the others. No normalised atomic measurement layer, fingerprints, segments, headroom estimates or business findings have yet been produced.
+Language has since been separated into its three observations. A supply audit came first: more than half of parent titles carry several audio tracks, but that supply is heavily structured by programme type, and a regional pack admits a title through its audio bridge without restricting playback to the pack language. Consumed language then proved far more concentrated than the reachable audio environment for almost every profile. Because reachable-language count saturates, the analysis moved from audio tracks to title origin: with each profile's Baseline viewing centre held fixed, cross-origin viewing rose much faster than the historically valid cross-origin opportunity behind it, and programme composition did not explain that difference away ([journal entries 16–18](docs/analysis_journal.md#16-a-multilingual-catalogue-is-not-the-same-thing-as-multilingual-behaviour)).
+
+That makes **cross-origin catalogue propensity under realistic opportunity** a provisional behavioural dimension — an observed tendency across two windows, not a trait, a segment or a headroom population. Native language is never inferred: `home_region`, plan language and title origin are contextual fields, and the anchor is behavioural. The next analysis asks whether this propensity adds anything inside the mechanism candidates already established in Tests 4 and 5. No normalised atomic measurement layer, fingerprints, segments, headroom estimates or business findings have yet been produced.
 
 ## Project Roadmap
 
 | State | Work |
 | --- | --- |
-| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit · post-choice response measurement and candidate mechanism states · realistic opportunity conditioning |
-| Current | Language opportunity: separating offered audio, entitlement and consumed audio |
+| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit · post-choice response measurement and candidate mechanism states · realistic opportunity conditioning · language supply, consumed-language behaviour and title-origin movement |
+| Current | Reintegration: does opportunity-conditioned cross-origin behaviour add information inside the existing mechanism candidates? |
 | Next | Normalised atomic measures · behavioural fingerprints · segmentation · headroom diagnosis · commercial context · visual analysis and Power BI |
 
 The [analysis journal](docs/analysis_journal.md) records the reasoning behind each decision so far.

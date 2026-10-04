@@ -32,7 +32,8 @@ The viewer-level base is reviewed in blocks, each asking whether a family of fie
 | Test 3 | Breadth and concentration | PASS WITH CAVEAT |
 | Test 4 | Post-choice response and its link to breadth and concentration | PASS WITH MEASUREMENT DECISIONS |
 | Test 5 | Opportunity measures used for realistic-choice conditioning | PASS |
-| Next | Language opportunity | Not yet reviewed |
+| Test 6A | Multilingual catalogue supply and language opportunity | PASS WITH CAVEAT |
+| Next | Reintegration of cross-origin behaviour into the mechanism candidates | Not yet reviewed |
 
 **PASS WITH CAVEAT** records a bounded semantic imperfection that does not threaten the project objective, downstream denominators, analytical eligibility or the interpretation of the populations actually used. The imperfection is documented and the affected rows are excluded from the relevant interpretation; the mart is not rebuilt for it.
 
@@ -198,3 +199,17 @@ Test 5 then added a window-level measure, `reachable_parent_titles_in_window`: t
 Three details matter when reading it. `hhi_valid_profiles` is the subset of each row's profiles whose title HHI is defined, so `avg_valid_title_hhi` has a smaller denominator than the other averages. Rows are reported however few profiles they contain — thin regimes are visible rather than merged away, and a row with a handful of profiles is a description, not a result. And `avg_meaningful_titles_per_100_reachable` is a profile-level average of a diagnostic ratio: it is not a utilisation target, because a reachable title was never owed a viewing.
 
 The conditioning results built on this structure are reported in [journal entry 15](../../docs/analysis_journal.md#15-a-large-catalogue-is-not-the-same-thing-as-a-large-choice-set), with their own tables in [`../viewer_diagnosis`](../viewer_diagnosis/README.md#opportunity-conditioning-test-5).
+
+### Test 6A — multilingual supply before any behaviour
+
+Language could not be added as another breadth measure until the supply behind it was audited, because three different fields describe it: the language a title originates in, the languages offered as audio on it, and the language actually played. This block contains no viewer behaviour at all — it asks what multilingual choice existed before asking what anyone did with it.
+
+It closed as **pass with caveat**. The structure holds, but `content_audio_languages` carries no independent entry or exit date per audio track, so listed tracks inherit the parent title's availability dates. That supports title-level multilingual opportunity and prevents any claim about the day a particular dub appeared if its real timing differed from the title's.
+
+[`catalogue_multilinguality_by_program_type.csv`](catalogue_multilinguality_by_program_type.csv) — one row per programme type plus an `ALL_TITLES` row, at parent-title grain across the whole catalogue. The 1,000 parent titles carry 1,904 title × audio-language rows: 445 are monolingual, 555 multilingual, and the mean is 1.904 audio languages. The `titles_with_N_audio_languages` columns let a reviewer rebuild that distribution and check the concentration of supply — the 244 titles with three or more tracks hold 65.6% of all additional-language tracks. Multilinguality then differs sharply by programme: 78.17% of movies against 9.83% of catch-up. `DOCUMENTARY_SPECIAL` covers nine titles and is reported as it stands rather than merged away; its percentage is arithmetically correct and analytically tiny.
+
+[`title_origin_vs_available_audio.csv`](title_origin_vs_available_audio.csv) — one row per language. `titles_of_this_origin` counts parent titles originating in that language; `titles_offering_this_audio` counts parent titles carrying it as an audio track. The two are not interchangeable, which is the point: Kannada originates 44 titles but is offered as audio on 216, so counting origins as audio opportunity would understate dubbing, and counting offered tracks as consumption would overstate behaviour.
+
+[`language_opportunity_by_access_regime.csv`](language_opportunity_by_access_regime.csv) — one row per window × access regime, built on the same historically valid day-by-day availability used for catalogue opportunity. It gives reachable parent titles, their multilingual count and share, mean accessible audio languages per reachable title, and the day-weighted versions of those. Read the percentages beside the absolute counts: a regional pack's catalogue is more multilingual in percentage terms precisely because a dub is one route by which a title becomes eligible for the pack, but 186 reachable titles under a Bengali pack is a much smaller choice set than 913 under broad access.
+
+**What these do not prove:** nothing about viewers. They establish supply and reachability, not multilingual viewing, preference, propensity, a segment or headroom. Reachable means technically available under historically valid entitlement — not surfaced, recommended, noticed or considered.

@@ -287,6 +287,148 @@ reachable but unwatched titles = viewing headroom      ✗ not licensed
 
 Reachability establishes possibility, not inclination or conversion. A title can be reachable without having been surfaced, considered or compatible with the viewer's observed behaviour, and genuine headroom requires later evidence beyond unused access.
 
+## Language fields: origin, offered audio and consumed audio
+
+Three fields describe language and none substitutes for another.
+
+| Quantity | Source | Meaning |
+| --- | --- | --- |
+| `original_language` | Parent-title catalogue metadata | The language ecosystem the title originates in |
+| Available audio language | `content_audio_languages` | Audio tracks offered on the parent title |
+| Consumed audio language | `view_events.audio_language` | The track actually played during an observed event |
+
+A viewer consuming Tamil audio on a Hindi-origin title has consumed Tamil audio *and* viewed inside a Hindi-origin ecosystem. Both statements are true and they answer different questions.
+
+`home_region` and regional-plan language are contextual metadata, not native-language fields. Terms such as "native-language share" or "non-native viewing" are not used anywhere in this project, because native language is unobserved.
+
+### Parent-title audio bridge
+
+`content_audio_languages` is read at the grain of one parent title × one available audio language. Audio rows are not weighted by the number of playable episode assets under the same parent title: catalogue-language structure stays at parent-title grain. A parent title may expose up to six audio languages in the observed catalogue.
+
+Language opportunity is layered onto the historically valid title state defined under [opportunity](#opportunity): a track listed on a title that was unavailable on a given day contributes no opportunity that day.
+
+### Regional entitlement is title-level, not a track restriction
+
+```text
+regional_title_eligible(t)
+  = plan_language_group ∈ parent title's available audio-language set
+```
+
+If this holds, the parent title enters the reachable catalogue — and once it is entitled, every audio language listed on that title remains selectable. The pack language determines *title admission*; it is not an exclusive playback-language restriction. `ALL_ACCESS` and `ALL_ACCESS_SPORTS` share the same VOD title and audio opportunity, as elsewhere in the project.
+
+**Caveat — audio-track timing.** `content_audio_languages` carries no independent entry or exit date per track, so listed tracks inherit the parent title's historically valid availability dates. This supports title-level multilingual opportunity analysis but does not establish the day a particular dub appeared if its real timing differed from the title's. It is carried as a bounded measurement caveat rather than repaired with invented dates.
+
+## Language opportunity: breadth and allocation are different questions
+
+```text
+reachable_audio_language_count
+  = distinct audio languages present among historically reachable parent titles
+```
+
+This is retained as a descriptive breadth measure only. It is not used as the sole language-opportunity control, because it saturates: most eligible profiles reach nearly the full observed language set. A profile reaching ten languages can still face a highly concentrated opportunity distribution, so language opportunity also needs shares across languages and the concentration of those shares.
+
+| Opportunity question | Carried by |
+| --- | --- |
+| Which languages were reachable | Reachable-language count |
+| How much title-day opportunity each language represented | Opportunity-language shares |
+| How concentrated that opportunity was | Opportunity-language HHI |
+
+As with reachable catalogue in Test 5, distinct-window reach and title-day opportunity answer different questions: reach asks what entered the choice set at least once, title-days ask how much historically valid opportunity accumulated through time. Title-day opportunity is the preferred denominator wherever timing and access duration differ.
+
+### Consumed-language and opportunity-language metrics
+
+Consumed-language measures use qualified viewing only, with `view_events.audio_language`. For profile *p*, window *w*, language *l*:
+
+```text
+consumed_language_share(p, w, l)
+  = qualified minutes consumed in l ÷ all qualified minutes for (p, w)
+
+consumed_language_hhi = Σ_l consumed_language_share_l²
+```
+
+No offered track counts as consumed unless a qualified event actually used it. Opportunity shares are built from historically valid language opportunity — profile existence → historical entitlement → parent-title availability → title audio bridge — and support `top_opportunity_language_share` and `opportunity_language_hhi`. They are opportunity descriptors, not expected consumption shares.
+
+Comparing consumed-language HHI with opportunity-language HHI asks whether playback is more concentrated than the reachable audio environment. It does not imply that a profile was expected to consume languages in proportion to supply. Qualified watch hours and active days remain separate activity controls here, exactly as in Tests 4 and 5: more activity means more chances to accumulate languages, so raw language breadth is never read without activity context.
+
+## Title origin and cross-origin movement
+
+### Paired population
+
+Cross-origin analysis uses profiles eligible in **both** `BASELINE_90` and `FINAL_90`: 8,199 profiles. The two windows are equal-length observational windows, not treatment and control periods — Baseline is the behavioural reference and Final the diagnostic window, and no causal before/after reading is licensed.
+
+### Baseline title-origin anchor
+
+```text
+baseline_origin_minutes(o)
+  = qualified Baseline minutes on parent titles whose original_language = o
+
+baseline_anchor_origin = argmax_o baseline_origin_minutes(o)
+baseline_anchor_share  = baseline_origin_minutes(anchor) ÷ all qualified Baseline minutes
+```
+
+Ties are broken by minutes descending then language ascending. The anchor stays fixed while Final behaviour and opportunity are evaluated; recomputing it from Final viewing would move the reference with the outcome. It is a behavioural reference only — not native language, home region, plan language or a permanent preference label.
+
+**Anchor-strength bands are sensitivity slices, not identities.** No natural breakpoint appears in the anchor-share distribution, so thresholds such as ≥70%, 70–95% and 95–100% exist only to make subsequent movement easier to read where the starting centre is clear. They are not segment boundaries, high/low propensity thresholds or identity labels, and activity remains relevant because broader activity can itself create greater origin breadth.
+
+### Cross-origin viewing and new-origin entry
+
+```text
+a = fixed Baseline anchor
+cross_origin_event      = original_language(parent_title) ≠ a
+cross_origin_minute_share = qualified minutes on cross-origin titles ÷ all qualified minutes
+```
+
+The audio track does not alter a title's origin classification: a dubbed title remains cross-origin when its `original_language` differs from the fixed anchor. An origin is **new** in Final when qualified Final viewing of it is positive while qualified Baseline viewing of it was zero. The derived descriptors — entered-new-origin, new-origin minute share, anchor-only — describe catalogue-origin movement and imply no permanent exploration tendency.
+
+### Historical cross-origin opportunity
+
+```text
+EligibleSet(p, t) = AvailableCatalogue(t) ∩ PlanEntitlement(account(p), t) ∩ profile existence
+
+cross_origin_title_day = reachable parent title-day whose original_language ≠ baseline_anchor_origin
+
+cross_origin_title_day_opportunity_share
+  = cross-origin reachable title-days ÷ all reachable title-days
+```
+
+This is the same day-by-day reconstruction used for catalogue opportunity in Test 5, partitioned by title origin relative to the fixed anchor. A later access change never rewrites earlier opportunity, and final-plan status is never projected backward.
+
+Cross-origin opportunity is enabling context, not expected behaviour. A profile with no cross-origin opportunity cannot legitimately show cross-origin viewing; a profile with substantial cross-origin opportunity is not expected to consume a fixed share of it. Cross-origin viewing share divided by cross-origin opportunity share is therefore **not a conversion rate**, and no openness or utilisation score is constructed from the pair. Where strong-anchor slices are used, the comparison that carries the argument is the change in behaviour against the change in historically valid opportunity — which supports the claim that opportunity alone does not determine behaviour, and establishes no causality, intrinsic preference or stable propensity.
+
+## Programme composition and peer matching
+
+Programme composition is reconstructed from meaningful Final title viewing, and dominant programme type is descriptive context rather than behavioural identity. The five programme types — `MOVIE`, `WEB_SERIES`, `TV_CATCHUP`, `REALITY`, `DOCUMENTARY_SPECIAL` — are retained wherever support permits; sparse categories are not merged to make a result look cleaner. A broader library-like (`MOVIE` + `WEB_SERIES` + `DOCUMENTARY_SPECIAL`) against recurring (`TV_CATCHUP` + `REALITY`) split is supporting context only and does not replace the five types in the primary sensitivity analysis.
+
+```text
+multilingual_title_minute_share
+  = qualified Final minutes on parent titles offering > 1 audio language
+    ÷ all qualified Final minutes
+```
+
+This is a consumption-composition measure and must not be called multilingual supply. A profile can spend 100% of its minutes on multilingual titles while selecting one audio language and one title-origin ecosystem.
+
+### Peer matching
+
+Final cross-origin behaviour is compared inside peer cells defined by the same Baseline anchor origin, the same 5-percentage-point anchor-share band, the same 5-percentage-point Final cross-origin opportunity-share band, and the same Final activity quintile. Activity is matched in two separate versions, `ACTIVE_DAYS` and `WATCH_HOURS`; the controls are never crossed or averaged.
+
+```text
+peer_expected_cross_origin_share
+  = mean Final cross-origin minute share in p's peer cell
+
+cross_origin_deviation_pp
+  = 100 × (profile Final cross-origin minute share − peer expected share)
+```
+
+Whether the focal profile is excluded from its own cell mean is **not established here**. The 6C.4B implementation was never persisted to the analysis workbench, and the published aggregate cannot settle it: every one of the 8,199 profiles carries a deviation and the smallest reported peer-cell size is 1, which is consistent both with an inclusive cell mean and with a leave-one-out mean over cells of at least two profiles. The wording therefore states the cell mean without claiming a leave-one-out rule it cannot support. Either convention shifts an individual deviation by a factor of n/(n−1), which is negligible at the supported cell sizes and leaves the published directions unchanged.
+
+The primary supported comparison uses `peer_n ≥ 20`. Smaller cells may be shown for support diagnostics but do not carry the interpretation — this is a support rule, not a behavioural threshold.
+
+Programme-level deviations are descriptive averages of profile deviations after matching; they are not programme treatment effects. Differences between the full population and the `peer_n ≥ 20` subset also carry population-selection effects and must not be attributed to opportunity matching alone. Thin groups stay thin: `REALITY` is support-sensitive and `DOCUMENTARY_SPECIAL` is too small to carry a programme conclusion. Multilingual-title-minute quintiles are descriptive sensitivity bands, and where a boundary cuts through a mass of identical values — profiles at 100% multilingual-title minutes, for instance — that boundary is a ranking artefact, not a behavioural threshold.
+
+## What the language and origin measures license
+
+These rules support the term **cross-origin catalogue propensity under realistic opportunity** as an observed behavioural tendency after conditioning, and nothing more. They do not turn it into a native-language preference, language-openness psychology, a causal effect, a permanent identity, a segment or a headroom score. Whether that tendency contributes non-redundant information inside the concentration mechanisms already established is a separate question, downstream of this methodology.
+
 ## Analytical eligibility
 
 A profile is eligible for the main comparison when it has **at least 30 entitled days, 3 active days and 120 qualified watch minutes** in the window. All three components stay visible beside the flag. No row is removed and no minimum breadth is imposed.
@@ -310,8 +452,11 @@ The full account aggregation builder remains outside the current public code che
 | `qualification.py` | Qualified start and the 90% progression threshold | Events with `watch_seconds`, `is_autoplay`; runtime in seconds |
 | `continuation.py` | Episode ordering, continuation opportunity, outcome state and attribution | Prepared episode events plus `profiles`, `accounts`, `catalogue`, `cycles` and `audio` frames |
 | `eligibility.py` | The eligibility rule | A frame that already carries entitled days, active days and qualified minutes |
+| `origin.py` | Baseline title-origin anchor, cross-origin classification and anchor-relative opportunity split | Qualified minutes by profile × `original_language`; an exposure matrix from `profile_opportunity` with each parent title's origin |
 
 Opportunity and continuation functions take a calendar object exposing `n_days` and `day_index(date)`; continuation additionally needs `start`, `end` and `analytical_start`. The fixture tests show a minimal example. `profile_opportunity` returns `(profile_ids, parent_ids, exposure_matrix)` indexed by profile, alongside a profile-level opportunity frame. `reachable_parent_titles` reduces that exposure matrix to the window-level count defined above, `entitlement_timing` labels full against partial entitlement, `meaningful_titles_per_100_reachable` forms the diagnostic ratio and returns `NaN` where nothing was reachable, and `access_context_days` and `opportunity_regimes` classify the access history. All five are pure functions over frames and arrays, and the fixtures cover their boundaries: a title reachable for one day counts once, a profile with no access has no context row, a move between `ALL_ACCESS` and `ALL_ACCESS_SPORTS` stays `STABLE_BROAD` because VOD reach is unchanged, and a move between regional languages or between regional and broad access is `MIXED_ACCESS`.
+
+`origin.py` reuses that same exposure matrix rather than rebuilding access: `baseline_origin_anchor` fixes the reference, `cross_origin_opportunity` partitions reach and title-days around it, and `cross_origin_minute_share` and `new_origin_entry` classify behaviour by title origin. Its fixtures cover the boundaries that matter: a regional pack admits a cross-origin title through its dub, a later broad plan does not enlarge the earlier window, the anchor stays fixed when Final behaviour moves, consumed audio never reclassifies a title's origin, and a share with no denominator is `NaN` rather than zero.
 
 The published code exposes these transformations and their checks. It does not include a single command that rebuilds every mart from full-resolution tables.
 
