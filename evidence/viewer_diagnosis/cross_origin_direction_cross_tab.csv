@@ -1,0 +1,10 @@
+behavior_direction,opportunity_direction,profiles,share_of_paired_profiles,share_within_behavior_direction,share_within_opportunity_direction,avg_baseline_cross_origin_title_day_share,avg_final_cross_origin_title_day_share,avg_cross_origin_title_day_share_change,avg_baseline_cross_origin_minute_share,avg_final_cross_origin_minute_share,avg_cross_origin_share_change,avg_baseline_cross_origin_reachable_titles,avg_final_cross_origin_reachable_titles,pct_entered_new_origin_language,avg_final_qualified_watch_hours,avg_final_active_days
+increased,increased,4662,0.5686,0.8836,0.6408,0.6837,0.6984,0.0147,0.3726,0.6205,0.2479,562.4966,615.953,76.1261,42.093,28.1175
+increased,decreased,614,0.0749,0.1164,0.6645,0.7859,0.7737,-0.0123,0.4458,0.6913,0.2455,345.2524,400.2362,73.6156,41.6446,27.7752
+increased,effectively unchanged,0,0.0,0.0,,,,,,,,,,,,
+decreased,increased,2074,0.253,0.8744,0.2851,0.6093,0.6215,0.0123,0.4047,0.2661,-0.1386,515.4716,560.6721,65.6702,48.8711,30.1856
+decreased,decreased,298,0.0363,0.1256,0.3225,0.6899,0.6478,-0.0421,0.4981,0.3564,-0.1417,363.7047,375.4362,60.0671,66.083,36.1611
+decreased,effectively unchanged,0,0.0,0.0,,,,,,,,,,,,
+effectively unchanged,increased,539,0.0657,0.9782,0.0741,0.1494,0.1584,0.009,0.0,0.0,-0.0,85.6865,100.0761,0.0,14.4718,16.3321
+effectively unchanged,decreased,12,0.0015,0.0218,0.013,0.4989,0.477,-0.0219,0.0,0.0,-0.0,292.1667,164.6667,0.0,12.2217,12.75
+effectively unchanged,effectively unchanged,0,0.0,0.0,,,,,,,,,,,,

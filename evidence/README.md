@@ -41,6 +41,7 @@ A Test 4 file therefore sits in `mart_audit/` when it settles how something is m
 | [`opportunity_conditioned_candidate_mechanisms.csv`](viewer_diagnosis/opportunity_conditioned_candidate_mechanisms.csv) | The Test 4 candidate states, and two neighbouring states, re-read inside broad and regional opportunity | Test 5D |
 | [`consumed_vs_opportunity_language.csv`](viewer_diagnosis/consumed_vs_opportunity_language.csv) | Consumed-language breadth and concentration against the reachable audio environment, by window and access regime | Test 6B |
 | [`cross_origin_anchor_and_opportunity.csv`](viewer_diagnosis/cross_origin_anchor_and_opportunity.csv) | Baseline title-origin anchors, and cross-origin viewing against historically valid cross-origin opportunity | Test 6C |
+| [`cross_origin_direction_cross_tab.csv`](viewer_diagnosis/cross_origin_direction_cross_tab.csv) | Every paired profile classified by the direction of its behavioural change against the direction of its opportunity change | Test 6C.3 |
 | [`test6c4b_programme_multilingual_sensitivity.csv`](viewer_diagnosis/test6c4b_programme_multilingual_sensitivity.csv) | Cross-origin deviation from matched peers by dominant programme type and multilingual-title intensity | Test 6C.4B |
 
 [`viewer_diagnosis/README.md`](viewer_diagnosis/README.md) documents that file's grain, denominators and interpretation boundary.

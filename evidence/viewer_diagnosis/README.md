@@ -148,6 +148,29 @@ The `POPULATION` rows are profile-weighted aggregations of the band rows, exact 
 
 **What it does not prove:** causality in either direction, language openness, native-language preference, a stable tendency, a segment or headroom. Cross-origin viewing divided by cross-origin opportunity is not a conversion rate. One caveat belongs beside every reading of the strong-anchor rows: the Baseline anchor is by construction the largest Baseline origin share, so profiles selected for extreme Baseline concentration have more room to move away from it afterwards, and some regression toward a less extreme final distribution is expected.
 
+### `cross_origin_direction_cross_tab.csv`
+
+**Question:** when a profile's cross-origin viewing changed between the windows, had its cross-origin *opportunity* moved in the same direction?
+
+**Why it matters:** the headline comparison shows that viewing moved much further than opportunity on average, but an average can hide a mechanical story in which almost everyone simply follows their own opportunity. This table opens the average up and asks whether the direction of opportunity change predicts the direction of behavioural change at all.
+
+**Produced by:** the Test 6C.3 analysis, from the same reconstruction behind [`cross_origin_anchor_and_opportunity.csv`](cross_origin_anchor_and_opportunity.csv). Profile-level sidecars are not published.
+
+**Population and grain:** the 8,199 paired profiles, each falling into exactly one of nine cells — behaviour direction (increased, decreased, effectively unchanged) × opportunity direction (the same three). All nine cells are published, including the three that are empty, so the partition is visible rather than implied. Profiles sum to 8,199.
+
+| Column | Meaning |
+| --- | --- |
+| `share_of_paired_profiles` | The cell as a share of all 8,199 |
+| `share_within_behavior_direction`, `share_within_opportunity_direction` | The same cell read down each margin |
+| `avg_baseline_/avg_final_cross_origin_title_day_share`, `avg_cross_origin_title_day_share_change` | Opportunity before, after and the change |
+| `avg_baseline_/avg_final_cross_origin_minute_share`, `avg_cross_origin_share_change` | Behaviour before, after and the change |
+| `avg_baseline_/avg_final_cross_origin_reachable_titles` | Distinct cross-origin titles reachable, as a size check on the opportunity pool |
+| `pct_entered_new_origin_language`, `avg_final_qualified_watch_hours`, `avg_final_active_days` | Movement and activity context for the cell |
+
+**What it supports:** that opportunity direction barely predicts behavioural direction. Among the 7,275 profiles whose opportunity share rose, 64.1% increased their cross-origin viewing; among the 924 whose opportunity share fell, 66.5% did — a difference of about two points in the wrong direction for a mechanical account. The magnitudes make the same point: the largest cell combines a +1.5-point opportunity change with a +24.8-point viewing change, and the 614 profiles whose opportunity share *fell* still raised viewing by 24.6 points. It is the source for the group counts behind Figures 18 and 18B.
+
+**What it does not prove:** causality in either direction, or that opportunity is irrelevant — cross-origin viewing cannot occur without cross-origin opportunity at all. Directions here are numerical signs with no materiality threshold, so many "rose" and "fell" changes are near zero; a falling *share* is also not the same as falling absolute opportunity, since the cross-origin pool grew in most of these cells.
+
 ### `test6c4b_programme_multilingual_sensitivity.csv`
 
 **Question:** does programme composition or multilingual-title viewing intensity materially explain cross-origin behaviour, once profiles are compared against peers with comparable historical cross-origin opportunity and activity?

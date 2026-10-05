@@ -652,6 +652,10 @@ Test 5 established the reachable catalogue. The next question became whether lan
 
 Those 244 titles hold 65.6% of all additional-language tracks. Supply exists at scale, but it is not spread evenly — and programme type produces the sharper asymmetry: 78.17% of movies are multilingual against 61.11% of web series, 19.83% of reality titles and 9.83% of catch-up. The documentary figure (6 of 9 titles) is arithmetically correct and analytically tiny.
 
+![100% stacked horizontal bars of parent titles by programme type, shaded by the number of audio languages available, showing movies 78.2% multilingual against TV catch-up 9.8%](../figures/figure_15_multilingual_supply_by_programme_type.png)
+
+*How to read it:* each bar is one programme type and totals 100% of its parent titles, so the coloured length is that programme's multilingual share and the darker shades show how deep the audio supply goes. Documentary specials are faded at nine titles. This is supply, not viewing. The [visual decision log](../figures/visual_decision_log.md#test-6--language-supply-consumed-language-and-cross-origin-movement--2026-10) carries the full reading contract.
+
 That ruled out a tempting shortcut immediately. A profile watching mostly movies and one watching mostly catch-up do not face the same multilingual environment, so raw consumed-language breadth would inherit programme structure before it reflected anything like exploratory behaviour.
 
 **Evidence — original language and available audio were not interchangeable either:** Hindi originates 428 titles but is offered as audio on 486; Tamil 158 against 271; Telugu 107 against 245; Kannada 44 against 216, nearly five times as many by audio as by origin. Counting original languages as if they were available audio would understate dubbing opportunity; counting every offered track as consumed behaviour would do the opposite.
@@ -674,6 +678,10 @@ Regional packs reached much smaller pools — 186 to 449 reachable parent titles
 | Mean opportunity-language HHI | 0.180 | 0.178 |
 
 In 99.43% of baseline and 99.47% of final eligible profiles, consumed-language HHI exceeded opportunity-language HHI. That sounds like a language-preference result until the denominator is inspected: reachable-language count was almost saturated at nine or ten languages. It could say that alternatives technically existed; it could not say how opportunity was distributed among them. The analysis therefore kept opportunity shares and opportunity HHI rather than promoting reachable-language count into a complete denominator.
+
+![Dumbbell chart comparing reachable language opportunity HHI with consumed language HHI for each access regime, with gaps between +0.31 and +0.46](../figures/figure_16_consumed_vs_opportunity_language_hhi.png)
+
+*How to read it:* within each row, the hollow square is the concentration of reachable language opportunity and the filled circle the concentration of consumed language; the distance between them is the gap, with Baseline shown as small grey context. Read the separation rather than either marker alone, and not as a calibrated selectivity effect — consumption volume is finite and no same-volume null was estimated.
 
 Broad-access profiles consumed more distinct audio languages and showed lower consumed-language concentration than every regional family, and the pattern held when qualified watch hours and active days were used separately as activity context. Regional-pack profiles also gave their pack language materially more consumed share than it held in their reachable opportunity. Those are real descriptive patterns, and they still do not establish that plan family causes language concentration: access, catalogue composition, programme mix and behavioural selection are entangled observationally. The project stopped short of manufacturing a "language openness" score from them.
 
@@ -717,6 +725,10 @@ That imbalance matters for support and for later matching. It is not a reason to
 
 **Evidence — the anchor had no natural threshold:** the next temptation was to require some minimum Baseline dominance before the reference counted as real. The anchor-share distribution declines smoothly across its 5-percentage-point bands, with no elbow to justify a cutoff, and activity itself structures origin breadth, which makes a universal threshold even less attractive. No anchor-strength cutoff became a behavioural rule. A ≥70% slice was retained as a strong-anchor diagnostic subset and the 95–100% slice as an even cleaner sensitivity case. Neither is a segment definition.
 
+![Histogram of the 8,199 paired profiles across Baseline anchor-share bands, continuous between about 30% and 95% with a pile-up in the 95 to 100% band](../figures/figure_17a_baseline_anchor_strength_distribution.png)
+
+*How to read it:* the bars are contiguous intervals, so this is a distribution rather than ranked categories. The smooth body is the reason no cutoff was adopted; the top band is the exception, collecting near single-origin viewing by the lightest viewers with the least cross-origin reach.
+
 **Evidence — movement appeared even from strong starting anchors:** for the 2,985 profiles with Baseline anchor share at or above 70%, cross-origin viewing rose materially in the final window.
 
 | Movement into Final | 70–95% anchors | 95–100% anchors |
@@ -726,6 +738,10 @@ That imbalance matters for support and for later matching. It is not a reason to
 | Entered a new origin ecosystem | 71.4% | 42.1% |
 | Increased cross-origin share | 70.2% | 42.5% |
 | Remained anchor-only | — | 55.7% |
+
+![Two-panel chart: Baseline and Final cross-origin levels by anchor band above, and the Final-minus-Baseline change per band below, rising to +22 points at 85-90% and falling to +10 in the top band](../figures/figure_17b_cross_origin_change_by_anchor_band.png)
+
+*How to read it:* Baseline in the upper panel tracks the dashed `1 − anchor share` line because the bands are defined from it, so the lower panel carries the information — Final minus Baseline per band, with profile counts underneath. Compare the change across bands, not the Baseline slope, and keep the regression-to-the-mean caution in view.
 
 The 95–100% group is the harder test, because its Baseline viewing was almost entirely anchor-centred. The combination mattered more than either side alone: movement was clearly possible even from extremely concentrated Baseline origin behaviour, and it was not universal. That is roughly what a useful behavioural dimension should look like before anyone gets overexcited and turns it into a personality test.
 
@@ -753,6 +769,14 @@ The 95–100% group is the harder test, because its Baseline viewing was almost 
 
 Within the strong-anchor group, the 70–95% band showed roughly an 18-point behavioural increase against about one point of opportunity movement. No profile reached the final window with zero opportunity outside its Baseline anchor.
 
+![Bubble scatter of change in cross-origin viewing share against change in cross-origin opportunity share, with every group far above the 1:1 diagonal](../figures/figure_18_quadrant_behaviour_vs_opportunity.png)
+
+*How to read it:* both axes are percentage-point changes on one scale, so the dashed diagonal is what a mechanical response would look like; bubble area is profile count. The distance from that diagonal is the finding. Groups are defined by the sign of their viewing change, so read distance and size rather than quadrant membership.
+
+![Companion panels: direction bars showing viewing rose for 64% of profiles whose opportunity rose and 66% of those whose opportunity fell, and a magnitude panel comparing mean opportunity and viewing change](../figures/figure_18b_companion_direction_bars.png)
+
+*How to read it:* the upper panel asks whether the direction of opportunity change predicts the direction of behaviour — 64% against 66% is the answer, with every cell behind both figures published in [`cross_origin_direction_cross_tab.csv`](../evidence/viewer_diagnosis/cross_origin_direction_cross_tab.csv). The lower panel puts both quantities on one percentage-point scale, where the connector length is the discrepancy between how far opportunity moved and how far viewing did.
+
 The result is not that opportunity was irrelevant — without cross-origin opportunity, cross-origin viewing cannot happen at all. It is that the direction and magnitude of the behavioural movement were not mechanically determined by the change in opportunity.
 
 One access case shows why the correction mattered. Baseline `FULL_90` Hindi regional access reached roughly 449 parent titles, but only about 54 of them were cross-origin relative to a Hindi anchor, giving cross-origin title-day opportunity of only about 11.5%. Profiles in that context could show Baseline anchor shares near 98% partly because the access structure offered little cross-origin room. That does not invalidate the anchor; it explains why the anchor cannot be read without opportunity beside it.
@@ -768,6 +792,10 @@ Test 6C.4B tightened the comparison. Peer cells matched profiles on exact Baseli
 | TV_CATCHUP | +1.32 pp | +1.23 pp | Well supported |
 | REALITY | — | — | Support-sensitive (~41–42 profiles) |
 | DOCUMENTARY_SPECIAL | — | — | Too thin (3 overall, 1 supported) |
+
+![Dot plot of matched-peer expectation against observed Final cross-origin share by programme type, with all deviations inside about two points on a 40 to 50% base](../figures/figure_19_programme_type_peer_deviation.png)
+
+*How to read it:* the x-axis is the Final cross-origin share on its real scale, so the gap between the hollow expectation marker and the filled observed marker can be judged against the level it sits on. The table repeats each deviation under both activity controls with its support. Reality is faded because its sign flips once thin peer cells are included; documentary special is omitted at one supported profile.
 
 That did not justify deleting the thin categories. It justified refusing to let them carry the conclusion. The full peer-matched comparison, including the `ALL` population beside the supported one and the peer-cell support columns behind each row, is published as [`test6c4b_programme_multilingual_sensitivity.csv`](../evidence/viewer_diagnosis/test6c4b_programme_multilingual_sensitivity.csv).
 
