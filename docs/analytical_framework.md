@@ -230,6 +230,8 @@ Profiles consume a much narrower language mix than their reachable audio environ
 
 These can diverge: a viewer can consume a dubbed track while moving into a different origin ecosystem, or consume one language across titles from several ecosystems. The framework keeps track choice and catalogue-origin movement separate rather than forcing both into a single language-exploration measure.
 
+Of the two, the project pursues origin movement. Explaining why a particular title or track was selected would require a theory of individual choice the data cannot support, and would not change what concentration, opportunity or post-choice response mean; movement away from an established centre is directly observable and composes with the opportunity layer already built. Track-level selection inside a multilingual title therefore stays a documented limitation rather than an analytical branch. That movement question needs a reference ecosystem that holds still while behaviour changes — and because native language is unobserved, the reference is the profile's own earlier viewing rather than any demographic or entitlement field.
+
 ### The Baseline title-origin anchor is behavioural, not demographic
 
 Native language is not observed. `home_region`, regional plan language and title origin are contextual fields; none of them proves a viewer's mother tongue. To study movement across ecosystems without inventing identity, the analysis uses an observed reference: the **Baseline title-origin anchor**, the origin ecosystem receiving the largest share of a profile's qualified Baseline viewing.

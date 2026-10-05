@@ -677,17 +677,39 @@ In 99.43% of baseline and 99.47% of final eligible profiles, consumed-language H
 
 Broad-access profiles consumed more distinct audio languages and showed lower consumed-language concentration than every regional family, and the pattern held when qualified watch hours and active days were used separately as activity context. Regional-pack profiles also gave their pack language materially more consumed share than it held in their reachable opportunity. Those are real descriptive patterns, and they still do not establish that plan family causes language concentration: access, catalogue composition, programme mix and behavioural selection are entangled observationally. The project stopped short of manufacturing a "language openness" score from them.
 
-**What this changed:** consumed audio was clearly behavioural, but raw consumed-language breadth was not sufficient for the mechanism question. The next step had to separate *which track was played* from *whether viewing moved across catalogue-origin ecosystems*.
+**What this changed:** language kept a provisional place in the behavioural picture — there was observable signal here, and it was not reducible to access alone. But what Test 6B had earned was narrower than it first looked. Raw consumed-language breadth was heavily opportunity-dependent. Reachable-language count had failed outright as a denominator, saturating at nine or ten for almost everyone. Activity materially structured how many languages a profile accumulated. Broad and regional differences survived coarse activity conditioning descriptively, and programme structure remained an unresolved confound behind all of it. No language-openness score had been earned, and raw language breadth was not a finished behavioural construct.
+
+The branch that suggested itself was to sharpen the behaviour rather than the denominator: separate **title selection from within-title audio-track selection**. A multilingual title lets a viewer choose a track after choosing the title, so a consumed-language count mixes two decisions. Did a profile pick a title because of its language ecosystem, or pick it for entirely different reasons and then land on one of its tracks? Resolving that would make any later language measure cleaner.
 
 **Evidence tables:** [`catalogue_multilinguality_by_program_type.csv`](../evidence/mart_audit/catalogue_multilinguality_by_program_type.csv), [`title_origin_vs_available_audio.csv`](../evidence/mart_audit/title_origin_vs_available_audio.csv), [`language_opportunity_by_access_regime.csv`](../evidence/mart_audit/language_opportunity_by_access_regime.csv) and [`consumed_vs_opportunity_language.csv`](../evidence/viewer_diagnosis/consumed_vs_opportunity_language.csv).
 
-## 17. Native language was not observed, so the reference had to come from behaviour
+## 17. From track choice to movement across title-origin ecosystems
 
 **Date:** 2026-10-04
 
-**Question:** if home region and regional-plan language cannot stand in for native language, what observable reference can define movement across content-language ecosystems?
+**Question:** the title-selection-versus-track-selection confound was real, and it was large. Was resolving it actually necessary for the diagnosis this project exists to make?
 
-**Why it matters:** the obvious shortcuts were all contextual metadata wearing a convincing label. `home_region` is account context, regional pack language is entitlement context, and `original_language` is title metadata. None tells us a profile's mother tongue, and calling any of them "native language" would turn an absent variable into a confident-looking column heading.
+**The tension:** pursued properly, that branch stops being a language question and becomes a theory of individual title choice. Why was this title selected at all — language, genre, familiarity, cast, programme type, where it happened to appear on a row? Was the track that played a deliberate choice or whatever the player defaulted to? Each of those is answerable only with evidence the dataset does not carry, and none of them is the question the project set out to answer: what explains concentrated catalogue consumption, and which patterns represent genuine unrealised viewing opportunity.
+
+**Decision:** the branch was documented and not pursued. A confound earns its own line of analysis when resolving it would change the diagnosis, the interpretation or the decision that follows; otherwise it stays a stated limitation. Track choice inside a multilingual title failed that test — it would have absorbed the rest of Test 6 without changing what concentration, opportunity or post-choice response mean. Programme-type context and the distinction between title origin and consumed audio both remained important; what was set aside was the attempt to explain why any individual title was chosen.
+
+**The alternative hypothesis:** the useful question was not why a particular title was selected but whether viewing *moved*. If a profile's earlier viewing sits firmly inside one title-origin ecosystem, then later qualified viewing on titles originating outside it is movement away from an established behavioural centre — and movement is observable in a way that title-level causation is not. It also composes with everything already built: once that movement exists, it can be conditioned on whether the alternatives were realistically reachable at all, which is exactly the opportunity machinery Test 5 produced.
+
+That reframing changes the analytical object from *the reason a title or track was selected* to *displacement from an earlier centre*, and it is what the rest of Test 6 is built on.
+
+**What it required:** a stable reference ecosystem, fixed independently of the behaviour being measured. The intuitive version of that reference is a viewer's own language — establish where viewing is centred, hold it still, and watch whether later viewing crosses out of it. The project cannot have that version. Native language is not observed, and `home_region`, regional pack language and `original_language` are account context, entitlement context and title metadata respectively. Using any of them as a stand-in would convert an absent variable into a confident-looking column.
+
+So the reference had to come from the profile's own observed behaviour, which is where Test 6C begins.
+
+**What it made us ask next:** can a profile's earlier viewing define that reference honestly, and does later viewing move beyond it when realistic alternatives exist?
+
+## 18. Native language was not observed, so the reference came from the profile's own viewing
+
+**Date:** 2026-10-04
+
+**Question:** the cross-ecosystem movement hypothesis needs a reference that stays still while behaviour moves. What can define that reference without claiming to know something about the viewer that was never observed?
+
+**Why it matters:** a reference built from metadata would be borrowed authority. `home_region` is account context, regional pack language is entitlement context, and `original_language` is title metadata; none of them tells us a profile's mother tongue, and a reference that moves with the behaviour it measures is worse than useless. The reference therefore had to be behavioural, taken from the earlier window and then held fixed.
 
 **Analyst choice:** for profiles eligible in both analytical windows, the Baseline title-origin ecosystem receiving the largest share of qualified viewing became the fixed reference — the Baseline title-origin anchor. The paired population contains 8,199 profiles, about 93.6% of baseline eligible profiles and 84.0% of final eligible ones. The distribution is concentrated: Hindi anchors 4,956 profiles (60.45%), Bengali 1,502 (18.32%) and Telugu 1,316 (16.05%), with Tamil 237 and Marathi 119 behind them. Those first three account for 94.82% of anchors.
 
@@ -713,7 +735,7 @@ The 95–100% group is the harder test, because its Baseline viewing was almost 
 
 **Evidence table:** [`cross_origin_anchor_and_opportunity.csv`](../evidence/viewer_diagnosis/cross_origin_anchor_and_opportunity.csv), whose `ANCHOR_SHARE_BAND` and `ANCHOR_ORIGIN_LANGUAGE` rows carry the distribution and the band movement above.
 
-## 18. Cross-origin movement survived the opportunity test, and programme structure did not explain it away
+## 19. Cross-origin movement survived the opportunity test, and programme structure did not explain it away
 
 **Date:** 2026-10-04
 
