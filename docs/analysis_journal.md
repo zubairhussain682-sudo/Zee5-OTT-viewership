@@ -803,4 +803,22 @@ The same check looked at the share of final minutes spent on multilingual titles
 
 **What this changed:** by the end of Test 6C.4B several simpler explanations had been narrowed. Raw audio supply, regional access, activity, Baseline anchor strength and historical cross-origin opportunity were each insufficient alone; programme composition did not explain the heterogeneity away; and multilingual-title intensity offered no monotonic substitute. The defensible carry-forward phrase is **cross-origin catalogue propensity under realistic opportunity** — deliberately bounded, describing an observed tendency across two windows of evidence rather than a psychological trait, a causal parameter, a native-language preference, a stable identity, a segment or a headroom score.
 
-**What it made us ask next:** when two profiles occupy the same opportunity-aware mechanism from Tests 4 and 5, does their cross-origin behaviour tell us something new about that mechanism, or is it merely another description of behaviour we already understand? That question belongs to Test 6D, and no answer to it is carried backward into this checkpoint.
+**What it made us ask next:** Test 6C had established that cross-origin viewing could move substantially even when the historically reachable catalogue outside a profile's Baseline anchor changed very little. It had also narrowed several alternative explanations. But finding behaviour that survives an opportunity test is not the same as finding behaviour that deserves its own place in the diagnosis.
+
+Tests 4 and 5 had already given us opportunity-aware candidate mechanisms. We knew something about how concentrated viewing was structured, what happened after meaningful content choices, and what alternatives were realistically available. The unresolved question was whether cross-origin behaviour could sharpen that picture or merely repeat it in a different vocabulary.
+
+Why insist on the distinction? Because the eventual business decision concerns **realistic additional viewing opportunity**, not the number of interesting ways we can describe a profile. If cross-origin behaviour simply reproduced breadth, concentration or the existing post-choice mechanism, adding it as another dimension would make the diagnosis more elaborate without making it more informative. Worse, we might count the same underlying behaviour twice and mistake that repetition for stronger evidence of viewing headroom.
+
+If, however, two profiles occupying the same opportunity-aware candidate mechanism still differed in how they used titles originating outside the language ecosystem that dominated their earlier viewing, the implication would be different.
+
+A profile whose Baseline viewing centred on Hindi-origin titles, for example, might later devote meaningful time to Bengali-, Tamil- or Telugu-origin productions, even when watching those titles through Hindi-dubbed audio. Another profile with similar access and the same concentration mechanism might continue drawing almost entirely from Hindi-origin content.
+
+That is what movement beyond the Baseline title-origin anchor actually represents: not necessarily changing the spoken language in which a viewer watches, but extending consumption beyond the original-language catalogue around which earlier viewing was organised.
+
+Realistic access would tell us that those alternatives could be chosen. The existing mechanism would tell us how viewing was concentrated and whether meaningful choices tended to work. Cross-origin behaviour might then reveal something additional about the profile's demonstrated tendency to engage with content originating outside its earlier centre of consumption.
+
+That extra information would not establish headroom. Watching productions from another catalogue ecosystem could replace existing viewing rather than increase total viewing. But it could strengthen or weaken the **behavioural plausibility** of additional catalogue use when considered alongside engagement, adequate opportunity and, eventually, longitudinal persistence.
+
+That was the reason to test non-redundancy. The question was not simply whether cross-origin behaviour differed between candidates. It was whether that difference contributed independent evidence to the path from **available choice to credible viewing opportunity**.
+
+Test 6D would make that distinction, beginning with the candidate mechanisms already earned and refusing to promote cross-origin propensity merely because Test 6C had found a compelling pattern. No answer from that later test is carried backward into this checkpoint.
