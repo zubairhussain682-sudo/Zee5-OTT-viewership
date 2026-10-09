@@ -25,7 +25,7 @@ flowchart TD
     G --> H[Business action and evaluation]
 ```
 
-All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity, session, breadth, concentration and post-choice response reviews. Realistic opportunity has since been brought into the diagnosis as a conditioning layer. Everything from atomic measures onward remains downstream work.
+All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity, session, breadth, concentration and post-choice response reviews. Realistic opportunity has since been reconstructed and brought into the behavioural diagnosis, and cross-origin catalogue propensity has passed its within-window non-redundancy tests. Final behavioural fingerprints, longitudinal validation, mechanism-led segments and headroom conclusions remain downstream work.
 
 ## The segmentation pathway
 
@@ -97,13 +97,7 @@ The first figures from the marts make these requirements concrete. [Depth within
 | Cross-origin catalogue propensity | Qualified viewing beyond a fixed Baseline title-origin anchor | Anchor-relative historical opportunity, and consumption kept separate from supply |
 | Responsiveness to prominent titles | Defensible observable proxies, if any hold up | No exposure data, so no causal claim and no use of later information |
 
-These are candidates. Some may prove unstable, redundant with another dimension, or unsupported by enough evidence, and stay descriptive rather than defining segments. Consumed-language breadth remains one of those descriptors: Test 6 kept it as a description of behaviour rather than letting it become a language-openness dimension.
-
-Cross-origin catalogue propensity is further along. Test 6D tested it for redundancy against the mechanisms and found substantial differences remaining *within* candidate families after anchor, opportunity and activity conditioning, so it is provisionally retained as a cross-cutting dimension rather than a mechanism of its own. Provisionally, because its longitudinal persistence, its relevance to final segmentation and its contribution to realisable headroom are all still unproven.
-
-The Final 90-day state is the latest observed behavioural classification available in this dataset. It describes consumption across the window ending 27 February 2026; it does not claim to describe what a profile was doing on that particular day, or to predict behaviour beyond the observation period.
-
-That endpoint matters because the diagnosis is ultimately about the population as it stood at the end of observation, informed by its history. The Baseline window supplies that history: it can show whether the Final state was already present, emerged from another state, or replaced an earlier pattern. Two profiles may both finish in Focused Successful with one arriving from the same state and the other from Broad Distributed — the same latest observed mechanism, different trajectories. The longitudinal stage must preserve both facts, qualifying the endpoint rather than erasing it or treating the two windows as competing final classifications.
+These are candidates, and they are not equally far along. Some may still prove unstable, redundant with another dimension, or unsupported by enough evidence, and remain descriptive rather than defining segments — consumed-language breadth is one of those, kept as a description of behaviour rather than promoted into a language-openness dimension. Cross-origin catalogue propensity has been tested further: Test 6D examined it for redundancy against the established mechanisms and found substantial differences remaining *within* candidate families after anchor, opportunity and activity conditioning, so it is provisionally retained as a cross-cutting dimension rather than a mechanism of its own. Provisional is the operative word — its longitudinal persistence, its relevance to final segmentation and its contribution to realisable headroom are all still unproven.
 
 ### Post-choice response is not one construct
 
@@ -115,7 +109,20 @@ A viewer with more qualified watch hours or active days has more chances to accu
 
 ### Candidate behavioural states are window-specific
 
-Breadth, concentration and post-choice response read under activity context give **behavioural states** — `state(profile, window)`. Current candidates are focused successful consumption, selective-core attachment, successful first-pass consumption and broad distributed consumption ([journal](analysis_journal.md#14-when-concentration-stops-meaning-the-same-thing)). They show that high concentration is not itself a mechanism. Each describes one profile in one 90-day window, so they are not segments or identities. Within-profile comparison across windows will later separate persistent, emerging and transient states.
+Breadth, concentration and post-choice response read under activity context give **behavioural states** — `state(profile, window)`. Current candidates are focused successful consumption, selective-core attachment, successful first-pass consumption and broad distributed consumption, alongside the relevant neighbouring and residual states ([journal](analysis_journal.md#14-when-concentration-stops-meaning-the-same-thing)). They show that high concentration is not itself a mechanism.
+
+These states describe how profiles actually behaved within a specified 90-day window. They are not permanent psychological identities — but neither should their window-specific character be mistaken for analytical irrelevance.
+
+The Final 90-day state is the **latest observed behavioural classification** available in this dataset. It describes consumption across the final window, which ends on 27 February 2026. It does not necessarily describe what a profile was doing on that particular day, and it does not predict behaviour beyond the dataset.
+
+That endpoint matters because the project ultimately seeks a diagnosis of the population as it stood at the end of observation, informed by the available history. The Baseline window provides that history: it can show whether the Final state was already present, emerged from another state, or replaced an earlier pattern. Two profiles may both finish in Focused Successful — one having been Focused Successful during Baseline, the other arriving from Broad Distributed.
+
+| | Baseline state | Final state |
+| --- | --- | --- |
+| Profile A | Focused Successful | Focused Successful |
+| Profile B | Broad Distributed | Focused Successful |
+
+Their latest observed mechanism is the same; their trajectories are not. The longitudinal stage must preserve both facts: what the profile ended up exhibiting, and how it arrived there. That distinction will inform final analytical segmentation without treating the endpoint as an eternal viewer identity, and without treating the two observational windows as competing final classifications.
 
 ### Opportunity remains separate from behavioural identity
 
@@ -178,6 +185,20 @@ The project can now make a stronger distinction than behaviour alone allowed —
 A behavioural fingerprint is the recurring configuration of relevant dimensions for a profile under realistic opportunity. It describes *how* someone watches. It is not an opportunity label and not a verdict.
 
 Cross-origin catalogue propensity is now eligible to contribute to that configuration, because Test 6D found substantial within-mechanism information the candidate states did not capture. Eligibility is not automatic inclusion: its contribution must still be judged against longitudinal evidence, support and the eventual headroom question. A fingerprint should explain how a profile consumes, not merely carry a longer list of features.
+
+### From opportunity-aware mechanism to final observed segment
+
+A behavioural state tells us what a profile did; realistic opportunity establishes the conditions under which it could make those choices. Together they support a more credible interpretation of the mechanism behind concentrated consumption — but that interpretation stays incomplete without the profile's historical trajectory.
+
+The Final window provides the latest observed endpoint. Longitudinal analysis will establish whether that endpoint reflects continuity, a recent transition or an emerging configuration, and the distinction matters commercially: a profile narrowly concentrated around a successful core across both windows presents different evidence from one that became concentrated only recently after distributing its viewing broadly. The same Final mechanism can therefore carry different degrees of historical support, and potentially different implications for unrealised opportunity.
+
+| Trajectory | Reading |
+| --- | --- |
+| Persistent pattern | May provide stronger evidence of an established mechanism |
+| Newly emerging pattern | May still be commercially important, but should not be described as an established habit |
+| Transition | May reveal changes in engagement, opportunity or content selection that the endpoint classification alone cannot explain |
+
+The Final state anchors the endpoint interpretation; the longitudinal trajectory qualifies it. The purpose of that analysis is not to erase or retrospectively redefine what occurred during the Final window, but to determine what the endpoint means when read against the available history. The candidate states have not yet been promoted into final analytical segments: that promotion requires their history, the supporting behavioural dimensions and relevance to the business objective.
 
 ### Mechanism-led segments
 
