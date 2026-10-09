@@ -1,0 +1,7 @@
+candidate_family,n,mean_final_opportunity_share,p10_final_opportunity_share,p25_final_opportunity_share,median_final_opportunity_share,p75_final_opportunity_share,p90_final_opportunity_share,mean_baseline_opportunity_share,median_baseline_opportunity_share,mean_opportunity_share_change,median_opportunity_share_change,median_baseline_anchor_share,p25_baseline_anchor_share,p75_baseline_anchor_share,pct_baseline_anchor_ge_070,pct_baseline_anchor_ge_095
+FOCUSED_SUCCESSFUL,1255,0.7247,0.1218,0.5759,0.8943,0.9234,0.9234,0.7209,0.8941,0.0038,0.0003,0.7258,0.5717,0.9002,52.8287,19.6813
+SELECTIVE_CORE,364,0.6896,0.5751,0.5759,0.576,0.9074,0.9234,0.6819,0.5757,0.0077,0.0067,0.5893,0.4801,0.7689,33.2418,8.5165
+ACCESS_SENSITIVE_NEIGHBOUR,377,0.7327,0.5753,0.5759,0.8943,0.9234,0.9234,0.7245,0.8941,0.0082,0.0008,0.7002,0.5883,0.8544,50.3979,12.9973
+SUCCESSFUL_FIRST_PASS,447,0.6672,0.1217,0.5759,0.6204,0.8943,0.9234,0.6606,0.6228,0.0066,0.0061,0.679,0.5395,0.8657,46.9799,19.4631
+BROAD_DISTRIBUTED,1413,0.5748,0.155,0.5759,0.5759,0.5759,0.8772,0.562,0.5642,0.0129,0.0117,0.5041,0.3787,0.7088,26.5393,5.4494
+RESIDUAL,4343,0.6347,0.1217,0.5759,0.5759,0.8943,0.9234,0.624,0.5642,0.0107,0.0077,0.5784,0.4514,0.7644,32.8344,12.3647

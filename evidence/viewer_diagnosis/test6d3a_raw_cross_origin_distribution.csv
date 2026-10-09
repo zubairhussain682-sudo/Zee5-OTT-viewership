@@ -1,0 +1,7 @@
+candidate_family,profiles,mean_final_cross_origin_pct,median_final_cross_origin_pct,p25_final_cross_origin_pct,p75_final_cross_origin_pct,pct_anchor_only_final,quantile_method
+FOCUSED_SUCCESSFUL,1255,41.316,32.6118,0.0,80.0172,26.9323,linear interpolation
+SELECTIVE_CORE,364,54.6206,55.4506,29.6081,80.6323,6.5934,linear interpolation
+ACCESS_SENSITIVE_NEIGHBOUR,377,41.9269,33.2968,12.8738,79.2238,9.8143,linear interpolation
+SUCCESSFUL_FIRST_PASS,447,50.1217,57.3735,27.192,72.174,13.6465,linear interpolation
+BROAD_DISTRIBUTED,1413,47.4843,50.8931,26.0501,68.1676,0.3539,linear interpolation
+RESIDUAL,4343,50.7683,55.1068,26.6222,74.7073,7.1609,linear interpolation

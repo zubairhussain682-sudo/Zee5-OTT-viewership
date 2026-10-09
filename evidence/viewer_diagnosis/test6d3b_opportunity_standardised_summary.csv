@@ -1,0 +1,7 @@
+candidate_family,profiles,raw_mean_final_cross_origin_pct,opportunity_standardised_mean_final_cross_origin_pct,raw_minus_standardised_pp,supported_profiles,support_coverage_pct,supported_raw_mean_final_cross_origin_pct,supported_raw_minus_standardised_pp,shared_supported_bands,common_support_population_profiles,common_support_population_coverage_pct,common_opportunity_bands,standardisation_scope
+FOCUSED_SUCCESSFUL,1255,41.316,35.6735,5.6425,1090,86.8526,39.9568,4.2833,4,7092,86.4984,10-<15%;55-<60%;85-<90%;90-<95%,COMMON_SUPPORT_ONLY
+SELECTIVE_CORE,364,54.6206,49.2002,5.4204,312,85.7143,52.9525,3.7523,4,7092,86.4984,10-<15%;55-<60%;85-<90%;90-<95%,COMMON_SUPPORT_ONLY
+ACCESS_SENSITIVE_NEIGHBOUR,377,41.9269,35.8021,6.1248,340,90.1857,39.5384,3.7363,4,7092,86.4984,10-<15%;55-<60%;85-<90%;90-<95%,COMMON_SUPPORT_ONLY
+SUCCESSFUL_FIRST_PASS,447,50.1217,46.3802,3.7414,380,85.0112,48.5192,2.139,4,7092,86.4984,10-<15%;55-<60%;85-<90%;90-<95%,COMMON_SUPPORT_ONLY
+BROAD_DISTRIBUTED,1413,47.4843,52.6116,-5.1273,1220,86.3411,45.832,-6.7796,4,7092,86.4984,10-<15%;55-<60%;85-<90%;90-<95%,COMMON_SUPPORT_ONLY
+RESIDUAL,4343,50.7683,50.4194,0.3489,3750,86.3458,49.2609,-1.1585,4,7092,86.4984,10-<15%;55-<60%;85-<90%;90-<95%,COMMON_SUPPORT_ONLY

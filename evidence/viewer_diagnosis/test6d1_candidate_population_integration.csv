@@ -1,0 +1,7 @@
+candidate_family,original_test4_states,profiles,pct_of_paired_population,candidate_ranking_population,paired_population
+FOCUSED_SUCCESSFUL,C4_B1 + C5_B1,1255,15.3067,9762,8199
+SELECTIVE_CORE,C4_B3,364,4.4396,9762,8199
+ACCESS_SENSITIVE_NEIGHBOUR,C5_B2,377,4.5981,9762,8199
+SUCCESSFUL_FIRST_PASS,C3_B2,447,5.4519,9762,8199
+BROAD_DISTRIBUTED,C1_B5,1413,17.2338,9762,8199
+RESIDUAL,15 remaining breadth x concentration states,4343,52.9699,9762,8199

@@ -202,3 +202,62 @@ The two thin rows are published rather than deleted, and they do not carry the c
 `multilingual_title_minute_share` is consumed minutes on titles that happen to offer several audio tracks. It is a consumption-composition measure and is never multilingual supply.
 
 **What it does not establish:** a causal programme effect, psychological language openness, a stable identity, segment membership, persistence or headroom. Differences between the `ALL` and `PEER_N_GE_20` populations also carry population-selection effects and must not be attributed to opportunity matching alone.
+
+## Test 6D — does cross-origin behaviour add information inside the mechanisms?
+
+**Question:** cross-origin movement survived Test 6C's structural explanations, but that did not show it told us anything the candidate mechanisms had not already said. Test 6D asks whether it is **non-redundant**: after holding the mechanism fixed and conditioning on anchor structure, historical opportunity and activity, do profiles inside the same mechanism still differ in how far their viewing extends beyond their Baseline origin centre?
+
+**Why it matters:** a second measure of the same underlying behaviour is not a second piece of evidence. If cross-origin behaviour were implicit in the mechanisms, carrying it forward would complicate the eventual headroom diagnosis without strengthening it.
+
+**Decision recorded by these tables:** pass for provisional carry-forward as a non-redundant, cross-cutting behavioural dimension. Nothing here establishes incremental viewing, a causal effect, longitudinal persistence, a final segment or realisable headroom.
+
+**Four populations run through this set, and they are not interchangeable:**
+
+| Population | Profiles | Used for |
+| --- | ---: | --- |
+| Full Final-eligible | 9,762 | Ranking the original Test 4 breadth × concentration states, before pairing |
+| Paired | 8,199 | Eligible in both windows; the Test 6D analysis population, and the ranking population for peer-matching activity quintiles |
+| Common opportunity-band | 7,092 | The four shared opportunity bands used for standardised comparison (86.5% of paired) |
+| Common-supported | 5,510 | Peer cells of at least 20 profiles under **both** activity controls (67.2% of paired) |
+
+Findings from a smaller population do not generalise to a larger one, and the tables carry their own counts so a reader can see which applies.
+
+### Population and opportunity structure
+
+[`test6d1_candidate_population_integration.csv`](test6d1_candidate_population_integration.csv) — one row per candidate family: its original Test 4 states, profile count and share of the paired population, with both ranking populations stated. Membership comes from the Final-window state construction ranked over 9,762 profiles and joined without reranking, so no candidate is redefined by anything Test 6D measures. The six families sum to 8,199.
+
+[`test6d2_candidate_opportunity_structure.csv`](test6d2_candidate_opportunity_structure.csv) — the Final cross-origin title-day opportunity distribution for each family: mean, median, p10/p25/p75/p90, the Baseline comparison and anchor-strength context. The distributions are kept rather than reduced to means because they are lumpy: large parts of the population sit at opportunity shares near 57.6%, 89.4% and 92.3%. Those are structural mass points produced by catalogue composition and historical access, **not** discovered behavioural thresholds. Mean opportunity runs from 57.5% (Broad Distributed) to 73.3% (Access-Sensitive Neighbour).
+
+[`test6d2_candidate_anchor_origin_composition.csv`](test6d2_candidate_anchor_origin_composition.csv) — which Baseline anchor origins make up each family. This is where the arithmetic behind the opportunity differences becomes visible: Broad Distributed is about 80% Hindi-anchored, and Hindi is the largest origin ecosystem in the catalogue, so a Hindi anchor leaves proportionally less reachable catalogue outside it. The opportunity measure describes the share of accessible catalogue outside the reference ecosystem — it is not a measure of who is adventurous.
+
+### Raw behaviour, bands and standardisation
+
+[`test6d3a_raw_cross_origin_distribution.csv`](test6d3a_raw_cross_origin_distribution.csv) — actual, unstandardised Final cross-origin minute share per family: mean, median, quartiles and the share of profiles that watched **nothing** outside their anchor. It is the table behind the central observation that Focused Successful and the Access-Sensitive Neighbour average 41.3% and 41.9% while 26.9% and 9.8% of them respectively are anchor-only. Percentiles use linear interpolation, stated in the file.
+
+[`test6d3b_opportunity_band_behaviour.csv`](test6d3b_opportunity_band_behaviour.csv) — behaviour inside five-percentage-point bands of Final cross-origin opportunity, one row per family × band, with the band's support flags and its common weight. **A band describes the available choice environment, not the viewing outcome:** a profile in the 55–60% band had roughly that share of its reachable parent-title-days outside its anchor language, which says nothing about what it watched, nor about what was surfaced or considered.
+
+[`test6d3b_opportunity_standardised_summary.csv`](test6d3b_opportunity_standardised_summary.csv) — each family's raw mean beside its common-weight standardised mean, with support coverage. Standardisation applies one shared set of band weights to every family, so the comparison runs through the same mix of opportunity bands; it changes no profile's viewing or opportunity and estimates no causal effect. Raw and standardised answer different questions and neither replaces the other. Standardised to the common distribution, Focused Successful and the neighbour land at 35.7% and 35.8% — and still differ underneath.
+
+**Banding is not matching.** Sharing a band does not equalise anchor origin, anchor strength, activity or programme composition, which is precisely why the peer adjustment follows.
+
+### Peer-adjusted residuals
+
+[`test6d4_peer_adjusted_candidate_residuals.csv`](test6d4_peer_adjusted_candidate_residuals.csv) — one row per family × activity control × support population (`ALL` and `PEER_N_GE_20`), with actual share, peer expectation, mean and median residual, quartiles, the share above and below peers, peer-group sizes and retention. Peer cells match exact Baseline anchor origin, 5-point anchor-strength band, 5-point Final opportunity band and Final activity quintile; **candidate family is deliberately not in the key**, since a candidate-specific benchmark would be built from the distinction under evaluation. Activity quintiles are ranked over the 8,199 paired profiles — recorded in the file as `activity_quintile_population` — and the expectation is the inclusive peer-cell mean, recorded as `peer_expectation_convention`.
+
+Supported candidate means sit within about ±6 pp of peer expectation: Focused Successful −1.91/−1.76 pp, Selective Core +2.62/+2.25, Access-Sensitive Neighbour −6.06/−4.26, Successful First-Pass +4.31/+5.01, Broad Distributed −1.27/−1.01 and residual states +0.90/+0.54, under the active-days and watch-hours controls respectively. Broad Distributed looked naturally cross-origin in the raw data yet sits close to expectation once context is accounted for.
+
+[`test6d4_programme_sensitivity.csv`](test6d4_programme_sensitivity.csv) — the same comparison with dominant Final programme type added to the peer key, carrying the core result on the same profiles for comparison. It narrows the Access-Sensitive Neighbour's gap without reversing it, and it materially reduces support, so it is sensitivity evidence rather than a replacement for the core residual.
+
+### Dispersion inside the mechanism
+
+[`test6d5_within_candidate_residual_dispersion.csv`](test6d5_within_candidate_residual_dispersion.csv) — residual distribution per family × control on the common-supported population: mean, median, p10/p25/p75/p90, interquartile range and median absolute deviation. The IQR matters more than the mean here, because large positive and negative residuals offset one another: Focused Successful's middle half spans roughly 46 pp around a mean of about −1.6.
+
+[`test6d5_cross_control_robustness.csv`](test6d5_cross_control_robustness.csv) — Spearman and Pearson correlation between the two specifications, sign agreement and reversal, mean absolute difference, and the quartile-overlap counts including `stable_low` and `stable_high`. For Focused Successful: ρ = 0.985, 97.8% keeping the same sign, 91.1% and 94.4% quartile overlap. **This is robustness, not replication** — both specifications benchmark the same Final outcome and share most matching variables, so agreement says the reading is not an artefact of one activity benchmark. It says nothing about persistence over time.
+
+[`test6d5_diagnostic_tail_context.csv`](test6d5_diagnostic_tail_context.csv) — what the tails actually look like: for each family's `STABLE_LOW` and `STABLE_HIGH` groups, actual cross-origin viewing, opportunity, Baseline anchor share and residuals. Inside Focused Successful, 195 low-tail profiles averaged 11.7% actual cross-origin viewing against 92.7% for 202 high-tail profiles — about 81 points apart — while their outside-anchor opportunity (77.0% against 76.8%) and anchor strength (67.4% against 66.4%) were nearly identical. These are group-level comparisons, not matched pairs, and the quartiles are positional diagnostics rather than propensity categories.
+
+[`test6d5_focused_constituent_state_sensitivity.csv`](test6d5_focused_constituent_state_sensitivity.csv) — the same checks inside C5_B1 and C4_B1 separately, showing the dispersion exists within the constituent states rather than arising from pooling them into one family.
+
+[`test6d5_programme_tail_sensitivity.csv`](test6d5_programme_tail_sensitivity.csv) — whether tail profiles keep their direction once programme type joins the peer key, with the surviving support for each tail. High directional agreement on low coverage establishes consistency within the comparable subset only.
+
+**What this set does not prove:** that cross-origin movement produces additional viewing time, that any difference is caused by access, programme or recommendation, that these behaviours persist beyond the Final window, or that any tail group is a segment. The `stable_low` and `stable_high` labels mean the same profiles occupied the same residual quartile under both Final-window activity controls — nothing more.

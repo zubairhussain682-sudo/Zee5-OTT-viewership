@@ -1,0 +1,13 @@
+candidate_family,control_basis,common_supported_profiles,mean_residual_pp,median_residual_pp,p10_residual_pp,p25_residual_pp,p75_residual_pp,p90_residual_pp,iqr_residual_pp,median_absolute_deviation_pp,quantile_interpolation,mad_definition
+FOCUSED_SUCCESSFUL,ACTIVE_DAYS,856,-1.5856,-0.3264,-40.097,-24.5618,22.0705,40.2364,46.6322,22.5752,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+FOCUSED_SUCCESSFUL,WATCH_HOURS,856,-1.1187,-0.1165,-38.921,-24.4135,21.4581,38.6603,45.8716,21.5979,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+SELECTIVE_CORE,ACTIVE_DAYS,239,2.3048,-1.1024,-25.6421,-12.9426,19.8915,31.916,32.8341,14.8551,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+SELECTIVE_CORE,WATCH_HOURS,239,2.2097,-0.8906,-25.3254,-14.0707,19.5673,30.0271,33.638,16.2489,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+ACCESS_SENSITIVE_NEIGHBOUR,ACTIVE_DAYS,236,-5.5915,-6.0858,-41.6489,-30.6001,20.6839,35.2392,51.284,25.0297,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+ACCESS_SENSITIVE_NEIGHBOUR,WATCH_HOURS,236,-3.9401,-2.4762,-40.264,-27.8794,20.4798,38.0531,48.3592,25.041,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+SUCCESSFUL_FIRST_PASS,ACTIVE_DAYS,282,4.2674,0.6597,-18.7436,-4.0582,15.7458,26.4086,19.804,12.5637,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+SUCCESSFUL_FIRST_PASS,WATCH_HOURS,282,4.2125,-0.0436,-20.9293,-3.2056,16.7214,25.7574,19.927,12.4693,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+BROAD_DISTRIBUTED,ACTIVE_DAYS,1032,-1.2573,-0.3431,-14.367,-7.1776,5.0732,10.9959,12.2508,6.0728,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+BROAD_DISTRIBUTED,WATCH_HOURS,1032,-1.0272,-0.4763,-14.0065,-7.0044,5.1865,11.3775,12.1909,5.9577,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+RESIDUAL,ACTIVE_DAYS,2865,0.7931,-0.4763,-21.1357,-8.9877,11.3926,23.0211,20.3803,10.282,linear,median(abs(residual_pp - median(residual_pp))); unscaled
+RESIDUAL,WATCH_HOURS,2865,0.4607,-0.5358,-21.6084,-9.2149,10.5839,21.9745,19.7989,10.0807,linear,median(abs(residual_pp - median(residual_pp))); unscaled
