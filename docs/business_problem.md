@@ -39,4 +39,6 @@ Any headroom identified will be a **diagnosis, not a causal estimate** of what a
 
 ## Where this stands
 
-The framing, data model and mart architecture are in place, and the title-level mart has been audited. No segment definitions, intervention priorities or business findings exist yet. The next question is whether the viewer-level measurement base can support fair, comparable measures of behaviour under different levels of opportunity.
+The framing, data model and mart architecture are in place, and the viewer-level measurement base has been audited through grain, activity, breadth, concentration and post-choice response. Candidate behavioural mechanisms have been established beneath similar concentration and read against the catalogue each profile could realistically reach, and cross-origin catalogue propensity has been tested for redundancy against those mechanisms and provisionally retained as a cross-cutting dimension.
+
+What that is not: no segment definitions, intervention priorities, headroom estimates or business findings exist yet. The evidence so far describes behaviour within two 90-day observation windows. Whether the latest observed mechanisms persist, how profiles arrived at them, and where concentration leaves credible room for additional meaningful viewing are the open questions, and the next step is within-profile longitudinal analysis rather than any business recommendation.

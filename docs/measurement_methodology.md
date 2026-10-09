@@ -419,15 +419,147 @@ cross_origin_deviation_pp
   = 100 × (profile Final cross-origin minute share − peer expected share)
 ```
 
-Whether the focal profile is excluded from its own cell mean is **not established here**. The 6C.4B implementation was never persisted to the analysis workbench, and the published aggregate cannot settle it: every one of the 8,199 profiles carries a deviation and the smallest reported peer-cell size is 1, which is consistent both with an inclusive cell mean and with a leave-one-out mean over cells of at least two profiles. The wording therefore states the cell mean without claiming a leave-one-out rule it cannot support. Either convention shifts an individual deviation by a factor of n/(n−1), which is negligible at the supported cell sizes and leaves the published directions unchanged.
+Whether the focal profile is excluded from its own cell mean is **not established here** (the corrected Test 6D implementation, by contrast, uses the inclusive cell mean and records it in its published evidence). The 6C.4B implementation was never persisted to the analysis workbench, and the published aggregate cannot settle it: every one of the 8,199 profiles carries a deviation and the smallest reported peer-cell size is 1, which is consistent both with an inclusive cell mean and with a leave-one-out mean over cells of at least two profiles. The wording therefore states the cell mean without claiming a leave-one-out rule it cannot support. Either convention shifts an individual deviation by a factor of n/(n−1), which is negligible at the supported cell sizes and leaves the published directions unchanged.
 
 The primary supported comparison uses `peer_n ≥ 20`. Smaller cells may be shown for support diagnostics but do not carry the interpretation — this is a support rule, not a behavioural threshold.
 
 Programme-level deviations are descriptive averages of profile deviations after matching; they are not programme treatment effects. Differences between the full population and the `peer_n ≥ 20` subset also carry population-selection effects and must not be attributed to opportunity matching alone. Thin groups stay thin: `REALITY` is support-sensitive and `DOCUMENTARY_SPECIAL` is too small to carry a programme conclusion. Multilingual-title-minute quintiles are descriptive sensitivity bands, and where a boundary cuts through a mass of identical values — profiles at 100% multilingual-title minutes, for instance — that boundary is a ranking artefact, not a behavioural threshold.
 
+## Test 6D: cross-origin behaviour inside candidate mechanisms
+
+Test 6C established cross-origin movement relative to a fixed Baseline anchor and historically valid opportunity. Test 6D asks a different measurement question: does that behaviour contribute information beyond the breadth × concentration mechanisms already identified, or reproduce distinctions those mechanisms already capture?
+
+| Quantity | Definition |
+| --- | --- |
+| **Outcome** — Final cross-origin minute share | Qualified Final viewing minutes on parent titles whose `original_language` differs from the fixed Baseline anchor origin, over all qualified Final minutes. A Hindi-anchored profile watching a Telugu-origin production through Hindi audio still contributes cross-origin viewing: audio selection never changes a title's original-language classification. |
+| **Context** — Final cross-origin reachable title-day share | Reconstructed historically from profile existence, effective entitlement and parent-title availability, as defined under [cross-origin measurement](#title-origin-and-cross-origin-movement). It is the proportion of reachable parent-title-days outside the anchor ecosystem — not content presented, noticed, considered or expected to be watched. |
+
+Viewing and opportunity remain separate quantities throughout. Neither is divided by the other to create a conversion or utilisation score.
+
+### 6D.1 — population and candidate-state reconstruction
+
+Test 6D uses the same 8,199 profiles eligible in both windows as Test 6C. Candidate mechanisms are assigned from the original Test 4 Final-window states *before* restricting to the paired population: concentration and breadth quintiles are `NTILE(5)` by top-title qualified share and distinct meaningful titles, with `profile_id` as tie-breaker, ranked over the **full 9,762 Final-eligible profiles**. The resulting state is joined to the paired population without reranking.
+
+| Candidate family | Original Test 4 state |
+| --- | --- |
+| `FOCUSED_SUCCESSFUL` | C5_B1 and C4_B1 |
+| `SELECTIVE_CORE` | C4_B3 |
+| `ACCESS_SENSITIVE_NEIGHBOUR` | C5_B2 |
+| `SUCCESSFUL_FIRST_PASS` | C3_B2 |
+| `BROAD_DISTRIBUTED` | C1_B5 |
+| `RESIDUAL` | All remaining breadth × concentration states |
+
+The family names are interpretive labels for previously defined configurations. Membership is never recalculated using cross-origin viewing, opportunity, residuals or any Test 6D result — which is what preserves the non-redundancy test: a proposed dimension must be examined against the mechanisms as they already existed rather than allowed to redefine them in its own favour. The Final candidate state is the latest observed behavioural state in this dataset; Baseline-to-Final continuity is a separate longitudinal question, and Test 6D assigns no persistent or emerging identity.
+
+### 6D.2 — opportunity distribution before behavioural comparison
+
+For each candidate family, describe the Final cross-origin title-day opportunity distribution — count, mean, median, quartiles — together with Baseline anchor-origin composition and anchor strength. The purpose is to find out whether apparent behavioural differences might arise from differently structured reachable catalogues: a Hindi anchor and a Bengali anchor need not leave the same proportion of accessible catalogue outside the anchor, even under broad entitlement, so broad-access membership alone does not establish equal cross-origin opportunity.
+
+Distributions are retained rather than reduced to means. Repeated opportunity-share values arise from common combinations of catalogue structure and historical access; they are **structural mass points, not discovered behavioural thresholds**. This step contains no behavioural ranking and establishes no propensity difference — it determines how cautiously the later comparisons may be read.
+
+### 6D.3 — raw behaviour, opportunity bands and common-weight standardisation
+
+**6D.3A.** For every candidate, describe the Final cross-origin minute share: mean, median, 25th and 75th percentiles, and the proportion of profiles with zero cross-origin Final viewing (anchor-only). The anchor-only proportion is retained because two families can have nearly identical means while containing very different numbers of profiles who never viewed outside their anchor. These are actual, unstandardised population descriptions and must stay available beside any conditional estimate.
+
+**6D.3B.** Place profiles into five-percentage-point bands of Final cross-origin title-day opportunity share, and compare candidate behaviour within them. A profile in the 55–60% band had roughly 55–60% of its historically reachable parent-title-days outside its Baseline anchor language — the band classifies the *available choice environment*, not the viewing outcome.
+
+The supported common-band comparison used four shared bands covering about 86.5% of the paired population:
+
+| Final cross-origin opportunity band | Paired profiles | Common weight |
+| --- | ---: | ---: |
+| 10 – <15% | 883 | 0.125 |
+| 55 – <60% | 3,743 | 0.528 |
+| 85 – <90% | 1,049 | 0.148 |
+| 90 – <95% | 1,417 | 0.200 |
+| Common-band population | 7,092 | 1.000 |
+
+Candidate families occupy those bands in different proportions, so comparing unadjusted means mixes behavioural differences with differences in the distribution of opportunity. The standardised comparison applies one common set of band weights, taken from the pooled paired population across the shared bands, to every family:
+
+```text
+band_mean(g, b)          = mean Final cross-origin minute share for candidate g in band b
+common_band_weight(b)    = paired profiles in shared band b ÷ all paired profiles in the shared bands
+standardised_mean(g)     = Σ_b [ common_band_weight(b) × band_mean(g, b) ]
+```
+
+The weights sum to one and are identical for every family. This is a descriptive standardisation of observed group means: it alters no profile's viewing or opportunity, creates no matched pairs and estimates no causal effect of access. A raw candidate mean describes the actual average in that candidate's observed population; a standardised mean answers the narrower question of behaviour under a common distribution of the selected bands. Neither replaces the other, and results from the common-band population do not automatically generalise beyond it.
+
+**Banding is not matching.** Sharing a band does not establish equivalence on anchor origin, anchor strength, activity or programme composition, all of which remain possible explanations for within-band differences. That limitation motivates 6D.4 rather than being treated as though standardisation had completed the conditioning.
+
+### 6D.4 — candidate-blind peer adjustment
+
+Each profile's Final cross-origin viewing is compared against the mean observed among profiles with similar anchor structure, historical opportunity and activity. The peer-cell key is exact `baseline_anchor_origin` → 5-point band of `baseline_anchor_share` → 5-point band of Final opportunity share → Final activity quintile, with `ACTIVE_DAYS` and `WATCH_HOURS` as separate specifications. The two activity variables are never combined into a composite, crossed into a joint cell, or averaged into one benchmark.
+
+**Population rule for activity quintiles.** Activity quintiles are `NTILE(5)` across the **full 8,199 paired profiles**, ordered by the Final activity measure with `profile_id` as deterministic tie-breaker; every paired profile receives a quintile and enters peer-cell construction before any support filtering. This differs from the candidate-state ranking population, and the two must not be interchanged:
+
+| Construction | Ranking population |
+| --- | --- |
+| Test 4 breadth × concentration state used by 6D | Full Final-eligible, 9,762 |
+| Test 6D activity quintile used for peer matching | Paired eligible, 8,199 |
+
+An initial implementation reused full-population activity quintiles for peer matching and was rejected when it failed to reproduce the established Test 6C.4B programme results. After the quintiles were rebuilt over the 8,199 paired profiles, those historical deviations reproduced, and only the corrected results are carried forward.
+
+```text
+peer_expected_share(p, control) = mean Final cross-origin minute share in p's peer cell
+cross_origin_residual_pp(p, control)
+    = 100 × ( observed Final cross-origin minute share(p) − peer_expected_share(p, control) )
+```
+
+The corrected Test 6D implementation uses the **inclusive** peer-cell mean, recorded in the published evidence as `peer_expectation_convention`. Reproducing Test 6C.4B's published group results does not establish whether that earlier, unpersisted implementation included or excluded the focal profile, and this repository does not claim otherwise — see the [note on that convention](#programme-composition-and-peer-matching).
+
+Candidate family is deliberately not part of the peer key: a candidate-specific benchmark would condition the comparison on the very classification whose additional value is under evaluation. The primary support rule is `peer_n ≥ 20`, counted before the restriction is applied; cells below it remain relevant to coverage diagnostics but carry no supported interpretation. This threshold concerns the reliability of the comparison population, not an intrinsic behavioural distinction.
+
+A positive residual means more cross-origin Final viewing than the observable peer context, a negative residual less. It is not a conversion rate and not a causal programme, entitlement or mechanism effect. Candidate-level summaries report supported residuals separately for each control, always with support counts and coverage, because comparisons between a full candidate population and its supported subset are affected by support selection as well as conditioning.
+
+**Programme sensitivity.** A stricter variant adds dominant Final programme type to the peer key while preserving the other conditions, interpreted only where the expanded cells satisfy `peer_n ≥ 20`. It does not replace the core residual, because an extra matching dimension materially reduces support, and its results cannot be presented as covering every profile in the original family.
+
+### 6D.5 — within-candidate dispersion and robustness
+
+Candidate-level means do not reveal whether cross-origin behaviour varies *inside* a mechanism. For the primary cross-control comparison, retain profiles whose peer cells hold at least 20 profiles under **both** specifications:
+
+```text
+common_supported(p) = peer_n_ACTIVE_DAYS(p) ≥ 20 AND peer_n_WATCH_HOURS(p) ≥ 20
+```
+
+That population is 5,510 of the 8,199 paired profiles (67.2%), and every distributional or cross-control claim refers to it rather than to the full paired population. For each candidate and specification, report count, mean and median residual, 25th and 75th percentiles and the interquartile range. The IQR is retained alongside the mean because substantial positive and negative residuals offset one another: a candidate with a near-zero mean residual can still contain profiles behaving very differently from their peers.
+
+Cross-control robustness is assessed with the Spearman rank correlation, the share retaining the same residual sign, the share reversing sign, and the mean absolute difference in percentage points. **These are not replication.** Both specifications use the same Final cross-origin outcome and share most matching variables, so high correlation is evidence of robustness to the activity benchmark, not independent observation of behaviour and not a persistent viewer trait.
+
+**Diagnostic quartile agreement.** Within each candidate's common-supported population, rank the residuals under each control into positional quartiles with `NTILE(4)` and `profile_id` as tie-breaker:
+
+```text
+stable_low  = bottom residual quartile under ACTIVE_DAYS AND under WATCH_HOURS
+stable_high = top residual quartile under ACTIVE_DAYS AND under WATCH_HOURS
+```
+
+These labels mean only that the same profiles occupy the same tail under both Final-window activity controls. They are **not** behavioural thresholds, final segments, propensity categories or evidence of persistence across time. Where many profiles share identical residuals at a quartile boundary, `NTILE(4)` splits ties by `profile_id`: reproducible, but not a behavioural boundary.
+
+For the two overlapping tail groups, inspect actual Final cross-origin minute share, Final cross-origin opportunity share, Baseline anchor share and the corresponding residuals. This translates residual dispersion back into observable viewing and checks whether the extremes merely reflect different starting anchors or opportunity. Similar group-level means do not establish individual matching; these are descriptive context layered onto the peer-conditioned result.
+
+Because `FOCUSED_SUCCESSFUL` combines C5_B1 and C4_B1, the residual-spread and cross-control checks are repeated within the constituent states, testing whether heterogeneity exists inside them or merely arises from pooling. The constituent checks do not redefine the parent family or create new labels. A programme-adjusted tail sensitivity recomputes the benchmark with dominant Final programme type in the key, subject to the same minimum support, and reports both directional agreement and surviving support for each tail — a high agreement percentage with low programme-matched coverage establishes directional consistency within the comparable subset only.
+
+### 6D.6 — decision and measurement boundaries
+
+**Pass for provisional carry-forward as a non-redundant, cross-cutting behavioural dimension.** The supporting measurement evidence is the substantial within-candidate variation in Final cross-origin viewing after structural, opportunity and activity conditioning, together with robustness to alternative activity controls and programme-context sensitivity where support permits.
+
+The decision introduces no new calculation, threshold, composite score or category, and it does not show how much incremental viewing a profile would generate if presented with more content. Cross-origin viewing can displace existing viewing rather than increase total qualified minutes; historically reachable titles are not necessarily titles shown, noticed or considered; and movement beyond an earlier original-language centre reveals neither native language nor psychological willingness to explore.
+
+| ✓ May now say | ✗ May not yet say |
+| --- | --- |
+| A provisional, opportunity-conditioned descriptor of cross-origin allocation | Native-language or mother-tongue preference |
+| Evidence beyond the breadth × concentration mechanisms | Psychological language openness or an intrinsic trait |
+| Input to later behavioural fingerprints and mechanism-led interpretation | A calibrated cross-origin conversion or catalogue-utilisation rate |
+| One component of a more discriminating unrealised-opportunity assessment | Causal effects of access, supply, programme composition or recommendations |
+| | A permanent viewer identity, or a final segment derived from Test 6D residuals |
+| | Longitudinal persistence inferred from two control specifications of the same Final outcome |
+| | Incremental viewing headroom inferred from cross-origin movement or unused reachable titles alone |
+
+The dimension is therefore available to inform later fingerprints and mechanism-led interpretation, but its role in any final segment must be earned through longitudinal evidence and relevance to the diagnosis rather than assumed from within-window robustness. Test 6D closes the non-redundancy question; it closes neither persistence nor realisable headroom.
+
 ## What the language and origin measures license
 
-These rules support the term **cross-origin catalogue propensity under realistic opportunity** as an observed behavioural tendency after conditioning, and nothing more. They do not turn it into a native-language preference, language-openness psychology, a causal effect, a permanent identity, a segment or a headroom score. Whether that tendency contributes non-redundant information inside the concentration mechanisms already established is a separate question, downstream of this methodology.
+These rules support the term **cross-origin catalogue propensity under realistic opportunity** as an observed behavioural tendency after conditioning, and nothing more. They do not turn it into a native-language preference, language-openness psychology, a causal effect, a permanent identity, a segment or a headroom score.
+
+Test 6D has since established that this tendency carries information the breadth × concentration mechanisms do not already capture, which is why it is carried forward provisionally. The progression the measurement layer licenses is therefore language supply → consumed-language behaviour → cross-origin viewing against a fixed anchor → non-redundant inside mechanisms. Raw language breadth remains descriptive throughout. Persistence across time and contribution to realisable headroom remain untested.
 
 ## Analytical eligibility
 

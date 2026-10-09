@@ -822,3 +822,114 @@ That extra information would not establish headroom. Watching productions from a
 That was the reason to test non-redundancy. The question was not simply whether cross-origin behaviour differed between candidates. It was whether that difference contributed independent evidence to the path from **available choice to credible viewing opportunity**.
 
 Test 6D would make that distinction, beginning with the candidate mechanisms already earned and refusing to promote cross-origin propensity merely because Test 6C had found a compelling pattern. No answer from that later test is carried backward into this checkpoint.
+
+## 20. The same viewing mechanism, a different use of available choice
+
+**Date:** 2026-10-08
+
+**Question:** after understanding concentration through candidate mechanisms and reconstructing the opportunity behind them, does cross-origin behaviour add information that matters to the eventual viewing-headroom diagnosis — or does it merely rename behaviour we already understand?
+
+**Why it matters:** the business concern sounds simpler than it is. Viewing can stay healthy while attention concentrates on a small part of the catalogue, and the question is where that concentration is preference-driven and where more viewing might genuinely be possible. Several shortcuts to answering it had already been rejected: a large catalogue is not a large reachable choice set, a reachable choice set is not a field of choices anyone seriously considers, concentrated viewing is not necessarily weak engagement, and a profile returning to a successful core may be doing exactly what it wants.
+
+The specific risk in Test 6D was different. If cross-origin behaviour were already implicit in the mechanisms, carrying it forward would not strengthen the headroom diagnosis — it would only make it more complicated. **A second measure of the same underlying behaviour is not a second piece of evidence.** Test 6D had to earn one conclusion: that cross-origin behaviour tells us something genuinely additional about how viewers use available choice.
+
+**Evidence — keep the mechanism fixed rather than rebuilding it:** the starting population was the 8,199 profiles eligible in both windows, and their Final candidate mechanisms came from the original Test 4 breadth × concentration construction. Those quintiles were ranked over the full Final-eligible population of 9,762 *before* the paired profiles were selected. Filtering first and reranking would have silently changed what the states mean.
+
+| Final candidate mechanism | Profiles | Share of paired |
+| --- | ---: | ---: |
+| Focused Successful (C5_B1 + C4_B1) | 1,255 | 15.3% |
+| Selective Core (C4_B3) | 364 | 4.4% |
+| Access-Sensitive Neighbour (C5_B2) | 377 | 4.6% |
+| Successful First-Pass (C3_B2) | 447 | 5.5% |
+| Broad Distributed (C1_B5) | 1,413 | 17.2% |
+| Residual states | 4,343 | 53.0% |
+
+These are latest observed candidate states, not new cross-origin categories. The distinction matters for the longitudinal stage to come: a profile's Final state is its observed endpoint in this dataset, and its Baseline history will eventually explain how it arrived there without being allowed to rewrite the endpoint retrospectively.
+
+The reconstruction immediately exposed a problem with naive comparison. Broad Distributed profiles had far more viewing activity than the narrow families, and different Baseline anchor strength and anchor-origin composition. More activity means more chances to encounter additional titles; a weaker anchor means a different starting point for measuring movement away from it.
+
+**Evidence — the field of available choice was not evenly distributed:** mean Final cross-origin title-day opportunity ran from about 57.5% for Broad Distributed to 72.5% for Focused Successful and 73.3% for the Access-Sensitive Neighbour. The distributions were not smooth: large parts of the population sat at opportunity shares of about 57.6%, 89.4% and 92.3%. Those are structural mass points, reflecting which origin ecosystem formed the anchor, the entitlement historically held and the composition of the reachable catalogue — not discovered behavioural thresholds.
+
+Broad Distributed was instructive. Around 80% of those profiles were Hindi-anchored, and Hindi is the largest title-origin ecosystem in the catalogue, so a Hindi anchor leaves proportionally less of the reachable catalogue outside it. Broad access does not erase that arithmetic. The opportunity measure was not telling us who was adventurous; it was telling us what proportion of accessible catalogue lay outside the profile's reference ecosystem.
+
+Focused Successful and the Access-Sensitive Neighbour, however, had strikingly similar opportunity distributions — essentially identical medians and quartile mass points — and comparatively similar anchor structures. That made them the useful pair to follow: if their cross-origin behaviour differed, the explanation could not simply be that one had a much larger outside-anchor catalogue.
+
+**Evidence — the same average concealed different shapes:** the first raw comparison almost made the two families look interchangeable. Focused Successful averaged 41.3% Final cross-origin viewing; the Access-Sensitive Neighbour averaged 41.9%. Roughly two-fifths of qualified viewing in each family went to titles originally made outside the ecosystem that had dominated Baseline viewing.
+
+Underneath, 26.9% of Focused Successful profiles spent *all* their qualified Final viewing inside their anchor origin, against 9.8% of the neighbour. The same average level of cross-origin consumption did not imply the same behavioural distribution — and that difference could still have been unequal opportunity rather than behaviour.
+
+**Evidence — comparing behaviour inside common opportunity bands:** Test 6D.3B placed profiles into five-percentage-point bands of observed Final cross-origin opportunity and compared candidates within them. A profile in the 55–60% band had roughly 55–60% of its historically reachable parent-title-days associated with productions originating outside its Baseline anchor language. **That is not what it watched** — the band classifies the available choice environment, not the viewing outcome, and certainly not what was surfaced, noticed or considered.
+
+The bands exist because different candidate mechanisms do not necessarily operate within the same field of available choice. A profile with 90% of its reachable opportunity outside its anchor is not situated like one with 30%, and comparing their cross-origin viewing directly would mistake the size of the available field for a difference in how they behave inside it.
+
+The bands served a second purpose. Candidate families occupy opportunity levels unevenly, so even their within-band comparisons could roll up into averages that mostly reflect how many members sit in high- or low-opportunity bands. The standardised comparison was therefore restricted to the bands shared across candidates, and one common set of band weights — taken from the pooled paired population in those bands — was applied to every family. Four shared bands covered 7,092 profiles, about 86.5% of the paired population.
+
+| Shared opportunity band | Paired profiles | Common weight |
+| --- | ---: | ---: |
+| 10 – <15% | 883 | 0.125 |
+| 55 – <60% | 3,743 | 0.528 |
+| 85 – <90% | 1,049 | 0.148 |
+| 90 – <95% | 1,417 | 0.200 |
+
+Standardisation changes the basis on which group averages are compared; it changes nobody's viewing or opportunity, creates no matched pairs and estimates no causal effect. Raw averages describe what actually happened in each population; standardised averages answer the narrower question of behaviour under a common opportunity distribution. Neither replaces the other.
+
+Within the 55–60% band, Focused Successful and the neighbour averaged about 37.0% and 36.6% cross-origin viewing — yet roughly 33% of the first group was anchor-only against about 8% of the second. In the 85–90% band Focused Successful ran about 13 points lower; in 90–95% the comparison reversed and it ran about 8 points higher. Standardised to the common distribution, the two families landed at 35.7% and 35.8%: virtually identical means.
+
+There was no clean hierarchy in which one candidate was always more cross-origin than another, and the standardisation was informative precisely because it did not settle the question. Equalised opportunity still left different shapes of behaviour underneath the means.
+
+Banding is also not matching. Sharing a band does not make two profiles equivalent on anchor origin, activity or programme composition, so this was an intermediate test rather than a completed conditioning exercise — which is exactly why the peer adjustment still had to follow.
+
+**Evidence — what remained after context:** Test 6D.4 changed the benchmark. Instead of asking how much cross-origin content a candidate consumed in absolute terms, it asked how far that consumption sat above or below the level observed among peers with similar starting and opportunity conditions: same Baseline anchor origin, same 5-point anchor-strength band, same 5-point Final opportunity band, same Final activity quintile — with active days and watch hours run as separate specifications. Candidate membership was deliberately *not* part of the peer key, since a candidate-specific benchmark would have been built from the very distinction under evaluation.
+
+| Final candidate | Active-days residual | Watch-hours residual |
+| --- | ---: | ---: |
+| Focused Successful | −1.91 pp | −1.76 pp |
+| Selective Core | +2.62 pp | +2.25 pp |
+| Access-Sensitive Neighbour | −6.06 pp | −4.26 pp |
+| Successful First-Pass | +4.31 pp | +5.01 pp |
+| Broad Distributed | −1.27 pp | −1.01 pp |
+| Residual states | +0.90 pp | +0.54 pp |
+
+The result complicated some earlier impressions and sharpened others. Broad Distributed had looked naturally cross-origin in the raw data, with almost no profiles staying entirely inside their anchor — yet after accounting for anchor structure, opportunity and activity its average sat close to peer expectation. Broad distribution was real, but much of its cross-origin level was consistent with the context already surrounding the family. Successful First-Pass stayed four to five points above expectation, Selective Core modestly positive, and Focused Successful only slightly below: its large anchor-only mass did not translate into an equally large negative average. The Access-Sensitive Neighbour, despite nearly the same raw average as Focused Successful, sat about 4.1 points further below peer expectation under active-days matching and 2.5 points under watch-hours. Adding dominant programme type narrowed that gap and substantially reduced the supported population, so programme composition explained some of the difference without reversing it.
+
+One correction belongs in the record. The first implementation of this step reused activity quintiles ranked across the full eligible population, and it failed to reproduce the established Test 6C.4B programme results. The candidate states correctly keep their full-population rankings, but the peer-matching activity quintiles had historically been ranked over exactly the 8,199 paired profiles. Once that was restored, the earlier 6C.4B deviations reproduced, and only the corrected result was carried forward. A comparison method cannot quietly change its reference population halfway through and still claim continuity with the evidence already established.
+
+**Evidence — dispersion inside the mechanism:** the candidate averages were modest, which left the sharper question: what if the most meaningful information was hidden *inside* each candidate rather than between candidate means? If everyone inside a mechanism behaves alike, knowing the mechanism already tells us most of what cross-origin behaviour could. If the same mechanism hides markedly different movement, and that survives a change of activity benchmark, then mechanism membership is leaving real behavioural information unexplained.
+
+Focused Successful gave the clearest test, on 856 profiles with support under both controls.
+
+| Check | Result |
+| --- | ---: |
+| Middle half (IQR) of peer residuals | ≈ 46 pp |
+| Spearman correlation, active-days against watch-hours ranks | 0.985 |
+| Profiles keeping the same residual sign | 97.8% |
+| Bottom-quartile overlap across controls | 91.1% |
+| Top-quartile overlap across controls | 94.4% |
+
+That is not small variation around one typical viewer, and the same profiles kept appearing near the extremes when the benchmark changed. Those quartiles were positional checks, not new propensity categories.
+
+Translating the tails back into actual viewing is where the result became consequential. Within Focused Successful, 195 profiles sat in the lowest residual quartile under both controls and 202 in the highest. The low tail averaged **11.7%** actual Final cross-origin viewing; the high tail averaged **92.7%** — roughly 81 percentage points apart, inside the same candidate mechanism. Their average Final outside-anchor opportunity was 77.0% against 76.8%, and their Baseline anchor strength 67.4% against 66.4%. These are group-level comparisons rather than exact matched pairs, but alongside the peer adjustment they substantially weaken the idea that the difference is merely unequal availability. The residuals reinforce it: about 40 points below peer expectation at one extreme and 39 above at the other.
+
+Both groups still showed the concentrated, generally successful pattern that put them in Focused Successful, and both had substantial outside-anchor catalogue available. What separated them was how differently they allocated attention across the original-language boundaries of the catalogue. For a Hindi-anchored viewer that might mean a Final window still dominated by Hindi-origin titles in one case and by Bengali-, Tamil- or Telugu-origin productions in the other — productions that could still be watched in Hindi audio, since the distinction concerns the origins of the titles consumed rather than the language heard.
+
+The heterogeneity was not manufactured by pooling two states. Focused Successful combines C5_B1 and C4_B1, and both constituent states contained profiles at the low and high extremes: residual IQRs of about 49 and 39 percentage points with cross-control Spearman correlations of 0.989 and 0.964.
+
+Nor was the signal equally strong everywhere. Selective Core and the Access-Sensitive Neighbour showed considerable residual variation, Successful First-Pass a more moderate spread, and Broad Distributed highly consistent ordering across controls but much less separation in magnitude. A high correlation does not make a dimension equally important everywhere; it only says the ordering is robust to the two controls tested.
+
+**Caveat — robust across comparisons is not persistent across time:** the two specifications are alternative benchmarks for the *same* Final viewing outcome, sharing most structural matching variables. Their agreement establishes robustness to the activity benchmark, not independent replication, and certainly not that these behaviours persisted through the 180 days or would continue after February 2026. The primary common-supported population was 5,510 of the 8,199 paired profiles, and none of these distributional claims extends automatically to profiles whose peer comparisons lacked support.
+
+**What this changed:** cross-origin catalogue propensity under realistic opportunity is not merely another description of the breadth × concentration mechanisms. After accounting for anchor origin, anchor strength, historical outside-anchor opportunity and activity, profiles in the same Final candidate mechanism still showed substantial differences in cross-origin viewing, robust across both activity specifications and not explained away by programme context where support remained. The strongest evidence was not a ranking of candidate means but the coexistence of very different uses of accessible catalogue inside one mechanism.
+
+**Decision: pass for provisional carry-forward as a non-redundant, cross-cutting behavioural dimension.** The dimension may now be described as an observed, opportunity-conditioned tendency that is non-redundant with the Test 4 and 5 mechanisms, informative inside several of them unevenly, robust to the choice of activity benchmark within the Final window, and one layer of a larger evidentiary argument. It may not be described as native-language preference or psychological openness, a permanent identity, a score or a set of high/low segments, proof that a viewer wants more content, or an estimate of viewing headroom.
+
+Why this matters to the business question: the evidence is accumulating in layers, and each layer has to resolve a different uncertainty rather than count the same behaviour twice. Concentration says where attention was distributed unevenly; post-choice mechanism says whether the chosen content worked; realistic opportunity says which alternatives were accessible; cross-origin propensity adds whether the profile has actually extended meaningful consumption beyond its earlier origin centre. A profile that has demonstrated that movement offers a different behavioural basis for considering compatible alternatives than one whose viewing stays almost entirely inside its established centre — which can strengthen the plausibility of further engagement when access and engagement signals also support it.
+
+It does not establish that additional viewing time would result. Watching a Tamil-origin title instead of a Hindi-origin one may redistribute the same hours, and the absence of cross-origin viewing does not prove unwillingness, since those titles might never have been surfaced or considered. **Demonstrated cross-origin movement ≠ incremental viewing headroom**, exactly as reachable but unwatched catalogue is not headroom. Those limits are not reasons to discard the dimension; they are why it must remain one part of the argument rather than the argument itself.
+
+**What it made us ask next:** time. The Final 90 days are the latest observed endpoint in a 180-day dataset, and the Baseline window holds the history of how profiles reached it. Two profiles can finish in Focused Successful with one arriving from Focused Successful and the other from Broad Distributed — the same endpoint, different trajectories, and potentially different confidence about what the concentration means.
+
+The longitudinal stage should therefore not treat the two windows as competing identities. It should ask whether the Final state represents continuity, emergence or transition, and whether cross-origin behaviour alongside it has a corresponding history. One caution belongs with it from the start: because the Baseline anchor is selected as the largest Baseline origin share, movement away from it partly reflects the construction of the reference and regression toward less extreme values, so a Baseline-to-Final rise in cross-origin viewing is not by itself proof of growing exploratory behaviour.
+
+Only after that can mechanism, realistic opportunity, cross-origin propensity where relevant, and historical persistence be brought together to examine realisable viewing headroom. Test 6 closes here, with a provisional dimension that has earned its place and a next stage that must determine how much historical weight it can carry.
+
+**Evidence tables:** the thirteen Test 6D tables under [`evidence/viewer_diagnosis`](../evidence/viewer_diagnosis/README.md#test-6d--does-cross-origin-behaviour-add-information-inside-the-mechanisms), covering candidate population integration, opportunity structure, raw and opportunity-standardised behaviour, peer-adjusted residuals with their programme sensitivity, within-candidate dispersion, cross-control robustness and the diagnostic tail context.

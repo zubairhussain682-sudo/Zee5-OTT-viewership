@@ -8,7 +8,7 @@
 
 Answering them in order matters. Asking about opportunity before understanding mechanism is how a platform ends up "fixing" viewers who were perfectly happy.
 
-That sequence has since been extended rather than replaced. Realistic opportunity is now reconstructed before behaviour is interpreted (Test 5), and language work (Test 6) has added one provisional stage after it: **concentration → mechanism → realistic opportunity → opportunity-conditioned propensity → persistence → realisable viewing headroom**. Only the propensity stage is newly earned. Persistence and headroom remain downstream questions, and the sequence is still a set of questions rather than a score.
+That sequence has since been extended rather than replaced. Realistic opportunity is now reconstructed before behaviour is interpreted (Test 5), and language work (Test 6) has added one stage after it: **concentration → mechanism → realistic opportunity → opportunity-conditioned propensity → persistence → realisable viewing headroom**. Test 6D established that cross-origin behaviour contains information the existing candidate mechanisms do not already capture, so that propensity stage is justified — but it is carried provisionally, because its persistence over time and its contribution to realisable headroom remain untested. Each layer should resolve a different uncertainty rather than count the same behavioural evidence twice, and the sequence is still a set of questions rather than a score.
 
 ## The measurement bridge
 
@@ -55,7 +55,9 @@ REALISABLE VIEWING HEADROOM
 
 Opportunity conditioning asks whether a behavioural mechanism still looks like the same mechanism once the realistic choice set behind it is visible. It changes how the pathway is read, not the order in which it runs.
 
-The propensity stage is the newest one and the only part of it earned so far: profiles differ in how far their viewing moves beyond the catalogue ecosystem it started in, and those differences survive the realistic opportunity behind them. Everything below it — fingerprints, within-profile stability, segments and headroom — is still downstream, and the propensity stage itself has yet to prove it adds anything the mechanisms above it do not already say.
+Opportunity conditioning asks whether an apparent mechanism survives once the realistic choice set behind it becomes visible. Opportunity-conditioned propensity asks something further: whether profiles facing comparable observable circumstances — including profiles occupying the *same* candidate mechanism — use the available alternatives differently.
+
+Test 6D answered that second question for cross-origin behaviour. Within the same Final mechanism, some profiles allocate almost no viewing to productions originating outside their Baseline anchor language while others allocate most of it, and those differences survive peer conditioning on anchor structure, historical opportunity and activity, under both activity-control specifications tested. That is why the propensity stage now occupies a justified but provisional position. Its presence does not make it a mandatory segmentation axis: a dimension may carry genuine information yet contribute unevenly across mechanisms, or matter less once longitudinal behaviour and headroom relevance are examined. Everything below it — fingerprints, within-profile stability, segments and headroom — remains downstream.
 
 ### Constraints decide what can be read fairly — they are not behaviour
 
@@ -96,6 +98,12 @@ The first figures from the marts make these requirements concrete. [Depth within
 | Responsiveness to prominent titles | Defensible observable proxies, if any hold up | No exposure data, so no causal claim and no use of later information |
 
 These are candidates. Some may prove unstable, redundant with another dimension, or unsupported by enough evidence, and stay descriptive rather than defining segments. Consumed-language breadth remains one of those descriptors: Test 6 kept it as a description of behaviour rather than letting it become a language-openness dimension.
+
+Cross-origin catalogue propensity is further along. Test 6D tested it for redundancy against the mechanisms and found substantial differences remaining *within* candidate families after anchor, opportunity and activity conditioning, so it is provisionally retained as a cross-cutting dimension rather than a mechanism of its own. Provisionally, because its longitudinal persistence, its relevance to final segmentation and its contribution to realisable headroom are all still unproven.
+
+The Final 90-day state is the latest observed behavioural classification available in this dataset. It describes consumption across the window ending 27 February 2026; it does not claim to describe what a profile was doing on that particular day, or to predict behaviour beyond the observation period.
+
+That endpoint matters because the diagnosis is ultimately about the population as it stood at the end of observation, informed by its history. The Baseline window supplies that history: it can show whether the Final state was already present, emerged from another state, or replaced an earlier pattern. Two profiles may both finish in Focused Successful with one arriving from the same state and the other from Broad Distributed — the same latest observed mechanism, different trajectories. The longitudinal stage must preserve both facts, qualifying the endpoint rather than erasing it or treating the two windows as competing final classifications.
 
 ### Post-choice response is not one construct
 
@@ -169,6 +177,8 @@ The project can now make a stronger distinction than behaviour alone allowed —
 
 A behavioural fingerprint is the recurring configuration of relevant dimensions for a profile under realistic opportunity. It describes *how* someone watches. It is not an opportunity label and not a verdict.
 
+Cross-origin catalogue propensity is now eligible to contribute to that configuration, because Test 6D found substantial within-mechanism information the candidate states did not capture. Eligibility is not automatic inclusion: its contribution must still be judged against longitudinal evidence, support and the eventual headroom question. A fingerprint should explain how a profile consumes, not merely carry a longer list of features.
+
 ### Mechanism-led segments
 
 Segments are meant to explain *why* consumption concentrates — not to reproduce acquisition cohorts or produce an elaborate taxonomy. Explanations worth testing include healthy preference depth, low engagement, sampling without retention, reliance on prominent titles and persistent exploration. Constrained access may explain apparent concentration, but it remains contextual evidence rather than becoming a viewer's behavioural segment identity.
@@ -192,6 +202,8 @@ Opportunity conditioning makes that diagnosis more defensible, and it also makes
 - opportunity exists under conditions where expansion is plausible.
 
 **Reachable but unwatched catalogue ≠ realisable headroom.** Opportunity is necessary to interpret headroom. It is not sufficient to create it.
+
+Cross-origin evidence adds a layer to that argument without replacing it. A profile that has demonstrated meaningful consumption beyond its earlier origin centre offers a different behavioural basis for considering compatible alternatives than one whose viewing stays almost entirely inside it — which can strengthen the plausibility of further engagement where access and engagement signals agree, and weaken the case for treating a narrow but successful core as an engagement problem. Neither inference is automatic, and the same caution applies in its own right: **demonstrated cross-origin movement ≠ incremental viewing headroom.** Watching a Tamil-origin title instead of a Hindi-origin one may redistribute the same hours, and the absence of cross-origin viewing does not prove unwillingness when those titles may never have been surfaced. The business question must also separate additional catalogue breadth from additional viewing volume: a wider range of productions is not necessarily more minutes watched.
 
 ### Language is three observations, not one dimension
 
@@ -252,6 +264,8 @@ After anchor structure, historical cross-origin opportunity and activity context
 
 "Propensity" here means an observed behavioural tendency in two windows of evidence. It is not a latent psychological trait, a native-language measure, a causal parameter, a permanent identity, a segment axis or a headroom score.
 
+Test 6D's verdict on it was **pass for provisional carry-forward as a non-redundant, cross-cutting behavioural dimension**: the dimension has earned its conceptual place because it describes observable use of available catalogue beyond an earlier viewing centre that the candidate mechanism alone does not capture. It has not earned a permanent identity, a high/low propensity rule, a calibrated score or a headroom estimate. Its prospective value is in helping distinguish merely accessible catalogue from alternatives a profile has demonstrated some capacity to engage with, alongside mechanism, engagement and eventually persistence.
+
 ### Programme composition remains context, not explanation
 
 Programme type changes the environment in which cross-origin behaviour happens, so it had to be tested as an alternative explanation rather than assumed away. After profiles were matched on Baseline origin structure, Final historical cross-origin opportunity and activity, the remaining programme deviations were modest for the well-supported groups, and multilingual-title viewing intensity was non-monotonic rather than rising steadily with cross-origin behaviour.
@@ -262,6 +276,10 @@ One naming rule follows from this. A profile's multilingual-title minute share i
 
 ### What remains unresolved
 
-Cross-origin propensity is a candidate dimension, not an established one. The open question is whether it carries information the project does not already have: when two profiles sit in the same opportunity-aware mechanism from Tests 4 and 5, does their cross-origin behaviour say something new about that mechanism, or does it merely re-describe behaviour already understood?
+Test 6 is closed. Cross-origin behaviour does add observable information beyond the candidate mechanisms, within the supported Final-window analysis — but that conclusion is deliberately bounded. The project has established neither the persistence of cross-origin propensity across time nor its contribution to final segments and realisable headroom.
 
-Until that is answered, cross-origin movement is not folded into a fingerprint, and the stages below propensity on the pathway — within-profile persistence, mechanism-led segments and realisable headroom — remain exactly where they were.
+The next stage is within-profile longitudinal analysis across the Baseline and Final windows, around three questions: which profiles remain in the same candidate mechanism and which transition, and what that history changes about interpreting their Final state; which mechanism signatures and cross-origin behaviours have enough historical consistency to strengthen a fingerprint rather than being window-specific observations; and which combinations of mechanism, opportunity, demonstrated use of alternatives and temporal evidence can distinguish healthy concentration from credible unrealised viewing opportunity.
+
+The Baseline anchor needs particular care in that stage. Because it is selected as the largest origin share within Baseline, later movement away from it partly reflects the construction of the reference and regression toward less extreme values, so a Baseline-to-Final rise in cross-origin viewing is not by itself proof of growing exploratory behaviour. The longitudinal methodology has to address that before any temporal interpretation is promoted.
+
+No final segments, persistence verdicts or headroom estimates exist at this checkpoint.
