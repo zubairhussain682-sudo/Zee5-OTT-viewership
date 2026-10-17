@@ -2,6 +2,8 @@
 
 This journal records the reasoning behind consequential measurement decisions — the question that forced each one, what the evidence showed, and what it made us ask next. It is not a log of every query.
 
+Where an entry carries a **Date**, it is the date the entry was written up, not the date the underlying analysis ran; write-up can follow the analysis by several days, and the entries describe the order of the reasoning rather than a run schedule.
+
 ---
 
 ## 1. Ranking titles was the wrong question
@@ -978,3 +980,726 @@ The longitudinal stage should therefore not treat the two windows as competing i
 Only after that can mechanism, realistic opportunity, cross-origin propensity where relevant, and historical persistence be brought together to examine realisable viewing headroom. Test 6 closes here, with a provisional dimension that has earned its place and a next stage that must determine how much historical weight it can carry.
 
 **Evidence tables:** the thirteen Test 6D tables under [`evidence/viewer_diagnosis`](../evidence/viewer_diagnosis/README.md#test-6d--does-cross-origin-behaviour-add-information-inside-the-mechanisms), covering candidate population integration, opportunity structure, raw and opportunity-standardised behaviour, peer-adjusted residuals with their programme sensitivity, within-candidate dispersion, cross-control robustness and the diagnostic tail context.
+
+## 21. The same viewer, a different window: why the investigation had to change
+
+**Date:** 2026-10-17
+
+**Question:** We had established that concentration was not one behaviour, that realistic catalogue opportunity mattered, and that viewers within the same behavioural configuration could make very different use of content outside their established title-origin ecosystem. But were these differences lasting features of their consumption, or simply descriptions of one 90-day period?
+
+**Why it matters:** Until this point, much of the investigation had worked by comparing populations. Tests 1–3 established where attention was concentrated and how breadth, activity and title allocation interacted. Test 4 brought post-choice response into the picture. Test 5 reconstructed the catalogue viewers could realistically access. Test 6 then asked whether consumption beyond a viewer's established title-origin ecosystem contributed something that the existing mechanisms could not already explain.
+
+Those tests progressively improved our understanding of what we were looking at. What they could not yet tell us was how a particular viewer had arrived there.
+
+This was a consequential difference in approach, not merely another dimension to add to our tables.
+
+Consider two profiles that both finish in Focused Successful. Each concentrates viewing on a small number of meaningful titles. Each may have adequate catalogue access, and each may demonstrate successful completion after choosing content. Yet one may have maintained almost identical consumption across both windows, while the other may previously have watched substantially more titles before narrowing its choices.
+
+Their Final configurations look similar. Their histories do not.
+
+The first could represent a consistently preferred consumption pattern. The second could represent a change in circumstances, availability, programme mix, viewing allocation or preference. We cannot identify which explanation is correct merely from the transition, but treating both viewers as historically identical would discard evidence we already had the means to examine.
+
+The investigation therefore needed to change its unit of reasoning. Instead of asking only how groups differed within a window, Test 7 would follow the same eligible viewer from Baseline to Final and examine what changed, what remained, and what the change could legitimately mean.
+
+This matters to the central business question because a catalogue opportunity cannot be inferred from concentration alone. Even after accounting for realistic access and post-choice response, we still need to understand whether a viewer's relationship with the catalogue appears persistent, newly emerging or transitional.
+
+**Evidence — the first problem was deciding who could actually be compared.**
+
+The dataset provides two consecutive 90-day observation windows:
+
+- Baseline: 1 September–29 November 2025.
+- Final: 30 November 2025–27 February 2026.
+
+Eligibility was evaluated independently in each window, using the established rules rather than rewriting them to obtain a convenient balanced sample.
+
+| Population | Eligible profiles |
+| --- | --- |
+| Baseline | 8,761 |
+| Final | 9,762 |
+| Eligible in both windows | 8,199 |
+| Baseline-only eligible | 562 |
+| Final-only eligible | 1,563 |
+
+The longitudinal population is therefore 8,199 viewers, not all 9,762 viewers eligible in Final.
+
+That difference matters. A profile without an eligible Baseline comparison does not necessarily represent a newly acquired viewer. It may have existed earlier without meeting the necessary observation requirements. Nor can a missing eligible Baseline be interpreted as zero viewing, a failed historical performance or an inability to grow.
+
+The 1,563 Final-only profiles remain valid members of the latest observed population. They have contemporary viewing, access and supported post-choice evidence. What they lack is the same kind of longitudinal comparison.
+
+Their absence from the paired analysis is a limitation of historical evidence, not a reason to exclude them from eventual behavioural segmentation or potential viewing opportunity.
+
+**Evidence — preserving the original behavioural states required another precaution.**
+
+The breadth and concentration quintiles established in Test 4 were defined separately on the full eligible populations of the two windows.
+
+If we had restricted the dataset to the 8,199 paired profiles and recalculated those quintiles, we would have silently changed the classifications we were supposedly trying to track.
+
+That would have produced a rather convenient but invalid longitudinal comparison: the same labels, with different underlying definitions.
+
+Instead, Test 7 preserved the original full-window concentration × breadth states and joined them by profile identity. The state assignments were not recalibrated to make the transitions look cleaner.
+
+There is a second consequence. A move from one C×B state to another represents a change in relative classification across independently ranked populations. It does not necessarily mean a corresponding absolute reduction or increase in titles, watch hours or concentration.
+
+Those actual measurements must accompany every state transition.
+
+**What this changed:** we now had two legitimate but different analytical populations: the full Final endpoint for eventual segmentation, and the paired population for historical explanation.
+
+We also established that a Final behavioural state must be interpreted as an endpoint with a history, where that history is observable, rather than a permanent viewer identity.
+
+**What it made us ask next:** if we track the same viewers using the original classifications, how many actually remain in the same behavioural configuration? And when a family label appears stable, how much behaviour might still be changing underneath it?
+
+## 22. A stable family is not necessarily a stable behaviour
+
+**Date:** 2026-10-17
+
+**Question:** How often do viewers retain their behavioural configuration across two windows, and what does remaining within the same family actually tell us?
+
+**Why it matters:** By this point we had become accustomed to discussing Focused Successful, Selective Core, Successful First-Pass and the other candidate families as useful behavioural descriptions.
+
+But a candidate family is an analytical grouping. It is not a diagnosis that a viewer must permanently satisfy.
+
+The longitudinal comparison offered the first opportunity to examine how much continuity those labels really contained.
+
+**Evidence — family recurrence was considerably more common than exact-state recurrence.**
+
+Among the 8,199 paired viewers:
+
+| Measure | Viewers | Share |
+| --- | --- | --- |
+| Remained in the same candidate family | 4,883 | 59.56% |
+| Remained in the exact same C×B state | 2,583 | 31.50% |
+
+The difference is 2,300 viewers.
+
+This was not merely an interesting discrepancy. It warned us that the apparent stability of a family can conceal movement between its constituent states.
+
+Consider the six families individually:
+
+| Baseline family | Paired viewers | Stayed in family | Retention |
+| --- | --- | --- | --- |
+| Focused Successful | 1,295 | 692 | 53.4% |
+| Selective Core | 425 | 47 | 11.1% |
+| Access-Sensitive Neighbour | 447 | 65 | 14.5% |
+| Successful First-Pass | 481 | 72 | 15.0% |
+| Broad Distributed | 1,443 | 1,058 | 73.3% |
+| Residual | 4,108 | 2,949 | 71.8% |
+
+At first glance, Broad Distributed and Residual both appear highly persistent. Roughly seven in ten original members remain in their respective families.
+
+But the similarity largely disappears when we inspect their construction.
+
+Broad Distributed is the single C1_B5 state. Remaining Broad means remaining in that exact classification.
+
+Residual contains 15 constituent C×B states. Of its 2,949 family stayers, only 930 stayed in precisely the same state. The other 2,019 moved between states without ever leaving Residual.
+
+Calling both families equally stable would therefore confuse the persistence of a label with the persistence of the behaviour contained by that label.
+
+The same caution applies elsewhere. Focused Successful contains two related narrow-breadth states, so a viewer can remain within the family while moving between C4_B1 and C5_B1.
+
+**Evidence — even exact-state persistence did not mean consumption stood still.**
+
+The 1,058 Broad Distributed stayers had a median increase of 14 meaningful titles and 5.47 qualified watch hours.
+
+They remained C1_B5 despite substantial increases in actual consumption.
+
+Conversely, the 692 Focused Successful stayers had a median change of zero meaningful titles and approximately zero qualified watch hours, even though many experienced greater historically reachable catalogue opportunity.
+
+These viewers had retained similar labels, yet their underlying consumption histories were different.
+
+That distinction matters because persistence is not automatically evidence of a ceiling, and movement is not automatically evidence of growth.
+
+A viewer may remain Broad Distributed while consuming substantially more. Another may move out of Broad Distributed while still watching more titles than before.
+
+We had to examine the measured change rather than let the state transition make the argument for us.
+
+An attempted adjustment did not survive scrutiny.
+
+Test 7.3 attempted to account for changes in viewing activity while comparing breadth and concentration trajectories.
+
+The method created peer cells within the original Baseline state, using separate bands for starting activity and activity change. Watch hours and active days were considered independently, rather than combined into a new activity score.
+
+Numerical coverage was high: 7,827 profiles had supported active-day comparisons, and 7,777 had supported watch-hour comparisons.
+
+But the peer counts concealed a comparability problem.
+
+In one Broad Distributed watch-hour reference cell, Baseline viewing ranged from approximately 134 to 568 hours. An active-day cell included viewers beginning anywhere from 25 to 53 active days, with changes ranging from +2 to +47 days.
+
+Having enough viewers in a cell did not mean those viewers were sufficiently similar.
+
+A benchmark can be calculated correctly and still be too coarse to support the interpretation being placed on it.
+
+The activity-conditioned residuals were therefore retained as numerical diagnostics, not accepted as validated like-for-like adjusted effects. We did not quietly promote them because they happened to be available, nor invent a new matching rule simply to obtain a more pleasing result.
+
+The direct same-viewer observations remained valid. What failed was the stronger claim that those observations had been adequately adjusted for activity.
+
+**What this changed:** the investigation moved away from treating stability as a single binary attribute.
+
+We now needed to distinguish family recurrence, exact-state recurrence and absolute movement in the measurements defining those states. Each answered a different question.
+
+It also became clear that a peer benchmark must be evaluated according to the question it was designed to answer. Support counts alone do not establish comparability.
+
+**What it made us ask next:** if a viewer changes breadth, concentration or viewing volume, does the content they choose subsequently work better? Or can consumption expansion and post-choice engagement move in opposite directions?
+
+## 23. More viewing did not necessarily mean better post-choice response
+
+**Date:** 2026-10-17
+
+**Question:** When viewers changed their consumption patterns, did completion, episodic continuation and completed-content replay move with them?
+
+**Why it matters:** Breadth and qualified watch hours describe the extent and volume of consumption. They do not independently tell us how the viewer responded after choosing content.
+
+This distinction had already been important in Test 4. It became more consequential once we began following individual viewers.
+
+Imagine a profile that increases meaningful-title breadth and qualified watch hours between windows. We have direct evidence of additional realised consumption. But if supported completion simultaneously declines, the expansion has a more complicated interpretation than simply saying the viewer became more successfully engaged.
+
+Likewise, a viewer who narrows consumption and completes more of what they start may be moving toward content that works better for them, even if their total viewing hours decline.
+
+Neither pattern alone determines prospective headroom.
+
+**Evidence — measurement support differed substantially.**
+
+The three post-choice measures were not available on identical populations.
+
+| Measure | Paired viewers supported in both windows |
+| --- | --- |
+| Completion | 6,882 |
+| Episodic continuation | 5,331 |
+| Fixed 14-day replay | 6,717 |
+| All three measures together | 5,317 |
+
+These denominators are essential to the interpretation.
+
+A viewer could qualify for a completion comparison while having insufficient observed next-episode opportunities for a supported continuation rate. Another could have too few known replay outcomes.
+
+Unsupported viewers were not coded as unsuccessful. They remained part of the viewing population, with their measurement limitations explicitly retained.
+
+Support was also uneven between families.
+
+Among the 1,295 Baseline Focused Successful viewers, only 601 had completion support in both windows. In contrast, all 1,443 Baseline Broad Distributed viewers had dual completion and replay support.
+
+That creates a real danger in comparing raw family-level post-choice averages. In one family we may be describing almost everybody; in another, disproportionately the more active and extensively measured members.
+
+**Evidence — the three measures did not tell one unified engagement story.**
+
+On their respective dual-supported populations:
+
+| Measure | Baseline mean | Final mean |
+| --- | --- | --- |
+| Completion | 79.82% | 79.78% |
+| Continuation | 68.28% | 62.84% |
+| Replay | 24.96% | 12.18% |
+
+Completion barely moved on average. Continuation fell, and replay fell considerably.
+
+But the near-flat completion average concealed meaningful individual variation. The middle half of individual completion changes ranged from approximately −7.16 to +7.69 percentage points.
+
+Some viewers improved substantially. Others moved in the opposite direction. The population average concealed both.
+
+The disagreement between measures also persisted when we restricted the analysis to the same 5,317 viewers supported on all three. It was not merely a consequence of comparing different marginal populations.
+
+This was an important result. Completion, continuation and replay cannot simply be collapsed into one measure of whether engagement improved.
+
+They reflect different opportunities and different behaviours.
+
+Replay's substantial decline required particular caution. The Final window contains unresolved follow-up opportunities, and the known-outcome population is affected by censoring. Even a fixed 14-day replay horizon does not remove every observation-window difference.
+
+The decline was also widespread. It appeared among highly concentrated viewers and among persistent Broad Distributed viewers.
+
+We therefore could not reasonably interpret a falling replay rate as evidence that a particular family had become less satisfied, less attached or more exploratory.
+
+**Evidence — transitions exposed conflicting behavioural responses.**
+
+Among 563 viewers entering Focused Successful, supported completion often improved. Yet those viewers generally narrowed their meaningful-title breadth, and their typical qualified watch hours declined.
+
+Among 603 viewers leaving Focused Successful, breadth and qualified hours often increased, but supported completion did not uniformly improve.
+
+The transition from Selective Core into Residual showed a similar complication. Its viewers tended to broaden consumption, and many increased watch hours, but completion, replay and continuation did not move together.
+
+The meaning of movement depended on the particular origin and destination.
+
+One of the central lessons was that greater realised viewing volume and a stronger post-choice response are not interchangeable achievements.
+
+A profile can consume more even while completing a lower proportion of starts. Another can complete a higher proportion while consuming less.
+
+Those observations should change how confidently we interpret a pathway, but neither should automatically disqualify a viewer from representing additional viewing opportunity.
+
+A further limitation emerged for continuation.
+
+Continuation depends on eligible next-episode opportunities. The proportion of episodic content watched, series structure, release patterns and the number of observable opportunities can differ substantially between populations.
+
+More episodic viewing does not mechanically guarantee a higher continuation rate, but programme mix affects the population and opportunities on which that rate is measured.
+
+Without a specific programme-mix adjustment, continuation could not carry the same interpretive weight as a clean, independently comparable behavioural response.
+
+We retained it as secondary evidence rather than expanding the investigation with another test of relatively limited decision value.
+
+**What this changed:** post-choice measures became complementary, sometimes contradictory evidence, not a single behavioural-success score.
+
+Completion and replay remained important to understanding whether selected content worked and whether previously completed content attracted return viewing. But we also had to preserve support, censoring and programme context whenever drawing conclusions.
+
+**What it made us ask next:** if broader viewing does not necessarily improve post-choice response, does it at least produce more actual consumption? How often are additional titles accompanied by additional qualified hours, and how often is viewing simply spread differently?
+
+## 24. More titles were not the same as more viewing
+
+**Date:** 2026-10-17
+
+**Question:** When the same viewers expanded their meaningful-title breadth, did they also generate more qualified viewing, or did they distribute their existing consumption across a different set of titles?
+
+**Why it matters:** The business question concerns additional qualified viewing, not simply the number of different titles appearing in a viewer's history.
+
+An increase in breadth is relevant because it shows that the viewer is consuming a wider set of parent titles. But ten more meaningful titles do not necessarily represent ten additional opportunities converted into incremental viewing time.
+
+Some viewers may consume more titles by watching less of each. Others may begin additional episodic programmes and accumulate considerably more viewing hours. Still others may watch the same limited set of programmes for longer.
+
+Each pattern says something different about their relationship with the catalogue.
+
+We needed to separate expansion of choice from expansion of consumption volume, without imposing the assumption that one must always accompany the other.
+
+**Evidence — the distinction was substantial, not marginal.**
+
+Among the 8,199 paired viewers:
+
+| Observed change | Viewers |
+| --- | --- |
+| Meaningful titles and qualified hours both increased | 3,784 |
+| Meaningful titles increased, qualified hours did not | 1,652 |
+
+These figures describe observed change, not opportunity qualification.
+
+The first population had realised expansion in both title breadth and total viewing. The second had broadened its consumption while failing to generate additional qualified hours.
+
+That second population could not simply be discarded.
+
+An increase in meaningful breadth is itself behavioural evidence. It may show willingness to distribute attention among a broader set of titles, even if that movement currently coincides with less total viewing.
+
+But we also could not present it as incremental viewing growth.
+
+The correct description was narrower: more meaningful catalogue choices were observed, without an increase in total qualified viewing.
+
+**Evidence — historical expansion appeared in very different consumption configurations.**
+
+Broad Distributed provided one of the clearest examples.
+
+Of its 1,058 persistent viewers, 601 increased both meaningful-title breadth and qualified watch hours.
+
+Their family classification did not change. They already occupied the highest breadth quintile and lowest concentration quintile, yet their consumption continued to expand.
+
+That observation challenged a tempting interpretation: that viewers who already watched extensively must be approaching a meaningful ceiling.
+
+The data did not establish such a ceiling.
+
+Residual offered a different illustration. Among its 2,949 family stayers, many changed their exact C×B state, while others retained it. Substantial viewing growth occurred in both situations.
+
+Meanwhile, viewers leaving highly concentrated configurations sometimes increased both breadth and hours, but others broadened without additional time.
+
+The same pair of metrics therefore carried different implications depending on the viewer's starting configuration and trajectory.
+
+**Evidence — catalogue opportunity also changed.**
+
+For the paired population, historically reachable parent titles increased by a median of 64.
+
+Many profiles experienced increased catalogue reach while retaining the same broad access classification.
+
+That strengthened the case for considering consumption growth alongside realistic opportunity. It also reinforced an important boundary inherited from Test 5: technically reachable catalogue is not necessarily noticed, appealing or seriously considered catalogue.
+
+A viewer can gain access to additional titles and still prefer the original core. Another can consume more because suitable alternatives became available. The observed increase alone cannot distinguish those explanations.
+
+More importantly, the fact that catalogue access expanded and historical viewing grew does not identify how much additional viewing remains possible after the Final window.
+
+**What this changed:** realised expansion became an important but bounded form of evidence.
+
+We now had a stronger basis for identifying viewers who had already demonstrated an ability to consume more, or to consume more broadly.
+
+But the project needed two separate future judgments:
+
+- Whether credible prospective incremental qualified-viewing headroom remained.
+- Whether the viewer showed a plausible behavioural inclination to realise it.
+
+Historical growth contributes to the second question. It does not automatically settle the first.
+
+Neither growth in titles nor growth in hours was made a universal qualification rule.
+
+**What it made us ask next:** even where viewing broadened or volume increased, did that consumption extend beyond the viewer's established title-origin ecosystem? And did it do so repeatedly, rather than in a single isolated observation?
+
+## 25. Moving outside the anchor was real; interpreting that movement was harder
+
+**Date:** 2026-10-17
+
+**Question:** Does viewing outside the Baseline title-origin anchor recur across windows, and how much weight can that recurrence carry in understanding future catalogue consumption?
+
+**Why it matters:** Test 6D had established that cross-origin consumption contributed information not completely described by the existing breadth × concentration mechanisms.
+
+But its strongest findings were cross-sectional. The activity-peer comparisons used the same Final viewing outcome, and agreement between those comparisons did not demonstrate temporal persistence.
+
+Test 7 offered something different: the opportunity to observe whether the same viewers actually consumed outside their fixed Baseline anchor in both periods.
+
+This was more than asking whether their Final outside-origin share was high.
+
+It was asking whether their behaviour had an observable history.
+
+**Evidence — outside-origin consumption was recurrent for a substantial population.**
+
+Among 8,199 paired viewers:
+
+| Observation | Viewers |
+| --- | --- |
+| Outside-anchor viewing observed in both windows | 7,129 |
+| Outside-anchor viewing on multiple dates in both windows | 6,644 |
+| At least one same outside-origin ecosystem revisited across windows | 6,792 |
+| At least one identical outside-origin parent title revisited across windows | 5,827 |
+
+These were different kinds of recurrence, not four interchangeable measures.
+
+Viewing outside the anchor in both windows establishes cross-window presence.
+
+Viewing on multiple dates provides a stronger observation of repeated activity, but two dates and twenty dates are not equivalent. A binary multiple-date indicator does not preserve that intensity.
+
+Returning to the same origin ecosystem can mean choosing different titles from that ecosystem. Returning to the identical parent title can instead represent an established relationship with familiar content.
+
+The latter is particularly important. Repeated cross-origin consumption is not necessarily repeated discovery.
+
+A viewer could watch the same Tamil-origin series across many dates and both windows. That is valid cross-origin recurrence relative to a Hindi-origin anchor, but it does not demonstrate a continuing appetite for newly encountered Tamil-origin titles.
+
+Frequency, title turnover, qualified time and programme structure would become important when the eventual segments required a deeper explanation.
+
+**Evidence — the average movement looked substantial, but the reference was asymmetric.**
+
+Across the paired population, average outside-anchor qualified viewing share increased from approximately 36.6% in Baseline to 48.5% in Final.
+
+Average outside-anchor qualified viewing hours increased from approximately 17.31 to 21.13.
+
+The additional outside hours are an observed quantity. They cannot, however, automatically be interpreted as incremental total hours. A viewer may allocate more time outside the anchor while reducing time spent on anchor-origin content.
+
+The share change required an additional qualification.
+
+The Baseline anchor was selected as the title-origin ecosystem that already held the largest share of the viewer's Baseline qualified viewing.
+
+That makes the starting reference a selected maximum. Subsequent viewing may move away from it partly because the original reference was unusually dominant by construction.
+
+A rise in outside share is therefore not, by itself, proof of increasing openness or strengthening exploratory propensity.
+
+The evidence we could defend was more precise: outside viewing was observed, sometimes repeatedly; its actual volume and composition changed; and historically reachable opportunities existed.
+
+Those observations mattered. The stronger psychological or prospective conclusions did not follow automatically.
+
+A peer-comparability issue further narrowed the interpretation.
+
+Test 6D's peer comparisons matched viewers on Baseline anchor origin, anchor strength, Final outside-anchor catalogue opportunity and separate activity quintiles.
+
+They did not require viewers to belong to the same C×B state or candidate family.
+
+That design was deliberate. A candidate-blind benchmark can establish how a family compares with a wider population under specified contextual conditions.
+
+But it cannot simultaneously be interpreted as a within-state comparison that has held the viewer's whole behavioural mechanism constant.
+
+This distinction became important during the family interpretations.
+
+A negative average cross-origin residual for Access-Sensitive Neighbour, for example, did not establish that its viewers possessed weak cross-origin propensity relative to otherwise similar C5_B2 viewers.
+
+Some of the difference could be associated with behavioural characteristics that were not part of the peer key.
+
+The original calculations were not thereby invalidated. The error was allowing a population-relative benchmark to support a stronger claim than its design permitted.
+
+Test 6D's within-family dispersion still mattered: viewers sharing a candidate configuration could differ substantially in their observed cross-origin allocation. But the candidate-blind residual alone could not determine which particular viewer had stronger intrinsic inclination after all other behavioural differences were controlled.
+
+**What this changed:** cross-origin behaviour retained its place as potentially informative, but its evidentiary role became more carefully defined.
+
+The most useful interpretation was not simply that one family ranked above another on average. It was that viewers sharing superficially similar concentration patterns could have different histories of using accessible alternative content.
+
+This evidence could strengthen a later inclination argument, particularly where actual recurrence, title-level response and realistic opportunity converged.
+
+But it remained an observational dimension, not a conversion rate, psychological trait or estimate of future incremental viewing.
+
+**What it made us ask next:** with history, post-choice outcomes, realistic access and cross-origin evidence now available, what happens when we bring all those layers together for the original candidate families? Would each family survive as a coherent behavioural explanation, or would its internal trajectories force us to reconsider?
+
+## 26. Six families, six investigations, and no single route to growth
+
+**Date:** 2026-10-17
+
+**Question:** Once the longitudinal evidence is integrated, which candidate-family mechanisms remain credible, which populations show meaningful expansion, and which viewers deserve further consideration for prospective viewing opportunity?
+
+**Why it matters:** Up to this point, the investigation had accumulated several evidence layers separately.
+
+We knew how viewers distributed attention among titles. We understood more about what happened after selection. We had reconstructed historically legitimate access and observed cross-origin consumption. We now had the same viewers' historical movements.
+
+But a viewer does not experience those dimensions separately.
+
+A profile can be highly concentrated, completion-positive, repeatedly consume titles outside its earlier origin ecosystem, gain catalogue access, and still maintain nearly identical total viewing hours.
+
+Another can begin with moderately selective viewing, broaden its title consumption considerably, gain qualified hours, and simultaneously show weaker completion.
+
+The question was no longer whether each metric was interesting. It was whether the combined evidence justified a coherent interpretation for the same viewers.
+
+This made Test 7.7 different from simply reproducing another set of summary tables.
+
+We examined the six families through their original mechanisms, membership changes, realistic opportunity, actual breadth and viewing volume, supported post-choice responses, and cross-origin histories.
+
+Crucially, we did not treat the family labels as final segments.
+
+**Focused Successful: narrowness did not automatically mean unrealised opportunity.**
+
+Focused Successful brought us back to the question that originally motivated much of the investigation.
+
+Its Final population contained 1,918 viewers, with a median of only two meaningful titles and approximately 4.1 qualified viewing hours.
+
+The original completion-positive signature provided evidence that many meaningful choices worked. The broad family also contained different viewing histories.
+
+Among 1,295 paired Baseline members, 692 remained within Focused Successful, while 603 left.
+
+The stayers were particularly revealing. Many gained a substantially larger historically reachable catalogue, yet their median breadth and qualified-hours changes were nearly zero.
+
+That was evidence of persistent narrow consumption alongside increasing technical opportunity. It was not proof that the available alternatives were appealing, nor that the viewer had reached a consumption ceiling.
+
+The leavers showed a different pattern. 445 of the 603 increased both meaningful-title breadth and qualified viewing hours.
+
+They became the first provisional historical expansion group.
+
+But even there, we were careful about what the movement meant. Leaving a very narrow breadth state makes increasing breadth partly expected. Actual additional watch hours provided a separate corroborating observation.
+
+We did not turn the remaining 158 leavers into unsuccessful viewers. They simply lacked the same initial combination of realised expansion evidence, and their final disposition remained open to wider context.
+
+The central lesson was that concentrated consumption can be healthy, persistent, transitional or expanding, and the family name alone cannot decide which.
+
+**Selective Core: attachment and expansion could coexist.**
+
+Selective Core, C4_B3, occupied a different part of the concentration–breadth space.
+
+Its original post-choice pattern was completion-negative and relatively replay-positive against activity-comparable viewers. Under realistic access conditioning, the completion contrast remained clearer than the replay advantage in all access contexts.
+
+It also proved far less persistent than Focused Successful.
+
+Only 47 of 425 paired Baseline members remained in Selective Core, while 280 moved into Residual.
+
+That mobility cautioned against treating C4_B3 as a lasting viewer identity.
+
+Yet the small persistent group contained viewers who increased breadth and qualified hours without leaving the state.
+
+This mattered because expansion did not require abandoning a selective consumption configuration. Some viewers maintained the same overall structural pattern while using more of the catalogue and generating additional qualified viewing.
+
+Cross-origin recurrence also appeared within this group, although the small support population and the limitations of candidate-blind peer benchmarks prevented us from treating its average residual as an intrinsic propensity measure.
+
+Selective Core therefore contributed a different kind of evidence from Focused Successful: realised expansion within an apparently selective configuration, alongside substantial movement toward other states.
+
+**Access-Sensitive Neighbour: the label was not the explanation.**
+
+Access-Sensitive Neighbour, C5_B2, occupied the highest concentration quintile with somewhat greater breadth than the narrowest Focused Successful state.
+
+Its original completion-negative, replay-positive signature resembled selective attachment.
+
+But the name Access-Sensitive was a working investigative label, not evidence that access caused its behaviour.
+
+Of 447 paired Baseline members, only 65 remained in C5_B2. Another 172 moved into Residual and 127 into Focused Successful.
+
+Those pathways were not equivalent.
+
+Among the 172 moving to Residual, 100 increased both meaningful-title breadth and qualified hours.
+
+Among the 127 moving into Focused Successful, none increased meaningful-title breadth, and most reduced their viewing hours, although a supported subset showed improved completion.
+
+The same original configuration could therefore lead toward broader realised consumption or toward narrower viewing with different post-choice responses.
+
+This reinforced a recurring lesson: the origin and destination of a behavioural transition matter more than the fact that a viewer left a family.
+
+The negative average Test 6D outside-origin residual was retained as a contextual population comparison, not as evidence that every C5_B2 viewer had weak inclination to explore alternatives.
+
+**Successful First-Pass: successful choices were not the same as additional hours.**
+
+Successful First-Pass, C3_B2, retained a relatively completion-positive, replay-negative original signature.
+
+This was a useful counterpart to the more replay-oriented selective states.
+
+It also showed low exact-family persistence: only 72 of 481 paired Baseline members remained.
+
+Its largest destination was Residual, with 232 viewers. Among them, 133 increased both meaningful-title breadth and qualified watch hours.
+
+Yet supported completion declined on average for the broader transition.
+
+Conversely, 114 moved into Focused Successful, typically narrowing their title consumption and reducing hours, while completion improved among the measurable subset.
+
+These opposing histories gave us a useful relational finding.
+
+A viewer may broaden consumption and add qualified viewing without improving every post-choice measure. Another may become more selective and complete more of what they start without generating additional total viewing.
+
+Neither outcome is inherently superior.
+
+Our objective requires us to understand which behaviours may support additional viewing, not rank viewers according to one preferred direction of change.
+
+**Broad Distributed: current success was not evidence of a ceiling.**
+
+Broad Distributed, C1_B5, was markedly different from the earlier families.
+
+Its Final members typically consumed 52 meaningful titles and approximately 110 qualified viewing hours across 55 active days, with a low top-title viewing share.
+
+It was also one of the most persistent configurations: 1,058 of 1,443 paired Baseline members remained in C1_B5.
+
+But persistence did not imply stagnation.
+
+Among those stayers, 601 increased both meaningful-title breadth and qualified viewing hours.
+
+Another 346 increased breadth without additional hours.
+
+At first, it was tempting to deprioritise these viewers because their existing consumption was already extensive.
+
+That reasoning was rejected.
+
+The business objective is not restricted to finding poorly engaged viewers who need correction. An already successful viewer can still possess credible incremental viewing headroom, provided the opportunity and inclination evidence support it.
+
+Equally, historical growth among extensive consumers does not establish that unlimited future viewing remains feasible.
+
+The correct decision was to retain different growth histories without assuming either saturation or automatic opportunity.
+
+Broad Distributed made a particularly important contribution to the eventual segmentation philosophy: strong existing consumption and further scalable consumption are not mutually exclusive.
+
+**Residual: the largest family was not one mechanism.**
+
+Residual required the greatest change in interpretive approach.
+
+Its 4,905 Final viewers occupied 15 constituent C×B states. Some configurations were closer to concentrated viewing; others were moderately distributed or relatively broad.
+
+A family-wide post-choice average could therefore conceal conflicting state-level mechanisms.
+
+Among its 2,949 paired stayers, 2,019 changed exact C×B state internally.
+
+That was an important discovery. Much of the movement we were trying to understand could occur entirely inside the supposedly unchanged Residual family.
+
+Among those internal state movers, 1,045 increased both breadth and qualified viewing hours. Another 470 viewers increased both while retaining the same exact Residual state.
+
+Residual was also the destination for substantial expansion pathways originating in the previous families.
+
+One decision had to be revisited. The overall Broad Distributed → Residual transition showed declining median qualified hours, which initially made it seem less compelling.
+
+But 144 individual viewers within that pathway had increased both breadth and hours. Their median qualified-hours gain was approximately 23.33 hours.
+
+The negative median of the larger pathway was not a legitimate reason to dismiss those individual growers.
+
+The lesson was clear: a cohort average can describe the overall pathway while concealing a distinctly different subset of viewers within it.
+
+That is precisely the kind of population heterogeneity the final segmentation must preserve.
+
+**The advancement decisions remained provisional.**
+
+Across the six family passes, the analyst developed a working advancement record based on different combinations of observed expansion, persistence, trajectory and supporting evidence.
+
+| Working route | Additional distinct provisional viewers |
+| --- | --- |
+| Focused Successful-origin expansion | 445 |
+| Selective Core pathways, net of previously counted viewers | 305 |
+| Access-Sensitive Neighbour pathways | 120 |
+| Successful First-Pass pathways | 161 |
+| Broad Distributed incoming and persistent growers | 875 |
+| Residual internal, persistent and incoming growers | 1,659 |
+| Working provisional total | 3,565 |
+
+The 3,565 is the analyst-established count of distinct provisional candidates, not the sum of overlapping family observations. Overlaps between advancement pathways were accounted for as each family pass was added: Selective Core, for example, contributed 330 candidate observations, of which 25 had already been selected through Focused Successful, leaving 305 additional viewers. What has not yet been performed is a separate, independent audit of the complete profile-ID advancement ledger. That audit belongs to the evidence publication. Its purpose is to verify the established count, and if it finds a discrepancy, the discrepancy is reported for analytical review rather than concealed or adjusted to reproduce the expected total.
+
+The number itself was never the intended discovery.
+
+These viewers did not share one mechanism or one evidentiary confidence level. Some were persistent broad consumers expanding further. Others left concentrated configurations. Some remained selective while increasing consumption. Others moved between different Residual states.
+
+The reasons for carrying them forward were different, and so were the unanswered questions.
+
+Another 1,100 breadth-only viewers were specifically retained for consideration through different consumption-allocation evidence.
+
+The 1,563 Final-only eligible viewers remained outside the longitudinal advancement route but were not excluded from future segmentation or opportunity assessment.
+
+**What this changed:** we completed six integrated family interpretations without granting the families the authority to define the final segments.
+
+The evidence suggested a more useful organising principle: current consumption configuration, historical pathway, post-choice response, realistic opportunity and demonstrated inclination must be considered together, with their individual support and contradictions preserved.
+
+The working shortlist was a way to preserve potentially relevant viewers for further investigation. It was not a final growth population and certainly not a target we were obliged to retain.
+
+**What it made us ask next:** during these interpretations, two relationships repeatedly helped explain consumption changes. Were they independently useful measurements, or were we assigning behavioural meaning to mathematical relationships that required more careful validation?
+
+## 27. Two useful relationships, but not two new behavioural dimensions
+
+**Date:** 2026-10-17
+
+**Question:** If qualified viewing grows while active days remain unchanged or decline, does the viewer actually consume content through longer or differently organised sessions? And if meaningful-title breadth grows while qualified hours decline, is there observable reallocation of viewing among titles?
+
+**Why it matters:** Both relationships had surfaced naturally during the family interpretations.
+
+Broad Distributed and Residual viewers sometimes added qualified hours despite fewer active days. This suggested changes in how viewing was organised.
+
+Other viewers expanded meaningful-title breadth without increasing hours. This suggested that some existing viewing might be redistributed across a different set of titles.
+
+Both interpretations were plausible. Neither deserved to become part of the final fingerprint merely because it sounded useful.
+
+The project had already learned the cost of adding dimensions that rename existing measurements. We therefore commissioned a bounded validation, using the established 8,199 paired viewers and the authoritative session, event and title marts.
+
+**Evidence — more hours on fewer days was supported by actual session observations.**
+
+Among the 8,199 paired profiles, 1,963 increased qualified watch hours without increasing active days.
+
+Of those, 1,628 actually watched on fewer days.
+
+If total hours rise while active days fall, hours per active day must increase. That is arithmetic, not new independent behavioural evidence.
+
+What mattered was whether the underlying session records showed anything more.
+
+Among those 1,628 viewers, 1,582 had increased average elapsed recorded session duration.
+
+The decomposition also showed that viewers did not all reach their additional qualified hours through the same combination of session count and playback per session. Some had fewer qualifying sessions with more playback per session; others had more sessions or a combination of both.
+
+The result supported a useful interpretation of how viewing was organised, but did not establish increased attention, uninterrupted consumption, motivation or future viewing capacity.
+
+The distinction was important enough to preserve. The original relationship was not rejected; its explanatory source was correctly located in observed session organisation rather than an invented independent intensity score.
+
+**Evidence — breadth growth without hours growth had a measurable title-allocation structure.**
+
+The 1,652 paired viewers who increased meaningful-title breadth without increasing qualified hours were examined at parent-title level.
+
+All 1,652 had gains on some titles and larger losses on others, reconciling with their net decline in total qualified viewing.
+
+More revealingly, 1,573 of them, or 95.2%, reduced qualified time on at least one title that remained meaningful in both windows.
+
+The change was therefore not merely a clean exchange of abandoned titles for newly consumed ones.
+
+Some viewers continued consuming established titles but devoted less viewing time to them, while adding qualified viewing elsewhere.
+
+The title-level accounting made that redistribution visible.
+
+Still, it could not establish the causal claim that a new title directly displaced a particular old one. Nor could it reveal how much viewing would have occurred if the newer title had not been consumed.
+
+Programme format mattered too. A parent title may represent one film or a series containing many episodes. Additional meaningful-title breadth cannot be converted into a fixed quantity of viewing time.
+
+For the persistent Broad Distributed population, the distinction was substantial.
+
+Its 346 breadth-only growers increased meaningful titles by a median of 10 while reducing qualified hours by a median of approximately 17.23.
+
+That is genuine wider title consumption accompanied by considerably less total viewing. It is neither equivalent to the 601 persistent Broad viewers who grew both dimensions nor proof that future incremental consumption is unavailable.
+
+Residual contained similarly different allocation histories.
+
+A final methodological qualification concerned time exposure and source reconciliation.
+
+The validation preserved the original window definitions and qualification rules. It distinguished all-event active days from qualified active days, and canonical elapsed sessions from qualified playback.
+
+It also retained the session-boundary and sub-second precision caveats instead of modifying the frozen records to force exact agreement between measurements with different time-assignment rules.
+
+Both relationships survived their intended descriptive checks, but neither established a new independent propensity construct.
+
+**Decision:** retain session organisation and title-time allocation as secondary interpretive evidence.
+
+They can help explain how consumption expanded, contracted or redistributed. They are not additional standalone fingerprint dimensions, universal promotion requirements or estimates of prospective headroom.
+
+The accompanying cross-origin inventory also confirmed that deeper measures of outside-origin viewing frequency, qualified dates, origin-specific volumes and repeated-title consumption are available or derivable from approved data.
+
+That inventory did not perform a fresh cross-origin behavioural test. It established what we can legitimately use when later segmentation questions require more detail than simple recurrence flags.
+
+**Where this leaves the investigation:** Test 7 has moved us from descriptions of behavioural configurations to evidence about how those configurations persist, change and coexist with different consumption outcomes.
+
+We have learned that high concentration need not imply poor content choices, that widening catalogue consumption need not increase total watch hours, that additional hours need not improve every post-choice measure, and that already extensive viewers may continue expanding.
+
+We also know that some apparent stability belongs to family labels rather than exact states, and that some attractive comparisons are limited by measurement support or benchmark design.
+
+These are not inconveniences to hide before segmentation. They are precisely the distinctions that should make the segmentation more credible.
+
+The next analytical task is no longer to discover another candidate family.
+
+It is to bring the evidence together at viewer level, preserve the different histories and confidence levels, and determine which observable configurations justify distinct behavioural segments.
+
+Only then can we seriously answer the remaining business question:
+
+Which viewers have credible additional qualified-viewing headroom, and what evidence suggests they are inclined to realise it?
+
+Test 7 closes with a substantially stronger account of observed behaviour, not a premature declaration that the opportunity has already been found.

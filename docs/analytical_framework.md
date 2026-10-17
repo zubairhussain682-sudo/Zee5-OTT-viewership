@@ -8,7 +8,7 @@
 
 Answering them in order matters. Asking about opportunity before understanding mechanism is how a platform ends up "fixing" viewers who were perfectly happy.
 
-That sequence has since been extended rather than replaced. Realistic opportunity is now reconstructed before behaviour is interpreted (Test 5), and language work (Test 6) has added one stage after it: **concentration → mechanism → realistic opportunity → opportunity-conditioned propensity → persistence → realisable viewing headroom**. Test 6D established that cross-origin behaviour contains information the existing candidate mechanisms do not already capture, so that propensity stage is justified — but it is carried provisionally, because its persistence over time and its contribution to realisable headroom remain untested. Each layer should resolve a different uncertainty rather than count the same behavioural evidence twice, and the sequence is still a set of questions rather than a score.
+That sequence has since been extended rather than replaced. Realistic opportunity is now reconstructed before behaviour is interpreted (Test 5), and language work (Test 6) has added one stage after it: **concentration → mechanism → realistic opportunity → opportunity-conditioned propensity → persistence → realisable viewing headroom**. Test 6D established that cross-origin behaviour contains information the existing candidate mechanisms do not already capture, so that propensity stage is justified but carried provisionally. Test 7 then followed the same eligible viewers across both windows, which turned persistence from a prospective question into observed evidence about how behavioural configurations recur and change. That gives the framework what it needs to begin constructing final fingerprints and segments — but not yet to declare a growth-opportunity population, which still requires cross-family reconciliation, defensible segment membership and a separate assessment of remaining headroom and inclination. Each layer should resolve a different uncertainty rather than count the same behavioural evidence twice, and the sequence is still a set of questions rather than a score.
 
 ## The measurement bridge
 
@@ -25,7 +25,7 @@ flowchart TD
     G --> H[Business action and evaluation]
 ```
 
-All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity, session, breadth, concentration and post-choice response reviews. Realistic opportunity has since been reconstructed and brought into the behavioural diagnosis, and cross-origin catalogue propensity has passed its within-window non-redundancy tests. Final behavioural fingerprints, longitudinal validation, mechanism-led segments and headroom conclusions remain downstream work.
+All six marts have been built, and human semantic validation is still underway: the title-level mart audit is complete, and the viewer-level measurement base has passed its grain, coverage, activity, session, breadth, concentration and post-choice response reviews. Realistic opportunity has since been reconstructed and brought into the behavioural diagnosis, cross-origin catalogue propensity has passed its within-window non-redundancy tests, and within-profile longitudinal evidence now describes how behavioural configurations persist and change across the two windows. Final behavioural fingerprints, mechanism-led segments and headroom conclusions remain downstream work.
 
 ## The segmentation pathway
 
@@ -42,22 +42,24 @@ OPPORTUNITY CONDITIONING
         ↓
 OPPORTUNITY-CONDITIONED PROPENSITY
         ↓
-BEHAVIOURAL FINGERPRINTS
+WITHIN-PROFILE LONGITUDINAL EVIDENCE
         ↓
-WITHIN-PROFILE LONGITUDINAL STABILITY
+BEHAVIOURAL FINGERPRINTS
         ↓
 MECHANISM-LED SEGMENTS
         ↓
-CONCENTRATION × MECHANISM × OPPORTUNITY
+PROSPECTIVE HEADROOM  +  BEHAVIOURAL INCLINATION   (separate judgments)
         ↓
 REALISABLE VIEWING HEADROOM
 ```
+
+Test 7 moved longitudinal evidence ahead of fingerprints: how a configuration recurred and changed across the two windows now informs which measurements a fingerprint should carry, rather than validating a fingerprint after it has been built. Segments then organise viewers by coherent mechanism, and only after that are prospective headroom and behavioural inclination assessed — as two separate judgments, neither of which a segment label settles on its own.
 
 Opportunity conditioning asks whether a behavioural mechanism still looks like the same mechanism once the realistic choice set behind it is visible. It changes how the pathway is read, not the order in which it runs.
 
 Opportunity conditioning asks whether an apparent mechanism survives once the realistic choice set behind it becomes visible. Opportunity-conditioned propensity asks something further: whether profiles facing comparable observable circumstances — including profiles occupying the *same* candidate mechanism — use the available alternatives differently.
 
-Test 6D answered that second question for cross-origin behaviour. Within the same Final mechanism, some profiles allocate almost no viewing to productions originating outside their Baseline anchor language while others allocate most of it, and those differences survive peer conditioning on anchor structure, historical opportunity and activity, under both activity-control specifications tested. That is why the propensity stage now occupies a justified but provisional position. Its presence does not make it a mandatory segmentation axis: a dimension may carry genuine information yet contribute unevenly across mechanisms, or matter less once longitudinal behaviour and headroom relevance are examined. Everything below it — fingerprints, within-profile stability, segments and headroom — remains downstream.
+Test 6D answered that second question for cross-origin behaviour. Within the same Final mechanism, some profiles allocate almost no viewing to productions originating outside their Baseline anchor language while others allocate most of it, and those differences survive peer conditioning on anchor structure, historical opportunity and activity, under both activity-control specifications tested. That is why the propensity stage now occupies a justified but provisional position. Its presence does not make it a mandatory segmentation axis: a dimension may carry genuine information yet contribute unevenly across mechanisms, or matter less once longitudinal behaviour and headroom relevance are examined. Of the stages below it, within-profile longitudinal evidence has since been gathered (Test 7); fingerprints, segments and the headroom and inclination assessments remain downstream.
 
 ### Constraints decide what can be read fairly — they are not behaviour
 
@@ -122,7 +124,7 @@ That endpoint matters because the project ultimately seeks a diagnosis of the po
 | Profile A | Focused Successful | Focused Successful |
 | Profile B | Broad Distributed | Focused Successful |
 
-Their latest observed mechanism is the same; their trajectories are not. The longitudinal stage must preserve both facts: what the profile ended up exhibiting, and how it arrived there. That distinction will inform final analytical segmentation without treating the endpoint as an eternal viewer identity, and without treating the two observational windows as competing final classifications.
+Their latest observed mechanism is the same; their trajectories are not. Test 7 preserved both facts — what the profile ended up exhibiting, and how it arrived there — and that distinction informs final analytical segmentation without treating the endpoint as an eternal viewer identity, and without treating the two observational windows as competing final classifications ([how the history is read](#from-opportunity-aware-mechanisms-to-an-endpoint-informed-by-history)).
 
 ### Opportunity remains separate from behavioural identity
 
@@ -178,33 +180,59 @@ Constrained access can explain an apparently narrow choice set without necessari
 
 ### Opportunity-aware mechanism is still not a final segment
 
-The project can now make a stronger distinction than behaviour alone allowed — **behavioural state** (what the profile did) plus **realistic opportunity** (the conditions under which it could do it) gives an opportunity-aware mechanism interpretation. That still stops before segmentation. The states are window-specific, opportunity can change between windows, and a mechanism observed once may be persistent, emerging or transient when the same profile is followed over time. Final fingerprints and segments therefore still require the later longitudinal stage.
+The project can now make a stronger distinction than behaviour alone allowed — **behavioural state** (what the profile did) plus **realistic opportunity** (the conditions under which it could do it) gives an opportunity-aware mechanism interpretation. That still stops before segmentation. The states are window-specific, opportunity can change between windows, and a mechanism observed once may be persistent, emerging or transient when the same profile is followed over time. Test 7 has since supplied that longitudinal evidence; final fingerprints and segments now require the cross-family reconciliation described [below](#mechanism-led-segments).
+
+### From opportunity-aware mechanisms to an endpoint informed by history
+
+Test 7 changes how we interpret the behavioural states established earlier in the investigation. Until now, the principal candidates were understood through their breadth, concentration, post-choice response and realistic catalogue opportunity. These remain valid observations, but they describe behaviour within a window. They cannot, by themselves, explain how a viewer arrived at that configuration.
+
+The longitudinal investigation adds that missing context.
+
+Among 8,199 profiles eligible in both windows, 4,883 retained their candidate family, but only 2,583 retained their exact concentration × breadth state. Even these classifications can conceal substantial changes in actual viewing. Persistent Broad Distributed viewers, for instance, could increase titles and qualified hours considerably without leaving C1_B5.
+
+Family recurrence, exact-state recurrence and stability of underlying consumption are therefore different observations. The first two describe continuity in classification; the third requires the actual measurements to be examined.
+
+This also establishes an important boundary: the Final state remains our latest observed behavioural endpoint, while Baseline provides historical context where an eligible comparison exists. Neither window defines a permanent viewer identity.
+
+The investigation cannot extend that history to all Final viewers. Of the 9,762 Final-eligible profiles, 1,563 lack an eligible Baseline comparison. They remain part of the eventual segmentation population, with valid Final-window behaviour and opportunity evidence but without an inferred historical transition. Missing longitudinal evidence must not be treated as weak inclination or zero earlier activity.
 
 ### Fingerprints are configurations, not labels
 
 A behavioural fingerprint is the recurring configuration of relevant dimensions for a profile under realistic opportunity. It describes *how* someone watches. It is not an opportunity label and not a verdict.
 
-Cross-origin catalogue propensity is now eligible to contribute to that configuration, because Test 6D found substantial within-mechanism information the candidate states did not capture. Eligibility is not automatic inclusion: its contribution must still be judged against longitudinal evidence, support and the eventual headroom question. A fingerprint should explain how a profile consumes, not merely carry a longer list of features.
+A behavioural fingerprint should describe a coherent consumption configuration, not simply assemble every available metric.
 
-### From opportunity-aware mechanism to final observed segment
+Test 7 strengthened this requirement by showing that related measurements can move in different directions. Meaningful-title breadth may increase while qualified hours decline. Completion can remain broadly stable while continuation and replay change substantially. Viewing may grow without additional active days, and the same candidate family can contain different consumption trajectories.
 
-A behavioural state tells us what a profile did; realistic opportunity establishes the conditions under which it could make those choices. Together they support a more credible interpretation of the mechanism behind concentrated consumption — but that interpretation stays incomplete without the profile's historical trajectory.
+These differences are informative, but they do not automatically justify additional fingerprint dimensions.
 
-The Final window provides the latest observed endpoint. Longitudinal analysis will establish whether that endpoint reflects continuity, a recent transition or an emerging configuration, and the distinction matters commercially: a profile narrowly concentrated around a successful core across both windows presents different evidence from one that became concentrated only recently after distributing its viewing broadly. The same Final mechanism can therefore carry different degrees of historical support, and potentially different implications for unrealised opportunity.
+The separate relational validation confirmed that session organisation and title-time redistribution help explain how consumption changes. Hours per active day, however, is mathematically dependent on existing measures, while breadth/hour direction alone does not identify causal substitution. Both relationships are retained as secondary interpretive context rather than new independent dimensions.
 
-| Trajectory | Reading |
-| --- | --- |
-| Persistent pattern | May provide stronger evidence of an established mechanism |
-| Newly emerging pattern | May still be commercially important, but should not be described as an established habit |
-| Transition | May reveal changes in engagement, opportunity or content selection that the endpoint classification alone cannot explain |
+Post-choice evidence also remains support-dependent. Completion, continuation and replay answer different questions and cannot be combined into a generic engagement score. In particular, continuation is sensitive to programme composition and observable next-episode opportunities.
 
-The Final state anchors the endpoint interpretation; the longitudinal trajectory qualifies it. The purpose of that analysis is not to erase or retrospectively redefine what occurred during the Final window, but to determine what the endpoint means when read against the available history. The candidate states have not yet been promoted into final analytical segments: that promotion requires their history, the supporting behavioural dimensions and relevance to the business objective.
+Cross-origin behaviour retains its provisional, cross-cutting role. Test 7 established recurring outside-anchor viewing, including repeated dates, ecosystems and parent titles. But recurrence does not necessarily mean repeated discovery, and the increase in outside-anchor share is affected by the Baseline-selected reference.
+
+Moreover, Test 6D's candidate-blind peers were matched on anchor structure, opportunity and activity, not on exact behavioural state or family. Their residuals provide contextual comparisons, not isolated within-state propensity estimates.
+
+The fingerprint must therefore preserve the distinction between defining behaviour, explanatory context and evidentiary confidence. A measure deserves inclusion because it adds defensible information, not because another calculation can be produced.
 
 ### Mechanism-led segments
 
 Segments are meant to explain *why* consumption concentrates — not to reproduce acquisition cohorts or produce an elaborate taxonomy. Explanations worth testing include healthy preference depth, low engagement, sampling without retention, reliance on prominent titles and persistent exploration. Constrained access may explain apparent concentration, but it remains contextual evidence rather than becoming a viewer's behavioural segment identity.
 
 None of these is yet an established mechanism, a final label or a prevalence estimate. Whichever dimensions end up defining segments must be interpretable, relevant to mechanism, stable, well evidenced and non-redundant.
+
+Test 7.7 examined six candidate families through their histories, underlying measurements, post-choice responses, realistic opportunities and cross-origin behaviour.
+
+The resulting interpretations were not uniform. Focused Successful included persistent narrow consumers and viewers who expanded after leaving. Selective Core and its Access-Sensitive Neighbour contained different transition pathways. Successful First-Pass showed that stronger completion did not necessarily accompany additional viewing. Broad Distributed demonstrated that already extensive consumers could continue growing, while Residual concealed substantial movement among its 15 constituent states.
+
+These families remain analytical starting points, not six predetermined final segments.
+
+Final segmentation should be based on coherent behavioural mechanisms, allowing viewers with similar mechanisms to be considered together despite different histories, while separating materially different patterns within an existing family where the evidence warrants it.
+
+The six-family investigation also produced a working pool of 3,565 deduplicated provisional candidates, alongside 1,100 separately flagged breadth-only viewers. These are review populations, not confirmed segments or established headroom. The 3,565 was deduplicated across overlapping advancement pathways during the family passes; an independent profile-ID audit of the full advancement ledger, with each viewer's advancement reasons, belongs to the evidence-publication phase, and any discrepancy it finds goes to analytical review rather than being adjusted away.
+
+The final descriptive segmentation must cover the full 9,762 Final-eligible population, including viewers who were never provisionally advanced. A viewer's segment and their qualification as a prospective growth opportunity are separate conclusions.
 
 Every segment has to stay traceable:
 
@@ -225,6 +253,26 @@ Opportunity conditioning makes that diagnosis more defensible, and it also makes
 **Reachable but unwatched catalogue ≠ realisable headroom.** Opportunity is necessary to interpret headroom. It is not sufficient to create it.
 
 Cross-origin evidence adds a layer to that argument without replacing it. A profile that has demonstrated meaningful consumption beyond its earlier origin centre offers a different behavioural basis for considering compatible alternatives than one whose viewing stays almost entirely inside it — which can strengthen the plausibility of further engagement where access and engagement signals agree, and weaken the case for treating a narrow but successful core as an engagement problem. Neither inference is automatic, and the same caution applies in its own right: **demonstrated cross-origin movement ≠ incremental viewing headroom.** Watching a Tamil-origin title instead of a Hindi-origin one may redistribute the same hours, and the absence of cross-origin viewing does not prove unwillingness when those titles may never have been surfaced. The business question must also separate additional catalogue breadth from additional viewing volume: a wider range of productions is not necessarily more minutes watched.
+
+**From behavioural inclination to realisable viewing headroom.** The objective is not to identify viewers whose consumption requires correction. It is to distinguish where additional qualified viewing is realistically possible and where observed behaviour makes that additional consumption plausible.
+
+This requires two related but independent judgments.
+
+**Prospective headroom** asks whether the viewer has credible room to generate additional qualified consumption under realistic access, suitable alternatives and existing viewing conditions.
+
+**Behavioural inclination** asks whether their observed consumption provides evidence that they might realise that opportunity.
+
+Historical growth can support inclination, but it does not prove remaining headroom. A wider set of meaningful titles can reflect redistribution rather than additional viewing hours. Similarly, an already successful and extensive viewer should not be presumed saturated simply because their current consumption is high.
+
+Different mechanisms may support different forms of inclination evidence. Joint breadth-and-hours growth is one useful observation, but cannot become a universal requirement. Supported post-choice response, recurring consumption of feasible alternatives, historical continuity and contemporary behaviour may contribute differently across populations.
+
+The eventual opportunity assessment must therefore bring these observations together at viewer level, preserving contradictory evidence, measurement support and unresolved prospective capacity. It must not turn group averages into claims about every individual member.
+
+Reachable catalogue is not demonstrated demand; realised historical growth is not guaranteed future growth; and behavioural segmentation is not itself an estimate of incremental viewing headroom.
+
+The framework now has the evidence necessary to begin constructing final fingerprints and segments, but not yet to declare the growth-opportunity population. That requires cross-family reconciliation, defensible segment membership, and a separate assessment of remaining headroom and inclination.
+
+The endpoint of the analytical pathway is consequently not a list of viewers who consume too little. It is an evidence-backed account of how different viewers consume, what their behaviour makes plausible, and where additional qualified viewing can credibly be pursued.
 
 ### Language is three observations, not one dimension
 
@@ -297,10 +345,10 @@ One naming rule follows from this. A profile's multilingual-title minute share i
 
 ### What remains unresolved
 
-Test 6 is closed. Cross-origin behaviour does add observable information beyond the candidate mechanisms, within the supported Final-window analysis — but that conclusion is deliberately bounded. The project has established neither the persistence of cross-origin propensity across time nor its contribution to final segments and realisable headroom.
+Test 7 is closed. Within-profile comparison across the two windows has replaced the prospective longitudinal questions with observed evidence: classifications recur more often at family level than at exact-state level, underlying consumption can change substantially beneath a stable label, post-choice measures can move in different directions, title breadth and viewing volume are separable, and outside-anchor viewing recurs for many viewers in forms that are not all discovery.
 
-The next stage is within-profile longitudinal analysis across the Baseline and Final windows, around three questions: which profiles remain in the same candidate mechanism and which transition, and what that history changes about interpreting their Final state; which mechanism signatures and cross-origin behaviours have enough historical consistency to strengthen a fingerprint rather than being window-specific observations; and which combinations of mechanism, opportunity, demonstrated use of alternatives and temporal evidence can distinguish healthy concentration from credible unrealised viewing opportunity.
+What remains is the reconciliation that turns that evidence into conclusions. The candidate families have to be resolved into coherent behavioural segments covering all 9,762 Final-eligible profiles, including the 1,563 without an eligible Baseline comparison. The working provisional pool needs its viewer-level lineage and advancement reasons reconciled before any figure from it is treated as a certified result. And prospective headroom and behavioural inclination have to be assessed as separate judgments at viewer level rather than read off a segment label or a historical growth signal.
 
-The Baseline anchor needs particular care in that stage. Because it is selected as the largest origin share within Baseline, later movement away from it partly reflects the construction of the reference and regression toward less extreme values, so a Baseline-to-Final rise in cross-origin viewing is not by itself proof of growing exploratory behaviour. The longitudinal methodology has to address that before any temporal interpretation is promoted.
+Two measurement limits carry forward unchanged. The Baseline title-origin anchor is a selected maximum, and no stability-null model or bias-corrected estimate of outside-anchor movement has been established. And Test 6D's candidate-blind residuals remain population-relative context rather than within-state propensity estimates.
 
-No final segments, persistence verdicts or headroom estimates exist at this checkpoint.
+No final segments, certified provisional populations or headroom estimates exist at this checkpoint.

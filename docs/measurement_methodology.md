@@ -508,7 +508,7 @@ The corrected Test 6D implementation uses the **inclusive** peer-cell mean, reco
 
 Candidate family is deliberately not part of the peer key: a candidate-specific benchmark would condition the comparison on the very classification whose additional value is under evaluation. The primary support rule is `peer_n ≥ 20`, counted before the restriction is applied; cells below it remain relevant to coverage diagnostics but carry no supported interpretation. This threshold concerns the reliability of the comparison population, not an intrinsic behavioural distinction.
 
-A positive residual means more cross-origin Final viewing than the observable peer context, a negative residual less. It is not a conversion rate and not a causal programme, entitlement or mechanism effect. Candidate-level summaries report supported residuals separately for each control, always with support counts and coverage, because comparisons between a full candidate population and its supported subset are affected by support selection as well as conditioning.
+A positive residual means more cross-origin Final viewing than the observable peer context, a negative residual less. It is not a conversion rate and not a causal programme, entitlement or mechanism effect. The peer cells are candidate-blind: they match anchor structure, opportunity and activity, not exact breadth × concentration state or family, so a residual is a population-relative comparison rather than an isolated within-state propensity estimate ([longitudinal treatment](#76--longitudinal-cross-origin-measurement)). Candidate-level summaries report supported residuals separately for each control, always with support counts and coverage, because comparisons between a full candidate population and its supported subset are affected by support selection as well as conditioning.
 
 **Programme sensitivity.** A stricter variant adds dominant Final programme type to the peer key while preserving the other conditions, interpreted only where the expanded cells satisfy `peer_n ≥ 20`. It does not replace the core residual, because an extra matching dimension materially reduces support, and its results cannot be presented as covering every profile in the original family.
 
@@ -559,7 +559,278 @@ The dimension is therefore available to inform later fingerprints and mechanism-
 
 These rules support the term **cross-origin catalogue propensity under realistic opportunity** as an observed behavioural tendency after conditioning, and nothing more. They do not turn it into a native-language preference, language-openness psychology, a causal effect, a permanent identity, a segment or a headroom score.
 
-Test 6D has since established that this tendency carries information the breadth × concentration mechanisms do not already capture, which is why it is carried forward provisionally. The progression the measurement layer licenses is therefore language supply → consumed-language behaviour → cross-origin viewing against a fixed anchor → non-redundant inside mechanisms. Raw language breadth remains descriptive throughout. Persistence across time and contribution to realisable headroom remain untested.
+Test 6D has since established that this tendency carries information the breadth × concentration mechanisms do not already capture, which is why it is carried forward provisionally. The progression the measurement layer licenses is therefore language supply → consumed-language behaviour → cross-origin viewing against a fixed anchor → non-redundant inside mechanisms. Raw language breadth remains descriptive throughout. Test 7 has since established observed cross-window recurrence of outside-anchor viewing for many paired viewers — across dates, ecosystems and parent titles ([7.6](#76--longitudinal-cross-origin-measurement)) — but recurrence is not an enduring intrinsic propensity, and contribution to future realisable headroom remains unproven.
+
+## Test 7: within-profile longitudinal measurement and integrated evidence
+
+Tests 4–6 established window-specific behavioural states, opportunity-aware mechanisms and cross-origin comparisons. Test 7 retains those definitions and changes the comparison grain: the same eligible profile is observed across two consecutive 90-day windows.
+
+The aim is to distinguish current behavioural configuration, historical movement and measurement support, without treating a state transition as a causal effect or a historical growth signal as prospective headroom.
+
+### 7.1–7.2 — Population, eligibility and state reconstruction
+
+The observation windows are BASELINE_90 (1 September–29 November 2025) and FINAL_90 (30 November 2025–27 February 2026), each containing 90 calendar days in Asia/Kolkata.
+
+Existing eligibility remains unchanged: at least 30 entitled days, three active days and 120 qualified watch minutes in the window.
+
+| Population | Profiles | Measurement role |
+| --- | --- | --- |
+| Baseline eligible | 8,761 | Earlier-window behavioural classification |
+| Final eligible | 9,762 | Latest observed endpoint population |
+| Eligible in both windows | 8,199 | Same-profile longitudinal comparisons |
+| Baseline-only eligible | 562 | Earlier-window evidence only |
+| Final-only eligible | 1,563 | Current evidence without an eligible Baseline comparison |
+
+The paired panel must contain one row per unique profile_id, with valid measurements from both windows. Missing eligibility in one window is never replaced with zero activity or interpreted as a state transition.
+
+State reconstruction retains the original Test 4 ranking populations. Concentration and breadth quintiles are assigned independently within each full eligible window, using the existing NTILE(5) definitions and deterministic profile_id tie-breaker. The 8,199 paired profiles are selected only after those classifications are formed.
+
+Re-ranking the paired population would change the state boundaries and invalidate comparisons with the previously established candidate mechanisms.
+
+The family mapping remains fixed:
+
+| Family | State membership |
+| --- | --- |
+| Focused Successful | C5_B1 and C4_B1 |
+| Selective Core | C4_B3 |
+| Access-Sensitive Neighbour | C5_B2 |
+| Successful First-Pass | C3_B2 |
+| Broad Distributed | C1_B5 |
+| Residual | Remaining 15 observed C×B states |
+
+Membership is inherited from the original state, not recalculated using subsequent post-choice outcomes, longitudinal changes, cross-origin measures or candidate advancement decisions.
+
+### 7.2–7.3 — Trajectories and activity comparability
+
+Three classifications are retained separately:
+
+- STAYED: Baseline and Final family membership agree.
+- LEFT / ENTERED: membership relative to the specified family changes.
+- SAME_STATE: exact Baseline and Final C×B codes agree.
+
+Family-level STAYED, LEFT and ENTERED views overlap when aggregated across families. A viewer leaving one family and entering another contributes to both descriptions. They must not be summed into a population total.
+
+Exact state transitions remain available even within the same family, particularly Residual.
+
+For each paired viewer, continuous measures are compared using:
+
+```text
+individual_change = Final value − Baseline value
+```
+
+Top-title share changes are reported in percentage points; title counts, active days and qualified hours retain their original units.
+
+These individual changes are not derived by subtracting independent population medians. Group summaries aggregate the already calculated individual differences.
+
+A state transition describes movement between relative classifications. It must therefore be interpreted alongside actual changes in breadth, concentration, qualified hours and active days.
+
+**Test 7.3 activity-conditioning attempt.** The diagnostic comparison constructed reference cells within each exact Baseline state, separately for watch hours and active days, crossing three empirical bands of Baseline activity with three bands of activity change. For supported cells, the reference was a leave-one-out median of individual changes, requiring at least 20 other profiles.
+
+Although numerical support covered most of the paired population, actual within-cell ranges were often too wide to establish adequate like-for-like comparability.
+
+The activity-conditioned differences were not accepted as adjusted behavioural effects. They remain diagnostic outputs, and no downstream mechanism claim relies on them as validated activity-controlled estimates.
+
+This limitation does not invalidate the direct paired-profile trajectories.
+
+### 7.4 — Longitudinal post-choice comparison
+
+The established completion, continuation and 14-day replay definitions remain unchanged.
+
+A rate is compared longitudinally only when the profile meets the original evidence threshold in each window:
+
+| Construct | Minimum known outcomes per window | Dual-supported paired profiles |
+| --- | --- | --- |
+| Completion | 5 | 6,882 |
+| Continuation | 5 | 5,331 |
+| 14-day replay | 3 | 6,717 |
+
+The intersection supported on all three measures contains 5,317 profiles.
+
+For each measure, retain the underlying numerator, known denominator, censoring and support status in both windows. A positive but subthreshold denominator does not qualify for primary comparison; zero outcomes and unavailable rates remain distinguishable.
+
+Rate direction is determined through exact integer numerator cross-products, avoiding artificial changes caused by floating representation. Population summaries report the distribution of individual percentage-point changes, and paired means use the same dual-supported viewers in both windows.
+
+Profile-average and pooled outcome rates are reported separately because they apply different weights. Neither substitutes for the other.
+
+A supported rate can still be imprecise. Five known outcomes permit a 20-percentage-point movement from one outcome; three permit 33.33 points. Evidence thresholds establish minimum support, not statistical significance.
+
+Completion, continuation and replay also have different observation clocks. Completion and resume may receive follow-up after their owning window, while replay retains early observed positives and excludes unresolved negatives. Continuation depends on observable next-episode opportunity and programme composition.
+
+The validated pre-completion resume measure contributes pathway counts only in Test 7.4. No new comparable resume rate is created.
+
+Comparisons across post-choice measures must use the actual intersection of supported profiles when claiming that several responses occurred together. Different metric-specific group means must not be presented as one viewer-level joint pattern.
+
+### 7.5 — Mechanism continuity, activity and opportunity
+
+Longitudinal continuity is described through three separate observations:
+
+- Family recurrence.
+- Exact-state recurrence.
+- Actual change in the underlying measurements.
+
+No persistence score is constructed.
+
+Opportunity continues to use the historical entitlement and catalogue rules established in Test 5. Stable access-regime membership does not imply identical reachable catalogue: releases, entries, exits and entitled days can change within and between windows.
+
+Where temporal regularity is examined, the following measures remain distinct:
+
+| Measurement | Definition |
+| --- | --- |
+| active_days | Distinct dates containing any playback event |
+| qualified_active_days | Distinct dates containing qualified events |
+| Qualified viewing span | Inclusive calendar days between first and last qualified viewing dates |
+| Maximum seven-day qualified-minute share | Largest share of the window's qualified minutes occurring in any seven consecutive calendar days wholly inside that window |
+
+A long span can arise from two distant viewing dates. It therefore cannot substitute for qualified-day frequency.
+
+The seven-day statistic measures observed temporal concentration; it is not an additional analytical window, a persistence threshold or a separate viewer classification.
+
+Entitlement timing remains beside these measures. Partial exposure can affect the opportunity to accumulate viewing dates and minutes.
+
+### 7.6 — Longitudinal cross-origin measurement
+
+The canonical Baseline title-origin anchor from Test 6 is preserved unchanged.
+
+Cross-origin measures continue to use qualified playback on parent titles whose original_language differs from that fixed anchor. Consumed audio, regional entitlement language and inferred native language are not substitutes.
+
+The longitudinal audit separates:
+
+| Observation | Operational treatment |
+| --- | --- |
+| Outside-origin level | Qualified hours, minute share and meaningful outside-origin titles in each window |
+| Movement | Individual Final-minus-Baseline change using the same fixed anchor |
+| Presence | Positive qualified outside-origin viewing in neither, either or both windows |
+| Repeated dates | More than one distinct date with qualified outside-origin viewing in each window |
+| Repeated ecosystem | At least one identical outside-origin original_language with qualified viewing in both windows |
+| Repeated parent title | At least one identical outside-origin parent title meaningfully consumed in both windows |
+
+Repeated ecosystems, repeated titles and repeated dates are different measurements. None alone defines a persistent propensity threshold.
+
+Cross-window recurrence is also not the same as repeated qualified starts or completed-content replay. A profile can repeatedly consume a familiar outside-origin title without discovering a new one.
+
+An origin or title newly observed in Final means new to the specified observation comparison, not never consumed in the viewer's lifetime.
+
+The fixed Baseline anchor is a selected maximum: Baseline outside share equals one minus the largest Baseline origin share. Consequently, increases in outside share are subject to reference-selection and regression-to-the-mean concerns. No stability-null model or bias-corrected estimate was established.
+
+The canonical fixed-anchor results remain primary. The earlier delete-one-title anchor diagnostic was retired from the active evidence package and is not reintroduced as a measurement adjustment.
+
+Test 6D's existing candidate-blind peer residuals may provide additional Final-window context, retaining their original support populations. They are not exact-state-matched longitudinal propensity estimates. Agreement between two activity-control specifications of the same Final outcome is not temporal replication.
+
+For Final-only eligible profiles, no eligible Baseline anchor exists under the approved design. Historical cross-origin movement and anchor-relative recurrence remain unavailable. Their Final title-origin composition can still be described without inventing a historical reference.
+
+### 7.7 — Integrated family interpretation and evidence coverage
+
+The six-family integration retains original states, historical pathways, actual measurement changes, realistic opportunity and supported post-choice and cross-origin evidence.
+
+Each family is examined through the relevant STAYED, LEFT, ENTERED and exact-state transitions, with destinations and origins distinguished where they materially change the interpretation.
+
+Family-level summary statistics cannot establish that different observations occur in the same viewer. For any joint claim, intersect the required profile-level conditions before aggregation and report the resulting denominator.
+
+Thin populations and unsupported outcomes remain visible rather than disappearing from the family reconciliation.
+
+The preliminary advancement register is an analyst decision layer, not a new measurement or automatic classification. It retains the reason for advancement, originating and Final state, supporting observations, contradictory evidence and unresolved prospective opportunity.
+
+Deduplication must occur by unique profile_id across pathways. The working total of 3,565 provisionally advanced paired viewers is the analyst-established distinct count: overlaps were removed as each family's pathways were added, which is why routes are recorded as additional distinct viewers (Selective Core's 330 candidate observations, for example, contribute 305 after 25 overlaps with Focused Successful). Those overlap-accounting decisions are distinct from an independent profile-ID audit of the complete advancement ledger, which has not yet been performed. The value is not a segmentation result or estimate of headroom.
+
+The 1,100 separately flagged breadth-only viewers remain a distinct review track. Neither list determines the membership of the future descriptive segmentation, which must represent the complete Final-eligible population.
+
+No numerical growth cutoff or automatic promotion rule is created by Test 7.7.
+
+### Supplementary validation — activity organisation and title-time allocation
+
+A bounded diagnostic validation reviewed two relationships that appeared repeatedly in the family interpretations, without changing the original population, rankings or analytical decisions.
+
+#### Qualified hours × active days
+
+For each paired profile, classify the joint directions of qualified-hour and active-day changes.
+
+Hours per active day is a deterministic quotient. An increase in qualified hours with unchanged or fewer active days necessarily raises that ratio, but does not independently establish longer sessions.
+
+Additional session evidence distinguishes the number of sessions containing qualifying events from mean qualified playback per such session:
+
+```text
+Qualified minutes in window
+= distinct qualifying-session count
+× mean qualified minutes per qualifying session
+```
+
+This identity is an accounting decomposition, not a new independent score.
+
+Canonical elapsed session duration is measured separately from qualified playback and includes all-event sessions. Canonical sessions are assigned by session start, whereas qualifying events are allocated by their event window.
+
+Sessions crossing window boundaries can therefore have different session and event window assignments. Diagnostic playback-duration comparisons must preserve this distinction and disclose timestamp/watch-second precision discrepancies rather than modifying the source.
+
+The validation supports longer average recorded sessions for many viewers whose qualified hours rose without additional active days. It does not demonstrate uninterrupted attention, motive or prospective capacity.
+
+**Disposition:** secondary activity-organisation context; no independent hours-per-day fingerprint dimension.
+
+#### Meaningful-title breadth × qualified hours
+
+For every paired profile, qualified viewing changes are reconciled at parent-title level.
+
+Two separate accounting identities are retained:
+
+```text
+Δ qualified hours
+= Δ hours on titles observed in both windows
++ Final hours on titles unobserved in Baseline
+− Baseline hours on titles unobserved in Final
+```
+
+```text
+Δ qualified hours
+= Δ hours on retained meaningful titles
++ hours on newly meaningful titles
+− hours on titles no longer meaningful
+```
+
+Observed means at least one recorded viewing event. Meaningful requires at least one canonically qualified start. These sets must not be used interchangeably.
+
+Within retained meaningful titles, gains and losses are also kept separately rather than allowing their net change to conceal opposing movements.
+
+The identities are verified for each profile before aggregation. Quantiles describe distributions of individual changes; medians of component distributions must not be added or subtracted to reproduce the median net change.
+
+A newly meaningful title may already have been observed without qualifying in Baseline. It must not be described as a first-ever discovery.
+
+Observed title-time reallocation is supported, including losses on titles that remain meaningful. The accounting cannot establish that viewing a newly meaningful title caused the viewer to reduce consumption elsewhere, nor that declining total hours indicate exhausted future capacity.
+
+**Disposition:** secondary title-allocation context; no causal substitution label, headroom score or universal breadth-and-hours growth requirement.
+
+### Cross-origin measurement depth: availability contract
+
+The measurement inventory distinguishes existing quantities from those that can be reconstructed if needed for later fingerprints.
+
+Already available are fixed-anchor outside-hour shares, outside-qualified date counts, cross-window ecosystem and parent-title recurrence, origin-specific qualified volumes and the existing Test 6D residuals.
+
+Anchor hours are derivable by subtracting outside-origin qualified hours from total qualified hours on the same profile-window.
+
+Qualified starts and minutes on recurring outside titles are derivable from the parent-title mart and fixed-origin classification.
+
+Distinct outside-origin sessions or origin-specific temporal frequencies require unions of raw session IDs or viewing dates. Title-level session counts must not be summed where a session can touch multiple titles.
+
+These finer measurements were inventoried, not reconstructed by the relational validation. No uncomputed frequency measure is treated as an established result.
+
+Neither the inventory nor the two-window data establishes lifetime novelty, recommendation exposure, psychological motive or causal incremental viewing.
+
+### Reconciliation and reproduction requirements
+
+Before publication, the Test 7 evidence package must satisfy the following contract:
+
+- One unique profile per paired panel row; independently valid window eligibility and unchanged original state rankings.
+- Population reconciliation across full eligible, paired and window-only groups.
+- Exact-state and family transition totals reconciling to the paired population without summing overlapping trajectory views.
+- Raw and mart measurement consistency for qualified hours, dates, sessions and meaningful parent titles.
+- Post-choice numerator, denominator, support and censoring checks, including same-profile dual support.
+- Historical access and origin-opportunity reconciliation against the established Test 5/6 definitions.
+- Profile-level reconciliation of title-time accounting identities and qualified-session decomposition.
+- Verified lineage and unique-profile deduplication for provisional advancement decisions: reconstruction of the complete profile-ID advancement ledger and its independent audit against the established 3,565 and the separate 1,100 breadth-only track. This is a dependency of the evidence-publication phase; it introduces no new advancement criteria and is not an occasion to alter the agreed count. Any discrepancy between the audited ledger and the established 3,565 is reported for analytical review, not concealed or artificially adjusted to reproduce the expected total.
+- Recorded source hashes, execution commands, source populations and any diagnostics rejected as unsuitable for downstream interpretation.
+
+The relational validation was run with a local diagnostic script whose source manifest and QA outputs are retained in the analysis environment. That script is not yet published in this repository; its publication, with the supporting manifest and QA outputs, belongs to the separate Test 7 evidence phase.
+
+Its computed context tables and cross-origin inventory are supporting evidence; they do not alter frozen source marts, existing behavioural states or Test 7.7 decisions.
+
+**Measurement boundary:** Test 7 supports observed behavioural history and allocation. It does not identify a causal intervention effect, a permanent viewer identity, a personal viewing-capacity ceiling or the additional qualified minutes a viewer would generate in the future.
 
 ## Analytical eligibility
 
