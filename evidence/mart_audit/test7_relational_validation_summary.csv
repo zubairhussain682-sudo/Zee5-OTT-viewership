@@ -1,0 +1,12 @@
+relationship,joint_group,context_profiles,profiles,share_of_context,median_delta_hours,median_delta_active_days,median_delta_titles,median_delta_q_sessions,median_delta_q_minutes_per_q_session,median_delta_elapsed_session_minutes,elapsed_session_mean_increased_profiles,q_session_frequency_increased_profiles,gross_gain_and_loss_profiles,retained_title_loss_profiles,previously_unqualified_addition_profiles
+hours_x_active_days,hours_not_up_days_up,8199,527,0.0643,-2.7447,2.0,1.0,2.0,-11.6361,-13.0099,24,163,524,459,4
+hours_x_active_days,hours_up_days_down,8199,1628,0.1986,4.1799,-3.0,3.0,-3.0,18.2423,18.1871,1582,1058,1621,1290,15
+hours_x_active_days,hours_up_days_same,8199,335,0.0409,4.1478,0.0,3.0,0.0,11.4018,11.3121,302,165,329,239,3
+hours_x_active_days,hours_up_days_up,8199,2789,0.3402,8.9083,5.0,5.0,6.0,9.0647,8.9795,2095,1453,2747,2063,31
+hours_x_active_days,remaining,8199,2920,0.3561,-5.2807,-6.0,0.0,-7.0,-0.3384,-1.2227,1328,1206,2864,2568,27
+titles_x_hours,titles_down_hours_down,8199,1329,0.1621,-5.0172,-5.0,-2.0,-6.0,-2.9619,-3.5,511,479,1282,1064,3
+titles_x_hours,titles_down_hours_up,8199,546,0.0666,2.4081,0.0,-2.0,0.0,9.6143,9.5423,456,295,546,266,3
+titles_x_hours,titles_same_hours_down,8199,466,0.0568,-3.3054,-4.0,0.0,-5.0,-0.7045,-1.2563,209,177,454,390,6
+titles_x_hours,titles_same_hours_up,8199,422,0.0515,2.2918,0.0,0.0,1.0,10.3321,10.5287,356,224,405,214,1
+titles_x_hours,titles_up_hours_down,8199,1652,0.2015,-5.3693,-4.0,4.0,-5.0,-2.6102,-3.8047,632,713,1652,1573,22
+titles_x_hours,titles_up_hours_up,8199,3784,0.4615,8.4926,2.0,6.0,3.0,13.4674,13.579,3167,2157,3746,3112,45

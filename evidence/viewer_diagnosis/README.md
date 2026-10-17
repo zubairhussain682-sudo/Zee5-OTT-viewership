@@ -269,3 +269,60 @@ Supported candidate means sit within about ±6 pp of peer expectation: Focused S
 **Provenance.** Every table here is an aggregate of a real Test 6D analysis output. Twelve are the analysis outputs themselves, restricted to published columns and ordered by candidate family. One is derived: [`test6d3a_raw_cross_origin_distribution.csv`](test6d3a_raw_cross_origin_distribution.csv) is computed from the profile-level Test 6D integration output by grouping `final_cross_origin_minute_share` and `stayed_only_in_baseline_anchor` on `candidate_family` and taking count, mean, median, 25th and 75th percentiles (linear interpolation, stated in the file) and the anchor-only share. No value in any table was transcribed from narrative prose, and no profile-level row is published.
 
 **What this set does not prove:** that cross-origin movement produces additional viewing time, that any difference is caused by access, programme or recommendation, that these behaviours persist beyond the Final window, or that any tail group is a segment. The `stable_low` and `stable_high` labels mean the same profiles occupied the same residual quartile under both Final-window activity controls — nothing more.
+
+## Test 7 — the same viewers across two windows
+
+**Question:** are the behavioural configurations established in Tests 4–6 lasting features of a viewer's consumption, or descriptions of one 90-day period — and when a viewer changes, what actually changes?
+
+**Why it matters:** a candidate family describes behaviour inside a window. It cannot say whether a profile arrived there through continuity, narrowing or expansion, and those histories carry different weight when the eventual question is where additional qualified viewing is credible.
+
+**Populations.** These tables run through two populations that must not be mixed:
+
+| Population | Profiles | Used for |
+| --- | ---: | --- |
+| Final eligible | 9,762 | The latest observed endpoint, and the population any final segmentation must cover |
+| Paired eligible | 8,199 | Eligible in both windows; every longitudinal comparison here |
+
+Baseline-only (562) and Final-only (1,563) profiles have no eligible comparison. A missing eligible window is neither zero viewing nor evidence of new acquisition, and no Baseline is imputed. States keep the original Test 4 rankings over each window's full eligible population; nothing is re-ranked over the paired profiles.
+
+**Provenance.** Every table is curated from the accepted Test 7 package (the amended `test7_integrated` outputs, which already exclude the retired delete-one-title anchor diagnostic) or from the supplementary relational validation. Nothing is transcribed from narrative prose, no profile-level row is published, and the Test 7.3 activity-conditioned peer residuals — which failed the comparability standard — are excluded from every table. The full journal narrative is in [entries 21–27](../../docs/analysis_journal.md#21-the-same-viewer-a-different-window-why-the-investigation-had-to-change), and the rules in the [methodology](../../docs/measurement_methodology.md#test-7-within-profile-longitudinal-measurement-and-integrated-evidence).
+
+### Population and transitions
+
+[`test7_population_and_family_coverage.csv`](test7_population_and_family_coverage.csv) — the five populations and every family's size on each basis: Baseline full, Baseline paired, Final full, Final paired and Final-only. The six Final families sum to 9,762 and the six paired Baseline families to 8,199. The `baseline_only` row has no source cohort of its own; it is derived as Baseline eligible minus paired and says so in its `derivation` column.
+
+[`test7_family_transition_matrix.csv`](test7_family_transition_matrix.csv) — the complete 6 × 6 Baseline-family × Final-family matrix, zero routes included, with each cell's share of its Baseline family. The 36 cells partition the 8,199 paired viewers, and the six `STAYED` cells sum to the 4,883 who kept their family. Read the shares along a row: Selective Core keeps 11.1% of its paired Baseline members, Broad Distributed 73.3%.
+
+[`test7_exact_state_transitions.csv`](test7_exact_state_transitions.csv) — the 233 observed exact concentration × breadth routes, with `same_family` and `same_state` flags. This is the table that separates family recurrence from exact-state recurrence: 4,883 viewers stay in their family but only 2,583 in their exact state. Residual makes the difference visible — of its 2,949 family stayers, 930 keep their exact state and 2,019 move between its 15 observed constituent states without leaving the family.
+
+**What these do not establish:** that a stable label means stable consumption, or that a state change is a behavioural change of the size the label suggests. A move between states is a change in *relative* classification across two independently ranked populations.
+
+### Consumption movement
+
+[`test7_consumption_change_by_trajectory.csv`](test7_consumption_change_by_trajectory.csv) — for the paired population, the exact-state recurrence split and each family's `STAYED`, `LEFT` and `ENTERED` cohorts: change in meaningful titles, qualified watch hours, active days, top-title share and historically reachable parent titles. Every change statistic is a distribution of **individual** Final-minus-Baseline differences; medians of change are never differences of window medians (the paired median hours change is +1.31, while the gap between the two window medians is a different number). `unit` and `lineage` are carried per row.
+
+[`test7_breadth_hours_joint_movement.csv`](test7_breadth_hours_joint_movement.csv) — the six mutually exclusive titles × hours direction groups, for all paired viewers, for each persistent family and for observed family-transition routes, with the median changes inside each group. It carries the distinctions the journal relies on: 3,784 paired viewers increased both titles and hours while 1,652 increased titles without more hours; among 1,058 persistent Broad Distributed viewers, 601 grew both and 346 broadened while losing a median 17.23 hours; and on the Broad Distributed → Residual route, whose overall median hours change is negative, 144 viewers still grew both by a median 23.33 hours. Groups under 30 profiles are flagged.
+
+**What these do not establish:** that broader viewing is incremental viewing, that persistent heavy viewers are near a ceiling, or anything about remaining headroom. The `STAYED`, `LEFT` and `ENTERED` cohorts overlap across families — a viewer leaving one family enters another — so they are never summed into a population total.
+
+### Post-choice outcomes
+
+[`test7_post_choice_outcomes.csv`](test7_post_choice_outcomes.csv) — completion, episodic continuation and 14-day replay for the paired population and each family trajectory. A rate is compared only where the profile meets the original evidence threshold **in both windows** (five known outcomes for completion and continuation, three for replay), so Baseline and Final summaries always describe the same viewers: 6,882 for completion, 5,331 for continuation and 6,717 for replay, with 5,317 supported on all three. Profile-average means and pooled rates are reported separately because they weight differently; numerators, known denominators, censored outcomes, zero and missing denominators and the size of one outcome step are carried alongside. Rows with dual support under 30 are flagged.
+
+On their dual-supported populations, mean completion moved from 79.82% to 79.78% while continuation fell from 68.28% to 62.84% and replay from 24.96% to 12.18%. The flat completion mean hides individual movement: its middle half of changes spans about −7.16 to +7.69 points.
+
+**What it does not establish:** a single engagement score, a change in satisfaction or attachment, or a causal effect. Continuation depends on programme mix and observable next-episode opportunity; replay is shaped by follow-up observability near the end of the Final window. Unsupported viewers are not failures — they are viewers without enough known outcomes to compare.
+
+### Cross-origin recurrence
+
+[`test7_cross_origin_recurrence.csv`](test7_cross_origin_recurrence.csv) — outside-anchor viewing for the paired population and each family trajectory, against the fixed Baseline title-origin anchor. Presence is a four-way partition (both windows, newly observed in Final, Baseline only, neither); the other recurrence columns — multiple dates in both windows, same outside-origin ecosystem, same outside parent title — **overlap** and are different observations, not partitions. Level and change columns for outside share, outside hours, reachable cross-origin titles and cross-origin title-day opportunity sit beside them.
+
+For the paired population: 7,129 viewers watched outside their anchor in both windows, 6,644 on more than one date in each, 6,792 returned to the same outside-origin ecosystem and 5,827 to the same outside parent title. Mean outside share rose from 36.6% to 48.5%, and mean outside hours from 17.31 to 21.13.
+
+**What it does not establish:** repeated discovery — returning to a familiar outside title is recurrence, not exploration — or an increase in exploratory propensity. The anchor is the largest Baseline origin share by construction, so a rise in outside share is subject to reference selection and regression to the mean, and no bias-corrected estimate exists. Origin is the title's `original_language`, never the consumed audio track. Test 6D's candidate-blind residuals are not republished here; they remain population-relative context.
+
+### Integrated family pathways
+
+[`test7_integrated_family_pathways.csv`](test7_integrated_family_pathways.csv) — one row per paired cohort that the Test 7.7 family interpretations rest on: the paired population, the exact-state split, each family's `STAYED`, `LEFT` and `ENTERED` cohorts and all 36 Baseline → Final routes. Each row carries its size and thin-population flag, family and exact-state recurrence, joint titles × hours growth counts, post-choice dual support including the all-three intersection, access-regime stability, outside-anchor recurrence and median titles, hours and active days in each window. The joint counts are profile-level intersections computed in the analysis environment before aggregation, so a count such as 445 Focused Successful leavers who grew both titles and hours describes the same viewers, not two separate summaries.
+
+**What it does not establish:** final segments, the provisional advancement pool or headroom. The 3,565 analyst-established provisional candidates and the separate 1,100 breadth-only review track are documented in [journal entry 26](../../docs/analysis_journal.md#26-six-families-six-investigations-and-no-single-route-to-growth) but are deliberately **not** published as table values: their profile-ID advancement ledger has not yet been independently audited, and that audit is a separate evidence dependency. Rows under 30 profiles are flagged and should be read as description, not result.

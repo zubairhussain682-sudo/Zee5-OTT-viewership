@@ -33,7 +33,7 @@ The viewer-level base is reviewed in blocks, each asking whether a family of fie
 | Test 4 | Post-choice response and its link to breadth and concentration | PASS WITH MEASUREMENT DECISIONS |
 | Test 5 | Opportunity measures used for realistic-choice conditioning | PASS |
 | Test 6A | Multilingual catalogue supply and language opportunity | PASS WITH CAVEAT |
-| Next | Reintegration of cross-origin behaviour into the mechanism candidates | Not yet reviewed |
+| Test 7 (relational) | Activity organisation and title-time allocation as interpretive context | PASS — secondary context only |
 
 **PASS WITH CAVEAT** records a bounded semantic imperfection that does not threaten the project objective, downstream denominators, analytical eligibility or the interpretation of the populations actually used. The imperfection is documented and the affected rows are excluded from the relevant interpretation; the mart is not rebuilt for it.
 
@@ -213,3 +213,16 @@ It closed as **pass with caveat**. The structure holds, but `content_audio_langu
 [`language_opportunity_by_access_regime.csv`](language_opportunity_by_access_regime.csv) — one row per window × access regime, built on the same historically valid day-by-day availability used for catalogue opportunity. It gives reachable parent titles, their multilingual count and share, mean accessible audio languages per reachable title, and the day-weighted versions of those. Read the percentages beside the absolute counts: a regional pack's catalogue is more multilingual in percentage terms precisely because a dub is one route by which a title becomes eligible for the pack, but 186 reachable titles under a Bengali pack is a much smaller choice set than 913 under broad access.
 
 **What these do not prove:** nothing about viewers. They establish supply and reachability, not multilingual viewing, preference, propensity, a segment or headroom. Reachable means technically available under historically valid entitlement — not surfaced, recommended, noticed or considered.
+
+### Test 7 — two relationships validated as context, not as new dimensions
+
+During the Test 7 family interpretations two relationships kept helping to explain change: qualified hours rising without more active days, and meaningful-title breadth rising without more hours. Both sounded like candidate behavioural dimensions. A bounded validation on the 8,199 paired viewers checked whether they rest on real measurement or on arithmetic.
+
+[`test7_relational_validation_summary.csv`](test7_relational_validation_summary.csv) — two partitions of the paired population. `hours_x_active_days` splits viewers by the joint direction of qualified hours and active days; `titles_x_hours` by the joint direction of meaningful titles and qualified hours. Each group carries its median changes, session evidence (sessions containing qualifying events, qualified minutes per such session, canonical elapsed session minutes) and title-allocation evidence (gains and losses, losses on titles that stayed meaningful, additions that were previously observed without qualifying).
+
+- **Activity organisation.** 1,963 viewers increased qualified hours without increasing active days — 1,628 with fewer days, 335 with the same. Hours per active day rising for them is arithmetic, not evidence. The independent observation is that 1,582 of the 1,628 had longer mean elapsed recorded sessions.
+- **Title-time allocation.** All 1,652 viewers who broadened without more hours gained time on some titles and lost more on others, and 1,573 of them (95.2%) lost qualified time on at least one title that stayed meaningful in both windows — redistribution is not just old titles out and new titles in.
+
+The supporting accounting holds per profile in the analysis environment: qualified minutes reconcile to qualifying-session count × qualified minutes per session, and both title-time identities — over *observed* titles and over *meaningful* titles — reconcile to each profile's net change in qualified hours (all relational QA checks pass). All-event active days, qualified active days, canonical elapsed sessions and qualified playback stay distinct; 811 events whose session starts in the other window and 99 session-window rows with playback exceeding elapsed time are disclosed as source caveats rather than repaired.
+
+**Disposition:** both relationships are secondary interpretive context. Neither is an independent fingerprint dimension, a causal substitution finding, a viewing-capacity conclusion or a universal growth requirement. The cross-origin measurement inventory that accompanied this validation is an availability contract — quantities marked derivable are not computed results, and none is published here. The rules are in the [methodology](../../docs/measurement_methodology.md#supplementary-validation--activity-organisation-and-title-time-allocation).
