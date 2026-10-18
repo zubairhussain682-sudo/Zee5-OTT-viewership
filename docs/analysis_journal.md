@@ -1092,6 +1092,14 @@ Broad Distributed is the single C1_B5 state. Remaining Broad means remaining in 
 
 Residual contains 15 constituent C×B states. Of its 2,949 family stayers, only 930 stayed in precisely the same state. The other 2,019 moved between states without ever leaving Residual.
 
+![Six-by-six matrix of Baseline candidate family against Final candidate family for 8,199 paired viewers, each cell showing a profile count and its share of the Baseline row, darker blue for larger row shares](../figures/figure_21_test7_family_transitions.png)
+
+*Figure 21 · Where the 8,199 paired viewers moved between candidate families.* *How to read it:* rows are Baseline families and columns Final families; each cell gives the count and its share of its own Baseline row, so every row has its own denominator, and darker blue means a larger row share. All 36 routes are shown, zeros included; daggers mark cells of 1–29 profiles. *What it shows:* retention runs from 11.1% in Selective Core to 73.3% in Broad Distributed. *Limit:* these are moves between relatively ranked classifications, not growth or decline in viewing.
+
+![Stacked horizontal bars dividing all paired viewers and each Baseline family into same exact state, same family but different state, and different family](../figures/figure_22_test7_family_vs_exact_state.png)
+
+*Figure 22 · Family recurrence against exact-state recurrence.* *How to read it:* each bar splits a population into three exclusive statuses — blue for the same exact C×B state, orange for the same family in a different state, grey for a different family — with counts and shares of that bar and its `n` at the right. *What it shows:* 4,883 kept their family but only 2,583 their exact state; Residual's orange segment is the 2,019 stayers who moved between its states, while single-state families such as Broad Distributed can have none. *Limit:* even blue stayers can have changed what they watched.
+
 Calling both families equally stable would therefore confuse the persistence of a label with the persistence of the behaviour contained by that label.
 
 The same caution applies elsewhere. Focused Successful contains two related narrow-breadth states, so a viewer can remain within the family while moving between C4_B1 and C5_B1.
@@ -1131,6 +1139,10 @@ A benchmark can be calculated correctly and still be too coarse to support the i
 The activity-conditioned residuals were therefore retained as numerical diagnostics, not accepted as validated like-for-like adjusted effects. We did not quietly promote them because they happened to be available, nor invent a new matching rule simply to obtain a more pleasing result.
 
 The direct same-viewer observations remained valid. What failed was the stronger claim that those observations had been adequately adjusted for activity.
+
+![Two-panel interval dot plot of individual change in meaningful titles and in qualified watch hours for stayed and left groups of each Baseline family](../figures/figure_23_test7_longitudinal_family_trajectories.png)
+
+*Figure 23 · Whether staying or leaving meant more viewing depended on the family.* *How to read it:* the twelve rows are the stayed (teal) and left (purple) groups of each Baseline family, partitioning the 8,199 paired viewers; the table gives each group's `n` and Baseline median titles and hours. In panel A (meaningful titles) and panel B (qualified hours), the dot and bold number are the median of each viewer's own Final-minus-Baseline change, the shaded bar the 25th–75th percentiles of those changes, and the vertical line zero. *What it shows:* Broad Distributed stayers added a median 14 titles and 5.5 hours without changing state, while Focused Successful stayers held still and its leavers expanded. *Limit:* these are direct changes, not activity-adjusted effects; the intervals are observed spreads, not confidence intervals.
 
 **What this changed:** the investigation moved away from treating stability as a single binary attribute.
 
@@ -1216,6 +1228,10 @@ Among 603 viewers leaving Focused Successful, breadth and qualified hours often 
 The transition from Selective Core into Residual showed a similar complication. Its viewers tended to broaden consumption, and many increased watch hours, but completion, replay and continuation did not move together.
 
 The meaning of movement depended on the particular origin and destination.
+
+![Three-panel interval plot of individual change in completion, continuation and 14-day replay, by stayed, left and entered route within each family](../figures/figure_24_test7_post_choice_family_trajectories.png)
+
+*Figure 24 · Post-choice responses diverged across family trajectories.* *How to read it:* panels A–C show completion, episodic continuation and 14-day replay; each row is a family's stayed, left or entered route. The axis is individual rate change in percentage points; the grey line spans the 25th–75th percentiles, the circle is the median and the diamond the mean. `dual n` counts viewers meeting that metric's support rule in both windows, so each metric has its own population; a dagger marks dual n under 30. *What it shows:* Focused Successful entrants gained a mean +9.46 points of completion while its leavers lost 6.42. *Limit:* routes overlap across families and must not be summed, and the three outcomes are not one engagement score.
 
 One of the central lessons was that greater realised viewing volume and a stronger post-choice response are not interchangeable achievements.
 
@@ -1361,6 +1377,14 @@ The latter is particularly important. Repeated cross-origin consumption is not n
 A viewer could watch the same Tamil-origin series across many dates and both windows. That is valid cross-origin recurrence relative to a Hindi-origin anchor, but it does not demonstrate a continuing appetite for newly encountered Tamil-origin titles.
 
 Frequency, title turnover, qualified time and programme structure would become important when the eventual segments required a deeper explanation.
+
+![Three-panel figure by family route: stacked bars of outside-origin recurrence, interval dots of change in outside-origin hours, and Baseline-to-Final dumbbells of reachable outside-origin titles](../figures/figure_25_test7_cross_origin_trajectories.png)
+
+*Figure 25 · Cross-origin recurrence was not the same history for every family.* *How to read it:* rows are stayed, left and entered routes, which overlap across families. Panel A splits each route into viewers repeating the same outside parent title (navy), outside in both windows without a repeated title (teal), and not outside in both windows (grey). Panel B gives the median (dot; rust where negative) and 25th–75th percentiles of individual change in outside-origin hours. Panel C shows mean reachable outside-origin titles in Baseline (navy) and Final (orange) on a truncated axis. *What it shows:* recurrence is common, but much of it is the same outside title, and a route can recur strongly while its outside hours fall. *Limit:* the panels are separate summaries of the same populations, not linked individual observations, and reachability is not exposure or demand.
+
+![Figure 25B: by Final family, Baseline and Final allocation inside versus outside the fixed anchor, Final outside viewing against reachable outside opportunity, and candidate-blind peer residuals](../figures/figure_25b_test7_anchor_and_cross_origin_context.png)
+
+*Figure 25B · How much viewing stayed inside each family's Baseline anchor.* This recaps the Test 6C–6D evidence ([entries 18–20](#18-native-language-was-not-observed-so-the-reference-came-from-the-profiles-own-viewing)) as context for Test 7, grouped by Final family. *How to read it:* panel A splits qualified minutes between the fixed anchor origin (navy) and outside it (teal) in Baseline and Final; panel B shows the middle half and median of Final outside-viewing shares beside the mean outside share of reachable title-days (diamond), which use different denominators; panel C shows Final outside viewing minus a candidate-blind peer expectation under the active-days control, with the interquartile range and mean. *What it shows:* families differ in anchor structure and outside allocation, and wide variation remains inside each family relative to peers. *Limit:* peers are not matched on exact state or family, so these are not within-state propensities, and the anchor is a selected Baseline maximum.
 
 **Evidence — the average movement looked substantial, but the reference was asymmetric.**
 
@@ -1575,6 +1599,10 @@ The negative median of the larger pathway was not a legitimate reason to dismiss
 The lesson was clear: a cohort average can describe the overall pathway while concealing a distinctly different subset of viewers within it.
 
 That is precisely the kind of population heterogeneity the final segmentation must preserve.
+
+![Grid of six families by stayed, left and entered routes, each cell showing the count and share of the route that increased both meaningful titles and qualified hours, with a family-specific note](../figures/figure_26_test7_integrated_family_pathways.png)
+
+*Figure 26 · Six candidate families, different routes through the same history.* *How to read it:* each cell gives the number of viewers on that route who increased **both** meaningful titles and qualified hours over the route's cohort size, with the bar and percentage showing that proportion; the right-hand column names what the family label did not explain. *What it shows:* Focused Successful leavers expanded at 74% against 17% of stayers, Selective Core stayers expanded without leaving C4_B3, and Access-Sensitive Neighbour's destinations diverged. *Limit:* proportions are within routes that overlap across families, and joint growth is realised history, not an advancement rule or headroom — the 3,565 provisional candidates are not a sum of these cells.
 
 **The advancement decisions remained provisional.**
 
