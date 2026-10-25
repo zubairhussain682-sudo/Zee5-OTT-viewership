@@ -893,11 +893,11 @@ Membership is reconstructed to profile identity from the accepted Test 7.7 selec
 
 A characteristic may define membership only if:
 
-- it describes a mechanism, not a measurement;
-- it isn't the selection rule restated;
-- it isn't volume in disguise;
-- it's observable for every member;
-- it isn't redundant with another defining characteristic.
+1. it describes a mechanism, not a measurement;
+2. it isn't the selection rule restated;
+3. it isn't volume in disguise;
+4. it's observable for every member;
+5. it isn't redundant with another defining characteristic.
 
 **Why it matters:** a route is fixed before segmentation begins, so the evidence used to interpret a segment can't redefine who is in it.
 

@@ -1812,11 +1812,11 @@ Routes were collapsed into segments where they behaved alike. Two were placed by
 
 A similarity could define membership only if it passed five tests:
 
-- it describes a mechanism, not a measurement;
-- it isn't the selection rule restated;
-- it isn't volume in disguise;
-- it's observable for every member;
-- it isn't redundant with another defining trait.
+1. it describes a mechanism, not a measurement;
+2. it isn't the selection rule restated;
+3. it isn't volume in disguise;
+4. it's observable for every member;
+5. it isn't redundant with another defining trait.
 
 Evidence that failed those tests still had a job. *Corroborating* evidence speaks to inclination and is reported per segment as present, mixed or unavailable, never averaged into a score. *Contextual* evidence describes the segment and frames its opportunity.
 
@@ -1858,7 +1858,7 @@ The conventions that held throughout:
 **Evidence — opening up, rung by rung:** the clearest pattern was viewers spreading their attention as they added titles and hours. It appeared at every scale, and the scales lined up:
 
 | Segment | Routes | Paired viewers | Baseline hours (median) | Hours change | Top-title share change | Kept-title hours change |
-| --- | --- | ---: | --- | --- | --- | --- |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
 | Narrow-to-broader growers | Focused Successful → Residual, → First-Pass, → Selective Core | 346 | 5.4–7.2 | +3.3 to +5.6 | −21 to −32 pp | −0.5 to +1.3 |
 | Concentrated-to-mixed growers | Selective Core, Access-Sensitive, First-Pass → Residual; Access-Sensitive → Selective Core | 412 | 9.1–14.3 | +5.0 to +8.5 | −6 to −37 pp | −0.1 to +1.3 |
 | Heavy spreaders | Residual → Residual, state moved | 1,045 | 23.7 | +10.1 | −11.9 pp | −0.8 |
@@ -1946,7 +1946,7 @@ These viewers have valid Final behaviour, access and outcome evidence; what they
 **Evidence:** most are new profiles. On five of the six Track C routes, median profile age at the start of the Final window was between 0 and 8 days. They were placed by their Final configuration alone, beside the segment whose Final positions they share. The match holds on scale as well as state:
 
 | Final family | Viewers | Final hours (median) | Final titles (median) | Placed beside |
-| --- | --- | --- | --- | --- |
+| --- | ---: | ---: | ---: | --- |
 | Successful First-Pass | 76 | 9.6 | 5 | Narrow-to-broader growers |
 | Residual | 562 | 21.2 | 9 | Concentrated-to-mixed growers |
 | Selective Core; Access-Sensitive | 82; 104 | 16.5; 8.0 | 8.5; 4 | Favourite-anchored growers |

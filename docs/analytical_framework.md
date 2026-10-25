@@ -245,11 +245,11 @@ Whichever dimensions define a segment must be interpretable, relevant to mechani
 
 Routes are collapsed into a segment when their mechanism signatures agree. A route is placed by its behaviour rather than its origin family when the two disagree. A similarity may define membership only if:
 
-- it describes a mechanism, not a measurement;
-- it isn't the selection rule restated;
-- it isn't volume in disguise;
-- it's observable for every member;
-- it isn't redundant with another defining trait.
+1. it describes a mechanism, not a measurement;
+2. it isn't the selection rule restated;
+3. it isn't volume in disguise;
+4. it's observable for every member;
+5. it isn't redundant with another defining trait.
 
 Evidence has one of three roles:
 

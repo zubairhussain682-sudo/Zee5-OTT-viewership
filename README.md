@@ -78,7 +78,7 @@ flowchart TD
 
 Access and catalogue context enter at the start, not after the marts. Constraints and opportunity condition how behaviour is measured and *interpreted fairly*; they are not behavioural identity. A profile created two weeks before the window closed has short tenure — that limits what its viewing can tell us, but it is not a personality trait.
 
-Candidate behavioural dimensions include activity, breadth, concentration, post-choice response (completion, episodic continuation, resume and 14-day replay), exploration, persistence, language openness and observable responsiveness to prominent titles. Each still needs to earn its place on evidence, stability and non-redundancy. There are no segment names, thresholds or prevalence estimates here yet.
+Candidate behavioural dimensions include activity, breadth, concentration, post-choice response (completion, episodic continuation, resume and 14-day replay), exploration, persistence, language openness and observable responsiveness to prominent titles. Each had to earn its place on evidence, stability and non-redundancy before it could shape a segment; the [final segmentation](#current-analytical-position) records which ones did.
 
 ## Measurement Principles
 
@@ -145,15 +145,25 @@ Test 6D then asked the harder question: does that behaviour add anything inside 
 
 **Cross-origin catalogue propensity under realistic opportunity** is therefore carried forward provisionally as a non-redundant, cross-cutting dimension — an observed tendency across two windows, not a trait, a score, a segment or a headroom estimate. Native language is never inferred: `home_region`, plan language and title origin are contextual fields, and the anchor is behavioural. Test 7 then followed the same 8,199 viewers eligible in both windows. Family labels recurred far more often than exact states (4,883 against 2,583), consumption could change sharply under a stable label, completion, continuation and replay moved differently, title breadth and viewing volume separated, and each candidate family resolved into different historical pathways ([journal entries 21–27](docs/analysis_journal.md#21-the-same-viewer-a-different-window-why-the-investigation-had-to-change)). That longitudinal investigation is complete and published with its curated evidence and figure series; it is historical description, not final segmentation.
 
-The next analytical work is fingerprint construction and mechanism-led final segmentation across all 9,762 Final-eligible profiles, followed by a separate assessment of prospective headroom and behavioural inclination. No normalised atomic measurement layer, final fingerprints, segments, headroom estimates or business findings have yet been produced.
+The final pass brought those layers together ([journal entries 28–33](docs/analysis_journal.md#28-where-the-evidence-converged-and-the-population-it-converged-on)). The 6,228 viewers advanced for investigation were verified viewer by viewer and segmented by how their viewing grew. The result is nine segments, built from the historical routes:
+- opening up, at four scales;
+- deepening a favourite;
+- scaling the same shape;
+- a new anchor at scale;
+- the same appetite on less time;
+- occasional light viewing.
+
+Viewers without an earlier window are placed beside the segment they currently resemble. Each segment states the kind of additional viewing its behaviour makes plausible. How much additional viewing an intervention would produce is handed on to controlled testing, segment by segment.
+
+Findings are reported as shares, medians of individual change and patterns across routes rather than totals, and every claim is held to an explicit support rule, so they do not depend on the size of the analysed population; the marts and transformations apply unchanged at larger scale.
 
 ## Project Roadmap
 
 | State | Work |
 | --- | --- |
-| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit · post-choice response measurement and candidate mechanism states · realistic opportunity conditioning · language supply, consumed-language behaviour and title-origin movement · cross-origin non-redundancy inside the candidate mechanisms · within-profile longitudinal analysis (Test 7.1–7.7) with its evidence and figures |
-| Current | Behavioural fingerprints and mechanism-led final segmentation across all Final-eligible profiles |
-| Next | Prospective headroom and behavioural inclination assessment · normalised atomic measures · commercial context · Power BI |
+| Completed | Business framing · data-model reasoning · raw schema understanding · analytical mart architecture · title-level mart audit · core measurement semantics for that mart · viewer-level grain, coverage, activity and session audit · viewer-level breadth and concentration audit · post-choice response measurement and candidate mechanism states · realistic opportunity conditioning · language supply, consumed-language behaviour and title-origin movement · cross-origin non-redundancy inside the candidate mechanisms · within-profile longitudinal analysis (Test 7.1–7.7) with its evidence and figures · verification of the investigated population · mechanism-led segmentation of the 6,228 investigated viewers |
+| Current | Publishing the segmentation's evidence tables and figures |
+| Next | Segment-level holdout testing of incremental qualified viewing · commercial context · Power BI |
 
 The [analysis journal](docs/analysis_journal.md) records the reasoning behind each decision so far.
 
