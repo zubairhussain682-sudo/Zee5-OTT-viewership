@@ -826,7 +826,7 @@ Before publication, the Test 7 evidence package must satisfy the following contr
 - Verified lineage and unique-profile deduplication for provisional advancement decisions: reconstruction of the complete profile-ID advancement ledger and its independent audit against the established 3,565 and the separate 1,100 breadth-only track. This is a dependency of the evidence-publication phase; it introduces no new advancement criteria and is not an occasion to alter the agreed count. Any discrepancy between the audited ledger and the established 3,565 is reported for analytical review, not concealed or artificially adjusted to reproduce the expected total.
 - Recorded source hashes, execution commands, source populations and any diagnostics rejected as unsuitable for downstream interpretation.
 
-The relational validation was run with a local diagnostic script whose source manifest and QA outputs are retained in the analysis environment. That script is not yet published in this repository; its publication, with the supporting manifest and QA outputs, belongs to the separate Test 7 evidence phase.
+The relational validation is implemented in [`scripts/diagnostics/validate_relational_measures.py`](../scripts/diagnostics/validate_relational_measures.py), published unchanged from the run that produced the accepted outputs. Its inputs — the marts, playback events and sessions, and profile-level Test 6–7 extracts — stay in the analysis environment, so a reviewer can read and audit the implementation and check its published summary, but cannot re-execute it from public files alone.
 
 Its computed context tables and cross-origin inventory are supporting evidence; they do not alter frozen source marts, existing behavioural states or Test 7.7 decisions.
 
