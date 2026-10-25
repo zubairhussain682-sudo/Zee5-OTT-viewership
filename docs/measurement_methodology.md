@@ -658,6 +658,8 @@ Completion, continuation and replay also have different observation clocks. Comp
 
 The validated pre-completion resume measure contributes pathway counts only in Test 7.4. No new comparable resume rate is created.
 
+**Later note (final pass, 2026-10-26).** In the segmentation, the *direction* of dual-supported 14-day replay change is not used as evidence of inclination. Replay fell on 18 of the 21 paired routes and across the full paired population alike. That pattern is consistent with the shorter follow-up available late in the Final window, not with a behaviour specific to any group. Replay levels and support stay published as context. The replay definition, its 14-day horizon and its support rule are unchanged.
+
 Comparisons across post-choice measures must use the actual intersection of supported profiles when claiming that several responses occurred together. Different metric-specific group means must not be presented as one viewer-level joint pattern.
 
 ### 7.5 — Mechanism continuity, activity and opportunity
@@ -732,7 +734,11 @@ The preliminary advancement register is an analyst decision layer, not a new mea
 
 Deduplication must occur by unique profile_id across pathways. The working total of 3,565 provisionally advanced paired viewers is the analyst-established distinct count: overlaps were removed as each family's pathways were added, which is why routes are recorded as additional distinct viewers (Selective Core's 330 candidate observations, for example, contribute 305 after 25 overlaps with Focused Successful). Those overlap-accounting decisions are distinct from an independent profile-ID audit of the complete advancement ledger, which has not yet been performed. The value is not a segmentation result or estimate of headroom.
 
+**Later note (final pass, 2026-10-26).** The independent audit of the advancement ledger has since been performed. No contemporaneous profile-ID ledger had been saved, so membership was reconstructed to profile identity from the accepted Test 7.7 selection rules and historical pathways. It was then checked for population, route, overlap and lineage. It reproduces 3,565 Track A, 1,100 Track B and 1,563 Track C viewers (6,228 distinct) with no discrepancy ([journal entry 28](analysis_journal.md#28-where-the-evidence-converged-and-the-population-it-converged-on)).
+
 The 1,100 separately flagged breadth-only viewers remain a distinct review track. Neither list determines the membership of the future descriptive segmentation, which must represent the complete Final-eligible population.
+
+**Later note (final pass, 2026-10-26).** The descriptive segmentation was scoped to the 6,228 investigated viewers rather than the full 9,762 Final-eligible population; see [segmentation](#segmentation-of-the-investigated-population). The 3,534 Final-eligible viewers not advanced by Test 7.7 are not segmented.
 
 No numerical growth cutoff or automatic promotion rule is created by Test 7.7.
 
@@ -823,7 +829,7 @@ Before publication, the Test 7 evidence package must satisfy the following contr
 - Post-choice numerator, denominator, support and censoring checks, including same-profile dual support.
 - Historical access and origin-opportunity reconciliation against the established Test 5/6 definitions.
 - Profile-level reconciliation of title-time accounting identities and qualified-session decomposition.
-- Verified lineage and unique-profile deduplication for provisional advancement decisions: reconstruction of the complete profile-ID advancement ledger and its independent audit against the established 3,565 and the separate 1,100 breadth-only track. This is a dependency of the evidence-publication phase; it introduces no new advancement criteria and is not an occasion to alter the agreed count. Any discrepancy between the audited ledger and the established 3,565 is reported for analytical review, not concealed or artificially adjusted to reproduce the expected total.
+- Verified lineage and unique-profile deduplication for provisional advancement decisions: reconstruction of the complete profile-ID advancement ledger and its independent audit against the established 3,565 and the separate 1,100 breadth-only track. This is a dependency of the evidence-publication phase; it introduces no new advancement criteria and is not an occasion to alter the agreed count. Any discrepancy between the audited ledger and the established 3,565 is reported for analytical review, not concealed or artificially adjusted to reproduce the expected total. *Completed in the final pass: the reconstructed ledger reproduces the established counts with no discrepancy ([§7.7 later note](#77--integrated-family-interpretation-and-evidence-coverage)).*
 - Recorded source hashes, execution commands, source populations and any diagnostics rejected as unsuitable for downstream interpretation.
 
 The relational validation is implemented in [`scripts/diagnostics/validate_relational_measures.py`](../scripts/diagnostics/validate_relational_measures.py), published unchanged from the run that produced the accepted outputs. Its inputs — the marts, playback events and sessions, and profile-level Test 6–7 extracts — stay in the analysis environment, so a reviewer can read and audit the implementation and check its published summary, but cannot re-execute it from public files alone.
@@ -831,6 +837,123 @@ The relational validation is implemented in [`scripts/diagnostics/validate_relat
 Its computed context tables and cross-origin inventory are supporting evidence; they do not alter frozen source marts, existing behavioural states or Test 7.7 decisions.
 
 **Measurement boundary:** Test 7 supports observed behavioural history and allocation. It does not identify a causal intervention effect, a permanent viewer identity, a personal viewing-capacity ceiling or the additional qualified minutes a viewer would generate in the future.
+
+## Segmentation of the investigated population
+
+The segments group the investigated viewers by how their viewing changed between the two windows. Every rule below sits on the Test 4–7 definitions and leaves them unchanged: qualified starts, meaningful titles, full-window C×B rankings, support thresholds and the fixed Baseline anchor.
+
+### Investigated population
+
+**Question:** who is segmented?
+
+**Rule:** the 6,228 distinct profiles advanced by Test 7.7, in three tracks:
+
+| Track | Definition | Profiles |
+| --- | --- | ---: |
+| A | Paired viewers on advanced routes whose meaningful titles and qualified hours both increased | 3,565 |
+| B | Paired viewers on advanced routes whose meaningful titles increased while qualified hours did not | 1,100 |
+| C | Final-eligible viewers with no eligible Baseline | 1,563 |
+
+Membership is reconstructed to profile identity from the accepted Test 7.7 selection rules and deduplicated by `profile_id`. A viewer advanced through two pathways is counted once, in the first family pass that selected them. The 27 historical groups behind the tracks are disjoint.
+
+**Why it matters:** a segment's size and composition are only as good as the list beneath it.
+
+**Scope:** the 3,534 Final-eligible viewers not advanced by Test 7.7 are outside the segmentation. Paired viewers who grew on routes not selected for investigation are outside it too: Test 7.7 selected by mechanism and pathway, not by growth sign alone.
+
+**Checked by:** population, route, overlap and lineage reconciliation. Every group's exact-state trajectories sum to its size, and parent-route sizes match the published [family transition matrix](../evidence/viewer_diagnosis/test7_family_transition_matrix.csv).
+
+### Viewer-level evidence record
+
+**Rule:** one linked record per investigated profile, joining the accepted marts and analytical outputs at their own grains. Each record carries:
+
+- Baseline and Final behaviour where both exist;
+- individual change measures;
+- family, exact state and route;
+- post-choice outcomes with support and censoring;
+- outside-anchor viewing and recurrence;
+- title-level additions, losses and retained-title hours;
+- session organisation;
+- reachable catalogue.
+
+| Treatment | Rule |
+| --- | --- |
+| Unsupported rates | Recorded as missing (`NULL`), never zero or failure |
+| Support thresholds | Unchanged: completion ≥ 5 known outcomes, continuation ≥ 5 observed opportunities, replay ≥ 3 known outcomes |
+| Historical change | Requires support in both windows |
+| Track C | Final evidence only; no Baseline, historical change or anchor is created |
+| Individual disagreement with the route | Retained as descriptive heterogeneity, not resolved towards the route's direction |
+
+**Why it matters:** a claim that behaviours occurred *together* must rest on the same viewers. Route-level summaries can't carry it ([§7.4](#74--longitudinal-post-choice-comparison)).
+
+**Checked by:** 647 technical and reconciliation checks, all passed, with no source table modified. They cover raw against mart watch time, qualified watch time, active days, sessions, entitled days and reachable-title days, across 10,893 eligible profile-windows. These are integrity checks, not validations of a behavioural reading.
+
+### Membership: the route
+
+**Rule:** the unit of membership is the historical route: origin family → Final family, with track, and exact-state disposition where it is part of the route's definition. Segments are formed by collapsing routes whose mechanism signatures agree (below). A route is placed by its behaviour rather than its origin family when the two disagree, and the placement and its reason are recorded.
+
+A characteristic may define membership only if:
+
+- it describes a mechanism, not a measurement;
+- it isn't the selection rule restated;
+- it isn't volume in disguise;
+- it's observable for every member;
+- it isn't redundant with another defining characteristic.
+
+**Why it matters:** a route is fixed before segmentation begins, so the evidence used to interpret a segment can't redefine who is in it.
+
+**Scope:** no new numerical threshold is introduced inside the investigated population. C×B states keep their full-window Test 4 rankings and are never re-ranked over the investigated viewers.
+
+### Mechanism signature
+
+**Rule:** each route is described by four quantities, each a median over the route's members of an individual Final − Baseline value. A median is never formed as the difference of two window medians.
+
+| Quantity | Definition |
+| --- | --- |
+| Attention spread | Change in top-title qualified share, in percentage points |
+| Kept-title hours | Change in qualified hours on titles meaningful in both windows |
+| Hours by title fate | Hours on titles no longer meaningful, change on retained meaningful titles, and hours on newly meaningful titles, from the [title-allocation identity](#meaningful-title-breadth--qualified-hours) |
+| Scale | Baseline qualified watch hours |
+
+The components of the title-allocation identity hold per viewer. Their route medians are reported side by side and must not be added or subtracted to reproduce the median net change.
+
+**Why it matters:** these quantities describe *how* viewing changed (where attention went, and whether new hours went to new or familiar titles) rather than how much. That is what separates mechanisms that a joint "titles and hours up" observation would merge.
+
+### Roles of evidence
+
+| Role | Use | Reporting |
+| --- | --- | --- |
+| Defining | Decides membership | Route and mechanism signature |
+| Corroborating | Speaks to inclination | Per segment: present, mixed or unavailable. Never averaged into a score |
+| Contextual | Describes the segment and frames its opportunity | Descriptive |
+
+Within the corroborating and contextual roles:
+
+- **Completion** on dual-supported viewers is the primary post-choice corroboration.
+- **Continuation** is secondary, because it depends on programme mix and next-episode supply.
+- **Replay direction** is not used ([§7.4 later note](#74--longitudinal-post-choice-comparison)).
+- **Outside-anchor share** is a modifier across segments, never a boundary, because the anchor is a selected Baseline maximum ([§7.6](#76--longitudinal-cross-origin-measurement)).
+- **Reachable catalogue** is context. It rose by a median of 64 parent titles for paired viewers regardless of growth.
+
+### Viewers without an eligible Baseline
+
+**Rule:** Track C viewers are placed beside the segment whose Final family and Final scale (median qualified hours and meaningful titles) they share. A Track C route that matches no growth segment forms its own segment. Membership is labelled as configuration, not trajectory.
+
+**Why it matters:** these viewers belong in the investigated population, but no growth can be attributed to a viewer without an observed earlier window.
+
+### What the segmentation licenses
+
+| ✓ May say | ✗ May not say |
+| --- | --- |
+| The typical viewer on a segment's routes changed in the way its signature describes | Every member of a segment did all of it |
+| Segments differ in mechanism, not only in volume | A segment's size predicts the size of its opportunity |
+| Each segment points to a kind of additional viewing that its behaviour makes plausible | How much additional qualified viewing an intervention would produce |
+| Track C viewers currently resemble a growth segment | Track C viewers grew |
+
+The amount of additional viewing is measured by a randomised holdout within each segment:
+
+- **Primary measure:** incremental qualified watch hours per viewer over a fixed window, under the rules in this document.
+- **Guardrails:** completion and abandonment on known outcomes.
+- **Reading:** segment by segment, never pooled across segments.
 
 ## Analytical eligibility
 

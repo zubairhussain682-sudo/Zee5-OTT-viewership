@@ -1731,3 +1731,292 @@ Only then can we seriously answer the remaining business question:
 Which viewers have credible additional qualified-viewing headroom, and what evidence suggests they are inclined to realise it?
 
 Test 7 closes with a substantially stronger account of observed behaviour, not a premature declaration that the opportunity has already been found.
+
+---
+
+## 28. Where the evidence converged, and the population it converged on
+
+**Date:** 2026-10-26
+
+Entry 1 replaced the question *which titles are under-watched?* with a harder one: what explains concentrated viewing, and where is more viewing genuinely possible? Every test since answered part of that question and deliberately stopped short of the rest. By the end of Test 7 the parts were all in place. Each one had been tested on its own terms, and each had been kept separate so it couldn't count the same evidence twice:
+
+| Earlier work | What it settled | What it becomes in the segmentation |
+| --- | --- | --- |
+| Measurement foundations (entries 1–11) | Viewing is counted at parent-title grain, on qualified starts, inside declared windows, against access that existed on the day | Every number below is measured this way |
+| Breadth × concentration (Test 3) | How far viewing reached and how attention was allocated are different signals | Each viewer's position in each window: the C×B state |
+| Post-choice response (Test 4) | Whether chosen content held attention, measured on known outcomes | Corroborating evidence, reported with its support |
+| Realistic opportunity (Test 5) | What each viewer could actually have reached | The test that rules access in or out as an explanation |
+| Title origin (Test 6) | Movement beyond a viewer's earlier origin centre carries information the mechanisms don't | A modifier that runs across segments, not a boundary |
+| Same viewers, two windows (Test 7) | How viewers moved, which routes grew, and that route averages can hide their own growers | The routes that define segment membership |
+
+This last pass brings those layers together. It doesn't add a seventh layer. Before it could, the population the layers would converge on had to be fixed at the level of individual viewers.
+
+**Evidence — who was carried forward:** Test 7.7 left three groups, recorded as working totals:
+
+- **Track A:** 3,565 provisional candidates who grew both meaningful titles and qualified hours on the advanced routes.
+- **Track B:** 1,100 viewers on those routes who widened their titles while their hours fell.
+- **Track C:** 1,563 Final-eligible viewers with no eligible Baseline.
+
+No contemporaneous profile-ID ledger had been saved for these decisions, so membership was reconstructed from the accepted selection rules and historical pathways, back to profile identity. It was then checked for population, route, overlap and lineage.
+
+| Track | Reconstructed | Expected | Difference |
+| --- | ---: | ---: | ---: |
+| A | 3,565 | 3,565 | 0 |
+| B | 1,100 | 1,100 | 0 |
+| C | 1,563 | 1,563 | 0 |
+| **Investigated population** | **6,228** | **6,228** | **0** |
+
+The family passes reproduced exactly: 445, 305, 120, 161, 875 and 1,659 additional distinct viewers. The 25 viewers advanced through both Focused Successful and Selective Core are counted once, in Focused Successful. The 27 historical groups behind the tracks are disjoint, every group's state trajectories sum to its size, and parent route sizes match the published [36-route family matrix](../evidence/viewer_diagnosis/test7_family_transition_matrix.csv).
+
+Two differences from earlier published counts are worth stating, because a careful reader will find them. [Entry 24](#24-more-titles-were-not-the-same-as-more-viewing) counts 3,784 paired viewers who grew both titles and hours; Track A holds 3,565. It also counts 1,652 who widened without more hours; Track B holds 1,100. The 219 and 552 aren't reconciliation losses, eligibility failures or deduplication casualties. They sit on historical pathways that were not selected for further investigation. Test 7.7 was a selective, mechanism-led advancement exercise, not a filter that collects every positive sign.
+
+**Evidence — what each viewer did:** a route median describes a route well and an individual badly. Segmentation would lean constantly on claims that behaviours occurred *together*, and those need the same viewers on both sides. So the evidence was rebuilt as one linked record per investigated profile, joining the accepted marts at their own grains. Each record carries:
+
+- Baseline and Final behaviour where both exist;
+- individual change in titles, hours, activity and concentration;
+- family, exact-state transition and route;
+- completion, continuation and replay with their support and censoring;
+- outside-anchor viewing and recurrence;
+- title-level additions, losses and retained-title hours;
+- session organisation;
+- reachable catalogue.
+
+The record holds 6,228 rows, one per investigated profile. It was built across 10,893 eligible profile-windows and 32,679 profile × window × outcome rows. All 647 technical and reconciliation checks passed, and no source table was modified. The checks covered raw against mart watch time, qualified watch time, active days, sessions, entitled days and reachable-title days. They are integrity checks, not 647 confirmations of a behavioural reading.
+
+Unsupported evidence stayed unsupported. A rate below its support rule is recorded as missing, not zero and not failure. Track C has no Baseline, and nothing historical was invented for it.
+
+The record also kept what disagreed with the routes. Of the 3,565 Track A viewers, 2,957 moved against their route's median direction on at least one historical finding. Those 5,757 individual disagreements were retained as descriptive heterogeneity rather than smoothed into the route's story.
+
+**Interpretation:** the population and the evidence held. Nothing the reconstruction found contradicted the historical decisions, which makes for a short paragraph and a dependable foundation.
+
+The more useful result is the second one. Most growers contradicted their own route on something, which is what viewer-level evidence should look like and exactly what route averages conceal. It sets the terms for everything that follows. A segment can say what the typical viewer on its routes did. It can't promise that every member did all of it.
+
+**What this changed:** the 6,228 became a verified population with a stated reason for every inclusion. The ledger audit that [methodology §7.7](measurement_methodology.md#77--integrated-family-interpretation-and-evidence-coverage) listed as outstanding is complete. Joint claims from here on trace to one viewer-level record.
+
+**What it made us ask next:** with a verified population and its evidence in hand, what should decide which of these viewers belong together?
+
+---
+
+## 29. Routes became the building blocks of segments
+
+**Date:** 2026-10-26
+
+The [framework](analytical_framework.md#mechanism-led-segments) had set the standard long before this point: segments should follow coherent mechanisms, considering viewers with similar mechanisms together despite different histories, and separating different patterns inside a family where the evidence warrants it. The open question was what to use as the unit.
+
+**Evidence and decisions:** the 27 historical groups became the building blocks. Each is defined by a route (origin family → Final family, with exact-state disposition where it matters) and a track. That makes the route the membership criterion. It is observable for every member, it was fixed before segmentation began, and it can't be redefined by the evidence it is later used to interpret.
+
+Routes were collapsed into segments where they behaved alike. Two were placed by behaviour rather than origin:
+
+- Focused Successful → Access-Sensitive Neighbour broadened slightly but stayed in the highest concentration quintile and added hours to titles it already watched. It belongs with the viewers who deepened a favourite.
+- Access-Sensitive Neighbour → Selective Core spread its attention sharply. It belongs with the viewers who opened up.
+
+A similarity could define membership only if it passed five tests:
+
+- it describes a mechanism, not a measurement;
+- it isn't the selection rule restated;
+- it isn't volume in disguise;
+- it's observable for every member;
+- it isn't redundant with another defining trait.
+
+Evidence that failed those tests still had a job. *Corroborating* evidence speaks to inclination and is reported per segment as present, mixed or unavailable, never averaged into a score. *Contextual* evidence describes the segment and frames its opportunity.
+
+Mechanism was read through three measures chosen because they describe *how* viewing changed rather than how much:
+
+- **Attention spread:** individual change in top-title share.
+- **Kept-title hours:** change in hours on titles meaningful in both windows.
+- **Where the hours came from:** hours on dropped, kept and newly meaningful titles.
+
+Baseline hours sit beside them as scale.
+
+The conventions that held throughout:
+
+| Convention | Reason |
+| --- | --- |
+| Per-viewer claims use the median of individual Final − Baseline changes | The difference of two window medians describes the windows, not a viewer |
+| C×B states keep their full-window rankings | Re-ranking would change what each state means ([methodology §7.1–7.2](measurement_methodology.md#7172--population-eligibility-and-state-reconstruction)) |
+| No new numerical cut-offs inside the 6,228 | A threshold invented here would become an untested segment boundary |
+| Replay direction is not used as inclination evidence | Replay fell on 18 of 21 paired routes and across the full paired population alike: a follow-up clock running short late in the Final window, not a behaviour |
+| Continuation stays secondary | It depends on programme mix and next-episode supply ([entry 23](#23-more-viewing-did-not-necessarily-mean-better-post-choice-response)) |
+| Outside-anchor share modifies, it doesn't divide | The anchor is a selected Baseline maximum ([methodology §7.6](measurement_methodology.md#76--longitudinal-cross-origin-measurement)) |
+
+**The population the segments describe:** the [framework](analytical_framework.md#mechanism-led-segments) had committed the final descriptive segmentation to all 9,762 Final-eligible viewers. These segments describe the 6,228 viewers the investigation advanced: those who demonstrated growth, those who widened on less time, and those with no earlier history. The remaining 3,534 Final-eligible viewers were not advanced by Test 7.7 and are not segmented here. The question these segments answer is where growth is plausible among viewers whose behaviour points to it, not a description of the whole audience. The earlier commitment is superseded here, not erased.
+
+**Interpretation:** route-based membership is a judgement-led method, recorded as one. It rests on longitudinal evidence and on decisions that each carry a stated reason. Every boundary in the map can be argued with, because every boundary was drawn for a reason that is written down. A model that finds clusters on its own can't offer that, and a reviewer can't check its reasoning.
+
+**What this changed:** the earlier choice between grouping by origin and grouping by destination stopped mattering. Segments were read by how viewing changed, with each route's origin and destination recorded rather than competing to define it.
+
+**What it made us ask next:** read by mechanism, how many different ways of growing are there?
+
+---
+
+## 30. Growth came in a few recognisable shapes
+
+**Date:** 2026-10-26
+
+"Grew titles and hours" is one observation that can describe very different viewers. A light viewer who stopped returning to one programme and started watching six isn't doing what a heavy viewer adding twenty hours across forty titles is doing. Neither resembles a viewer who added hours almost entirely to a favourite. Treating them as one growth population would average away the very mechanism a decision needs.
+
+**Evidence — opening up, rung by rung:** the clearest pattern was viewers spreading their attention as they added titles and hours. It appeared at every scale, and the scales lined up:
+
+| Segment | Routes | Paired viewers | Baseline hours (median) | Hours change | Top-title share change | Kept-title hours change |
+| --- | --- | ---: | --- | --- | --- | --- |
+| Narrow-to-broader growers | Focused Successful → Residual, → First-Pass, → Selective Core | 346 | 5.4–7.2 | +3.3 to +5.6 | −21 to −32 pp | −0.5 to +1.3 |
+| Concentrated-to-mixed growers | Selective Core, Access-Sensitive, First-Pass → Residual; Access-Sensitive → Selective Core | 412 | 9.1–14.3 | +5.0 to +8.5 | −6 to −37 pp | −0.1 to +1.3 |
+| Heavy spreaders | Residual → Residual, state moved | 1,045 | 23.7 | +10.1 | −11.9 pp | −0.8 |
+| Broad expanders | Residual → Broad Distributed; Broad Distributed stayers | 875 | 52.0; 105.7 | +21.2; +20.9 | −10.5; −2.6 pp | −6.5; −13.9 |
+
+*Ranges span the routes in each segment; every value is a median of individual changes. Viewers without history placed beside these segments are described in [entry 32](#32-viewers-without-history-landed-where-the-growers-were).*
+
+Read top to bottom, the medians form a ladder: roughly 5, 12, 24, 52 and 106 Baseline hours. Each rung ends where the next one begins. Narrow viewers who opened up landed in exactly the states the concentrated-to-mixed growers departed from: Focused → First-Pass ends in C3_B2, and Focused → Selective Core in C4_B3. Every rung added titles faster than hours, spread its attention, and left kept-title hours close to flat. The new viewing went to new titles.
+
+With two windows, no viewer is observed climbing two rungs. The ladder is a pattern across routes, not a path anyone has been watched taking. It is still a useful pattern: the same mechanism recurring at five scales is harder to dismiss than one route behaving well once.
+
+**Evidence — the other shapes:**
+
+| Segment | Pattern | Routes | Paired viewers | What distinguishes it |
+| --- | --- | --- | ---: | --- |
+| Favourite-anchored growers | Deepening a favourite | Selective Core stayers; Residual → Selective Core; First-Pass → Selective Core; Focused Successful → Access-Sensitive; Access-Sensitive stayers | 245 | Top-title share flat or rising (−8 to +8 pp); kept-title hours up to +3.3 h. Growth went to what was already working |
+| Same-shape scalers | Scaling the same shape | First-Pass stayers; Residual → Residual, same state | 498 | Modest spread (−4.8 to −6.3 pp), kept-title hours slightly up; more of the same allocation |
+| Broad with an emerging anchor | New anchor at scale | Broad Distributed → Residual | 144 | Heavy viewers (88 h) adding 23 h while top-title share *rose* 7.7 pp: breadth kept, a new centre formed |
+
+The emerging-anchor route carries [entry 26](#26-six-families-six-investigations-and-no-single-route-to-growth)'s warning into the segmentation. Its parent route lost a median 4.4 hours; its 144 growers added 23.3. A segment drawn from the route median would have described the opposite of what these viewers did.
+
+**Evidence — what didn't explain it:** access. Reachable catalogue rose by a median of 64 titles for growers and non-growers alike, and entitlement was flat. A change that reached everyone can't explain why only some grew. The swing from web series towards movies on the concentrated-to-mixed routes (episodic share down 12–20 points) also appeared on other routes. It is read as calendar or catalogue context, not as a trait of any segment.
+
+Three placements are recorded as closer calls than the table suggests:
+
+- Focused → Residual ends 64% in C4_B2, so only about half its destination overlaps the next rung.
+- First-Pass → Residual barely spread (−6 pp) and completed less (pooled 89% → 83%), which puts it near the same-shape scalers.
+- The heavy spreaders and the same-state Residual viewers start in the same cells at the same scale and differ mainly in degree. Part of that boundary may be where a quintile line happens to fall.
+
+**Interpretation:** growth among these viewers took four forms:
+
+- opening up, at five scales;
+- deepening a favourite;
+- scaling an unchanged allocation;
+- forming a new anchor at scale.
+
+These are different relationships with the catalogue, not different amounts of the same one. Scale is recorded beside each segment but doesn't define it. The opening-up rungs share one explanation at different volumes, which is why they stay separate without being given separate stories.
+
+**What this changed:** the growth pool is no longer one population with one shared signal. It's a set of growth patterns, each defined by mechanism and each pointing to a different kind of opportunity: wider choice for those opening up, depth around what already works for those deepening.
+
+**What it made us ask next:** the breadth-only viewers widened their titles while watching less. Were they a different kind of viewer, or the same kind with less time?
+
+---
+
+## 31. Same appetite, less time
+
+**Date:** 2026-10-26
+
+If the 1,100 viewers who widened on fewer hours were a different mechanism, they needed their own reading. If they were the growers' twins with less time, the difference between the two was time, not taste. That changes what any opportunity for them would look like.
+
+**Evidence — the twins:** each breadth-only route has a growing counterpart from the same parent route.
+
+| Parent route | Growers (median) | Widening on less time (median) |
+| --- | --- | --- |
+| Broad Distributed stayers | 601 viewers · 105.7 → 132.3 h · 47 titles added / 28 dropped · top share −2.6 pp | 346 viewers · 135.9 → 113.8 h · 43 added / 32.5 dropped · top share −0.9 pp |
+| Residual stayers | 1,045 viewers (state moved) · 23.7 → 35.9 h · 13 / 6 · −11.9 pp | 647 viewers · 33.6 → 27.9 h · 11 / 7 · −5.1 pp |
+| Broad Distributed → Residual | 144 viewers · 88.2 → 114.7 h · 34 / 21 · +7.7 pp | 107 viewers · 97.3 → 80.9 h · 27 / 20 · +9.2 pp |
+
+The title behaviour that neither selection rule touched (how many titles came and went, and which way attention moved) is close between twins. The difference sits in time. The breadth-only viewers lost a median 5 to 7 active days, 6 to 8 sessions and 2 to 5 minutes per sitting. Their twins gained days, sessions and longer sittings.
+
+**Evidence — the regression the selection builds in:** the two tracks were chosen by the direction of their own hours change, from the same parent routes, so part of their separation was guaranteed before anyone behaved differently. They cross their parent's median from opposite sides:
+
+| Parent route | Parent median hours, Baseline → Final | Growers | Widening on less time |
+| --- | --- | --- | --- |
+| Broad Distributed stayers | 118.5 → 125.9 | 105.7 → 132.3 | 135.9 → 113.8 |
+| Residual stayers | 25.9 → 28.7 | 23.7 → 35.9 | 33.6 → 27.9 |
+| Broad Distributed → Residual | 89.1 → 84.5 | 88.2 → 114.7 | 97.3 → 80.9 |
+
+The growers started below their parent and finished above it; the widening viewers did the reverse. That is regression to the mean when a sample is chosen by the direction of its own change.
+
+**Interpretation:** because hours define the tracks, hours are the weakest evidence for comparing them. The sturdier evidence is the behaviour the selection left alone, and on that the twins look alike. The defensible reading is the same title appetite with less viewing time: fewer days, fewer sittings, shorter ones. Their relationship with the catalogue hasn't changed; their time has. Why the time fell is not something two windows can show.
+
+**What this changed:** the breadth-only viewers became one segment, *widening on less time*, read beside their growing twins rather than as a separate mechanism. Wherever a selection rule had used hours, title-level behaviour became the primary evidence.
+
+**What it made us ask next:** 1,563 viewers have no Baseline at all. Without a history, where do they belong?
+
+---
+
+## 32. Viewers without history landed where the growers were
+
+**Date:** 2026-10-26
+
+These viewers have valid Final behaviour, access and outcome evidence; what they lack is a past to compare against. Leaving them out would treat missing history as missing relevance. Inferring a trajectory for them would be worse: a growth label resting on no observed growth.
+
+**Evidence:** most are new profiles. On five of the six Track C routes, median profile age at the start of the Final window was between 0 and 8 days. They were placed by their Final configuration alone, beside the segment whose Final positions they share. The match holds on scale as well as state:
+
+| Final family | Viewers | Final hours (median) | Final titles (median) | Placed beside |
+| --- | --- | --- | --- | --- |
+| Successful First-Pass | 76 | 9.6 | 5 | Narrow-to-broader growers |
+| Residual | 562 | 21.2 | 9 | Concentrated-to-mixed growers |
+| Selective Core; Access-Sensitive | 82; 104 | 16.5; 8.0 | 8.5; 4 | Favourite-anchored growers |
+| Broad Distributed | 76 | 121.8 | 49 | Broad expanders |
+| Focused Successful | 663 | 3.6 | 2 | Occasional light viewers (own segment) |
+
+Their outcome evidence is thinner than the paired viewers', which is expected for new profiles: 916 of 1,563 have a supported Final completion rate, and the rest are recorded as unsupported rather than low.
+
+The Focused Successful route is the exception. Its viewers are not new (median profile age 283 days). They are light: 3.6 hours, two titles, 74% of viewing on one. They didn't meet eligibility in the Baseline window. They match no growth rung, so they form their own segment.
+
+**Interpretation:** placing a new viewer beside the growers says their current viewing looks like the growers' current viewing. That is a real signal: new profiles arriving at the same positions, at the same scale, as viewers who reached them by growing. It isn't a claim that they grew, and their membership is labelled as configuration, not trajectory.
+
+The occasional light viewers are a long-standing, low-volume pattern. Two windows can't separate contented occasional use from weak engagement, so the segment says what they do and doesn't diagnose why.
+
+**What this changed:** every investigated viewer now has a place in the map.
+
+| # | Segment | Growth pattern | Viewers |
+| --- | --- | --- | ---: |
+| 1 | Narrow-to-broader growers | Opening up, bottom rung | 422 |
+| 2 | Concentrated-to-mixed growers | Opening up, middle rung | 974 |
+| 3 | Favourite-anchored growers | Deepening a favourite | 431 |
+| 4 | Same-shape scalers | Scaling the same shape | 498 |
+| 5 | Heavy spreaders | Opening up, upper rung | 1,045 |
+| 6 | Broad expanders | Opening up, top rung | 951 |
+| 6b | Broad with an emerging anchor | New anchor at scale | 144 |
+| 7 | Widening on less time | Same appetite, less time | 1,100 |
+| 8 | Occasional light viewers | Light, concentrated, long-standing | 663 |
+|  | **Total** |  | **6,228** |
+
+**What it made us ask next:** with every viewer placed, what does the map establish, and what does it leave for the next stage of work?
+
+---
+
+## 33. What the investigation established, and what it hands on
+
+**Date:** 2026-10-26
+
+The project began by refusing a leaderboard of under-watched titles. It ends with a map of how 6,228 viewers actually grew, built from every layer the investigation earned: measurement that counts titles and time honestly, positions defined by breadth and concentration, outcomes held to known results, access reconstructed day by day, origin movement as a modifier, and routes followed across two windows.
+
+**What the evidence establishes:**
+
+- **These viewers demonstrated growth, in observable ways.** On every advanced route the typical viewer added meaningful titles. On every Track A route they also added qualified hours. Each claim is a median of individual change on a verified population, with the viewers who moved against it retained rather than hidden.
+- **Growth has a small number of shapes.** Opening up recurs at five scales, from about 5 to about 106 Baseline hours. Deepening a favourite, scaling an unchanged allocation and forming a new anchor at scale are distinct from it and from each other.
+- **Widening on less time is a time pattern, not a taste pattern.** On the behaviour selection didn't touch, these viewers match their growing twins.
+- **Access doesn't explain who grew.** Reachable catalogue rose alike for everyone; growth didn't.
+- **New viewers are arriving where growers are.** Most Track C profiles reached the growers' positions, at matching scale, within days of existing.
+- **Each segment points to a different kind of opportunity:**
+
+| Segment | Where its opportunity lies |
+| --- | --- |
+| Opening up: narrow-to-broader, concentrated-to-mixed, heavy spreaders, broad expanders | Wider, adjacent choice. These viewers move their new viewing to new titles |
+| Favourite-anchored growers | Depth around what already works: continuations, related titles, more of the anchor's kind |
+| Same-shape scalers | More of the existing mix rather than a different one |
+| Broad with an emerging anchor | Supporting a new centre forming inside very broad viewing |
+| Widening on less time | Formats and sessions that fit less time; the appetite for range is already there |
+| Viewers without history (placed beside their lookalikes) | Early-life viewing that already resembles the growers' |
+| Occasional light viewers | Re-engagement, with no assumption about why viewing is light |
+
+**What it doesn't measure, by design:** the segments say where additional viewing is plausible and what kind of offer fits each group. They don't say *how much* additional qualified viewing an intervention would produce, or how readily each segment would respond. Demonstrated behaviour supports the inference. Only an intervention measured against viewers who didn't receive it can put a number on it.
+
+**What this hands on:** the natural next stage belongs to the team that runs experiments on the platform, and the segments are built to be its input.
+
+- **Design:** for each segment, a randomised holdout. A treated group receives the intervention that fits its pattern; a matched holdout from the same segment receives nothing different.
+  - Opening-up segments: surfacing adjacent titles across genres and origins.
+  - Favourite-anchored growers: continuations and close relatives of the anchor.
+  - Widening on less time: shorter formats and easier resumption.
+  - New and occasional viewers: onboarding and re-engagement.
+- **Primary measure:** incremental qualified watch hours per viewer over a fixed window, treated against holdout, using the measurement rules this project established.
+- **Secondary measures:** meaningful titles and, where supported, completion.
+- **Guardrails:** completion and abandonment on known outcomes, so that more viewing isn't bought with worse viewing, and continued entitlement.
+- **Reading the result:** segment by segment. The segments were defined by different mechanisms, so their responses shouldn't be pooled into a single lift.
+
+That test answers the question the segments were built to ask. The investigation's part was to make sure it would be asked of the right viewers, in the right way, for reasons a reviewer can trace back through every entry in this journal.
