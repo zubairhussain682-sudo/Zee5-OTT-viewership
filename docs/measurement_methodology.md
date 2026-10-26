@@ -840,7 +840,7 @@ Its computed context tables and cross-origin inventory are supporting evidence; 
 
 ## Segmentation of the investigated population
 
-The segments group the investigated viewers by how their viewing changed between the two windows. Every rule below sits on the Test 4–7 definitions and leaves them unchanged: qualified starts, meaningful titles, full-window C×B rankings, support thresholds and the fixed Baseline anchor.
+The segments group the investigated viewers by how their viewing changed between the two windows. The route-level evidence behind every rule in this section is published in [`evidence/segmentation`](../evidence/segmentation/README.md). Every rule below sits on the Test 4–7 definitions and leaves them unchanged: qualified starts, meaningful titles, full-window C×B rankings, support thresholds and the fixed Baseline anchor.
 
 ### Investigated population
 

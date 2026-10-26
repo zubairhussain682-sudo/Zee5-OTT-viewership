@@ -1,0 +1,22 @@
+group_id,segment_id,parent_route,parent_n,parent_hours_baseline_median,parent_hours_final_median,parent_hours_change_median,route_n,route_hours_baseline_median,route_hours_final_median,route_hours_change_median,not_selected_n,not_selected_hours_baseline_median,not_selected_hours_final_median,not_selected_hours_change_median
+A01,1,Focused Successful → Residual,325,6.0731,9.5731,3.0744,238,5.4938,11.2571,5.0682,87,8.4389,6.7703,-1.4886
+A02,3,Focused Successful → Access-Sensitive Neighbour,138,5.2756,7.8851,1.5242,99,4.6133,8.5625,3.0581,39,7.4964,5.8842,-1.3156
+A03,1,Focused Successful → Successful First-Pass,114,6.6932,8.3436,1.8074,83,5.4106,9.2214,3.2689,31,8.6956,7.3514,-1.4383
+A04,1,Focused Successful → Selective Core,26,7.2451,12.3224,5.1786,25,7.1811,12.5286,5.5731,1,10.1672,7.2075,-2.9597
+A05,2,Selective Core → Residual,280,13.6354,18.0385,3.7281,157,14.3131,23.1878,8.5006,123,12.9742,12.3897,-1.7006
+A06,3,Selective Core → Selective Core,47,14.0789,15.9119,1.6567,25,11.5325,17.1811,4.7181,22,14.8488,13.401,-1.7464
+A07,3,Residual → Selective Core,234,15.3258,16.6829,0.74,85,9.6931,16.6764,5.6561,149,19.3647,16.6894,-3.0581
+A08,2,Access-Sensitive Neighbour → Selective Core,30,10.3826,14.4044,4.1589,22,9.8654,15.9654,5.0308,8,15.5014,11.5454,-2.2944
+A09,3,Successful First-Pass → Selective Core,27,9.1944,12.4081,2.3311,16,7.3217,14.6206,5.9772,11,16.2478,9.5103,-3.0833
+A10,2,Access-Sensitive Neighbour → Residual,172,9.4519,12.2194,3.0196,100,9.1086,15.9076,5.8518,72,10.1582,7.4053,-1.8738
+A11,3,Access-Sensitive Neighbour → Access-Sensitive Neighbour,65,6.9992,8.6597,1.6006,20,4.9506,10.58,5.1758,45,7.405,7.7231,-0.2933
+A12,2,Successful First-Pass → Residual,232,11.7093,12.494,1.9532,133,9.9406,17.7767,5.6719,99,13.3458,10.1414,-2.315
+A13,4,Successful First-Pass → Successful First-Pass,72,12.7375,10.3471,0.7781,28,7.1004,11.9264,3.2531,44,15.3271,10.0353,-3.7833
+A14,6,Broad Distributed → Broad Distributed,1058,118.5411,125.9215,5.4713,601,105.7331,132.2961,20.855,457,138.4442,113.0783,-17.8567
+A15,6,Residual → Broad Distributed,352,56.1835,73.5487,15.4506,274,52.0411,74.8782,21.1617,78,74.4769,65.4114,-9.6644
+A16,5,"Residual → Residual, exact state moved",2019,25.5792,28.6475,2.9747,1045,23.7081,35.8528,10.0803,974,27.6685,21.9615,-4.4903
+A17,4,"Residual → Residual, exact state retained",930,27.2468,28.7661,1.7693,470,24.1275,33.3203,6.8747,460,30.9894,24.4639,-5.2189
+A18,6b,Broad Distributed → Residual,385,89.0922,84.5133,-4.3683,144,88.2018,114.7361,23.3286,241,90.2044,70.3006,-14.7667
+B01,7,Broad Distributed → Broad Distributed,1058,118.5411,125.9215,5.4713,346,135.8958,113.7917,-17.229,712,109.9506,128.8585,16.1049
+B02,7,Residual → Residual,2949,25.8911,28.6811,2.5325,647,33.6328,27.8511,-5.2825,2302,23.8971,28.891,5.1104
+B03,7,Broad Distributed → Residual,385,89.0922,84.5133,-4.3683,107,97.3383,80.9486,-12.6931,278,83.7803,86.3897,6.0772

@@ -1,0 +1,7 @@
+group_id,final_family,profiles,profile_age_days_median,final_hours_median,final_titles_median,final_top_share_median,completion_supported_n,completion_supported_pooled,segment_id,placed_beside
+C01,Focused Successful,663,283.0,3.5717,2.0,0.7401,141,0.8345,8,Occasional light viewers
+C02,Selective Core,82,0.0,16.5268,8.5,0.4652,82,0.7614,3,Favourite-anchored growers
+C03,Access-Sensitive Neighbour,104,4.0,8.0311,4.0,0.6981,52,0.7315,3,Favourite-anchored growers
+C04,Successful First-Pass,76,0.0,9.5685,5.0,0.368,65,0.8686,1,Narrow-to-broader growers
+C05,Broad Distributed,76,7.5,121.7594,49.0,0.0968,76,0.8879,6,Broad expanders
+C06,Residual,562,0.0,21.1883,9.0,0.341,500,0.8693,2,Concentrated-to-mixed growers

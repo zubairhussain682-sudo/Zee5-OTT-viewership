@@ -1,0 +1,38 @@
+baseline_family,final_family,paired_profiles,titles_up_hours_up,advanced_track_a,titles_up_hours_up_not_advanced,titles_up_hours_not_up,advanced_track_b,titles_up_hours_not_up_not_advanced
+Focused Successful,Focused Successful,692,120,0,120,49,0,49
+Focused Successful,Selective Core,26,25,25,0,1,0,1
+Focused Successful,Access-Sensitive Neighbour,138,99,99,0,39,0,39
+Focused Successful,Successful First-Pass,114,83,83,0,31,0,31
+Focused Successful,Broad Distributed,0,0,0,0,0,0,0
+Focused Successful,Residual,325,238,238,0,85,0,85
+Selective Core,Focused Successful,30,0,0,0,0,0,0
+Selective Core,Selective Core,47,25,25,0,9,0,9
+Selective Core,Access-Sensitive Neighbour,30,0,0,0,0,0,0
+Selective Core,Successful First-Pass,35,2,0,2,1,0,1
+Selective Core,Broad Distributed,3,3,0,3,0,0,0
+Selective Core,Residual,280,157,157,0,39,0,39
+Access-Sensitive Neighbour,Focused Successful,127,0,0,0,0,0,0
+Access-Sensitive Neighbour,Selective Core,30,22,22,0,8,0,8
+Access-Sensitive Neighbour,Access-Sensitive Neighbour,65,20,20,0,8,0,8
+Access-Sensitive Neighbour,Successful First-Pass,53,21,0,21,16,0,16
+Access-Sensitive Neighbour,Broad Distributed,0,0,0,0,0,0,0
+Access-Sensitive Neighbour,Residual,172,100,100,0,33,0,33
+Successful First-Pass,Focused Successful,114,0,0,0,0,0,0
+Successful First-Pass,Selective Core,27,16,16,0,11,0,11
+Successful First-Pass,Access-Sensitive Neighbour,36,9,0,9,4,0,4
+Successful First-Pass,Successful First-Pass,72,28,28,0,22,0,22
+Successful First-Pass,Broad Distributed,0,0,0,0,0,0,0
+Successful First-Pass,Residual,232,133,133,0,50,0,50
+Broad Distributed,Focused Successful,0,0,0,0,0,0,0
+Broad Distributed,Selective Core,0,0,0,0,0,0,0
+Broad Distributed,Access-Sensitive Neighbour,0,0,0,0,0,0,0
+Broad Distributed,Successful First-Pass,0,0,0,0,0,0,0
+Broad Distributed,Broad Distributed,1058,601,601,0,346,346,0
+Broad Distributed,Residual,385,144,144,0,107,107,0
+Residual,Focused Successful,292,0,0,0,0,0,0
+Residual,Selective Core,234,85,85,0,46,0,46
+Residual,Access-Sensitive Neighbour,108,21,0,21,10,0,10
+Residual,Successful First-Pass,173,43,0,43,23,0,23
+Residual,Broad Distributed,352,274,274,0,67,0,67
+Residual,Residual,2949,1515,1515,0,647,647,0
+All paired,,8199,3784,3565,219,1652,1100,552

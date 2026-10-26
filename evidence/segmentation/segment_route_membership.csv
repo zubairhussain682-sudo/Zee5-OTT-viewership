@@ -1,0 +1,28 @@
+group_id,track,baseline_family,final_family,exact_state_disposition,selection_rule,profiles,segment_id,segment,growth_pattern,placement_basis,placement_note
+A01,A,Focused Successful,Residual,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,238,1,Narrow-to-broader growers,"Opening up, bottom rung",ROUTE_MECHANISM,"Closer call: 64% end in C4_B2, so only about half the destination overlaps the next rung"
+A02,A,Focused Successful,Access-Sensitive Neighbour,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,99,3,Favourite-anchored growers,Deepening a favourite,BEHAVIOUR_OVER_ORIGIN,Stayed in the highest concentration quintile and added hours to titles already watched; placed with deepening rather than with its origin family
+A03,A,Focused Successful,Successful First-Pass,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,83,1,Narrow-to-broader growers,"Opening up, bottom rung",ROUTE_MECHANISM,
+A04,A,Focused Successful,Selective Core,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,25,1,Narrow-to-broader growers,"Opening up, bottom rung",ROUTE_MECHANISM,
+A05,A,Selective Core,Residual,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,157,2,Concentrated-to-mixed growers,"Opening up, middle rung",ROUTE_MECHANISM,
+A06,A,Selective Core,Selective Core,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,25,3,Favourite-anchored growers,Deepening a favourite,ROUTE_MECHANISM,
+A07,A,Residual,Selective Core,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,85,3,Favourite-anchored growers,Deepening a favourite,ROUTE_MECHANISM,
+A08,A,Access-Sensitive Neighbour,Selective Core,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,22,2,Concentrated-to-mixed growers,"Opening up, middle rung",BEHAVIOUR_OVER_ORIGIN,Spread attention sharply; placed with opening up rather than with deepening
+A09,A,Successful First-Pass,Selective Core,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,16,3,Favourite-anchored growers,Deepening a favourite,ROUTE_MECHANISM,
+A10,A,Access-Sensitive Neighbour,Residual,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,100,2,Concentrated-to-mixed growers,"Opening up, middle rung",ROUTE_MECHANISM,
+A11,A,Access-Sensitive Neighbour,Access-Sensitive Neighbour,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,20,3,Favourite-anchored growers,Deepening a favourite,ROUTE_MECHANISM,20 viewers; folded into Segment 3 without moving any segment boundary
+A12,A,Successful First-Pass,Residual,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,133,2,Concentrated-to-mixed growers,"Opening up, middle rung",ROUTE_MECHANISM,Closer call: barely spread and completion fell; sits near the same-shape scalers
+A13,A,Successful First-Pass,Successful First-Pass,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,28,4,Same-shape scalers,Scaling the same shape,ROUTE_MECHANISM,
+A14,A,Broad Distributed,Broad Distributed,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,601,6,Broad expanders,"Opening up, top rung",ROUTE_MECHANISM,
+A15,A,Residual,Broad Distributed,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,274,6,Broad expanders,"Opening up, top rung",ROUTE_MECHANISM,
+A16,A,Residual,Residual,MOVED,TITLES_UP_AND_HOURS_UP,1045,5,Heavy spreaders,"Opening up, upper rung",ROUTE_MECHANISM,
+A17,A,Residual,Residual,SAME,TITLES_UP_AND_HOURS_UP,470,4,Same-shape scalers,Scaling the same shape,ROUTE_MECHANISM,Closer call: starts in the same cells and at the same scale as Segment 5; differs mainly in degree of spread
+A18,A,Broad Distributed,Residual,MIXED_OR_SINGLE_STATE,TITLES_UP_AND_HOURS_UP,144,6b,Broad with an emerging anchor,New anchor at scale,ROUTE_MECHANISM,
+B01,B,Broad Distributed,Broad Distributed,MIXED_OR_SINGLE_STATE,TITLES_UP_HOURS_DOWN,346,7,Widening on less time,"Same appetite, less time",ROUTE_MECHANISM,
+B02,B,Residual,Residual,MIXED_OR_SINGLE_STATE,TITLES_UP_HOURS_DOWN,647,7,Widening on less time,"Same appetite, less time",ROUTE_MECHANISM,
+B03,B,Broad Distributed,Residual,MIXED_OR_SINGLE_STATE,TITLES_UP_HOURS_DOWN,107,7,Widening on less time,"Same appetite, less time",ROUTE_MECHANISM,
+C01,C,,Focused Successful,NOT_APPLICABLE,FINAL_ELIGIBLE_WITHOUT_ELIGIBLE_BASELINE,663,8,Occasional light viewers,"Light, concentrated, long-standing",FINAL_CONFIGURATION,No eligible Baseline and matches no growth segment; forms its own segment
+C02,C,,Selective Core,NOT_APPLICABLE,FINAL_ELIGIBLE_WITHOUT_ELIGIBLE_BASELINE,82,3,Favourite-anchored growers,Deepening a favourite,FINAL_CONFIGURATION,"No eligible Baseline; placed by Final family and Final scale, describing configuration, not trajectory"
+C03,C,,Access-Sensitive Neighbour,NOT_APPLICABLE,FINAL_ELIGIBLE_WITHOUT_ELIGIBLE_BASELINE,104,3,Favourite-anchored growers,Deepening a favourite,FINAL_CONFIGURATION,"No eligible Baseline; placed by Final family and Final scale, describing configuration, not trajectory"
+C04,C,,Successful First-Pass,NOT_APPLICABLE,FINAL_ELIGIBLE_WITHOUT_ELIGIBLE_BASELINE,76,1,Narrow-to-broader growers,"Opening up, bottom rung",FINAL_CONFIGURATION,"No eligible Baseline; placed by Final family and Final scale, describing configuration, not trajectory"
+C05,C,,Broad Distributed,NOT_APPLICABLE,FINAL_ELIGIBLE_WITHOUT_ELIGIBLE_BASELINE,76,6,Broad expanders,"Opening up, top rung",FINAL_CONFIGURATION,"No eligible Baseline; placed by Final family and Final scale, describing configuration, not trajectory"
+C06,C,,Residual,NOT_APPLICABLE,FINAL_ELIGIBLE_WITHOUT_ELIGIBLE_BASELINE,562,2,Concentrated-to-mixed growers,"Opening up, middle rung",FINAL_CONFIGURATION,"No eligible Baseline; placed by Final family and Final scale, describing configuration, not trajectory"
