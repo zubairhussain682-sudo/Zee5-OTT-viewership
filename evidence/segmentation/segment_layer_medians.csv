@@ -1,0 +1,66 @@
+segment_id,segment,population,layer,unit,baseline_observed_n,baseline_p25,baseline_median,baseline_p75,final_observed_n,final_p25,final_median,final_p75,change_observed_n,change_p25,change_median,change_p75,change_increased_n,change_decreased_n,change_unchanged_n,index_final_over_baseline
+1,Narrow-to-broader growers,PAIRED,distinct_meaningful_titles,parent titles,346,2.0000,3.0000,3.0000,346,4.0000,6.0000,7.0000,346,2.0000,3.0000,5.0000,346,0,0,200.0000
+1,Narrow-to-broader growers,PAIRED,qualified_watch_hours,hours,346,3.7553,5.5361,8.3197,346,7.5825,10.7368,14.8949,346,2.1987,4.2156,7.6697,346,0,0,193.9413
+1,Narrow-to-broader growers,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),346,0.5691,0.6844,0.8308,346,0.3458,0.4216,0.5052,346,-42.2319,-28.0586,-15.4630,15,331,0,61.5947
+1,Narrow-to-broader growers,PAIRED,active_days,days,346,8.0000,11.0000,14.0000,346,11.0000,14.0000,18.0000,346,0.0000,3.0000,7.0000,248,84,14,127.2727
+1,Narrow-to-broader growers,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,346,26.2741,32.3961,40.7183,346,35.4233,44.0483,52.6390,346,1.7880,10.7271,20.3346,267,79,0,135.9680
+1,Narrow-to-broader growers,FINAL_ONLY,distinct_meaningful_titles,parent titles,,,,,76,4.7500,5.0000,6.0000,,,,,,,,
+1,Narrow-to-broader growers,FINAL_ONLY,qualified_watch_hours,hours,,,,,76,5.4399,9.5685,16.9387,,,,,,,,
+1,Narrow-to-broader growers,FINAL_ONLY,top_title_qualified_share,fraction (levels); percentage points (change),,,,,76,0.3297,0.3680,0.3882,,,,,,,,
+1,Narrow-to-broader growers,FINAL_ONLY,active_days,days,,,,,76,8.0000,11.0000,16.0000,,,,,,,,
+1,Narrow-to-broader growers,FINAL_ONLY,mean_qualified_minutes_per_session,minutes per qualifying session,,,,,76,35.5781,48.6591,60.3135,,,,,,,,
+2,Concentrated-to-mixed growers,PAIRED,distinct_meaningful_titles,parent titles,412,4.0000,5.0000,7.0000,412,8.0000,10.0000,13.0000,412,3.0000,4.0000,7.0000,412,0,0,200.0000
+2,Concentrated-to-mixed growers,PAIRED,qualified_watch_hours,hours,412,7.3969,11.2147,16.3093,412,13.7952,19.3753,25.9849,412,3.1384,6.5840,10.9312,412,0,0,172.7665
+2,Concentrated-to-mixed growers,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),412,0.4365,0.5093,0.6515,412,0.2430,0.3165,0.4134,412,-31.8138,-21.7507,-10.6809,45,367,0,62.1462
+2,Concentrated-to-mixed growers,PAIRED,active_days,days,412,13.0000,18.0000,23.0000,412,16.0000,22.0000,27.0000,412,-1.0000,3.0000,8.0000,264,120,28,122.2222
+2,Concentrated-to-mixed growers,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,412,27.5547,37.3474,48.3104,412,41.0723,50.0771,61.6173,412,4.0739,12.1267,19.7111,345,67,0,134.0848
+2,Concentrated-to-mixed growers,FINAL_ONLY,distinct_meaningful_titles,parent titles,,,,,562,5.0000,9.0000,18.0000,,,,,,,,
+2,Concentrated-to-mixed growers,FINAL_ONLY,qualified_watch_hours,hours,,,,,562,10.8039,21.1883,40.0201,,,,,,,,
+2,Concentrated-to-mixed growers,FINAL_ONLY,top_title_qualified_share,fraction (levels); percentage points (change),,,,,562,0.2331,0.3410,0.4633,,,,,,,,
+2,Concentrated-to-mixed growers,FINAL_ONLY,active_days,days,,,,,562,12.0000,20.5000,31.0000,,,,,,,,
+2,Concentrated-to-mixed growers,FINAL_ONLY,mean_qualified_minutes_per_session,minutes per qualifying session,,,,,562,43.7024,60.2780,77.0557,,,,,,,,
+3,Favourite-anchored growers,PAIRED,distinct_meaningful_titles,parent titles,245,3.0000,4.0000,6.0000,245,4.0000,7.0000,9.0000,245,1.0000,2.0000,4.0000,245,0,0,175.0000
+3,Favourite-anchored growers,PAIRED,qualified_watch_hours,hours,245,4.3564,6.7267,10.3117,245,8.3517,11.7197,17.6603,245,2.0369,4.3150,7.8033,245,0,0,174.2278
+3,Favourite-anchored growers,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),245,0.4647,0.5665,0.7447,245,0.4707,0.5883,0.6638,245,-10.3058,-0.7838,9.1975,117,128,0,103.8355
+3,Favourite-anchored growers,PAIRED,active_days,days,245,9.0000,13.0000,18.0000,245,12.0000,17.0000,22.0000,245,0.0000,3.0000,6.0000,175,51,19,130.7692
+3,Favourite-anchored growers,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,245,23.9182,30.5578,40.4229,245,33.2538,41.4548,53.5475,245,2.5393,8.9888,18.3273,192,53,0,135.6601
+3,Favourite-anchored growers,FINAL_ONLY,distinct_meaningful_titles,parent titles,,,,,186,4.0000,5.5000,8.0000,,,,,,,,
+3,Favourite-anchored growers,FINAL_ONLY,qualified_watch_hours,hours,,,,,186,7.0278,11.4885,16.6697,,,,,,,,
+3,Favourite-anchored growers,FINAL_ONLY,top_title_qualified_share,fraction (levels); percentage points (change),,,,,186,0.4726,0.6175,0.7035,,,,,,,,
+3,Favourite-anchored growers,FINAL_ONLY,active_days,days,,,,,186,9.0000,13.0000,18.0000,,,,,,,,
+3,Favourite-anchored growers,FINAL_ONLY,mean_qualified_minutes_per_session,minutes per qualifying session,,,,,186,37.9475,49.8835,60.0783,,,,,,,,
+4,Same-shape scalers,PAIRED,distinct_meaningful_titles,parent titles,498,7.0000,12.0000,16.0000,498,10.0000,16.0000,23.0000,498,2.0000,4.0000,7.0000,498,0,0,133.3333
+4,Same-shape scalers,PAIRED,qualified_watch_hours,hours,498,12.0913,22.7414,35.2626,498,18.4466,31.6221,45.7819,498,3.5688,6.7800,11.6388,498,0,0,139.0508
+4,Same-shape scalers,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),498,0.2299,0.3009,0.3941,498,0.1848,0.2447,0.3269,498,-8.6387,-4.8351,-1.5737,87,411,0,81.3106
+4,Same-shape scalers,PAIRED,active_days,days,498,19.0000,28.0000,36.0000,498,21.0000,29.5000,37.0000,498,-3.0000,1.0000,5.0000,268,192,38,105.3571
+4,Same-shape scalers,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,498,34.4427,44.6772,58.2899,498,46.7715,59.3348,72.7098,498,5.7294,13.3239,22.8240,428,70,0,132.8077
+5,Heavy spreaders,PAIRED,distinct_meaningful_titles,parent titles,1045,7.0000,10.0000,15.0000,1045,13.0000,18.0000,24.0000,1045,4.0000,7.0000,10.0000,1045,0,0,180.0000
+5,Heavy spreaders,PAIRED,qualified_watch_hours,hours,1045,14.9619,23.7081,34.8892,1045,24.2114,35.8528,50.1594,1045,4.7050,10.0803,17.5206,1045,0,0,151.2261
+5,Heavy spreaders,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),1045,0.2491,0.3263,0.4266,1045,0.1622,0.2226,0.3013,1045,-19.1356,-11.9200,-1.4621,234,811,0,68.2182
+5,Heavy spreaders,PAIRED,active_days,days,1045,21.0000,29.0000,36.0000,1045,25.0000,32.0000,39.0000,1045,-2.0000,2.0000,7.0000,630,354,61,110.3448
+5,Heavy spreaders,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,1045,36.9759,48.0025,59.9029,1045,51.4285,63.6569,76.4271,1045,5.9405,14.7227,23.9928,905,140,0,132.6118
+6,Broad expanders,PAIRED,distinct_meaningful_titles,parent titles,875,25.0000,35.0000,51.0000,875,39.0000,52.0000,75.0000,875,11.0000,17.0000,26.0000,875,0,0,148.5714
+6,Broad expanders,PAIRED,qualified_watch_hours,hours,875,58.6275,85.1200,130.6429,875,79.1424,111.7161,157.9694,875,9.8685,20.9264,36.9729,875,0,0,131.2454
+6,Broad expanders,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),875,0.0945,0.1300,0.1765,875,0.0688,0.0900,0.1137,875,-8.2652,-4.2586,-1.1529,152,723,0,69.2467
+6,Broad expanders,PAIRED,active_days,days,875,44.0000,53.0000,62.0000,875,47.0000,55.0000,64.5000,875,-2.0000,2.0000,7.0000,523,306,46,103.7736
+6,Broad expanders,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,875,71.1748,90.2301,117.3215,875,88.9250,108.8406,132.5232,875,4.7191,16.3608,27.2248,737,138,0,120.6257
+6,Broad expanders,FINAL_ONLY,distinct_meaningful_titles,parent titles,,,,,76,40.0000,49.0000,67.5000,,,,,,,,
+6,Broad expanders,FINAL_ONLY,qualified_watch_hours,hours,,,,,76,95.9096,121.7594,162.1012,,,,,,,,
+6,Broad expanders,FINAL_ONLY,top_title_qualified_share,fraction (levels); percentage points (change),,,,,76,0.0795,0.0968,0.1158,,,,,,,,
+6,Broad expanders,FINAL_ONLY,active_days,days,,,,,76,44.0000,56.5000,64.0000,,,,,,,,
+6,Broad expanders,FINAL_ONLY,mean_qualified_minutes_per_session,minutes per qualifying session,,,,,76,103.3249,122.0769,139.7131,,,,,,,,
+6b,Broad with an emerging anchor,PAIRED,distinct_meaningful_titles,parent titles,144,27.0000,34.0000,42.0000,144,38.7500,47.0000,58.0000,144,7.0000,13.0000,18.0000,144,0,0,138.2353
+6b,Broad with an emerging anchor,PAIRED,qualified_watch_hours,hours,144,70.3758,88.2018,108.4987,144,92.5587,114.7361,146.8885,144,11.3631,23.3286,38.9761,144,0,0,130.0836
+6b,Broad with an emerging anchor,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),144,0.1006,0.1253,0.1471,144,0.1619,0.1883,0.2311,144,3.1348,7.7019,12.8137,133,11,0,150.2949
+6b,Broad with an emerging anchor,PAIRED,active_days,days,144,48.0000,53.0000,58.2500,144,51.0000,58.0000,63.0000,144,-2.0000,2.0000,8.0000,88,43,13,109.4340
+6b,Broad with an emerging anchor,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,144,76.2727,87.1664,104.6237,144,92.2806,103.6240,119.5763,144,7.7931,17.0120,27.4674,125,19,0,118.8807
+7,Widening on less time,PAIRED,distinct_meaningful_titles,parent titles,1100,11.0000,20.0000,40.0000,1100,15.0000,25.0000,48.0000,1100,2.0000,5.0000,9.0000,1100,0,0,125.0000
+7,Widening on less time,PAIRED,qualified_watch_hours,hours,1100,30.5400,57.2262,110.8153,1100,24.1939,46.2519,91.5599,1100,-17.2354,-8.1504,-3.4155,0,1100,0,80.8230
+7,Widening on less time,PAIRED,top_title_qualified_share,fraction (levels); percentage points (change),1100,0.1095,0.1769,0.2956,1100,0.1078,0.1730,0.2500,1100,-7.8452,-2.0552,2.7516,409,691,0,97.7605
+7,Widening on less time,PAIRED,active_days,days,1100,31.0000,44.0000,58.0000,1100,26.0000,38.0000,52.0000,1100,-9.0000,-5.0000,-1.0000,190,857,53,86.3636
+7,Widening on less time,PAIRED,mean_qualified_minutes_per_session,minutes per qualifying session,1100,55.7531,75.1130,103.0324,1100,52.8964,72.3530,100.2770,1100,-11.0477,-2.3816,6.0553,482,618,0,96.3255
+8,Occasional light viewers,FINAL_ONLY,distinct_meaningful_titles,parent titles,,,,,663,2.0000,2.0000,3.0000,,,,,,,,
+8,Occasional light viewers,FINAL_ONLY,qualified_watch_hours,hours,,,,,663,2.6722,3.5717,5.3928,,,,,,,,
+8,Occasional light viewers,FINAL_ONLY,top_title_qualified_share,fraction (levels); percentage points (change),,,,,663,0.5837,0.7401,0.9135,,,,,,,,
+8,Occasional light viewers,FINAL_ONLY,active_days,days,,,,,663,5.0000,6.0000,8.0000,,,,,,,,
+8,Occasional light viewers,FINAL_ONLY,mean_qualified_minutes_per_session,minutes per qualifying session,,,,,663,27.8300,36.5467,47.4730,,,,,,,,

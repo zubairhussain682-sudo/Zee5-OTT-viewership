@@ -98,7 +98,7 @@ Segment-level medians are **not** published. Route medians can't be combined int
 | Title turnover | `titles_added_*`, `titles_dropped_*`, `titles_kept_*` |
 | Time organisation | `active_days_change_median`, `qualifying_sessions_change_median`, `qualified_minutes_per_session_change_median` |
 
-**Reading it:** attention spread (`top_share_change_median`), kept-title hours and hours by title fate are the mechanism signature; Baseline hours are scale. Opening-up routes show a clear negative top-share change, near-flat kept-title hours and most new hours on new titles. Deepening routes show flat or rising top share and positive kept-title hours. For Track B, the time-organisation columns carry the difference from their growing twins.
+**Reading it:** attention spread (`top_share_change_median`), kept-title hours and hours by title fate are the mechanism signature; Baseline hours are scale. Opening-up routes show a clear negative top-share change and most new hours on new titles; kept-title hours are near flat on the lower rungs and fall on the two heaviest routes. Deepening routes show flat or rising top share and positive kept-title hours. For Track B, the time-organisation columns carry the difference from their growing twins.
 
 ### `route_outcomes_and_context.csv`
 
@@ -131,6 +131,35 @@ Segment-level medians are **not** published. Route medians can't be combined int
 - The segment each route is placed beside.
 
 **Reading it:** five of the six routes have a median profile age of 0–8 days and match a growth segment's Final family and scale. The Focused Successful route (median age 283 days, 3.57 hours, two titles) matches none and forms its own segment. 916 of the 1,563 have a supported Final completion rate; the rest are unsupported, not low.
+
+---
+
+## One number per segment
+
+### `segment_layer_medians.csv`
+
+**Question:** what did the typical viewer in each segment look like in each window, layer by layer?
+
+**Why it exists:** route medians can't be combined into a segment median, because a median of medians isn't a median of viewers. A one-chart-per-segment summary therefore needs each segment's medians computed from its viewers directly. This table supplies them from the viewer-level evidence record, using the published route-to-segment membership. It adds no definition, threshold or re-ranking, and changes no segment.
+
+**Grain:** one row per segment × population × layer (65 rows).
+- `PAIRED` (Tracks A and B; 4,665 viewers) carries both windows and individual change.
+- `FINAL_ONLY` (Track C; 1,563 viewers) carries the Final window only. It is never mixed into a paired row, so a segment's Baseline and Final describe the same viewers.
+
+**Layers:** `distinct_meaningful_titles`, `qualified_watch_hours`, `top_title_qualified_share` (fraction for levels, percentage points for change), `active_days`, `mean_qualified_minutes_per_session` (qualified playback minutes ÷ qualifying sessions).
+
+**Columns:**
+- Observed n, p25, median and p75 for each window and for individual change.
+- Counts of viewers whose value increased, decreased or stayed unchanged.
+- `index_final_over_baseline` = 100 × Final median ÷ Baseline median. This is a display index for charts: a ratio of window medians, not a median of individual percentage changes.
+
+**Reconciliation, all passed:**
+- Membership matches `segment_summary.csv` exactly: every one of the 6,228 viewers sits in exactly one route and one segment.
+- The single-route segments reproduce their published route values: heavy spreaders (A16), the emerging anchor (A18), and occasional light viewers (C01, Final window).
+- Across 501 comparable route statistics, 500 match the published tables at four decimal places. The one exception is A03's hours-change p75 (6.3212 against a published 6.3213), a rounding boundary of 0.0001 hours. It is documented, not adjusted.
+- For every multi-route segment and layer, the sign of the segment's median individual change matches the majority of its routes. The favourite-anchored growers and the widening-on-less-time viewers keep minority routes whose top-title share rose; their segment medians are negative, as their route majorities are.
+
+**What it does not establish:** that every member moved as the median did, or anything beyond what the route tables already support. It summarises the same evidence at the level the segments are read.
 
 ---
 

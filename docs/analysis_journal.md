@@ -1866,7 +1866,7 @@ The conventions that held throughout:
 
 *Ranges span the routes in each segment; every value is a median of individual changes. Viewers without history placed beside these segments are described in [entry 32](#32-viewers-without-history-landed-where-the-growers-were).*
 
-Read top to bottom, the medians form a ladder: roughly 5, 12, 24, 52 and 106 Baseline hours. Each rung ends where the next one begins. Narrow viewers who opened up landed in exactly the states the concentrated-to-mixed growers departed from: Focused → First-Pass ends in C3_B2, and Focused → Selective Core in C4_B3. Every rung added titles faster than hours, spread its attention, and left kept-title hours close to flat. The new viewing went to new titles.
+Read top to bottom, the medians form a ladder: roughly 5, 12, 24, 52 and 106 Baseline hours. Each rung ends where the next one begins. Narrow viewers who opened up landed in exactly the states the concentrated-to-mixed growers departed from: Focused → First-Pass ends in C3_B2, and Focused → Selective Core in C4_B3. Every rung added titles faster than hours, spread its attention and put its new viewing on new titles. On the lower rungs, kept-title hours stayed close to flat; on the top two, they fell (by a median 6.5 and 13.9 hours) while new titles carried all of the growth.
 
 With two windows, no viewer is observed climbing two rungs. The ladder is a pattern across routes, not a path anyone has been watched taking. It is still a useful pattern: the same mechanism recurring at five scales is harder to dismiss than one route behaving well once.
 

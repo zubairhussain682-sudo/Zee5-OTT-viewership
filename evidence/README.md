@@ -81,6 +81,7 @@ A Test 4 file therefore sits in `mart_audit/` when it settles how something is m
 | [`route_outcomes_and_context.csv`](segmentation/route_outcomes_and_context.csv) | Dual-supported post-choice outcomes, with replay as context only, and changes in reach, outside-anchor share and episodic share | Final pass |
 | [`route_vs_parent_hours.csv`](segmentation/route_vs_parent_hours.csv) | Each selected route against its full parent transition and the not-selected remainder | Final pass |
 | [`final_only_placement.csv`](segmentation/final_only_placement.csv) | Viewers without an eligible Baseline: profile age, Final scale, completion support and placement | Final pass |
+| [`segment_layer_medians.csv`](segmentation/segment_layer_medians.csv) | Each segment's median titles, hours, top-title share, active days and minutes per sitting in each window, with individual change; viewers without history kept separate | Final pass |
 
 [`segmentation/README.md`](segmentation/README.md) documents each table's grain, columns and interpretation boundary.
 
